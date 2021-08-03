@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reminder_Days_cannot_be_in_Past</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+            Reminder_Days__c &gt;= (Appointment_Date__c -  TODAY() ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;appointment&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga__ehencounter__c&quot;
+        )</errorConditionFormula>
+    <errorMessage>Please enter days before appointment date you need a Reminder, which is not in past or today.</errorMessage>
+</ValidationRule>

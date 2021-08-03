@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PeopleSoft_Id__c</fullName>
+    <description>Map this field with People Soft(Vendor) Id for Import/Export data.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>PeopleSoft Vendor Id</inlineHelpText>
+    <label>PeopleSoft Id (Vendor)</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

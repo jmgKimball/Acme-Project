@@ -1,0 +1,57 @@
+/**
+ * Created by vupneja on 9/12/2020.
+ */
+h1 {
+    font-size: 22px;
+    padding-top: 29px;
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 420px) {
+
+	.khc-edit-condition {
+		padding-left: 60px;
+		max-width: 650px;
+	}
+
+	.khc-edit-condition h1 {
+		display: inline-block;
+		font-size: 22px;
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+
+	.khc-update-button {
+		display: block;
+		width: auto;
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* add condition */
+	.khc-form {
+		display: grid;
+		grid-gap: 15px;
+		grid-template-columns: 50% 50%;
+		margin-top: 10px;
+	}
+
+	.khc-form-item {
+		position: relative;
+	}
+
+
+	.khc-form-item lightning-helptext {
+		position: absolute;
+		top: -24px;
+		right: 5px;;
+		display: inline-block;
+	}
+
+	.khc-disabled-field {
+		background-color: #dddddd;
+	}
+
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Knowledge Process</fullName>
+    <description>For the Knowledge Management Cases</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Added %2F Updated</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Cannot Reproduce</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>No Change</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Not Added - Does not meet criteria</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending Follow-Up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Waiting for Response</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

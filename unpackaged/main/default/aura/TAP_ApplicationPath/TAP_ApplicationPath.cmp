@@ -1,0 +1,89 @@
+<!--
+@author IVL Dev
+@date 11-June-2020
+@description component created for adding path on Application object in order to maintain and update the application status.
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                controller ="TAP_Application_Ctlr">
+    <aura:attribute name="showUpdateButton" type="Boolean" default="false"/>
+    <aura:attribute name="selectedStatus" type="Boolean" default="false"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="previousStatus" type="String"/>
+    <aura:attribute name="isStatusEditable" type="Boolean" default="false"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:notificationsLibrary aura:id="notifLib" />
+    
+    
+    
+    <force:recordData aura:id="recordHandler" recordId="{!v.recordId}" targetFields="{!v.simpleRecord}" fields="Application_Status__c,Care_Program__c,Select_non_suggested_Care_Program__c,Rejection_Reason__c,Need_More_Information__c" mode="EDIT" />
+    <lightning:card class="stepLabel-hidden ">
+        
+        <div class="{!v.isStatusEditable ? '' : 'read-only-path'}">
+            <lightning:picklistPath aura:id="picklistPath" recordId="{!v.recordId}" 
+                                    variant="non-linear" picklistFieldApiName="Application_Status__c" 
+                                    onselect="{!c.handleSelect}"/>
+            
+        </div>
+        <aura:renderif isTrue="{!v.simpleRecord.Application_Status__c == 'Rejected'}">
+            <div class="slds-p-around_medium">
+                <lightning:inputRichText value="{!v.simpleRecord.Rejection_Reason__c}" 
+                                         disabledCategories="FORMAT_FONT,FORMAT_FONT,REMOVE_FORMATTING" 
+                                         disabled="{!or(v.previousStatus == 'Rejected',empty(v.previousStatus))}"/>
+            </div>
+        </aura:renderif>
+        <aura:renderif isTrue="{!v.simpleRecord.Application_Status__c == 'Need More Information'}">
+            <div class="slds-p-around_medium">
+                <lightning:inputRichText value="{!v.simpleRecord.Need_More_Information__c}" 
+                                         disabledCategories="FORMAT_FONT,FORMAT_FONT,REMOVE_FORMATTING" 
+                                         disabled="{!or(v.previousStatus == 'Need More Information',
+                                                   empty(v.previousStatus))}"
+                                         placeholder="Please enter what information is incomplete using bullet points."/>
+            </div>
+        </aura:renderif>
+        
+        <aura:renderif isTrue="{!v.showUpdateButton}">
+            
+            <div class="slds-align_absolute-center">
+                <lightning:button onclick="{!c.handleCancel}" label="Cancel" />
+                <lightning:button onclick="{!c.handleSave}" label="Update Status" variant="brand" />
+            </div>
+        </aura:renderif>
+        
+        <aura:if isTrue="{!v.isModalOpen}">
+            
+            <div class="demo-only" style="height:24rem">
+                <section role="alertdialog" tabindex="0" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header slds-theme_warning slds-theme_alert-texture">
+                            
+                            <h2 class="slds-text-heading_medium" id="prompt-heading-id">Warning</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+                            <p class="slds-text-align_center">
+                                <b><lightning:formattedText value="Selected Care Program is not in Suggested Care Programs" /></b>
+                            </p>
+                        </div>
+                        <footer class="slds-modal__footer slds-theme_default">
+                            <lightning:button variant="neutral"
+                                              label="Cancel"
+                                              title="Cancel"
+                                              onclick="{! c.closeModel }"/>
+                            <lightning:button variant="brand"
+                                              label="Continue"
+                                              title="Continue"
+                                              onclick="{!c.continueToSave}"/>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+            
+        </aura:if>
+        <lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+        
+        
+    </lightning:card>
+</aura:component>

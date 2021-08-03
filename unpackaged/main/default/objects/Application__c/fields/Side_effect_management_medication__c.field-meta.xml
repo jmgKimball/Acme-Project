@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Side_effect_management_medication__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether the Applicant Needed Financial Support for Side-Effect Management Medication.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Side-effect management medication (e.g. pain, anti-nausea, etc.)</inlineHelpText>
+    <label>Side-Effect Management Medication</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

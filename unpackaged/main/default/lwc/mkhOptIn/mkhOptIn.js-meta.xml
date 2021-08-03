@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Dashboard component for unauthenticated Health Cloud users to opt in</description>
+    <isExposed>true</isExposed>
+    <masterLabel>MyKomen Health Opt In</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+    </targets>
+</LightningComponentBundle>

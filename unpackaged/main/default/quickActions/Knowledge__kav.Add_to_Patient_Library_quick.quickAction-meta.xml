@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Quick action that connects a knowledge article with a patient via a resource referral</description>
+    <fieldOverrides>
+        <field>Knowledge_Article_Referred__c</field>
+        <formula>Knowledge__kav.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Referred__c</field>
+        <formula>TRUE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Referred_By__c</field>
+        <formula>$User.Id</formula>
+    </fieldOverrides>
+    <label>Add to Patient Library</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Patient__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Referred_By__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Knowledge_Article_Referred__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>Referral_Record__c</targetObject>
+    <targetParentField>Knowledge_Article_Referred__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

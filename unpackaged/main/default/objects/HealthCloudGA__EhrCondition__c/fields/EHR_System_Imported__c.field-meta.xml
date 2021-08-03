@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EHR_System_Imported__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, indicates this record came from an EHR system.  Also, if checked a Validation Rule will prevent the editing of this field by anyone other than a System Administrator.</description>
+    <externalId>false</externalId>
+    <label>EHR System Imported?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

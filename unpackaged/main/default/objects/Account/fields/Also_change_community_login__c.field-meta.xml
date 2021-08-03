@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Also_change_community_login__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked, causes the sync of data back to the NPSP org to also update the User record for the Patient to use a new email address.  This will cause an email to be send to the Patient informing them of their new email address and asking them to confirm.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checking this box will cause the Patient&apos;s Community Login Email address to also be changed - this will then email the Patient asking them to confirm the address change.
+
+If Unchecked, the email address will only update the Contact records, not the Patient&apos;s login information.</inlineHelpText>
+    <label>Also change community login?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

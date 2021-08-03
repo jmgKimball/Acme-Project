@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_to_Patient__c</fullName>
+    <description>My Relationship to Patient?</description>
+    <externalId>false</externalId>
+    <label>Relationship to Patient</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self</fullName>
+                <default>true</default>
+                <label>Self</label>
+            </value>
+            <value>
+                <fullName>Parent_or_Guardian</fullName>
+                <default>false</default>
+                <label>Parent_or_Guardian</label>
+            </value>
+            <value>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+                <label>Spouse</label>
+            </value>
+            <value>
+                <fullName>Family Member</fullName>
+                <default>false</default>
+                <label>Family Member</label>
+            </value>
+            <value>
+                <fullName>Social_Worker</fullName>
+                <default>false</default>
+                <label>Social Worker</label>
+            </value>
+            <value>
+                <fullName>Patient_Navigator</fullName>
+                <default>false</default>
+                <label>Patient Navigator</label>
+            </value>
+            <value>
+                <fullName>Healthcare Provider</fullName>
+                <default>false</default>
+                <label>Healthcare Provider</label>
+            </value>
+            <value>
+                <fullName>Other (please specify)</fullName>
+                <default>false</default>
+                <label>Other (please specify)</label>
+            </value>
+            <value>
+                <fullName>Doctor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Doctor</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Spouse or Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spouse or Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

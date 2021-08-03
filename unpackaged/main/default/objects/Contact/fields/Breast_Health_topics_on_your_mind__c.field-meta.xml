@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breast_Health_topics_on_your_mind__c</fullName>
+    <externalId>false</externalId>
+    <label>Breast Health topics on your mind?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Screening &amp; Mammograms</fullName>
+                <default>false</default>
+                <label>Screening &amp; Mammograms</label>
+            </value>
+            <value>
+                <fullName>Diagnosis &amp; Treatment</fullName>
+                <default>false</default>
+                <label>Diagnosis &amp; Treatment</label>
+            </value>
+            <value>
+                <fullName>Metastatic Breast Cancer</fullName>
+                <default>false</default>
+                <label>Metastatic Breast Cancer</label>
+            </value>
+            <value>
+                <fullName>Financial Assistance</fullName>
+                <default>false</default>
+                <label>Financial Assistance</label>
+            </value>
+            <value>
+                <fullName>Support &amp; Counseling</fullName>
+                <default>false</default>
+                <label>Support &amp; Counseling</label>
+            </value>
+            <value>
+                <fullName>Clinical Trials</fullName>
+                <default>false</default>
+                <label>Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

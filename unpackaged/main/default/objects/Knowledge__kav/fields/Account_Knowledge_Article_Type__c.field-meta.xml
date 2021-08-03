@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Knowledge_Article_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( INCLUDES ( Account__r.Knowledge_Article_Type__c , &quot;Screening Facility&quot; ), &quot;Screening Facility; &quot;,null ) &amp;
+IF ( INCLUDES ( Account__r.Knowledge_Article_Type__c , &quot;Mammogram Facility&quot; ), &quot;Mammogram Facility; &quot;,null ) &amp;
+IF ( INCLUDES ( Account__r.Knowledge_Article_Type__c , &quot;Cosmetic&quot; ), &quot;Cosmetic; &quot;,null ) &amp;
+IF ( INCLUDES ( Account__r.Knowledge_Article_Type__c , &quot;Financial Assistance&quot; ), &quot;Financial Assistance; &quot;,null )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Knowledge Article Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

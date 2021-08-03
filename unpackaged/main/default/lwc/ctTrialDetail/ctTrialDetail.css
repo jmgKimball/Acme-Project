@@ -1,0 +1,121 @@
+.container {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222223;
+    margin: -17px; /* remove built-in padding on outer container */
+    background: rgb(22,20,21);
+    background: linear-gradient(356deg, rgba(22,20,21,1) 0%, rgba(67,60,62,1) 100%);
+    background-attachment: fixed;
+}
+
+.card-controls {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background: white;
+    padding: 20px 20px 10px;
+}
+
+.card-divider {
+    padding-top: 5px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-button {
+    display: inline-block;
+    font-weight: normal;
+}
+
+.nav-button-icon {
+    color: #b31064;
+    vertical-align: middle;
+}
+
+.card-header {
+    background: white;
+    padding: 20px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.detail-id {
+    size: 12px;
+    color:#444444;
+    float: right;
+}
+
+.card-detail-groups {
+    background-color: #FCFAFB;
+    padding-top: 10px;
+}
+
+.accordion-description {
+    font-size: 12px;
+    font-weight: normal
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul.criteria {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.card-free-text {
+    background-color: white;
+    padding: 20px 20px;
+}
+
+.free-text-title {
+    size: 12px;
+    color:#444444;
+}
+
+.card-footer {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: white;
+}
+
+.loading-screen {
+    height: 4000px;
+    overflow-y: hidden;
+    width: 100%;
+    font-weight: 300;
+    font-size: 20px;
+    background-color: white;
+}
+
+.loading-text {
+    padding-top: 150px;
+    padding-bottom: 60px;
+}
+
+.loading-spinner {
+    border: 10px solid white;
+    border-top: 10px solid #DD71A1;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: simple-spin 2s linear infinite;
+}
+
+@keyframes simple-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

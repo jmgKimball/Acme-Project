@@ -1,0 +1,57 @@
+/* Filter Pills / Badges */
+.filter-buttons {
+    font-size: 10px;
+}
+.filter-buttons button {
+    padding: 0px 10px;
+}
+.slds-pill-active {
+    color: #b2005d;
+    border-color: #b2005d;
+}
+.khc-slds-pill{
+    cursor: pointer;
+    border-radius: 20px;
+    min-width: 90px;
+}
+.slds-pill__label{
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+.khc-filter-list{
+    border: 1px solid #d4d4d4;
+    text-align: left;
+}
+.khc-filter-wrapper {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    margin-left: 10px;
+}
+.khc-filter-hidden {
+    display: none;
+}
+/* TODO ML - Move this into GlobalStylesheet static resource */
+.khc-filter-counter {
+    position: absolute;
+    right: -5px;
+    top: -8px;
+    background: #b2005d;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    color: white;
+    font-size: 12px;
+    display: grid;
+    align-items: center;
+}
+
+.khc-multiselect-dropdown-overlay {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    opacity:0;
+}

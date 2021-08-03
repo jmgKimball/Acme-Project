@@ -1,0 +1,80 @@
+<!--
+ - Created by vupneja on 2/18/2021.
+ -->
+
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+
+        <div class="slds-p-vertical_small">
+            <h1>{headerText}</h1>
+        </div>
+
+        <div class="khc-content">
+            <template if:true={hasPendingApplications}><h4>{inprocessingLabel}</h4> </template>
+            <template for:each={applicationPending} for:item="application" if:true={hasPendingApplications}>
+                <div key={application.Id} class="data-header">
+                    <div class="controls" >
+                        <a name={application.Id} data-id={application.Id}
+                           onclick={handleWithdrawApplication} >{withdrawLabel}</a>
+                    </div>
+                    <p><bold>{statusLabel}: </bold> {application.Application_Status__c}</p>
+                    <p><bold>{sourceLabel}: </bold>{application.Application_Source__c}</p>
+                    <p><bold>{emailLabel}: </bold>{application.Patient_Email_Address__c}</p>
+                    <p><bold>{stateLabel}: </bold>{application.Patient_State__c}</p>
+                    <p><bold>{abnormalLabel}: </bold>{application.abnormalScreeningResultValue}</p>
+                    <p><bold>{activeLabel}: </bold>{application.inActiveTreatmentValue}</p>
+                </div>
+            </template>
+            <p>&nbsp;</p>
+            <template if:true={hasApprovedApplications}><h4>{approvedLabel}</h4> </template>
+            <template for:each={applicationApproved} for:item="application" if:true={hasApprovedApplications}>
+                <div key={application.Id} class="data-header">
+                    <p><bold>{statusLabel}: </bold> {application.Application_Status__c}</p>
+                    <p><bold>{sourceLabel}: </bold>{application.Application_Source__c}</p>
+                    <p><bold>{emailLabel}: </bold>{application.Patient_Email_Address__c}</p>
+                    <p><bold>{stateLabel}: </bold>{application.Patient_State__c}</p>
+                    <p><bold>{abnormalLabel}: </bold>{application.abnormalScreeningResultValue}</p>
+                    <p><bold>{activeLabel}: </bold>{application.inActiveTreatmentValue}</p>
+                </div>
+            </template>
+            <p>&nbsp;</p>
+            <template if:true={hasNotApprovedApplications}><h4>{applicationNotApprovedLabel}</h4> </template>
+            <template for:each={applicationNotApproved} for:item="application" if:true={hasNotApprovedApplications}>
+                <div key={application.Id} class="data-header">
+                    <p><bold>{statusLabel}: </bold> {application.Application_Status__c}</p>
+                    <p><bold>{sourceLabel}: </bold>{application.Application_Source__c}</p>
+                    <p><bold>{emailLabel}: </bold>{application.Patient_Email_Address__c}</p>
+                    <p><bold>{stateLabel}: </bold>{application.Patient_State__c}</p>
+                    <p><bold>{abnormalLabel}: </bold>{application.abnormalScreeningResultValue}</p>
+                    <p><bold>{activeLabel}: </bold>{application.inActiveTreatmentValue}</p>
+                </div>
+            </template>
+
+            <template if:true={hasWithdrawnApplications}><h4>{applicationWithdrawnLabel}</h4> </template>
+            <template for:each={applicationWithdrawn} for:item="application" if:true={hasWithdrawnApplications}>
+                <div key={application.Id} class="data-header">
+                    <p><bold>{applicationNumberLabel}: </bold> {application.Name}</p>
+                    <p><bold>{statusLabel}: </bold> {application.Application_Status__c}</p>
+                    <p><bold>{sourceLabel}: </bold>{application.Application_Source__c}</p>
+                    <p><bold>{applicationDateWithdrawn}: </bold>{withdrawnDate}</p>
+                </div>
+            </template>
+
+            <template if:false={hasApplications}>
+                <label>{noApplicationLabel}</label>
+            </template>
+        </div>
+        <footer>
+            <p>&nbsp;</p>
+            <div class="slds-align_absolute-center slds-m-around_medium" >
+                <button title="Add a new Allergy" onclick={handleAddApplicationClick}
+                        class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button khc-add-button">
+                    {addLabel}
+                </button>
+            </div>
+        </footer>
+    </div>
+</template>

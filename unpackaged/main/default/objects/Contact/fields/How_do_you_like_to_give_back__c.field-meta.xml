@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_do_you_like_to_give_back__c</fullName>
+    <externalId>false</externalId>
+    <label>How do you like to give back?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public Policy &amp; Advocacy</fullName>
+                <default>false</default>
+                <label>Public Policy &amp; Advocacy</label>
+            </value>
+            <value>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+                <label>Volunteer</label>
+            </value>
+            <value>
+                <fullName>Community Outreach</fullName>
+                <default>false</default>
+                <label>Community Outreach</label>
+            </value>
+            <value>
+                <fullName>Fundraising &amp; Events</fullName>
+                <default>false</default>
+                <label>Fundraising &amp; Events</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

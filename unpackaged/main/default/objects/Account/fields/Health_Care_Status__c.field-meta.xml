@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Care_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+				OR ( 
+								ISBLANK( Annual_Insurance_Deductible__c ), 
+								ISBLANK( Monthly_out_of_pocket_health_Care_Costs__c )
+				),&apos;&apos;,
+				IF(
+								OR(
+												(Monthly_out_of_pocket_health_Care_Costs__c*12)&gt; (Annual_Household_Income__pc*0.1),
+												(Monthly_out_of_pocket_health_Care_Costs__c*12)&gt; (2*Federal_Bracket__c),
+												Annual_Insurance_Deductible__c &gt; (Annual_Household_Income__pc*0.05)
+								),
+								&apos;Underinsured&apos;,
+								&apos;Not Underinsured&apos;
+				)
+)</formula>
+    <label>Health Care Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

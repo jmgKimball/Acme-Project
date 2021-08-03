@@ -1,0 +1,118 @@
+<!--
+ - Created by vupneja on 10/19/2020.
+ -->
+
+<!-- Khc Links -->
+<template>
+	<template if:true={isSmallScreen}>
+		<div class="mk-footer-links-mobile">
+			<lightning-layout horizontal-align="center">
+				<lightning-layout-item padding="around-small">
+					<a href={facebooklabel} target="_blank">
+						<img src={facebookLogoSmall} alt="facebookLogo"/>
+					</a>
+				</lightning-layout-item>
+				<lightning-layout-item padding="around-small">
+					<a href={twitterlabel} target="_blank">
+						<img src={twitterLogoSmall} alt="twitterLogo"/>
+					</a>
+				</lightning-layout-item>
+				<lightning-layout-item padding="around-small">
+					<a href={instagramlabel} target="_blank">
+						<img src={instagramLogoSmall} alt="instagramLogo"/>
+					</a>
+				</lightning-layout-item>
+			</lightning-layout>
+			<p class="slds-align_absolute-center ">&nbsp; </p>
+			<div class="slds-p-around_medium ">
+				<u>
+					<p class="slds-align_absolute-center " text-decoration="underline">
+						<lightning-formatted-url label="Komen.org" value={komenlabel} tooltip="Komen.org"
+												 target="_blank"></lightning-formatted-url>
+					</p>
+				</u>
+				<p class="slds-align_absolute-center ">&nbsp; </p>
+				<u>
+					<p class="slds-align_absolute-center ">
+						<lightning-formatted-url label="Terms of Use" value={termslabel} tooltip="Terms of Use"
+												 target="_blank"></lightning-formatted-url>
+					</p>
+				</u>
+				<u>
+					<p class="slds-align_absolute-center ">
+						<lightning-formatted-url label="Privacy Policy" value={privacylabel} tooltip="Privacy Policy"
+												 target="_blank"></lightning-formatted-url>
+					</p>
+				</u>
+				<u>
+					<p class="slds-align_absolute-center ">
+						<lightning-formatted-url label="Contact Us" value={contactUslabel} tooltip="Contact Us"></lightning-formatted-url>
+					</p>
+				</u>
+				<u>
+					<p class="slds-align_absolute-center">
+						<c-mkh-site-feedback></c-mkh-site-feedback>
+					</p>
+				</u>
+				<p class="slds-align_absolute-center ">&nbsp; </p>
+				<p class="slds-align_absolute-center ">{addresslabel}</p>
+				<p class="slds-align_absolute-center ">{einlabel}</p>
+				<p class="slds-align_absolute-center ">&nbsp; </p>
+				<p class="slds-align_absolute-center ">{copyrightlabel}</p>
+			</div>
+		</div>
+	</template>
+	<template if:false={isSmallScreen}>
+		<lightning-layout vertical-align="center" class="mk-footer-links-desktop">
+			<lightning-layout-item>
+				<lightning-layout class="mk-footer-info-desktop">
+					<lightning-layout-item>
+						<div class="mk-copyright-desktop">{addresslabel}</div>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<div class="mk-ein-desktop">{einlabel}</div>
+					</lightning-layout-item>
+				</lightning-layout>
+				<lightning-layout class="mk-link-desktop">
+					<lightning-layout-item>
+						<div class="mk-copyright-desktop">{copyrightlabel}</div>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={komenlabel} target="_blank" title="Komen.org">Komen.org</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={termslabel} target="_blank" title="Terms of Use">Terms of Use</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={privacylabel} target="_blank" title="Privacy Policy">Privacy Policy</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={contactUslabel} title="Contact Us">Contact Us</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<c-mkh-site-feedback></c-mkh-site-feedback>
+					</lightning-layout-item>
+				</lightning-layout>
+			</lightning-layout-item>
+			<lightning-layout-item>
+				<lightning-layout horizontal-align="end" vertical-align="center" class="mk-social-desktop">
+					<lightning-layout-item>
+						<a href={facebooklabel} target="_blank">
+							<img src={facebookLogoLarge} alt="facebookLogo"/>
+						</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={twitterlabel} target="_blank">
+							<img src={twitterLogoLarge} alt="twitterLogo"/>
+						</a>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<a href={instagramlabel} target="_blank">
+							<img src={instagramLogoLarge} alt="instagramLogo"/>
+						</a>
+					</lightning-layout-item>
+				</lightning-layout>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+</template>

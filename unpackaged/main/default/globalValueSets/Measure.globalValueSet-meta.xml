@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Absolute Neutrophil Count</fullName>
+        <default>false</default>
+        <label>Absolute Neutrophil Count</label>
+    </customValue>
+    <customValue>
+        <fullName>BMI</fullName>
+        <default>false</default>
+        <label>BMI</label>
+    </customValue>
+    <customValue>
+        <fullName>cm</fullName>
+        <default>false</default>
+        <label>cm</label>
+    </customValue>
+    <customValue>
+        <fullName>Count</fullName>
+        <default>false</default>
+        <label>Count</label>
+    </customValue>
+    <customValue>
+        <fullName>Creatinine</fullName>
+        <default>false</default>
+        <label>Creatinine</label>
+    </customValue>
+    <customValue>
+        <fullName>ECOG Scale</fullName>
+        <default>false</default>
+        <label>ECOG Scale</label>
+    </customValue>
+    <customValue>
+        <fullName>ml</fullName>
+        <default>false</default>
+        <label>ml</label>
+    </customValue>
+    <customValue>
+        <fullName>Percentage</fullName>
+        <default>false</default>
+        <label>Percentage</label>
+    </customValue>
+    <customValue>
+        <fullName>Platelets</fullName>
+        <default>false</default>
+        <label>Platelets</label>
+    </customValue>
+    <customValue>
+        <fullName>Stage</fullName>
+        <default>false</default>
+        <label>Stage</label>
+    </customValue>
+    <customValue>
+        <fullName>True/False</fullName>
+        <default>false</default>
+        <label>True/False</label>
+    </customValue>
+    <customValue>
+        <fullName>μL</fullName>
+        <default>false</default>
+        <label>μL</label>
+    </customValue>
+    <masterLabel>Measure</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

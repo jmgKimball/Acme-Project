@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-form-element">
+        <label if:false={showPill} class="slds-form-element__label">{label}</label>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-haspopup="listbox">
+                <!-- Drop Down-->
+                <div if:false={showPill} class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                    <lightning-input type="text" class="slds-combobox__input" autocomplete="off" value={selectedOption}
+                        placeholder={placeholder} readonly variant="label-hidden" onclick={handleSelectOption}></lightning-input>
+                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right khc-pointer">
+                        <lightning-icon size="x-small" icon-name="utility:down"></lightning-icon>
+                    </span>
+                </div>
+                <!--Pill-->
+                <span if:true={showPill} class="slds-pill khc-slds-pill" onclick={handleSelectOption}>
+                    <span class="slds-pill__label">{label}</span>
+                </span>
+                <div if:true={showOptions}>
+                    <div class={sldsDropdownClasses} role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                            <template for:each={options} for:item="option">
+                                <li role="presentation" class="slds-listbox__item" key={option.value} >
+                                    <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+                                        <lightning-input type="checkbox" label={option.label} class="option-checkbox"
+                                            onchange={handleOptionSelection} data-value={option.value}></lightning-input>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Invisible backdrop to close dropdown when clicked -->
+    <div class="khc-multiselect-dropdown-overlay" if:true={showOptions} onclick={handleSelectOption}></div>
+</template>

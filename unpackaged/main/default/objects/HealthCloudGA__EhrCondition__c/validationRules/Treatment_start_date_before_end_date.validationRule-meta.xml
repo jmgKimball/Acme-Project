@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Treatment_start_date_before_end_date</fullName>
+    <active>true</active>
+    <description>The treatment start date must be before the treatment end date</description>
+    <errorConditionFormula>AND(
+            Treatment_Start_Date__c  &gt;  Treatment_End_Date__c,
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga__ehrcondition__c&quot;
+        )</errorConditionFormula>
+    <errorMessage>Treatment start date cannot be greater than treatment end date</errorMessage>
+</ValidationRule>

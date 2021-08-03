@@ -1,0 +1,59 @@
+.container {
+    background: rgb(22,20,21);
+    background: linear-gradient(356deg, rgba(22,20,21,1) 0%, rgba(67,60,62,1) 100%);
+    background-attachment: fixed;
+}
+
+.list-header {
+    color: white;
+    background: rgb(167,18,88);
+    background: linear-gradient(90deg, rgba(167,18,88,1) 0%, rgba(201,66,123,1) 100%);
+}
+
+.nav-button {
+    display: inline-block;
+}
+
+.nav-button-icon {
+    vertical-align: middle;
+}
+
+.loading-screen {
+    height: 4000px;
+    overflow-y: hidden;
+    width: 100%;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+}
+
+.loading-text {
+    padding-top: 150px;
+    padding-bottom: 60px;
+}
+
+.loading-spinner {
+    border: 10px solid #383535;
+    border-top: 10px solid #DD71A1;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: simple-spin 2s linear infinite;
+}
+
+@keyframes simple-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,123 @@
+<template>
+    <!-- "Quick List" / Referral Record Tiles -->
+    <template if:true={showCompact}>
+        <div class="khc-tile-wrapper slds-p-top_small">
+            <div class="slds-grid slds-grid_vertical-align-center">
+                <!-- Article Icon -->
+                <i if:true={isArticleResource} class="far fa-newspaper"></i>
+                <i if:true={isWebResource} class="fas fa-desktop"></i>
+                <i if:true={isLocalResource} class="fas fa-map-marker-alt"></i>
+                <!-- Article Title -->
+                <h2 class="slds-p-left_small">
+                    <a data-article-url-name={compactRecord.UrlName}
+                        onclick={handleNavigateToArticle}>
+                        {compactRecord.Title}
+                    </a>
+                </h2>
+            </div>
+            <small>
+                <!-- Account Information -->
+                <div if:true={compactRecord.AccountName} class="slds-p-vertical_small ">
+                    <label><strong>{compactRecord.AccountName}</strong></label>
+                    <p>
+                        <template if:true={compactRecord.Street}>{compactRecord.Street}&nbsp;<br/></template>
+                        <template if:true={compactRecord.City}>{compactRecord.City},&nbsp;</template>
+                        <template if:true={compactRecord.State}>{compactRecord.State},&nbsp;</template>
+                        <template if:true={compactRecord.Country}>{compactRecord.Country},&nbsp;</template>
+                        <template if:true={compactRecord.Zip}>{compactRecord.Zip}</template>
+                    </p>
+                </div>
+                <!-- Article Summary -->
+                <p class="slds-p-vertical_small" if:true={isWebResource}>
+                    {compactRecord.Summary}
+                </p>
+            </small>
+        </div>
+    </template>
+
+    <!-- ---------- -->
+
+    <!-- Search Results List / Full Tiles -->
+    <template if:true={showDetailed}>
+        <div class="khc-tile-wrapper">
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread">
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <!-- Article Icons -->
+                    <i if:true={isArticleResource} class="far fa-newspaper"></i>
+                    <i if:true={isWebResource} class="fas fa-desktop"></i>
+                    <i if:true={isLocalResource} class="fas fa-map-marker-alt"></i>
+                    <!-- Article Title -->
+                    <h2 class="slds-p-left_small">
+                        <a data-article-url-name={knowledge.UrlName}
+                            onclick={handleNavigateToArticle}>
+                            {knowledge.Title}
+                        </a>
+                    </h2>
+                </div>
+                <!-- Tile Dropdown Menu -->
+                <div>
+                    <c-khc-knowledge-resource-tile-menu if:false={isGuest} knowledge={knowledge}
+                        onrefresh={handleRefresh}></c-khc-knowledge-resource-tile-menu>
+                </div>
+            </div>
+
+            <small>
+                <!-- Account Information -->
+                <div if:true={knowledge.Account_Name__c} class="slds-p-top_x-small">
+                    <label><strong>{knowledge.Account_Name__c}</strong></label>
+                    <p if:true={knowledge.Account_Billing_Address_Street__c}>
+                        {knowledge.Account_Billing_Address_Street__c}&nbsp;
+                    </p>
+                    <p>
+                        <template if:true={knowledge.Account_Billing_Address_City__c}>{knowledge.Account_Billing_Address_City__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_State__c}>{knowledge.Account_Billing_Address_State__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_Country__c}>{knowledge.Account_Billing_Address_Country__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_Zip__c}>{knowledge.Account_Billing_Address_Zip__c}</template>
+                    </p>
+                </div>
+
+                <!-- Website / Phone / Email -->
+                <div class="slds-grid slds-p-top_x-small">
+                    <template if:true={phoneNumberMarkupString}>
+                        <a href={phoneNumberMarkupString} class="slds-p-right_small">{knowledge.Phone__c}</a>
+                    </template>
+
+                    <template if:true={knowledge.Komen_Site_URL__c}>
+                        <a href={knowledge.Komen_Site_URL__c} target="_blank" class="slds-p-right_small">{visitWebsiteLabel}</a>
+                    </template>
+
+                    <template if:true={emailToMarkupString}>
+                        <a href={emailToMarkupString} class="slds-p-right_small">{emailLabel}</a>
+                    </template>
+                </div>
+
+                <!-- Article Summary -->
+                <p class="slds-p-vertical_small">
+                    {knowledge.Summary}
+                </p>
+
+                <!-- Favourite Button -->
+                <div class="slds-grid slds-grid_align-spread">
+                    <div></div>
+                    <button class="slds-button khc-favorite"
+                            onclick={toggleFavourite}
+                            data-favorite={knowledge.isFavorite}>
+                        {favoriteLabel}
+                        <i if:true={knowledge.isFavorite} class="fas fa-heart slds-m-left_xx-small" data-favorite={knowledge.isFavorite} ></i>
+                        <i if:false={knowledge.isFavorite} class="far fa-heart slds-m-left_xx-small" data-favorite={knowledge.isFavorite}></i>
+                    </button>
+                </div>
+            </small>
+        </div>
+    </template>
+
+    <!-- Guest User Login Modal -->
+    <c-mk-modal data-modal-name="guest-login-modal">
+        <div slot="header">
+            {logInOrRegisterLabel}
+        </div>
+        <div slot="content">
+            <c-khc-guest-login-form></c-khc-guest-login-form>
+        </div>
+    </c-mk-modal>
+</template>

@@ -1,0 +1,27 @@
+<template>
+  <div class="container" if:true={visible}>
+  <section role="dialog" tabindex="-1" aria-labelledby="modal-heading" aria-modal="true" aria-describedby="modal-content" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container slds-scrollable_y">
+
+      <header class="slds-modal__header">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse khc-modal-close"
+                title="Close"
+                onclick={onClose}>
+          <lightning-icon variant="inverse" icon-name="utility:close" aria-label="Close"></lightning-icon>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <slot name="header"></slot>
+      </header>
+
+      <div class="slds-is-relative modalBody">
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+          <slot name="spinner"></slot>
+          <slot name="content"></slot>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open"></div>
+  </div>
+</template>

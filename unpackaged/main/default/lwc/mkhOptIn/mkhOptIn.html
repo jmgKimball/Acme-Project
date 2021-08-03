@@ -1,0 +1,21 @@
+<!-- MyKomen Health Opt In -->
+<template>
+  <div class="slds-p-bottom_medium mk-opt-in">
+    <header class="htmlHeading">
+      <p class="optin-header">{optInHeaderText}</p>
+    </header>
+    <article class="htmlContent">
+      <template if:true={showOptIn}>
+        <h1 class="optin-section">
+          {optInDetailText2}&nbsp;<a onclick={handleOptInPressed}>{optInLabel}</a>
+        </h1>
+      </template>
+      <template if:true={showRegisterAndLogin}>
+        <p>
+          {optInDetailText}&nbsp;<a onclick={handleRegisterPressed}>{registerLabel}</a>&nbsp;{orLabel}&nbsp;<a
+            onclick={handleLoginPressed}>{loginLabel}</a>
+        </p>
+      </template>
+    </article>
+  </div>
+</template>

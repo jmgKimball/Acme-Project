@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Application_must_have_status_as_New</fullName>
+    <active>true</active>
+    <errorConditionFormula>
+        AND(
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            ISNEW(),
+            NOT(
+                OR(
+                    ISPICKVAL(Application_Status__c , &apos;New&apos;),
+                    ISPICKVAL(Application_Status__c , &apos;Draft&apos;)
+                )
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>Application Status must be New</errorMessage>
+</ValidationRule>

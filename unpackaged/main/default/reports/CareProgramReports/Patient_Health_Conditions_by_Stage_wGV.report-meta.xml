@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrCondition__c.Condition_Sub_Category__c</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrCondition__c.Condition_Category__c</field>
+    </columns>
+    <description>All Cancer Patient Conditions by Stage at Diagnosis</description>
+    <filter>
+        <criteriaItems>
+            <column>HealthCloudGA__EhrCondition__c.Condition_Category__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Cancer</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>HealthCloudGA__EhrCondition__c.Stage_at_Diagnosis__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Patient Health - Conditions by Stage</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$HealthCloudGA__EhrCondition__c@HealthCloudGA__EhrCondition__c.HealthCloudGA__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>HealthCloudGA__EhrCondition__c.HealthCloudGA__DateDocumented__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

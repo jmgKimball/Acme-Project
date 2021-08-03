@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Madatory_fields_on_Electronic_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>
+        AND(
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            ISPICKVAL( Method_of_Payment_Distribution__c , &quot;Electronic Check&quot;) ,
+            OR(ISBLANK(  Bank_Name__c ), ISBLANK( Account_Number__c ),
+            ISBLANK( Routing_Number__c ),
+            ISBLANK( Name_on_Account__c ),
+            ISBLANK( TEXT ( Account_Type__c ))),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorDisplayField>Method_of_Payment_Distribution__c</errorDisplayField>
+    <errorMessage>Fill the Mandatory fields -Bank Name,Account Number,Account Type, Routing Number,Name on Account</errorMessage>
+</ValidationRule>

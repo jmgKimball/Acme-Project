@@ -1,0 +1,273 @@
+/**
+ * Shared styles used by all custom MyKomen Community components
+ *
+ * @author Grant Adamson, Traction on Demand
+ * @date 2020-09-04
+ * @changeLog Nitin Chandwani, Added namespace, added as static resource
+ *
+ * @modifiedBy  Scott Taylor, Traction on Demand
+ * @modifiedDate    2020-11-03 (scoped all styles to :root)
+ */
+
+:root .khc-container {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    color: #3B3B3B;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+:root .khc-container .container-external {
+    margin-top: 0;
+}
+
+:root .khc-container header, .khc-container footer {
+    margin-bottom: 30px;
+}
+
+:root .khc-container h1 {
+    font-size: 22px;
+}
+
+:root .khc-container h4 {
+    font-size: 20px;
+    color: #B2005D !important;
+}
+
+:root .khc-container h2 {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+:root .khc-container h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+:root .khc-container article {
+    margin-bottom: 10px;
+}
+
+:root .khc-container a, .khc-container  a:active,.khc-container a:visited,.khc-container a:hover {
+    color: #B2005D !important; /* For whatever reason default link styling doesn't come through for external pages */
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+:root .khc-container small {
+    font-size: 13px;
+}
+
+:root .khc-container .data-header {
+    margin: 16px 0;
+    font-weight: 400;
+}
+
+:root .khc-container .data-header h2 {
+    display: inline-block;
+    width:90%;/*to allow spacing for controls on right*/
+}
+
+:root .khc-container .data-header a {
+    font-size: 13px;
+}
+
+:root .khc-container .data-header .controls {
+    font-weight: bold;
+    float: right;
+}
+
+:root .khc-container b {
+    font-weight: 400;
+}
+
+:root .khc-container bold {
+    font-weight: 600;
+}
+
+:root .khc-container button {
+    font-weight: 400;
+	padding: 8px 16px;
+	width: 100%;
+	margin: auto;
+    display: flex;
+   
+}
+
+:root .khc-container .slds-button-neutral {
+    background: none;
+    border-color: #B2005D;
+}
+
+:root .khc-container .slds-button-neutral.slds-is-pressed {
+    background: #B2005D;
+}
+
+:root .khc-container .error {
+    margin: 15px 0;
+    text-align: center;
+    color: #ff9e9e;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+:root .khc-container .password-toggle {
+    float: right;
+    position: relative;
+    bottom: 40px;
+    font-size: 13px;
+}
+
+:root .khc-container .link-reset {
+    text-decoration: none !important;
+    color: #3B3B3B !important;
+}
+
+:root .khc-container .slds-input__icon .slds-button_icon{
+    padding: 0px !important;
+}
+
+:root .khc-container a[disabled]{
+    text-decoration: none !important; /*as it sytling is controlled by active class*/
+    pointer-events: none;
+    color: #3B3B3B !important;
+}
+
+:root .khc-checkbox{
+    height: 22px !important;
+    width: 22px !important;
+    margin: 2px 8px 2px 2px;
+}
+
+:root .khc-accordian{
+    cursor: pointer;
+}
+
+:root .khc-container .slds-accordion__section{
+    padding: 5px 0px!important;
+}
+
+:root .khc-container .slds-accordion__summary-action{
+    padding: 2px !important;
+}
+
+:root .khc-container .khc-a{
+    font-weight: bold;
+}
+
+:root .khc-container .slds-box{
+    border: none;
+}
+
+:root .khc-container label {
+    font-weight: 500 !important;
+}
+
+:root .slds-accordion__summary-heading{
+    font-size: 16px !important;
+}
+
+:root .slds-accordion__summary-action{
+    font-weight: 500 !important;
+}
+
+:root .khc-medications h1 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+:root .khc-medication-list {
+    display: grid;
+    margin-bottom: 10px;
+}
+
+:root .khc-medication-item {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 10px;
+}
+
+:root .khc-medication-item a {
+    text-decoration: underline;
+}
+:root .khc-lookup button[data-element-id=searchClear] {
+    margin-top: -9px;
+}
+:root .slds-form-element__label{
+    font-weight: 500 !important;
+}
+:root .navigate-back-margin{
+    margin-top: -30px;
+}
+/* DESKTOP */
+@media only screen and (min-width: 410px) {
+
+    .khc-container {
+        max-width: 650px;
+        padding-left: 54px;
+        padding-top: 40px;
+    }
+
+    .khc-container header {
+        margin-bottom: 5px !important;
+        padding-left: 12px;
+    }
+
+    .khc-family-conditions-editor {
+        padding-left: 12px;
+    }
+
+
+    .slds-button.slds-button_stretch.khc-button {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: unset;
+        display: flex;
+    }
+
+    .mkh-footer-actions {
+        text-align: center;
+    }
+
+	button.khc-add-button {
+		display: inline-block;
+		min-width: unset;
+		width: auto !important;
+		padding-left: 30px !important;
+		padding-right: 30px !important;
+	}
+
+    .khc-medications h1 {
+        display: inline-block;
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .khc-medication-list {
+        display: grid;
+        margin-bottom: 10px;
+    }
+
+    .khc-medication-item {
+        display: grid;
+        grid-template-columns: 90% 10%;
+        padding: 10px;
+    }
+
+    .khc-medication-item a {
+        text-decoration: underline;
+    }
+
+    .khc-lookup button[data-element-id=searchClear] {
+        margin-top: -9px;
+    }
+
+}

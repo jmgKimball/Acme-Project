@@ -1,0 +1,23 @@
+.khc-sub-heading{
+    font-weight: bold;
+    font-size: 14px;
+}
+.khc-resource-shortlist-section .khc-resource-shortlist-button {
+    bottom: 0px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.khc-dismissal-icon::before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f2ed";
+    color:var(--lwc-colorTextBrand);
+    float: right;
+    padding-top: 0.6rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .khc-resource-shortlist-section {
+        min-height: 350px;
+    }
+}

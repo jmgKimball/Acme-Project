@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Profile_Update_or_Record_Creation</name>
+        <label>Profile Update or Record Creation?</label>
+        <locationX>578</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>Health_Profile</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Profile_Info</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonMailingCity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonMailingState</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonMailingPostalCode</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonMailingStreet</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonHomePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetAccount_0.PersonEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Account_Info</targetReference>
+            </connector>
+            <label>Update Profile Info</label>
+        </rules>
+        <rules>
+            <name>No_Condition_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetConditionRecord.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Condition_Screen</targetReference>
+            </connector>
+            <label>No Condition Record</label>
+        </rules>
+        <rules>
+            <name>No_Mediation_Statement_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Med_Statement.HealthCloudGA__Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Med_Statement_Screen</targetReference>
+            </connector>
+            <label>No Mediation Statement Record</label>
+        </rules>
+        <rules>
+            <name>No_Family_Health_History</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Family_Health_History.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fammedhistoryscreen</targetReference>
+            </connector>
+            <label>No Family Health History</label>
+        </rules>
+    </decisions>
+    <description>Updating the font colors used</description>
+    <dynamicChoiceSets>
+        <name>Account_PersonMailingStateCode</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>PersonMailingStateCode</picklistField>
+        <picklistObject>Account</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>BreastCancerSubType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>Breast_Cancer_Sub_Type__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrCondition__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>BreastCancerType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>Breast_Cancer_Type__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrCondition__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ConditionCategory</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>Condition_Category__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrCondition__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ConditionSubCategory</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>Condition_Sub_Category__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrCondition__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>StageatDiagnosis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>Stage_at_Diagnosis__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrCondition__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>StatusCode_var</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>HealthCloudGA__StatusCode__c</picklistField>
+        <picklistObject>HealthCloudGA__EhrMedicationStatement__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>MKH User Info Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MKH User Info Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Family_Health_History</name>
+        <label>Get Family Health History</label>
+        <locationX>578</locationX>
+        <locationY>518</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Profile_Update_or_Record_Creation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Patient__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Patient_Contact__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Med_Statement</name>
+        <label>Get Med Statement</label>
+        <locationX>578</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Family_Health_History</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>HealthCloudGA__Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>HealthCloudGA__EhrMedicationStatement__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetAccount_0</name>
+        <label>GetAccount</label>
+        <locationX>578</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetConditionRecord</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetConditionRecord</name>
+        <label>GetConditionRecord</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Med_Statement</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>HealthCloudGA__Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>HealthCloudGA__EhrCondition__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Account_Info</name>
+        <label>Account Info</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Userinfotitle</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(105, 109, 121); background-color: rgb(255, 255, 255);&quot;&gt;{!mhkMyProfile}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Condition_Screen</name>
+        <label>Condition Screen</label>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ConditionRecordTitle</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(105, 109, 121);&quot;&gt;{!khcAddCondition}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Fammedhistoryscreen</name>
+        <label>Fam Med History Screen</label>
+        <locationX>842</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FamilyMedHistorytext</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(105, 109, 121);&quot;&gt;{!khcFamilyMedHistory}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Health_Profile</name>
+        <label>Health Profile</label>
+        <locationX>1106</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>DefaultText</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(105, 109, 121);&quot;&gt;﻿&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(105, 109, 121);&quot;&gt;{!khcHealthProfile}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>New_Med_Statement_Screen</name>
+        <label>New Med Statement Screen</label>
+        <locationX>578</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Medicationtext</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(105, 109, 121);&quot;&gt;{!khcAddMedication}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetAccount_0</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>khcAddCondition</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;div class=&quot;htmlArea slds-grid slds-wrap&quot;&gt;
+&lt;div class=&quot;htmlHeading slds-size_1-of-1&quot;&gt;&lt;span class=&quot;far fa-id-badge fa-lg&quot;&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Conditions &amp; Diagnoses&lt;/div&gt;&lt;br/&gt;
+&lt;div class=&quot;htmlContent slds-size_1-of-1&quot;&gt;Understanding any conditions or diagnoses you have can help Susan G. Komen offer more accurate support and resources for your care.
+&lt;br/&gt;
+&lt;div class=&quot;mkButton slds-size_1-of-1&quot;&gt;&lt;a href=&quot;/s/my-health-conditions&quot; target=&quot;_self&quot;&gt;&lt;button class=&quot;mkButton&quot;&gt;Update Condition Info&lt;/button&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>khcAddMedication</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;div class=&quot;htmlArea slds-grid slds-wrap&quot;&gt;
+&lt;div class=&quot;htmlHeading slds-size_1-of-1&quot;&gt;&lt;span class=&quot;far fa-id-badge fa-lg&quot;&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Medication Info&lt;/div&gt;&lt;br/&gt;
+&lt;div class=&quot;htmlContent slds-size_1-of-1&quot;&gt;Understanding any medications you are currently taking can help Susan G. Komen offer more accurate support and resources for your care.
+&lt;br/&gt;
+&lt;div class=&quot;mkButton slds-size_1-of-1&quot;&gt;&lt;a href=&quot;/s/my-medications&quot; target=&quot;_self&quot;&gt;&lt;button class=&quot;mkButton&quot;&gt;Update Contact Info&lt;/button&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>khcFamilyMedHistory</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;div class=&quot;htmlArea slds-grid slds-wrap&quot;&gt;
+&lt;div class=&quot;htmlHeading slds-size_1-of-1&quot;&gt;&lt;span class=&quot;far fa-id-badge fa-lg&quot;&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Family Health History&lt;/div&gt;&lt;br/&gt;
+&lt;div class=&quot;htmlConten slds-size_1-of-1t&quot;&gt;Understanding your family health history can help Susan G. Komen offer more accurate support and resources for your care.
+&lt;br/&gt;
+&lt;div class=&quot;mkButton slds-size_1-of-1&quot;&gt;&lt;a href=&quot;/s/my-family-health-history&quot; target=&quot;_self&quot;&gt;&lt;button class=&quot;mkButton&quot;&gt;Update Contact Info&lt;/button&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>khcHealthProfile</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;div class=&quot;htmlArea slds-grid slds-wrap&quot;&gt;
+&lt;div class=&quot;htmlHeading slds-size_1-of-1&quot;&gt;&lt;span class=&quot;far fa-id-badge fa-lg&quot;&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Health Profile&lt;/div&gt;&lt;br/&gt;
+&lt;div class=&quot;htmlContent slds-size_1-of-1&quot;&gt;Understanding your health profile can help Susan G. Komen offer more accurate support and resources for your care.
+&lt;br/&gt;
+&lt;div class=&quot;mkButton slds-size_1-of-1&quot;&gt;&lt;a href=&quot;/s/my-health-profile&quot; target=&quot;_self&quot;&gt;&lt;button class=&quot;mkButton&quot;&gt;Update Contact Info&lt;/button&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>mhkMyProfile</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;div class=&quot;htmlArea slds-grid slds-wrap&quot;&gt;
+&lt;div class=&quot;htmlHeading slds-size_1-of-1&quot;&gt;&lt;span class=&quot;far fa-id-badge fa-lg&quot;&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Contact Info&lt;/div&gt;&lt;br/&gt;
+&lt;div class=&quot;htmlContent slds-size_1-of-1&quot;&gt;Understanding your personal details can help Susan G. Komen offer more accurate support and resources for your care.
+&lt;br/&gt;
+&lt;div class=&quot;mkButton slds-size_1-of-1&quot;&gt;&lt;a href=&quot;/s/my-profile&quot; target=&quot;_self&quot;&gt;&lt;button class=&quot;mkButton&quot;&gt;Update Contact Info&lt;/button&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>Account_var</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>ContactRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>Set_Birth_Year</name>
+        <label>Set Birth Year</label>
+        <locationX>621</locationX>
+        <locationY>333</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Birth_Year__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formulaBirthYearFromEstimatedAge</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Estimated_Age</name>
+        <label>Set Estimated Age</label>
+        <locationX>860</locationX>
+        <locationY>113</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Estimated_Age_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formulaEstimatedAgeFromBirthYear</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Birth_Year_or_Estimated_Age</name>
+        <label>Birth Year or Estimated Age?</label>
+        <locationX>614</locationX>
+        <locationY>117</locationY>
+        <defaultConnectorLabel>Estimated Age AND Birth Year</defaultConnectorLabel>
+        <rules>
+            <name>Birth_Year_not_Estimated_Age</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CloneSourceId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Estimated_Age_2__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Estimated_Age</targetReference>
+            </connector>
+            <label>Birth Year, not Estimated Age</label>
+        </rules>
+        <rules>
+            <name>Estimated_Age_Not_Birth_Year</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Birth_Year__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Estimated_Age_2__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Birth_Year</targetReference>
+            </connector>
+            <label>Estimated Age, Not Birth Year</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_Birth_Year_or_Estimated_Age_been_entered</name>
+        <label>Has Birth Year or Estimated Age been entered?</label>
+        <locationX>443</locationX>
+        <locationY>118</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Estimated_Age_2__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CloneSourceId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Birth_Year_or_Estimated_Age</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>formulaBirthYearFromEstimatedAge</name>
+        <dataType>String</dataType>
+        <expression>TEXT(
+    YEAR(Today())-{!$Record.Estimated_Age_2__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaEstimatedAgeFromBirthYear</name>
+        <dataType>Number</dataType>
+        <expression>YEAR(Today()) - VALUE({!$Record.Birth_Year__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Family Medical History Before Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Family Medical History Before Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Has_Birth_Year_or_Estimated_Age_been_entered</targetReference>
+        </connector>
+        <object>Patient_Contact__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

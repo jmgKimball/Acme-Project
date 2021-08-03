@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Need__c</fullName>
+    <description>Used to determine the basis on which the Patient is asking for assistance.  The values here are used by Flow (Patient Navigator Matching Flow) to determine which Care Programs should be matched to.  If updating the values here, please also update the flow and Care Programs to match.</description>
+    <externalId>false</externalId>
+    <label>Patient Need</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Patient_Need</valueSetName>
+    </valueSet>
+</CustomField>

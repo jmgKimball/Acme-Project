@@ -1,0 +1,133 @@
+<!--
+ - Created by vupneja on 10/2/2020.
+ -->
+<!-- Khc My Procedures -->
+
+<template>
+    <div class="khc-container">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="loading" ></lightning-spinner>
+        </template>
+       
+        <template if:true={showViewProcedure} >
+                <c-khc-back-navigation></c-khc-back-navigation>
+                <h1>{mySurgeryHeaderLabel}</h1>
+            <template for:each={procedureList} for:item="procedure" >
+                <lightning-record-view-form   record-id={procedure.Id} key={procedure.Id}
+                                            object-api-name="HealthCloudGA__EHRProcedure__c"
+                                            onload={onFormLoad}
+                                            onsubmit={onFormSubmit}>
+                    <div class="data-header">
+                            {procedure.Procedure_Type__c} ({procedure.HealthCloudGA__PerformedDateTime__c})
+                        <div class="controls">
+                            <a data-id={procedure.Id} onclick={onEdit} >{editLabel}</a>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </template>
+
+            <footer>
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button"
+                            title={addAnotherProcedureLabel} onclick={addNewProcedure} if:true={showViewProcedure} >
+                        {addAnotherProcedureLabel}
+                    </button>
+                </div>
+            </footer>
+        </template>
+
+        <template if:true={addProcedure} >
+            <header>
+                <h1>{addNewProcedureHeaderLabel}</h1>
+            </header>
+            <lightning-record-edit-form object-api-name="HealthCloudGA__EHRProcedure__c"
+                                        onsuccess={showRefreshExistingProcedure}
+                                        onload={onFormLoad} density="comfy">
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input-field field-name="Procedure_Type__c" onchange={handleEvent}></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <template for:each={procedureFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+                                               class="slds-p-around--small">
+                            <label for={fieldName.apiName}>{fieldName.label}</label>
+                            <lightning-input-field key={fieldName.apiName} variant="label-hidden"
+                                                   field-name={fieldName.apiName}
+                                                   id={fieldName.apiName} ></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+
+                    <lightning-input-field field-name="HealthCloudGA__Notes__c" required={isRequired}></lightning-input-field>
+                    <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId} class="slds-hide">
+                    </lightning-input-field>
+                </lightning-layout>
+
+                <div class="slds-m-top_large" >
+                    <button class="slds-button  slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" >
+                        {addAnotherProcedureLabel}
+                    </button>
+                    <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small " >
+                        <a onclick={showExistingProcedure}>{cancelLabel}</a>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+        </template>
+
+        <template if:true={noProcedureExist}>
+            <c-khc-back-navigation></c-khc-back-navigation>
+            <p>&nbsp;</p>
+            <h3 >{noproceduretextlabel}</h3>
+            <p>&nbsp;</p>
+
+            <footer>
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" onclick={addFirstProcedure} >
+                        {addFirstprocedureLabel}
+                    </button>
+                </div>
+            </footer>
+        </template>
+
+        <template if:true={isFirstProcedure} >
+            <lightning-record-edit-form object-api-name="HealthCloudGA__EHRProcedure__c"
+                                        onsuccess={showRefreshExistingProcedure}
+                                        onload={onFormLoad} density="comfy" >
+                <p>&nbsp; </p>
+
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input-field field-name="Procedure_Type__c" onchange={handleEvent}></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <template for:each={procedureFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+                                               class="slds-p-around--small">
+                            <label for={fieldName.apiName}>{fieldName.label}</label>
+                            <lightning-input-field key={fieldName.apiName} variant="label-hidden"
+                                                   field-name={fieldName.apiName}
+                                                   id={fieldName.apiName}></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                    <lightning-input-field field-name="HealthCloudGA__Notes__c" required={isRequired}></lightning-input-field>
+                    <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId} class="slds-hide">
+                    </lightning-input-field>
+                </lightning-layout>
+
+                <div class="slds-m-top_large" >
+                    <button class="slds-button  slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" >
+                        {addFirstprocedureLabel}
+                    </button>
+                    <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small ">
+                        <a onclick={showNoProcedure}>{cancelLabel}</a>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+
+        </template>
+    </div>
+</template>

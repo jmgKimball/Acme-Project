@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_if_EHR_System_Sourced</fullName>
+    <active>true</active>
+    <description>Prevents the editing by anyone other than a System Administrator for a record sourced from an EHR System.</description>
+    <errorConditionFormula>AND(
+  $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+  EHR_System_Imported__c
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga__ehrcondition__c&quot;))</errorConditionFormula>
+    <errorMessage>This record has been imported from an EHR system.  Please check with your System Administrator if the details herein are inaccurate.</errorMessage>
+</ValidationRule>

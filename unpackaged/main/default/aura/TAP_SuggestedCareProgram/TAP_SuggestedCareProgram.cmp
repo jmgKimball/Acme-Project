@@ -1,0 +1,122 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" controller="TAP_Application_Ctlr" access="global" >
+    
+    <aura:attribute name="showCareProgram" type="Boolean" default="false"/>
+    <aura:attribute name="IsCareProgramavailable" type="Boolean" default="false"/>
+    <aura:attribute name="hasEditAccess" type="Boolean" default="false"/>
+    
+    <aura:attribute name="existingCareProgram" type="Object"/>
+    <aura:attribute name="careProgramWrapper" type="object" />
+    <aura:attribute name="careProgram" type="List"/>
+    <aura:attribute name="CareProgramId" type="String"/>
+    <aura:attribute name="CareProgramRecord" type="Object"/>
+    <aura:attribute name="columns" type="List" default="[{label:'Name',fieldName:'Name',type:'text'},
+                                                        {label:'Balance',fieldName:'Remaining_Amount__c',type:'currency',cellAttributes: { alignment: 'center'}},
+                                                        {label:'Monthly Balance',fieldName:'Remaining_monthly_Balance__c',type:'currency',cellAttributes: { alignment: 'center'}}]"/>
+    <aura:attribute name="programType" type="String" default="suggested"/>
+    <aura:attribute name="programTypes" type="List" default="[
+                                                       {'label': 'Suggested Care Programs', 'value': 'suggested'},
+                                                       {'label': 'All Care Programs', 'value': 'all'}
+                                                      ]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler name="change" value="{!v.careProgramWrapper}" action="{!c.onLoad}"/>
+    
+    <aura:If isTrue="{!v.hasEditAccess}">
+        <lightning:recordEditForm aura:id="careProgram" recordId="{!v.recordId}" objectApiName="Application__c" onsuccess="{!c.handleSuccess}">
+            <lightning:messages />
+            <lightning:outputField aura:id="careProgramOnApplication" fieldName="Care_Program__c" variant="label-hidden"/>
+            <lightning:card iconName="standard:work_order_item" class=". slds-text-title_bold" title="Care Program">
+                <aura:If isTrue="{!v.showCareProgram}">
+                    <div class="demo-only slds-p-left_x-small slds-p-bottom_x-small" style="width:80%;">
+                      <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">
+                          <article class="slds-tile slds-tile_board">
+                            <h3 class="slds-tile__title slds-truncate" title="Anypoint Connectors">
+                              <a href="javascript:void(0);">{!v.existingCareProgram.Name}</a>
+                            </h3>
+                            <div class="slds-tile__detail">
+                              <p class="slds-text-title_bold">
+                                  <lightning:formattedText value="Balance: "/>
+                                  <span class="slds-text-heading_medium">
+                                  <lightning:formattedNumber value="{!v.existingCareProgram.Remaining_Amount__c}" style="currency" currencyCode="USD"/>
+                                    </span>
+                                  </p>
+                            </div>
+                            <div class="slds-tile__detail">
+                              <p class="slds-text-title_bold">
+                                  <lightning:formattedText value="Monthly Balance: "/>
+                                  <span class="slds-text-heading_medium">
+                                  <lightning:formattedNumber value="{!v.existingCareProgram.Remaining_monthly_Balance__c}" style="currency" currencyCode="USD"/>
+                                    </span>
+                                  </p>
+                            </div>
+                          </article>
+                        </li>
+                        </ul>
+                    </div>
+                    <span>
+                        <div class="slds-form-element buttons slds-text-align_center">
+                            <lightning:button label="Change" variant ="brand" onclick="{!c.handleChange}"/> 
+                        </div>
+                    </span>
+                    <aura:set attribute="else">
+                        <span class="slds-text-body_small slds-text-align_center"> 
+                                    <lightning:radioGroup name="programs" 
+                                          options="{! v.programTypes }"
+                                          value="{! v.programType }"
+                                          type="button"
+                                          onchange="{! c.handleProgramTypeChange }"
+                                          />
+                        </span>
+                        
+                        <lightning:layout>
+                            <lightning:layoutItem flexibility="auto" padding="around-small">
+                                <div style="height:12rem;" class="slds-text-align_center">
+                                <lightning:datatable  aura:id="suggestedCareProgram" data="{!v.careProgram}" columns="{! v.columns }" keyField="Id" maxRowSelection="1" onrowselection="{!c.updateSelectedCareProgram}"/>
+                                </div>
+                                </lightning:layoutItem>   
+                        </lightning:layout>
+                        
+                        <div class="slds-align_absolute-center">
+                            <aura:renderIf isTrue="{!v.IsCareProgramavailable}">
+                                <lightning:button label="Back" onclick="{!c.handleBack}"/> 
+                            </aura:renderIf>
+                            <lightning:button aura:id="saveButton" label="Save" onclick="{!c.handleSave}" variant ="brand" disabled="true"/>
+                        </div>
+                    </aura:set>
+                    
+                </aura:If>
+                <lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+            </lightning:card>
+        </lightning:recordEditForm>
+        
+        <aura:set attribute="else">
+            <lightning:card iconName="standard:work_order_item" class=". slds-text-title_bold" title="Care Program">
+                <div class="demo-only slds-p-left_x-small slds-p-bottom_x-small" style="width:80%;">
+                    <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">
+                            <article class="slds-tile slds-tile_board">
+                                <h3 class="slds-tile__title slds-truncate" title="Anypoint Connectors">
+                                    <a href="javascript:void(0);">
+                                        <aura:If isTrue="{!v.showCareProgram}">{!v.existingCareProgram.Name}
+                                        </aura:If>
+                                    </a>
+                                </h3>
+                                <div class="slds-tile__detail">
+                                    <p class="slds-text-title_bold">
+                                        <lightning:formattedText value="Balance: "/>
+                                        <span class="slds-text-heading_medium">
+                                            <aura:If isTrue="{!v.showCareProgram}">
+                                                <lightning:formattedNumber value="{!v.existingCareProgram.Remaining_Amount__c}" style="currency" currencyCode="USD"/>
+                                            </aura:If>
+                                        </span>
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </lightning:card>
+        </aura:set>
+    </aura:If>
+    
+</aura:component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Helpline_User_edit_TAP_Appl</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+IF(RecordType.DeveloperName == &apos;Treatment_Assistance_Program&apos;, true, false),
+ISCHANGED(Application_Status__c),
+$Permission.Helpline_Application_Permission,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;Accounting&apos;
+)</errorConditionFormula>
+    <errorMessage>Helpline Agents and Patient Navigators cannot change the status of a Treatment Assistance Application</errorMessage>
+</ValidationRule>

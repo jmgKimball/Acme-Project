@@ -1,0 +1,27 @@
+<!-- Khc Report Resource Issue -->
+<template>
+    <!-- Spinner -->
+    <div class="slds-align_absolute-center khc-report-issue-spinner" if:true={showSpinner}>
+        <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+    <!-- Create a Case Form -->
+    <lightning-record-edit-form object-api-name="Case" if:true={knowledge}
+        onload={handleOnload}
+        onsuccess={handleSuccess}>
+        <lightning-messages>
+        </lightning-messages>
+        <lightning-input-field field-name="Origin" value="Community" class="slds-hide"></lightning-input-field>
+        <lightning-input-field field-name="Type" value="Resource Issue" class="slds-hide"></lightning-input-field>
+        <lightning-input-field field-name="RecordTypeId" value={recordTypeId} class="slds-hide"></lightning-input-field>
+        <lightning-input-field field-name="Related_Resource__c" value={knowledge.Id} class="slds-hide"></lightning-input-field>
+        <lightning-input-field field-name="Subject"></lightning-input-field>
+        <lightning-input-field field-name="Issue__c"></lightning-input-field>
+        <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button"
+                type="submit"
+                name="update"
+                style="margin-top: 100px;"
+                onclick={handleSubmit}>
+            {reportAnIssueLabel}
+        </button>
+    </lightning-record-edit-form>
+</template>

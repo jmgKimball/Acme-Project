@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bone Cancer</fullName>
+        <default>false</default>
+        <label>Bone Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Brain Cancer</fullName>
+        <default>false</default>
+        <label>Brain Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Breast Cancer</fullName>
+        <default>false</default>
+        <label>Breast Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Colon Cancer</fullName>
+        <default>false</default>
+        <label>Colon Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Colorectal Cancer</fullName>
+        <default>false</default>
+        <label>Colorectal Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Esophageal Cancer</fullName>
+        <default>false</default>
+        <label>Esophageal Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Familial adnenomatous polyposis (FAP)</fullName>
+        <default>false</default>
+        <label>Familial adnenomatous polyposis (FAP)</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastric Cancer</fullName>
+        <default>false</default>
+        <label>Gastric Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Lynch Syndrome/Hereditary non-polyposis colorectal cancer (HNPCC)</fullName>
+        <default>false</default>
+        <label>Lynch Syndrome/Hereditary non-polyposis colorectal cancer (HNPCC)</label>
+    </customValue>
+    <customValue>
+        <fullName>Kidney Cancer</fullName>
+        <default>false</default>
+        <label>Kidney Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Leukemia</fullName>
+        <default>false</default>
+        <label>Leukemia</label>
+    </customValue>
+    <customValue>
+        <fullName>Liver Cancer</fullName>
+        <default>false</default>
+        <label>Liver Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Lung Cancer</fullName>
+        <default>false</default>
+        <label>Lung Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Muscle Cancer</fullName>
+        <default>false</default>
+        <label>Muscle Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Cancer</fullName>
+        <default>false</default>
+        <label>Other Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Ovarian Cancer</fullName>
+        <default>false</default>
+        <label>Ovarian Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Pancreatic Cancer</fullName>
+        <default>false</default>
+        <label>Pancreatic Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Prostate Cancer</fullName>
+        <default>false</default>
+        <label>Prostate Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Rectal Cancer</fullName>
+        <default>false</default>
+        <label>Rectal Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Skin Cancer</fullName>
+        <default>false</default>
+        <label>Skin Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Thyroid Cancer</fullName>
+        <default>false</default>
+        <label>Thyroid Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Cancer</fullName>
+        <default>false</default>
+        <label>Unknown Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Uterine Cancer</fullName>
+        <default>false</default>
+        <label>Uterine Cancer</label>
+    </customValue>
+    <customValue>
+        <fullName>Clotting Disorder</fullName>
+        <default>false</default>
+        <label>Clotting Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Deep Vein Thrombosis (DVT)</fullName>
+        <default>false</default>
+        <label>Deep Vein Thrombosis (DVT)</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulmonary Embolism</fullName>
+        <default>false</default>
+        <label>Pulmonary Embolism</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Clotting Disorder</fullName>
+        <default>false</default>
+        <label>Unknown Clotting Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Dementia/Alzheimer&apos;s</fullName>
+        <default>false</default>
+        <label>Dementia/Alzheimer&apos;s</label>
+    </customValue>
+    <customValue>
+        <fullName>Diabetes</fullName>
+        <default>false</default>
+        <label>Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Gestational Diabetes</fullName>
+        <default>false</default>
+        <label>Gestational Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Impaired Fasting Glucose</fullName>
+        <default>false</default>
+        <label>Impaired Fasting Glucose</label>
+    </customValue>
+    <customValue>
+        <fullName>Impaired Glucose Tolerance</fullName>
+        <default>false</default>
+        <label>Impaired Glucose Tolerance</label>
+    </customValue>
+    <customValue>
+        <fullName>Insulin Resistance</fullName>
+        <default>false</default>
+        <label>Insulin Resistance</label>
+    </customValue>
+    <customValue>
+        <fullName>Maturity Onset Diabetes mellitus in Young (MODY)</fullName>
+        <default>false</default>
+        <label>Maturity Onset Diabetes mellitus in Young (MODY)</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre-Diabetes</fullName>
+        <default>false</default>
+        <label>Pre-Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Type 1 Diabetes</fullName>
+        <default>false</default>
+        <label>Type 1 Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Type 2 Diabetes</fullName>
+        <default>false</default>
+        <label>Type 2 Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Diabetes</fullName>
+        <default>false</default>
+        <label>Unknown Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Colon Polyp</fullName>
+        <default>false</default>
+        <label>Colon Polyp</label>
+    </customValue>
+    <customValue>
+        <fullName>Crohn&apos;s Disease</fullName>
+        <default>false</default>
+        <label>Crohn&apos;s Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastrointestinal Disorder</fullName>
+        <default>false</default>
+        <label>Gastrointestinal Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Irritable Bowel Syndrome</fullName>
+        <default>false</default>
+        <label>Irritable Bowel Syndrome</label>
+    </customValue>
+    <customValue>
+        <fullName>Ulcerative Colitis</fullName>
+        <default>false</default>
+        <label>Ulcerative Colitis</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Gastrointestinal Disorder</fullName>
+        <default>false</default>
+        <label>Unknown Gastrointestinal Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Angina</fullName>
+        <default>false</default>
+        <label>Angina</label>
+    </customValue>
+    <customValue>
+        <fullName>Coronary Artery Disease</fullName>
+        <default>false</default>
+        <label>Coronary Artery Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Heart Attack</fullName>
+        <default>false</default>
+        <label>Heart Attack</label>
+    </customValue>
+    <customValue>
+        <fullName>Heart Disease</fullName>
+        <default>false</default>
+        <label>Heart Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Heart Disease</fullName>
+        <default>false</default>
+        <label>Unknown Heart Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>High Cholesterol</fullName>
+        <default>false</default>
+        <label>High Cholesterol</label>
+    </customValue>
+    <customValue>
+        <fullName>Hypertension</fullName>
+        <default>false</default>
+        <label>Hypertension</label>
+    </customValue>
+    <customValue>
+        <fullName>Cystic Kidney Disease</fullName>
+        <default>false</default>
+        <label>Cystic Kidney Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Diabetic Kidney Disease</fullName>
+        <default>false</default>
+        <label>Diabetic Kidney Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Kidney Disease Present from Birth</fullName>
+        <default>false</default>
+        <label>Kidney Disease Present from Birth</label>
+    </customValue>
+    <customValue>
+        <fullName>Kidney Nephrosis</fullName>
+        <default>false</default>
+        <label>Kidney Nephrosis</label>
+    </customValue>
+    <customValue>
+        <fullName>Nephritis</fullName>
+        <default>false</default>
+        <label>Nephritis</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Kidney Disease</fullName>
+        <default>false</default>
+        <label>Other Kidney Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Kidney Disease</fullName>
+        <default>false</default>
+        <label>Unknown Kidney Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Asthma</fullName>
+        <default>false</default>
+        <label>Asthma</label>
+    </customValue>
+    <customValue>
+        <fullName>COPD</fullName>
+        <default>false</default>
+        <label>COPD</label>
+    </customValue>
+    <customValue>
+        <fullName>Chronic Bronchitis</fullName>
+        <default>false</default>
+        <label>Chronic Bronchitis</label>
+    </customValue>
+    <customValue>
+        <fullName>Chronic Lower Respiratory Disease</fullName>
+        <default>false</default>
+        <label>Chronic Lower Respiratory Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Emphysema</fullName>
+        <default>false</default>
+        <label>Emphysema</label>
+    </customValue>
+    <customValue>
+        <fullName>Influenza/Pneumonia</fullName>
+        <default>false</default>
+        <label>Influenza/Pneumonia</label>
+    </customValue>
+    <customValue>
+        <fullName>Lung Disease</fullName>
+        <default>false</default>
+        <label>Lung Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Lung Disease</fullName>
+        <default>false</default>
+        <label>Unknown Lung Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Osteoporosis</fullName>
+        <default>false</default>
+        <label>Osteoporosis</label>
+    </customValue>
+    <customValue>
+        <fullName>Anxiety</fullName>
+        <default>false</default>
+        <label>Anxiety</label>
+    </customValue>
+    <customValue>
+        <fullName>Attention Deficit Disorder-Hyperactivity</fullName>
+        <default>false</default>
+        <label>Attention Deficit Disorder-Hyperactivity</label>
+    </customValue>
+    <customValue>
+        <fullName>Autism</fullName>
+        <default>false</default>
+        <label>Autism</label>
+    </customValue>
+    <customValue>
+        <fullName>Bipolar Disorder</fullName>
+        <default>false</default>
+        <label>Bipolar Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Dementia</fullName>
+        <default>false</default>
+        <label>Dementia</label>
+    </customValue>
+    <customValue>
+        <fullName>Depression</fullName>
+        <default>false</default>
+        <label>Depression</label>
+    </customValue>
+    <customValue>
+        <fullName>Eating Disorder</fullName>
+        <default>false</default>
+        <label>Eating Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Mental Disorder Unspecified</fullName>
+        <default>false</default>
+        <label>Mental Disorder Unspecified</label>
+    </customValue>
+    <customValue>
+        <fullName>Obsessive Compulsive Disorder</fullName>
+        <default>false</default>
+        <label>Obsessive Compulsive Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Panic Disorder</fullName>
+        <default>false</default>
+        <label>Panic Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Personality Disorder</fullName>
+        <default>false</default>
+        <label>Personality Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Post Traumatic Stress Disorder</fullName>
+        <default>false</default>
+        <label>Post Traumatic Stress Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Schizophrenia</fullName>
+        <default>false</default>
+        <label>Schizophrenia</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Phobia</fullName>
+        <default>false</default>
+        <label>Social Phobia</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Psychological Disorder</fullName>
+        <default>false</default>
+        <label>Unknown Psychological Disorder</label>
+    </customValue>
+    <customValue>
+        <fullName>Septicemia</fullName>
+        <default>false</default>
+        <label>Septicemia</label>
+    </customValue>
+    <customValue>
+        <fullName>Stroke/Brain Attack</fullName>
+        <default>false</default>
+        <label>Stroke/Brain Attack</label>
+    </customValue>
+    <customValue>
+        <fullName>Sudden Infant Death Syndrome</fullName>
+        <default>false</default>
+        <label>Sudden Infant Death Syndrome</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown Disease</fullName>
+        <default>false</default>
+        <label>Unknown Disease</label>
+    </customValue>
+    <masterLabel>Condition Sub Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

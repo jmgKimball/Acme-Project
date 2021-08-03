@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provide_More_Details_Found_Komen_Via</fullName>
+    <active>true</active>
+    <description>If Internet Search, or Other: fill in the blank option, collect more info.</description>
+    <errorConditionFormula>AND (
+            ISBLANK(Description),
+            OR (
+                ISPICKVAL(Initial_Found_Helpline_Via__c,&quot;Internet Search (Google, Yahoo, etc.)&quot;),
+                ISPICKVAL(Initial_Found_Helpline_Via__c,&quot;Other: fill in the blank option&quot;)
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;case&quot;
+        )</errorConditionFormula>
+    <errorMessage>Please be sure to add details in the Description field about the website or other source from which you found out about Komen.</errorMessage>
+</ValidationRule>

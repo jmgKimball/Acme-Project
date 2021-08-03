@@ -1,0 +1,4 @@
+<design:component label="Profile Photo">
+   <design:attribute name="photoUrl" label="Profile Photo Url" />
+   
+</design:component>

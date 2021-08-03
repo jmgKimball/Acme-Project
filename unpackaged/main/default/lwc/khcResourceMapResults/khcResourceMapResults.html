@@ -1,0 +1,20 @@
+<!-- Khc Resource Map Results -->
+<template>
+    <div if:false={hasMarkers} class="slds-size_1-of-1 slds-text-align_center slds-p-vertical_medium">
+        <p class="slds-text-title_caps">{LABELS.noArticlesHaveLocations}</p>
+    </div>
+
+    <div if:true={hasMarkers} class="slds-card slds-m-top_large">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item>
+                <lightning-map
+                        options={mapOptions}
+                        map-markers={mapMarkers}
+                        zoom-level="18"
+                        center={center}
+                        list-view="visible">
+                </lightning-map>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

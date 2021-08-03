@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Did_You_Hear_About_SG_Komen_with_Others</fullName>
+    <active>true</active>
+    <errorConditionFormula>
+        AND (
+            ISPICKVAL( How_Did_You_Hear_About_SGK_TAP__c , &apos;Other&apos;) ,
+            ISBLANK( Other_Sources__c ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorDisplayField>Other_Sources__c</errorDisplayField>
+    <errorMessage>Please Specify &quot;How Did You Hear About SGK TAP&quot;.</errorMessage>
+</ValidationRule>

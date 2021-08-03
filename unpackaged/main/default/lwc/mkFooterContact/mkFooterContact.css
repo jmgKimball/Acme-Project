@@ -1,0 +1,69 @@
+/**
+ * Created by cwico@tractionondemand.com on 2020-11-16.
+ */
+
+.mk-footer-contact {
+	background: #EBE9E7;
+	border-top: 18px solid #B2005D;
+}
+
+.mk-footer-contact[data-mode=Block] {
+	background: unset;
+	border-top: unset;
+}
+
+a {
+	color: #B2005D;
+	font-family: "Montserrat", sans-serif;
+}
+
+
+h1 {
+	color: #B2005D;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1rem;
+	font-weight: 500;
+
+}
+
+span.far {
+	color: var(--lwc-colorTextLabel, rgb(105, 109, 121));
+}
+
+.mk-links {
+	color: var(--lwc-colorTextLabel, rgb(105, 109, 121));
+}
+
+.mk-toggle {
+	cursor: pointer;
+}
+
+.mk-toggle .fa {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.mk-buttons .slds-button {
+	background-color: #B2005D;
+	color: #ffffff;
+	padding: 5px 25px;;
+}
+
+.slds-select_container {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+select.slds-select {
+	font-family: "Montserrat", sans-serif !important;
+	font-weight: 300 !important;
+	font-size: 16px;
+}

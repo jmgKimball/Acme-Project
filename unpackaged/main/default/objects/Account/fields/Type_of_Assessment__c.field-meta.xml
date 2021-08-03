@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Assessment__c</fullName>
+    <description>Risk assessment types</description>
+    <externalId>false</externalId>
+    <label>Type of Assessment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mammograms</fullName>
+                <default>false</default>
+                <label>Mammograms</label>
+            </value>
+            <value>
+                <fullName>Triple assessment</fullName>
+                <default>false</default>
+                <label>Triple assessment</label>
+            </value>
+            <value>
+                <fullName>MRI</fullName>
+                <default>false</default>
+                <label>MRI</label>
+            </value>
+            <value>
+                <fullName>Gail model</fullName>
+                <default>false</default>
+                <label>Gail model</label>
+            </value>
+            <value>
+                <fullName>IBIS model</fullName>
+                <default>false</default>
+                <label>IBIS model</label>
+            </value>
+            <value>
+                <fullName>BOADICEA model</fullName>
+                <default>false</default>
+                <label>BOADICEA model</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

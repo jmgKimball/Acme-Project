@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Details_On_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL( Application_Source__c,&apos;Postal Mail&apos;)),
+ISPICKVAL(Application_Status__c , &quot;Approved&quot;),
+ISBLANK(Patient__r.PersonContact.Email),
+ISBLANK(Patient__r.PersonContact.MobilePhone),
+ISBLANK(Patient__r.PersonContact.HomePhone)
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;))</errorConditionFormula>
+    <errorMessage>Provide Details In Either Email ,Cell Phone Or Home Phone.</errorMessage>
+</ValidationRule>

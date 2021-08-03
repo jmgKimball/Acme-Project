@@ -1,0 +1,478 @@
+<!--
+ * @description Lightning web component for My Health Condition
+ * @author Vikrant Upneja, Traction on Demand
+ * @date 9/14/2020.
+ -->
+
+<template>
+    <div class="khc-container khc-health-conditions">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="loading"></lightning-spinner>
+        </template>
+
+        <template if:true={showHealthCondition}>
+            <c-khc-back-navigation></c-khc-back-navigation>
+            <h1>{headerText}</h1>
+            <lightning-accordion class="accordion-section" allow-multiple-sections-open=true>
+                <template if:true={bcCondition}>
+                    <template for:each={bcCondition} for:item="Condition">
+                        <lightning-accordion-section name={Condition.Condition_Name__c}
+                                                     label={Condition.Condition_Name__c} key={Condition.Id}>
+                            <lightning-record-view-form record-id={Condition.Id}
+                                                        object-api-name="HealthCloudGA__EhrCondition__c"
+                                                        if:true={showViewHealthCondition}
+                                                        onload={onFormLoad}
+                                                        onsubmit={onFormSubmit}
+                                                        onerror={handleInputError}>
+                                <div class="slds-box">
+                                    <div class="khc-view-item">
+                                        <span>
+											<lightning-output-field field-name="Condition_Name__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Is_Recurrence__c">
+											</lightning-output-field>
+										</span>
+										<span>
+											<lightning-output-field field-name="Breast_Cancer_Type__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Breast_Cancer_Type_Other__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Breast_Cancer_Sub_Type__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Breast_Cancer_Sub_Type_Other__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__DateAsserted__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Stage_at_Diagnosis__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Treatment_Start_Date__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Treatment_End_Date__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__IsAbated__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Date_Abated__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__Notes__c">
+											</lightning-output-field>
+										</span>
+                                    </div>
+
+                                    <span class="mk-action">
+										<a data-id={Condition.Id} onclick={onEditBC}>Edit</a>
+									</span>
+                                </div>
+
+                            </lightning-record-view-form>
+                        </lightning-accordion-section>
+                    </template>
+                </template>
+            </lightning-accordion>
+
+            <lightning-accordion class="accordion-section" allow-multiple-sections-open=true>
+                <template if:true={chronicCondition}>
+                    <template for:each={chronicCondition} for:item="Condition">
+                        <lightning-accordion-section name={Condition.Condition_Name__c}
+                                                     label={Condition.Condition_Name__c} key={Condition.Id}>
+                            <lightning-record-view-form record-id={Condition.Id}
+                                                        object-api-name="HealthCloudGA__EhrCondition__c"
+                                                        if:true={showViewHealthCondition}
+                                                        onload={onFormLoad}
+                                                        onsubmit={onFormSubmit}
+                                                        onerror={handleInputError}>
+                                <div class="slds-box">
+                                    <div class="khc-view-item">
+                                        <span>
+											<lightning-output-field field-name="Condition_Name__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Condition_Category__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Condition_Sub_Category__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__DateAsserted__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__IsAbated__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Date_Abated__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Treatment_Start_Date__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="Treatment_End_Date__c">
+											</lightning-output-field>
+										</span>
+                                        <span>
+											<lightning-output-field field-name="HealthCloudGA__Notes__c">
+											</lightning-output-field>
+										</span>
+                                    </div>
+
+                                    <span class="mk-action">
+										<a data-id={Condition.Id} onclick={onEditChronic}>Edit</a>
+									</span>
+                                </div>
+                            </lightning-record-view-form>
+                        </lightning-accordion-section>
+                    </template>
+                </template>
+            </lightning-accordion>
+            <footer>
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button"
+                            title="Add another condition" onclick={addNewCondition} if:true={showViewHealthCondition}>
+                        {addAnotherConditionLabel}
+                    </button>
+                </div>
+            </footer>
+        </template>
+
+        <template if:true={noHealthConditionExist}>
+            <c-khc-back-navigation></c-khc-back-navigation>
+            <h1>{headerText}</h1>
+            <p>&nbsp;</p>
+            <h3>{noHealthConditionExistLabel}</h3>
+            <p>&nbsp;</p>
+            <footer>
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button"
+                            onclick={addFirstCondition}>
+                        {addNewHealthConditionLabel}
+                    </button>
+                </div>
+            </footer>
+        </template>
+
+        <template if:true={newHealthCondition}>
+            <h1>{headerAddText}</h1>
+
+            <div class="khc-type-input">
+                <lightning-combobox name="Condition Type" label="Condition Type" options={conditionTypeOptions}
+                                    onchange={handleConditionTypeValueEvent} value={conditionTypeValue}>
+                </lightning-combobox>
+            </div>
+
+            <lightning-record-edit-form object-api-name="HealthCloudGA__EhrCondition__c"
+                                        onsuccess={showExistingCondition}
+                                        onload={onFormLoad}
+                                        onsubmit={onFormSubmit}
+                                        onerror={handleInputError}>
+                <lightning-messages></lightning-messages>
+                <div class="khc-form">
+                    <div class="khc-form-item">
+                        <lightning-input-field field-name="Condition_Name__c" required="true">
+                        </lightning-input-field>
+                    </div>
+
+                    <template if:false={renderOptionalField}>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Condition_Category__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Condition_Sub_Category__c">
+                            </lightning-input-field>
+                        </div>
+                    </template>
+
+                    <template if:true={renderOptionalField}>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Is_Recurrence__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Breast_Cancer_Type__c" data-name="breastCancerType"
+                                                   onchange={setOtherCancerTypeField}>
+                            </lightning-input-field>
+                        </div>
+
+                        <template if:true={otherCancerTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Type_Other__c" disabled="true"
+                                                       class="khc-disabled-field">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <template if:false={otherCancerTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Type_Other__c" required="true">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Breast_Cancer_Sub_Type__c"
+                                                   data-name="breastCancerSubType" onchange={setOtherCancerTypeField}>
+                            </lightning-input-field>
+                        </div>
+
+                        <template if:true={otherCancerSubTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" disabled="true"
+                                                       class="khc-disabled-field">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <template if:false={otherCancerSubTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" required="true">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+                    </template>
+
+                        <div class="khc-form-item">
+                            <label class="slds-form-element__label">{whenWereYouDiagnosed}</label>
+                            <lightning-input-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+                            </lightning-input-field>
+                        </div>
+
+                        <template if:true={renderOptionalField}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Stage_at_Diagnosis__c">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <label class="slds-form-element__label">{whenDidThisConditionEnd}</label>
+                            <lightning-input-field field-name="Date_Abated__c" variant="label-hidden">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Treatment_Start_Date__c" data-name="treatmentStartDate">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Treatment_End_Date__c" data-name="treatmentEndDate">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-hide">
+                            <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                            </lightning-input-field>
+                        </div>
+
+                    <template if:false={renderOptionalField}>
+                        <div class="slds-hide">
+                            <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                            </lightning-input-field>
+                        </div>
+                    </template>
+                    <div class="khc-form-item">
+                        <lightning-input-field field-name="HealthCloudGA__Notes__c">
+                        </lightning-input-field>
+                    </div>
+                    <div class="slds-hide">
+                        <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId}>
+                        </lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-m-top_large">
+                    <button
+                            class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button"
+                            type="submit">
+                        {addNewConditionLabel}
+                    </button>
+                </div>
+            </lightning-record-edit-form>
+
+            <footer>
+                <div class="slds-m-top_large khc-align-center">
+                    <a onclick={showNoCondition}>
+                        {cancelLabel}
+                    </a>
+                </div>
+            </footer>
+        </template>
+
+        <template if:true={addHealthCondition}>
+            <h1>{headerAddText}</h1>
+
+            <div class="khc-type-input">
+                <lightning-combobox name="Condition Type" label="Condition Type" options={conditionTypeOptions}
+                                    onchange={handleConditionTypeValueEvent} value={conditionTypeValue}>
+                </lightning-combobox>
+            </div>
+
+            <lightning-record-edit-form object-api-name="HealthCloudGA__EhrCondition__c"
+                                        onsuccess={showExistingCondition}
+                                        onload={onFormLoad}
+                                        onsubmit={onFormSubmit}
+                                        onerror={handleInputError}>
+                <lightning-messages></lightning-messages>
+                <div class="khc-form">
+                    <div class="khc-form-item">
+                        <lightning-input-field field-name="Condition_Name__c" required="true">
+                        </lightning-input-field>
+                    </div>
+
+                    <template if:false={renderOptionalField}>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Condition_Category__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Condition_Sub_Category__c">
+                            </lightning-input-field>
+                        </div>
+                    </template>
+
+                    <template if:true={renderOptionalField}>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Is_Recurrence__c">
+                            </lightning-input-field>
+                        </div>
+
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Breast_Cancer_Type__c" data-name="breastCancerType"
+                                                   onchange={setOtherCancerTypeField}>
+                            </lightning-input-field>
+                        </div>
+
+                        <template if:true={otherCancerTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Type_Other__c" disabled="true"
+                                                       class="khc-disabled-field">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <template if:false={otherCancerTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Type_Other__c" required="true">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Breast_Cancer_Sub_Type__c"
+                                                   data-name="breastCancerSubType" onchange={setOtherCancerTypeField}>
+                            </lightning-input-field>
+                        </div>
+                        <template if:true={otherCancerSubTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" disabled="true"
+                                                       class="khc-disabled-field">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+                        <template if:false={otherCancerSubTypeReadOnly}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" required="true">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+                    </template>
+
+                        <div class="khc-form-item">
+                            <label>{whenWereYouDiagnosed}</label>
+                            <lightning-input-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+                            </lightning-input-field>
+                        </div>
+
+                        <template if:true={renderOptionalField}>
+                            <div class="khc-form-item">
+                                <lightning-input-field field-name="Stage_at_Diagnosis__c">
+                                </lightning-input-field>
+                            </div>
+                        </template>
+
+						<div class="khc-form-item">
+							<lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+							</lightning-input-field>
+						</div>
+                        <div class="khc-form-item">
+                            <label>{whenDidThisConditionEnd}</label>
+                            <lightning-input-field field-name="Date_Abated__c" variant="label-hidden">
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Treatment_Start_Date__c" data-name="treatmentStartDate" onerror={handleInputError}>
+                            </lightning-input-field>
+                        </div>
+                        <div class="khc-form-item">
+                            <lightning-input-field field-name="Treatment_End_Date__c" data-name="treatmentEndDate" onerror={handleInputError}>
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-hide">
+                            <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                            </lightning-input-field>
+                        </div>
+
+                    <template if:false={renderOptionalField}>
+                        <div class="slds-hide">
+                            <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                            </lightning-input-field>
+                        </div>
+                    </template>
+                    <div class="khc-form-item">
+                        <lightning-input-field field-name="HealthCloudGA__Notes__c">
+                        </lightning-input-field>
+                    </div>
+                    <div class="slds-hide">
+                        <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId}>
+                        </lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-m-top_large">
+                    <button
+                            class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button"
+                            type="submit"
+                            onerror={handleInputError}>
+                        {addNewConditionLabel}
+                    </button>
+                </div>
+            </lightning-record-edit-form>
+
+            <footer>
+                <div class="slds-m-top_large khc-align-center">
+                    <a onclick={showExistingCondition}>
+                        {cancelLabel}
+                    </a>
+                </div>
+            </footer>
+
+        </template>
+    </div>
+</template>

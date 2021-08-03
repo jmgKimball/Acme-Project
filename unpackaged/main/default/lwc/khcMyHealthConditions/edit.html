@@ -1,0 +1,177 @@
+<template>
+	<div class="khc-container khc-edit-condition">
+		<h1>{headerText}</h1>
+		<lightning-record-edit-form record-id={editId} object-api-name="HealthCloudGA__EhrCondition__c"
+		                            if:true={showBCEditHealthCondition}
+		                            onsubmit={onFormSubmit}
+		                            onload={onFormLoad}
+									onerror={handleInputError}
+		                            onsuccess={showExistingCondition}>
+			<lightning-messages></lightning-messages>
+			<div class="khc-form">
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Condition_Name__c" required="true">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Is_Recurrence__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Breast_Cancer_Type__c" data-name="breastCancerType" onchange={setOtherCancerTypeField}>
+					</lightning-input-field>
+				</div>
+
+				<template if:true={otherCancerTypeReadOnly}>
+					<div class="khc-form-item">
+						<lightning-input-field field-name="Breast_Cancer_Type_Other__c" disabled="true" class="khc-disabled-field" value="">
+						</lightning-input-field>
+					</div>
+				</template>
+
+				<template if:false={otherCancerTypeReadOnly}>
+					<div class="khc-form-item">
+						<lightning-input-field field-name="Breast_Cancer_Type_Other__c" required="true" data-name="breastCancerOtherType">
+						</lightning-input-field>
+					</div>
+				</template>
+
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Breast_Cancer_Sub_Type__c" data-name="breastCancerSubType" onchange={setOtherCancerTypeField}>
+					</lightning-input-field>
+				</div>
+
+				<template if:true={otherCancerSubTypeReadOnly}>
+					<div class="khc-form-item">
+						<lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" disabled="true" class="khc-disabled-field" value="">
+						</lightning-input-field>
+					</div>
+				</template>
+
+				<template if:false={otherCancerSubTypeReadOnly}>
+					<div class="khc-form-item">
+						<lightning-input-field field-name="Breast_Cancer_Sub_Type_Other__c" required="true" data-name="breastCancerOtherSubType">
+						</lightning-input-field>
+					</div>
+				</template>
+				<div class="khc-form-item">
+					<label class="slds-form-element__label">{whenWereYouDiagnosed}</label>
+					<lightning-input-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Stage_at_Diagnosis__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<label>{whenDidThisConditionEnd}</label>
+					<lightning-input-field field-name="Date_Abated__c" variant="label-hidden">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Treatment_Start_Date__c" data-name="treatmentStartDate">
+					</lightning-input-field>
+				</div>
+
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Treatment_End_Date__c" data-name="treatmentEndDate">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="HealthCloudGA__Notes__c">
+					</lightning-input-field>
+				</div>
+			</div>
+			<div class="slds-m-top_large">
+				<button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-update-button"
+				        type="submit" name="update">
+					{updateConditionLabel}
+				</button>
+			</div>
+			<footer>
+				<div class="slds-m-top_small khc-align-center">
+					<a name="remove"
+					        onclick={deleteRecord} data-recordid={editId}>
+						{removeLabel}
+					</a><br/><br/>
+					<a name="Close"
+					        onclick={openViewForm}>
+						{cancelLabel}
+					</a>
+				</div>
+			</footer>
+		</lightning-record-edit-form>
+
+		<lightning-record-edit-form record-id={editId} object-api-name="HealthCloudGA__EhrCondition__c"
+		                            if:true={showChronicEditHealthCondition}
+		                            onsubmit={onFormSubmit}
+		                            onload={onFormLoad}
+									onerror={handleInputError}
+		                            onsuccess={showExistingCondition}>
+			<lightning-messages></lightning-messages>
+			<div class="khc-form">
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Condition_Name__c" required="true">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Condition_Category__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Condition_Sub_Category__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<label>{whenWereYouDiagnosed}</label>
+					<lightning-input-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<label>{whenDidThisConditionEnd}</label>
+					<lightning-input-field field-name="Date_Abated__c" variant="label-hidden">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Treatment_Start_Date__c" data-name="treatmentStartDate">
+					</lightning-input-field>
+				</div>
+
+				<div class="khc-form-item">
+					<lightning-input-field field-name="Treatment_End_Date__c" data-name="treatmentEndDate">
+					</lightning-input-field>
+				</div>
+				<div class="khc-form-item">
+					<lightning-input-field field-name="HealthCloudGA__Notes__c">
+					</lightning-input-field>
+				</div>
+			</div>
+			<div class="slds-m-top_large">
+				<button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-update-button"
+				        type="submit" name="update">
+					{updateConditionLabel}
+				</button>
+			</div>
+			<footer>
+				<div class="slds-m-top_small khc-align-center">
+					<a name="remove"
+					        onclick={deleteRecord} data-recordid={editId}>
+						{removeLabel}
+					</a><br/><br/>
+					<a name="Close"
+					        onclick={openViewForm}>
+						{cancelLabel}
+					</a>
+				</div>
+			</footer>
+		</lightning-record-edit-form>
+	</div>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_Of_Poverty_Guideline__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field should be selected when a criteria as Income based, It denotes that the patient/applicant eligibility for care program only with in his/her income or household income below the poverty guidelines.</inlineHelpText>
+    <label>Income Guideline/Percent Of Poverty</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

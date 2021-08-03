@@ -1,0 +1,11 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+<!-- Component is initialized -->
+<aura:handler name="init" value="{!this}" action="{!c.init}" /> 
+    <div class="slds-docked_container_align-left">
+        <div class="slds-docked-modal_composer slds-grid slds-grid_vertical-align-left slds-grid_align-left slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
+            <div class="slds-docked-composer__body slds-scrollable">
+                <lightning:flow aura:id="flowData" />
+            </div>
+        </div>
+    </div>
+</aura:component>

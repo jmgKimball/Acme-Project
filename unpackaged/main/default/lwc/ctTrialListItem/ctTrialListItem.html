@@ -1,0 +1,55 @@
+<!-- Ct Trial List Item -->
+<template>
+    <div class="item-container slds-p-horizontal_large slds-p-bottom_x-small">
+        <div class="item-header">
+            <div class="item-controls slds-grid">
+                <div class="badge-container">
+                    <c-ct-phase-badge value={record.Phase__c}></c-ct-phase-badge>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-p-around_none slds-float_right">
+                        <c-ct-bookmark trial-id={record.Id} record-id={bookmarkId}></c-ct-bookmark>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-content">
+            <p class="item-title slds-line-clamp">
+                {title}
+            </p>
+            <div class="slds-grid slds-wrap slds-gutters_medium">
+                <div class="slds-col slds-size_3-of-3 slds-p-top_small">
+                    <span class="field-title">Condition</span>
+                    <p class="slds-truncate field-value">{joinedConditions}</p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-top_small">
+                    <span class="field-title">Id</span>
+                    <p class="field-value">{record.Name}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-top_small">
+                    <span class="field-title">Type</span>
+                    <p class="field-value">{record.Clinical_Trial_Type__c}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-top_small">
+                    <span class="field-title">Location</span>
+                    <p class="field-value" if:true={hasDistance}>{distance} mi.</p>
+                    <p class="field-value" if:false={hasDistance}>{locationList}</p>
+                </div>
+            </div>
+        </div>
+        <div class="item-footer" onclick={handleSelect}>
+            <div class="slds-text-align_center">
+                <span>View Details</span>
+                <span class="icon slds-p-left_medium">
+                    <span class="slds-icon_container slds-icon-utility-chevronright slds-current-color"
+                          title="Bookmark Trial">
+                        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                        </svg>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</template>

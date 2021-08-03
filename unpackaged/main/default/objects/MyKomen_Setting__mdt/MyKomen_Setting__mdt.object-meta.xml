@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Various settings related to the MyKomen community. These may vary by org or be the same in all environments</description>
+    <label>MyKomen Setting</label>
+    <pluralLabel>MyKomen Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

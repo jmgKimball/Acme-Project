@@ -1,0 +1,16 @@
+<template>
+  <div class="container" if:true={showErrorDetail}>
+    <header>
+      <c-mkh-logo></c-mkh-logo>
+      <h1>{loginErrorHeaderText}</h1>
+    </header>
+
+    <article>
+      <p>{loginErrorHeaderDetail}</p>
+      <br/>
+      <small>{errorCodeLabel}: {errorCode}</small>
+      <br/>
+      <small>{errorDescriptionLabel}: {errorDescription}</small>
+    </article>
+  </div>
+</template>

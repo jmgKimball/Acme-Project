@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Send Qualtrics Survey</fullName>
+        <actions>
+            <name>Stamp_Survey_Feedback_Recipient_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Survey_Send_Recipient_FName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Survey_Send_Recipient_LName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Stamp_Survey_Sent_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Send_Immediately</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Qualtrics_Survey_Message</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Komen_Survey_Feedback__c.Send_Immediately__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Komen_Survey_Feedback__c.Survey_Listener_URL__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Workflow to send outbound message for survey and stamp fields</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,137 @@
+/**
+ * Shared styles used by all custom MyKomen Community components
+ *
+ * @author Grant Adamson, Traction on Demand
+ * @date 2020-09-04
+ * @changeLog Nitin Chandwani, Added namespace, added as static resource
+ */
+
+.khc-container {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    color: #3B3B3B;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: -30px; /* Remove the extra padding at the top of standard community builder pages */
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.khc-container .container-external {
+    margin-top: 0;
+}
+
+.khc-container header, .khc-container footer {
+    margin-bottom: 30px;
+}
+
+.khc-container h1 {
+    font-size: 22px;
+}
+
+.khc-container h2 {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.khc-container article {
+    margin-bottom: 10px;
+}
+
+.khc-container a, .khc-container  a:active,.khc-container a:visited,.khc-container a:hover {
+    color: #B2005D !important; /* For whatever reason default link styling doesn't come through for external pages */
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+.khc-container small {
+    font-size: 13px;
+}
+
+.khc-container .data-header {
+    margin: 16px 0;
+    font-weight: 400;
+}
+
+.khc-container .data-header h2 {
+    display: inline-block;
+    width:90%;/*to allow spacing for controls on right*/
+}
+
+.khc-container .data-header a {
+    font-size: 13px;
+}
+
+.khc-container .data-header .controls {
+    font-weight: 400;
+    float: right;
+}
+
+.khc-container b {
+    font-weight: 400;
+}
+
+.khc-container button {
+    font-weight: 400;
+    width: 100%;
+    padding: 8px 16px;
+}
+
+.khc-container .slds-button-neutral {
+    background: none;
+    border-color: #B2005D;
+}
+
+.khc-container .slds-button-neutral.slds-is-pressed {
+    background: #B2005D;
+}
+
+.khc-container .error {
+    margin: 15px 0;
+    text-align: center;
+    color: #ff9e9e;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.khc-container .password-toggle {
+    float: right;
+    position: relative;
+    bottom: 40px;
+    font-size: 13px;
+}
+
+.khc-container .link-reset {
+    text-decoration: none !important;
+    color: #3B3B3B !important;
+}
+
+.khc-container .slds-input__icon .slds-button_icon{
+    padding: 0px !important;
+}
+
+.khc-container a[disabled]{
+    text-decoration: none !important; /*as it sytling is controlled by active class*/
+    pointer-events: none;
+    color: #3B3B3B !important;
+}
+
+.khc-checkbox{
+    height: 22px !important;
+    width: 22px !important;
+    margin: 2px 8px 2px 2px;
+}
+.khc-accordian{
+    cursor: pointer;
+}
+.khc-container .slds-accordion__section{
+    padding: 5px 0px!important;
+}
+.khc-container .slds-accordion__summary-action{
+    padding: 2px !important;
+}
+.khc-container .khc-a{
+    font-weight: bold;
+}

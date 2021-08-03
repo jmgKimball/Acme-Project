@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Intention_to_Act__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Pick one or more actions that the contact intends to complete.</inlineHelpText>
+    <label>Initial Intention to Act</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Use the information I received to make decisions</fullName>
+                <default>false</default>
+                <label>Use the information I received to make decisions</label>
+            </value>
+            <value>
+                <fullName>Use the information I received to talk to my doctor</fullName>
+                <default>false</default>
+                <label>Use the information I received to talk to my doctor</label>
+            </value>
+            <value>
+                <fullName>Share this information with family and/or friends</fullName>
+                <default>false</default>
+                <label>Share this information with family and/or friends</label>
+            </value>
+            <value>
+                <fullName>Gather appropriate medical records / information in order to understand diagnosis a little better or answer certain questions</fullName>
+                <default>false</default>
+                <label>Gather appropriate medical records / information in order to understand diagnosis a little better or answer certain questions</label>
+            </value>
+            <value>
+                <fullName>Contact a treatment assistance program</fullName>
+                <default>false</default>
+                <label>Contact a treatment assistance program</label>
+            </value>
+            <value>
+                <fullName>Make a mammogram appointment</fullName>
+                <default>false</default>
+                <label>Make a mammogram appointment</label>
+            </value>
+            <value>
+                <fullName>Call the helpline back at a later time</fullName>
+                <default>false</default>
+                <label>Call the helpline back at a later time</label>
+            </value>
+            <value>
+                <fullName>Visit komen.org for more information</fullName>
+                <default>false</default>
+                <label>Visit komen.org for more information</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

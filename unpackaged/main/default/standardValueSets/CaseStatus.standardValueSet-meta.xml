@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending Follow-Up</fullName>
+        <default>false</default>
+        <label>Pending Follow-Up</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting for Response</fullName>
+        <default>false</default>
+        <label>Waiting for Response</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+        <label>Resolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Case Lost to Follow-Up</fullName>
+        <default>false</default>
+        <label>Case Lost to Follow-Up</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Wrong Number/SPAM/Hang Up</fullName>
+        <default>false</default>
+        <label>Wrong Number/SPAM/Hang Up</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Operations Transfer</fullName>
+        <default>false</default>
+        <label>Operations Transfer</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Mission Transfer</fullName>
+        <default>false</default>
+        <label>Mission Transfer</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Media Transfer</fullName>
+        <default>false</default>
+        <label>Media Transfer</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+        <label>Duplicate</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Added / Updated</fullName>
+        <default>false</default>
+        <label>Added / Updated</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Change</fullName>
+        <default>false</default>
+        <label>No Change</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Added - Does not meet criteria</fullName>
+        <default>false</default>
+        <label>Not Added - Does not meet criteria</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cannot Reproduce</fullName>
+        <default>false</default>
+        <label>Cannot Reproduce</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Screening</fullName>
+        <default>false</default>
+        <label>Screening</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Diagnosis</fullName>
+        <default>false</default>
+        <label>Diagnosis</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Treatment</fullName>
+        <default>false</default>
+        <label>Treatment</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Survivorship</fullName>
+        <default>false</default>
+        <label>Survivorship</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>End Of Live / Palliative Care</fullName>
+        <default>false</default>
+        <label>End Of Live / Palliative Care</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Care Completed</fullName>
+        <default>false</default>
+        <label>Care Completed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Response From Patient</fullName>
+        <default>false</default>
+        <label>No Response From Patient</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Closed / Not Compliant</fullName>
+        <default>false</default>
+        <label>Patient Closed / Not Compliant</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Deceased</fullName>
+        <default>false</default>
+        <label>Patient Deceased</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>TAP Referral</fullName>
+        <default>false</default>
+        <label>TAP Referral</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pat Nav Referral</fullName>
+        <default>false</default>
+        <label>Pat Nav Referral</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>S/D Referral</fullName>
+        <default>false</default>
+        <label>S/D Referral</label>
+        <closed>true</closed>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Featured_End_Date_cannot_be_in_past</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( Featured__c ,
+            Featured_End_Date__c &lt;TODAY(),
+            NOT(ISBLANK(Featured_End_Date__c )),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;knowledge__kav&quot;
+        )</errorConditionFormula>
+    <errorMessage>If Knowledge Article is Featured, the featured end date cannot be in the past. Please select a future date or remove the date to save the record.</errorMessage>
+</ValidationRule>

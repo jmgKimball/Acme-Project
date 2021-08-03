@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Locking_For_Helpline</fullName>
+    <active>false</active>
+    <description>Validation Rule  to prevent the editing of the Application record by Helpline when the Application is in any status other than Draft or Needs information.</description>
+    <errorConditionFormula>
+        AND(
+            NOT( ISCHANGED( Is_Locked_Helpline__c ) ),
+            Is_Locked_Helpline__c ,
+            $Permission.Helpline_Application_Permission,
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>You do not have permission to edit the application.</errorMessage>
+</ValidationRule>

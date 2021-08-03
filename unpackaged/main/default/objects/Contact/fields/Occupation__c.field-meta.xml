@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Occupation__c</fullName>
+    <externalId>false</externalId>
+    <label>Occupation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Administrative and Clerical</fullName>
+                <default>false</default>
+                <label>Administrative and Clerical</label>
+            </value>
+            <value>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+                <label>Advertising</label>
+            </value>
+            <value>
+                <fullName>Aerospace and Defense</fullName>
+                <default>false</default>
+                <label>Aerospace and Defense</label>
+            </value>
+            <value>
+                <fullName>Agriculture, Forestry, and Fishing</fullName>
+                <default>false</default>
+                <label>Agriculture, Forestry, and Fishing</label>
+            </value>
+            <value>
+                <fullName>Architecture</fullName>
+                <default>false</default>
+                <label>Architecture</label>
+            </value>
+            <value>
+                <fullName>Arts and Entertainment</fullName>
+                <default>false</default>
+                <label>Arts and Entertainment</label>
+            </value>
+            <value>
+                <fullName>Aviation and Airlines</fullName>
+                <default>false</default>
+                <label>Aviation and Airlines</label>
+            </value>
+            <value>
+                <fullName>Banking and Financial Services</fullName>
+                <default>false</default>
+                <label>Banking and Financial Services</label>
+            </value>
+            <value>
+                <fullName>Business Owner</fullName>
+                <default>false</default>
+                <label>Business Owner</label>
+            </value>
+            <value>
+                <fullName>Clergy</fullName>
+                <default>false</default>
+                <label>Clergy</label>
+            </value>
+            <value>
+                <fullName>Construction and Landscaping</fullName>
+                <default>false</default>
+                <label>Construction and Landscaping</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Counseling</fullName>
+                <default>false</default>
+                <label>Counseling</label>
+            </value>
+            <value>
+                <fullName>Education and Training</fullName>
+                <default>false</default>
+                <label>Education and Training</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Environment</fullName>
+                <default>false</default>
+                <label>Environment</label>
+            </value>
+            <value>
+                <fullName>Executive/Management</fullName>
+                <default>false</default>
+                <label>Executive/Management</label>
+            </value>
+            <value>
+                <fullName>Facilities, Maintenance, and Repair</fullName>
+                <default>false</default>
+                <label>Facilities, Maintenance, and Repair</label>
+            </value>
+            <value>
+                <fullName>Fire, Law Enforcement, and Security</fullName>
+                <default>false</default>
+                <label>Fire, Law Enforcement, and Security</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Homemaking</fullName>
+                <default>false</default>
+                <label>Homemaking</label>
+            </value>
+            <value>
+                <fullName>Hotel, Gaming, Leisure, and Travel</fullName>
+                <default>false</default>
+                <label>Hotel, Gaming, Leisure, and Travel</label>
+            </value>
+            <value>
+                <fullName>Human Resources</fullName>
+                <default>false</default>
+                <label>Human Resources</label>
+            </value>
+            <value>
+                <fullName>Information Technology (IT)</fullName>
+                <default>false</default>
+                <label>Information Technology (IT)</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Legal and Paralegal</fullName>
+                <default>false</default>
+                <label>Legal and Paralegal</label>
+            </value>
+            <value>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+                <label>Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Media</fullName>
+                <default>false</default>
+                <label>Media</label>
+            </value>
+            <value>
+                <fullName>Military</fullName>
+                <default>false</default>
+                <label>Military</label>
+            </value>
+            <value>
+                <fullName>Nonprofit</fullName>
+                <default>false</default>
+                <label>Nonprofit</label>
+            </value>
+            <value>
+                <fullName>Personal Care and Service</fullName>
+                <default>false</default>
+                <label>Personal Care and Service</label>
+            </value>
+            <value>
+                <fullName>Photography</fullName>
+                <default>false</default>
+                <label>Photography</label>
+            </value>
+            <value>
+                <fullName>Politics</fullName>
+                <default>false</default>
+                <label>Politics</label>
+            </value>
+            <value>
+                <fullName>Property Management</fullName>
+                <default>false</default>
+                <label>Property Management</label>
+            </value>
+            <value>
+                <fullName>Psychology</fullName>
+                <default>false</default>
+                <label>Psychology</label>
+            </value>
+            <value>
+                <fullName>Publishing</fullName>
+                <default>false</default>
+                <label>Publishing</label>
+            </value>
+            <value>
+                <fullName>Real Estate, Rental, and Leasing</fullName>
+                <default>false</default>
+                <label>Real Estate, Rental, and Leasing</label>
+            </value>
+            <value>
+                <fullName>Restaurant and Food Services</fullName>
+                <default>false</default>
+                <label>Restaurant and Food Services</label>
+            </value>
+            <value>
+                <fullName>Retail/Wholesale</fullName>
+                <default>false</default>
+                <label>Retail/Wholesale</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Science and Biotechnology</fullName>
+                <default>false</default>
+                <label>Science and Biotechnology</label>
+            </value>
+            <value>
+                <fullName>Skilled Work and Trades</fullName>
+                <default>false</default>
+                <label>Skilled Work and Trades</label>
+            </value>
+            <value>
+                <fullName>Social Work</fullName>
+                <default>false</default>
+                <label>Social Work</label>
+            </value>
+            <value>
+                <fullName>Stock Broker/Investment Advisor</fullName>
+                <default>false</default>
+                <label>Stock Broker/Investment Advisor</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+                <label>Telecommunications</label>
+            </value>
+            <value>
+                <fullName>Transportation and Warehousing</fullName>
+                <default>false</default>
+                <label>Transportation and Warehousing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

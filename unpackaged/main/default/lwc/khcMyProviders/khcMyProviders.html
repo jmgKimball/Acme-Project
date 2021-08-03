@@ -1,0 +1,73 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div class="khc-container">
+        <template if:true={showBack}>
+            <a onclick={handleBackClick} class="slds-m-bottom_small khc-a" >&lt; {backLabel}</a>
+        </template>
+        <!-- My Providers-->
+        <template if:true={showMyProividers} >
+            <c-khc-back-navigation ></c-khc-back-navigation>
+            <div class="khc-current-providers" >
+                <h1 class="slds-p-vertical_small">{myCurrentProvidersLabel}</h1>
+                <ul>
+                    <template for:each={existingProviders} for:item="provider" if:true={showExistingProviders}>
+                        <li key={provider.Id}>
+                            <lightning-accordion  class="accordion-section" allow-multiple-sections-open= true>
+                                <lightning-accordion-section name={provider.Provider__r.Name} label={provider.Provider__r.Name}>
+                                    <lightning-tile>
+                                        <div class="slds-p-bottom_small">
+                                            <p class="slds-truncate">{provider.Provider__r.MailingStreet}</p>
+                                            <p class="slds-truncate">{provider.Provider__r.MailingCity}</p>
+                                            <p class="slds-truncate">{provider.Provider__r.MailingStateCode}</p>
+                                            <p class="slds-truncate">{provider.Provider__r.MailingPostalCode}</p>
+                                        </div>
+                                        <lightning-button variant="brand" label="Set Inactive"
+                                            onclick={handleSetInactiveClick} data-id={provider.Id}></lightning-button>
+                                    </lightning-tile>
+                                </lightning-accordion-section>
+                            </lightning-accordion>
+                        </li>
+                    </template>
+                    <template if:false={showExistingProviders}>
+                        <li class="slds-p-vertical_small">{noExistingProvidersLabel}</li>
+                    </template>
+                </ul>
+            </div>
+            <div class="khc-current-providers">
+                <h1 class="slds-p-vertical_small">{myPastProvidersLabel}</h1>
+                <ul>
+                    <template for:each={pastProviders} for:item="provider"  if:true={showPastProviders}>
+                        <li key={provider.Id}>
+                            <lightning-accordion  class="accordion-section" allow-multiple-sections-open= true>
+                                <lightning-accordion-section name={provider.Provider__r.Name} label={provider.Provider__r.Name}>
+                                    <lightning-tile>
+                                        <p class="slds-truncate">{provider.Provider__r.MailingStreet}</p>
+                                        <p class="slds-truncate">{provider.Provider__r.MailingCity}</p>
+                                        <p class="slds-truncate">{provider.Provider__r.MailingStateCode}</p>
+                                        <p class="slds-truncate">{provider.Provider__r.MailingPostalCode}</p>
+                                    </lightning-tile>
+                                </lightning-accordion-section>
+                            </lightning-accordion>
+                        </li>
+                    </template>
+                    <template if:false={showPastProviders}>
+                        <li class="slds-p-vertical_small">{noExistingProvidersLabel}</li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <!-- Add new Providers -->
+        
+        <template if:false={showAddProvider}>
+	        <div class="slds-m-vertical_medium">
+	            <button onclick={handleAddProviderClick}
+	                class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button">
+	                {addNewProviderLabel}
+	            </button>
+	        </div>
+        </template>
+        <c-khc-search-provider if:true={showAddProvider} existing-providers={existingProviders} past-providers={pastProviders} onbackbuttonevent={handleHideBackButton}></c-khc-search-provider>
+    </div>
+</template>

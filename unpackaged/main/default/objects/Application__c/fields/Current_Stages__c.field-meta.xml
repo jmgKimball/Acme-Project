@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Stages__c</fullName>
+    <description>Current Stage for Patient&apos;s Breast Cancer.</description>
+    <externalId>false</externalId>
+    <label>Current Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Stage-0/In Situ (DCIS)</fullName>
+                <default>false</default>
+                <label>Stage-0/In Situ (DCIS)</label>
+            </value>
+            <value>
+                <fullName>Stage-I</fullName>
+                <default>false</default>
+                <label>Stage-I</label>
+            </value>
+            <value>
+                <fullName>Stage-II</fullName>
+                <default>false</default>
+                <label>Stage-II</label>
+            </value>
+            <value>
+                <fullName>Stage-III</fullName>
+                <default>false</default>
+                <label>Stage-III</label>
+            </value>
+            <value>
+                <fullName>Stage-IV</fullName>
+                <default>false</default>
+                <label>Stage-IV</label>
+            </value>
+            <value>
+                <fullName>Undesignated</fullName>
+                <default>false</default>
+                <label>Undesignated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

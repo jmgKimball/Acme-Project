@@ -1,0 +1,105 @@
+<template>
+	<template if:true={showSpinner}>
+		<lightning-spinner alternative-text="Loading"></lightning-spinner>
+	</template>
+	<div if:true={showMedicationDetail}>
+		<div class="slds-align_absolute-center khc-h1" slot="title">
+			{sectionLabel}
+		</div>
+		<lightning-record-edit-form
+			record-id={recordId} onload={handleLoad} onsubmit={handleSubmit}
+			onsuccess={handleSuccess} onerror={handleError}
+			object-api-name="HealthCloudGA__EhrMedicationStatement__c">
+
+			<lightning-messages></lightning-messages>
+
+			<template if:true={isLoaded}>
+				<div class="khc-lookup-wrap" if:false={showAdditionalDetails}>
+
+					<c-khc-medication-lookup medication-record={medicationStatement.Medication__r}
+					                         onmedicationchange={handleMedicationChanged}></c-khc-medication-lookup>
+				</div>
+				<div class="khc-lookup-wrap" if:true={showAdditionalDetails}>
+
+					<c-khc-medication-lookup medication-record={medicationStatement.Medication__r}
+					                         onmedicationchange={handleMedicationChanged}></c-khc-medication-lookup>
+				</div>
+				<h2 class="slds-m-vertical_large khc-accordion" onclick={handleShowAdditionalDetails}>
+					{additionalDetailsLabel} <span if:true={showAdditionalDetails}>-</span><span
+					if:false={showAdditionalDetails}>+</span>
+				</h2>
+				<div if:true={showAdditionalDetails} class="khc-details">
+
+					<span>
+						<label for="First_Dose_Taken_When">{medicationStartDatetimelabel}</label>
+						<lightning-input-field id="First_Dose_Taken_When" field-name="First_Dose_Taken_When__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+					<span>
+						<div class="slds-form-element slds-m-bottom_small">
+							<div class="slds-form-element__control">
+								<div class="slds-checkbox">
+									<input type="checkbox" id="with-food" class="withFood"/>
+									<label class="slds-checkbox__label" for="with-food">
+										<span class="slds-checkbox_faux khc-checkbox"></span>
+										<span class="slds-form-element__label">{takenWithfoodLabel}</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</span>
+
+					<span>
+						<label for="Doses_in_Prescription">{numberOfDoseLabel}</label>
+						<lightning-input-field id="Doses_in_Prescription" field-name="Doses_in_Prescription__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+
+					<span>
+						<label for="Dosage_Value">{dosageValueLabel}</label>
+						<lightning-input-field id="Dosage_Value" field-name="Dosage_Value__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+					<span>
+						<label for="Dosage_Unit">{dosageUnitLabel}</label>
+						<lightning-input-field id="Dosage_Unit" field-name="Dosage_Unit__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+					<span>
+						<label for="Frequency_Value">{frequencyValueLabel}</label>
+						<lightning-input-field id="Frequency_Value" field-name="Frequency_Value__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+					<span>
+						<label for="Frequency_Unit">{frequencyUnitLabel}</label>
+						<lightning-input-field id="Frequency_Unit" field-name="Frequency_Unit__c"
+						                       variant="label-hidden"></lightning-input-field>
+					</span>
+
+				</div>
+
+				<div if:true={showAdditionalDetails} class="khc-notes">
+					<label for="Notes">{notesLabel}</label>
+					<lightning-input-field id="Notes"
+					                       field-name="Notes__c"
+					                       variant="label-hidden"></lightning-input-field>
+				</div>
+
+				<div class="slds-align_absolute-center">
+					<button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button">
+						{buttonLabel}
+					</button>
+				</div>
+				<div class="slds-align_absolute-center">
+					<a if:true={recordId} onclick={removeMedicationStatement} class="khc-remove-button">{removeMedicationLabel}</a>
+				</div>
+			</template>
+
+		</lightning-record-edit-form>
+	</div>
+</template>

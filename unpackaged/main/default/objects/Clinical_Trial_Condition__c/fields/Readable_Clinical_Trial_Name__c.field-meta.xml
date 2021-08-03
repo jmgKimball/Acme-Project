@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Readable_Clinical_Trial_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (  ISBLANK(Clinical_Trial__r.Readable_Title__c) ,  Clinical_Trial__r.Brief_Title__c , Clinical_Trial__r.Readable_Title__c)</formula>
+    <label>Readable Clinical Trial Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Federal_Bracket__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(PersonMailingState), 0, 
+			IF(Household_Size_Including_Patient__pc  &gt; 0 &amp;&amp; Household_Size_Including_Patient__pc  &lt; 9 &amp;&amp; PersonMailingState != &apos;Alaska&apos; &amp;&amp; PersonMailingState != &apos;Hawaii&apos;,
+CASE(Household_Size_Including_Patient__pc,
+1,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_1__c,
+2,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_2__c,
+3,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_3__c,
+4,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_4__c,
+5,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_5__c,
+6,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_6__c,
+7,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_7__c,
+8,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_8__c,
+0),
+IF(Household_Size_Including_Patient__pc  &gt; 0 &amp;&amp; Household_Size_Including_Patient__pc  &lt; 9 &amp;&amp; (PersonMailingState == &apos;Alaska&apos;),
+CASE(Household_Size_Including_Patient__pc ,
+1,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_1__c,
+2,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_2__c,
+3,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_3__c,
+4,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_4__c,
+5,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_5__c,
+6,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_6__c,
+7,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_7__c,
+8,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_8__c,
+0),
+IF(Household_Size_Including_Patient__pc  &gt; 0 &amp;&amp; Household_Size_Including_Patient__pc  &lt; 9 &amp;&amp; ( PersonMailingState == &apos;Hawaii&apos;),
+CASE(Household_Size_Including_Patient__pc ,
+1,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_1__c,
+2,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_2__c,
+3,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_3__c,
+4,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_4__c,
+5,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_5__c,
+6,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_6__c,
+7,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_7__c,
+8,$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_8__c,
+0),
+IF(Household_Size_Including_Patient__pc  &gt; 8 &amp;&amp; PersonMailingState != &apos;Alaska&apos; &amp;&amp; PersonMailingState != &apos;Hawaii&apos;,
+$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_8__c+($CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.X48_Over8__c*(Household_Size_Including_Patient__pc-8)),
+IF(Household_Size_Including_Patient__pc  &gt; 8 &amp;&amp; (PersonMailingState == &apos;Alaska&apos;),
+$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_8__c+($CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.AK_Over8__c*(Household_Size_Including_Patient__pc -8)),
+IF(Household_Size_Including_Patient__pc  &gt; 8 &amp;&amp; (PersonMailingState == &apos;Hawaii&apos;),
+$CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_8__c+($CustomMetadata.Federal_Poverty_Guidelines__mdt.FPL2021.HI_Over8__c*(Household_Size_Including_Patient__pc -8)),
+0
+)
+)
+)
+)
+)
+)
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Federal Bracket</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

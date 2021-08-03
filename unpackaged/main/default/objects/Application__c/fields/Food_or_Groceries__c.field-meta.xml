@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Food_or_Groceries__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether Applicant Needed Financial Support for Food or Groceries?</description>
+    <externalId>false</externalId>
+    <label>Food or Groceries</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

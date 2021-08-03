@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows Patient Navigators to edit their profiles</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Availability_for_Navigation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Patient Navigation Self Management</label>
+    <license>Salesforce</license>
+</PermissionSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Care_Program_Enrollee__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>holds the lookup to the Care Program Enrollee record that the Patient is currently enrolled in.  Filled in by a Flow based on create or edit of a Care Program Enrollee record</description>
+    <externalId>false</externalId>
+    <label>Care Program Enrollee</label>
+    <referenceTo>CareProgramEnrollee</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Patients</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

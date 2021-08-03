@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family_Care_childcare_eldercare_etc__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether Applicant Needed  Financial Support for Family Care?</description>
+    <externalId>false</externalId>
+    <label>Family Care (childcare, eldercare, etc.)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

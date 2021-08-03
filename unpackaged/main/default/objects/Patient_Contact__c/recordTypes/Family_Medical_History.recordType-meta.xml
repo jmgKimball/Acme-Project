@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family_Medical_History</fullName>
+    <active>true</active>
+    <description>Record type to store Family Medical History related to Patient</description>
+    <label>Family Medical History</label>
+    <picklistValues>
+        <picklist>Estimated_Age__c</picklist>
+        <values>
+            <fullName>20-29 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30-39 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40-49 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50-59 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Years or older</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Adolescence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Childhood</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Infancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newborn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prebirth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Estimated_Age_at_Death__c</picklist>
+        <values>
+            <fullName>20-29 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30-39 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40-49 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50-59 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Years or older</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Adolescence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Childhood</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Infancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newborn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prebirth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ethnicity__c</picklist>
+        <values>
+            <fullName>Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to Answer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gender Diverse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not To Say</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race_Picklist__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaiian or Other Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern and North African %28MENA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to Answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaiian or Other Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern and North African %28MENA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to Answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Related_through_family_member__c</picklist>
+        <values>
+            <fullName>Father</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Cousin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandchild</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandparent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Half Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mother</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niece%2FNephew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle%2FAunt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship__c</picklist>
+        <values>
+            <fullName>Father</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Cousin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandchild</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandparent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Half Sibling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mother</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niece%2FNephew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle%2FAunt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Was_this_person_born_a_twin_multiple__c</picklist>
+        <values>
+            <fullName>Not a Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C Identical Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C Not Identical Twin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

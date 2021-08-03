@@ -1,0 +1,108 @@
+<aura:component implements="forceCommunity:themeLayout" controller="MK_NavigationController" >
+	<aura:attribute name="search" type="Aura.Component[]"/>
+	<aura:attribute name="navBar" type="Aura.Component[]"/>
+	<aura:attribute name="profileMenu" type="Aura.Component[]"/>
+	<aura:attribute name="headlineMessage" type="Aura.Component[]"/>
+	<aura:attribute name="welcomeMessage" type="Aura.Component[]"/>
+	<aura:attribute name="sidebarFooter" type="Aura.Component[]"/>
+	<aura:attribute name="headerProfile" type="Aura.Component[]"/>
+	<aura:attribute name="isGuest" type="Boolean" default="true"/>
+	<aura:attribute name="myKomenURL" type="String"/>
+	<aura:attribute name="pageName" type="String"/>
+	<aura:attribute name="isMyKomenAuthenticated" type="Boolean" default="false"/>
+
+	<ltng:require styles="{!$Resource.MKH_Community}"/>
+
+	<lightning:navigation aura:id="navService"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<!-- DESKTOP HEADER -->
+
+	<div class="slds-container--fluid cHeaderLine mk-desktop-header slds-p-vertical_small">
+		<div class="slds-col slds-size_3-of-12">
+			<div class="logoContainer"></div>
+		</div>
+		<div class="slds-col slds-size_9-of-12">
+			<div class="slds-grid slds-grid_vertical-align-center">
+				<div class="slds-col cSearchPublisher">
+					<div class="mk-desktop-search">
+						{!v.search}
+					</div>
+				</div>
+				<div class="slds-col cWelcome">{!v.welcomeMessage}</div>
+				<div class="slds-col cNotifications slds-no-flex">
+					<forceCommunity:notifications/>
+				</div>
+				<div class="slds-col cProfileCon">
+					
+					<aura:if isTrue="{!v.isGuest}">
+						<div class="mk-guest-header-links">
+							<aura:if isTrue="{!v.isMyKomenAuthenticated}">
+								<a onclick="{!c.gotoOptIn}">Join MyKomen Health</a>
+								<aura:set attribute="else">
+									<a onclick="{!c.gotoLogin}">Login</a>
+									<a onclick="{!c.gotoRegistration}">Register</a>
+								</aura:set>
+							</aura:if>
+						</div>
+						<aura:set attribute="else">
+							{!v.profileMenu}
+						</aura:set>
+					</aura:if>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- MOBILE HEADER -->
+	<div class="slds-container--fluid mk-mobile-header slds-is-relative">
+		<div class="slds-grid slds-grid_vertical-align-center">
+			<div class="slds-col">
+				<div class="logoContainer"></div>
+			</div>
+			<div class="slds-col slds-no-flex">
+				<div class="slds-grid slds-p-horizontal_medium">
+					<forceCommunity:notifications/>
+				</div>
+			</div>
+			<div class="slds-col slds-no-flex">
+				<div class="slds-grid slds-p-horizontal_medium">
+					<c:mkNavigation mode="Mobile"/>
+				</div>
+			</div>
+		</div>
+		<div class="slds-grid slds-p-horizontal_medium">
+			<div class="slds-col">{!v.search}</div>
+		</div>
+	</div>
+
+
+	<!-- BODY -->
+	<div class="slds-container--fluid cMainBody" data-page="{!v.pageName}">
+		<!-- LEFT NAVBAR -->
+		<div class="slds-col cSideBar slds-size_2-of-12">
+			<!-- This is the first column on the left, holds the logo and the navigation. Only shown on interfaces > 600px -->
+			<c:mkNavigation mode="Desktop"/>
+		</div>
+
+
+		<!-- MAIN CONTENT -->
+		<div class="slds-col cMainContent slds-size_12-of-12"> <!-- This is the main 2/3rds of the page to the right -->
+
+			<!-- This is the Body of the page -->
+			<div class="slds-grid slds-grid--align-center cMainContentCenter" >
+				<div class="slds-col content mk-content-body">
+					{!v.body}
+				</div>
+			</div>
+			<!-- DESKTOP FOOTER -->
+			<div class="slds-container--fluid sidebarFooter">
+				{!v.sidebarFooter}
+			</div>
+		</div>
+	</div>
+
+
+</aura:component>

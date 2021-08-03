@@ -1,0 +1,3116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>APPOINTMENTS</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APPOINTMENTS</shortDescription>
+        <value>APPOINTMENTS</value>
+    </labels>
+    <labels>
+        <fullName>A_Dismissal_Reason_Must_Be_Selected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>A Dismissal Reason Must Be Selected</shortDescription>
+        <value>A Dismissal Reason Must Be Selected</value>
+    </labels>
+    <labels>
+        <fullName>About_the_person_submitting_the_request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>About the person submitting the request</shortDescription>
+        <value>About the person submitting the request</value>
+    </labels>
+    <labels>
+        <fullName>About_the_recommended_resource</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>About the recommended resource</shortDescription>
+        <value>About the recommended resource</value>
+    </labels>
+    <labels>
+        <fullName>Account_updated</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account updated</shortDescription>
+        <value>Account updated</value>
+    </labels>
+    <labels>
+        <fullName>Add_Another_Family_Member</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Another Family Member</shortDescription>
+        <value>Add another family member</value>
+    </labels>
+    <labels>
+        <fullName>Add_Care_Providers</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Care Providers</shortDescription>
+        <value>Add Care Providers</value>
+    </labels>
+    <labels>
+        <fullName>Add_Caregiver_Supporter</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Caregiver/Supporter</shortDescription>
+        <value>Add Caregiver/Supporter</value>
+    </labels>
+    <labels>
+        <fullName>Add_Family_Member</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Family Member</shortDescription>
+        <value>Add family member</value>
+    </labels>
+    <labels>
+        <fullName>Add_Health_Conditions_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Health Conditions Text</shortDescription>
+        <value>Add a Health Condition</value>
+    </labels>
+    <labels>
+        <fullName>Add_Medications</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Medications</shortDescription>
+        <value>Add Medications</value>
+    </labels>
+    <labels>
+        <fullName>Add_New</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add New Family Member</shortDescription>
+        <value>Add New Family Member</value>
+    </labels>
+    <labels>
+        <fullName>Add_New_Contact</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add New Contact</shortDescription>
+        <value>Add New Contact</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_Health_Issue</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a Health Issue</shortDescription>
+        <value>Add a health issue</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_coverage</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a coverage</shortDescription>
+        <value>Add New Provider</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_new_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a new Medication</shortDescription>
+        <value>Add a new Medication</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_new_immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a new immunization</shortDescription>
+        <value>Add a new immunization</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_new_insurance_coverage</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a new insurance coverage</shortDescription>
+        <value>Add a new insurance coverage</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_new_procedure</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a new procedure</shortDescription>
+        <value>Add a new procedure</value>
+    </labels>
+    <labels>
+        <fullName>Add_a_new_provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add a new provider</shortDescription>
+        <value>Add a new provider</value>
+    </labels>
+    <labels>
+        <fullName>Add_another_condition</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add another condition text</shortDescription>
+        <value>Add another condition</value>
+    </labels>
+    <labels>
+        <fullName>Add_another_procedure</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add another procedure text</shortDescription>
+        <value>Add another Procedure</value>
+    </labels>
+    <labels>
+        <fullName>Add_first_procedure</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add first procedure</shortDescription>
+        <value>Add first procedure</value>
+    </labels>
+    <labels>
+        <fullName>Add_my_family_History</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add my family History</shortDescription>
+        <value>Add my family History</value>
+    </labels>
+    <labels>
+        <fullName>Add_new_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add new Medication</shortDescription>
+        <value>Add New Medication</value>
+    </labels>
+    <labels>
+        <fullName>Add_new_condition</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add new condition on My Health Condition</shortDescription>
+        <value>Add New Condition</value>
+    </labels>
+    <labels>
+        <fullName>Add_new_health_condition</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add new health condition</shortDescription>
+        <value>Add New Health Condition</value>
+    </labels>
+    <labels>
+        <fullName>Add_new_insurance_provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add new insurance provider</shortDescription>
+        <value>Add New Insurance Provider</value>
+    </labels>
+    <labels>
+        <fullName>Add_new_provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add new provider</shortDescription>
+        <value>Add New Provider</value>
+    </labels>
+    <labels>
+        <fullName>Additional_Details</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ADDITIONAL DETAILS</shortDescription>
+        <value>ADDITIONAL DETAILS</value>
+    </labels>
+    <labels>
+        <fullName>Address_line_1</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Address line 1</shortDescription>
+        <value>Address line 1</value>
+    </labels>
+    <labels>
+        <fullName>Age_Age_at_death_Cause</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Age/Age at death - Cause</shortDescription>
+        <value>Age/Age at death - Cause</value>
+    </labels>
+    <labels>
+        <fullName>All_Appointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>All Appointments</shortDescription>
+        <value>All Appointments</value>
+    </labels>
+    <labels>
+        <fullName>Alphabetically_Ascending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Alphabetically Ascending</shortDescription>
+        <value>Alphabetically (Ascending)</value>
+    </labels>
+    <labels>
+        <fullName>Alphabetically_Descending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Alphabetically Descending</shortDescription>
+        <value>Alphabetically (Descending)</value>
+    </labels>
+    <labels>
+        <fullName>Application_Active_Breast_Cancer_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Physician has not confirmed that patient is in active breast cancer treatment</shortDescription>
+        <value>Patient is not in active Breast Cancer treatment</value>
+    </labels>
+    <labels>
+        <fullName>Application_Add_Button</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Add Button</shortDescription>
+        <value>Add Application</value>
+    </labels>
+    <labels>
+        <fullName>Application_Add_Header</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Add Header</shortDescription>
+        <value>Add Application</value>
+    </labels>
+    <labels>
+        <fullName>Application_Approved</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Approved</shortDescription>
+        <value>Approved</value>
+    </labels>
+    <labels>
+        <fullName>Application_Award_In_Last_12_Months_Yes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assistance provided in last 12 months</shortDescription>
+        <value>Assistance provided in last 12 months</value>
+    </labels>
+    <labels>
+        <fullName>Application_Date_Withdrawn</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Date Withdrawn</shortDescription>
+        <value>Date Withdrawn</value>
+    </labels>
+    <labels>
+        <fullName>Application_Error_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Error Msg</shortDescription>
+        <value>This application couldn&apos;t be saved.</value>
+    </labels>
+    <labels>
+        <fullName>Application_Field_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Field Description</shortDescription>
+        <value>Patient Navigation is currently open for Patients who have received an abnormal screening or are in active treatment. Please select the option(s) below to indicate your status.</value>
+    </labels>
+    <labels>
+        <fullName>Application_Header</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Header</shortDescription>
+        <value>Patient Navigation Applications</value>
+    </labels>
+    <labels>
+        <fullName>Application_In_Processing</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application In Processing</shortDescription>
+        <value>In Process</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Details_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Income details are not available</shortDescription>
+        <value>Income details not provided</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Guideline</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Income Guideline</shortDescription>
+        <value>Incomplete Application</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Guideline_for_Care_Program</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Income Guideline</shortDescription>
+        <value>Care Program Not Selected</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Verification_Invalid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application_Income_Verification_Invalid</shortDescription>
+        <value>Invalid income proof</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Verification_Not_Provided</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application_Income_Verification_Not_Provided</shortDescription>
+        <value>Income proof not provided</value>
+    </labels>
+    <labels>
+        <fullName>Application_Income_Within_Guidelines_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Patient household income is not withing income guidelines</shortDescription>
+        <value>Income not withing income guidelines</value>
+    </labels>
+    <labels>
+        <fullName>Application_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No as a Value</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>Application_No_Entry</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application No Entry</shortDescription>
+        <value>No Application has been requested.</value>
+    </labels>
+    <labels>
+        <fullName>Application_No_Income_Guideline_On_Care_Program</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Income Guideline</shortDescription>
+        <value>No Income Guidelines On Care Program</value>
+    </labels>
+    <labels>
+        <fullName>Application_Not_Approved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Not Approved</shortDescription>
+        <value>Not Approved</value>
+    </labels>
+    <labels>
+        <fullName>Application_Save</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Save</shortDescription>
+        <value>Save Application</value>
+    </labels>
+    <labels>
+        <fullName>Application_Status_Approved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Approved Application</shortDescription>
+        <value>Approved</value>
+    </labels>
+    <labels>
+        <fullName>Application_Status_Rejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rejected  Status</shortDescription>
+        <value>Rejected</value>
+    </labels>
+    <labels>
+        <fullName>Application_Success_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Success Msg</shortDescription>
+        <value>Application saved successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Application_US_Resident_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Not a US resident</shortDescription>
+        <value>Not a US resident</value>
+    </labels>
+    <labels>
+        <fullName>Application_Unapproved</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Unapproved</shortDescription>
+        <value>Application Unapproved</value>
+    </labels>
+    <labels>
+        <fullName>Application_Value_Unknown</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Value Unknown</shortDescription>
+        <value>Unknown</value>
+    </labels>
+    <labels>
+        <fullName>Application_Withdraw_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Withdraw Button</shortDescription>
+        <value>Withdraw</value>
+    </labels>
+    <labels>
+        <fullName>Application_Withdraw_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Withdraw Msg</shortDescription>
+        <value>Application was withdrawn successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Application_Withdrawn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Withdrawn</shortDescription>
+        <value>Withdrawn</value>
+    </labels>
+    <labels>
+        <fullName>Application_Yes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Yes value</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_Created</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Appointment Created</shortDescription>
+        <value>Appointment Created</value>
+    </labels>
+    <labels>
+        <fullName>Are_you_Insured</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you Insured?</shortDescription>
+        <value>Are you Insured?</value>
+    </labels>
+    <labels>
+        <fullName>Are_you_a_Caregiver_or_Co_Survivor</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you a Caregiver or Co-Survivor?</shortDescription>
+        <value>Are you a Caregiver or Co-Survivor?</value>
+    </labels>
+    <labels>
+        <fullName>Are_you_a_twin_multiple</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you a twin/multiple?</shortDescription>
+        <value>Are you a twin/multiple?</value>
+    </labels>
+    <labels>
+        <fullName>Are_you_an_Organ_Donor</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you an Organ Donor?</shortDescription>
+        <value>Are you an Organ Donor?</value>
+    </labels>
+    <labels>
+        <fullName>Attended</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attended</shortDescription>
+        <value>Attended</value>
+    </labels>
+    <labels>
+        <fullName>Back</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_My_Account</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to My Account</shortDescription>
+        <value>&lt; Back to My Account</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_Resource_Library</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to Resource Library</shortDescription>
+        <value>Back to Resource Library</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_results</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to results</shortDescription>
+        <value>Back to results</value>
+    </labels>
+    <labels>
+        <fullName>Blood_Type</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Blood Type</shortDescription>
+        <value>Blood Type</value>
+    </labels>
+    <labels>
+        <fullName>CARE_GIVER_SUPPORTERS</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CARE GIVERS/SUPPORTERS</shortDescription>
+        <value>CARE GIVERS/SUPPORTERS</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Care_Providers_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Care Providers Description</shortDescription>
+        <value>Add contact information for your care providers, such as your doctors, specialists, etc.</value>
+    </labels>
+    <labels>
+        <fullName>Caregiver_or_Co_Survivor</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Caregiver or Co-Survivor</shortDescription>
+        <value>Caregiver or Co-Survivor</value>
+    </labels>
+    <labels>
+        <fullName>Caregivers_Supporters</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Caregivers/Supporters</shortDescription>
+        <value>Caregivers/Supporters</value>
+    </labels>
+    <labels>
+        <fullName>Case_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Case_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_Number</shortDescription>
+        <value>Case #</value>
+    </labels>
+    <labels>
+        <fullName>Case_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_Owner</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>Case_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Case_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>City</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>Close</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Comments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comments</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>Condition_Summary</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Condition Summary</shortDescription>
+        <value>CONDITION SUMMARY</value>
+    </labels>
+    <labels>
+        <fullName>Conditions_Diagnosed_Age</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conditions - Diagnosed Age</shortDescription>
+        <value>Conditions - Diagnosed Age</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Form_Email_Required</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Form Email Required</shortDescription>
+        <value>Email is required to submit your message.</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Form_Name_Required</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Form Name Required</shortDescription>
+        <value>Contact name is required to submit your message.</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Form_Success_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Form Success Msg</shortDescription>
+        <value>Thank you for contacting Komen. An expert will be in contact shortly</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Form_Success_Msg_Title</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Form Success Msg Title</shortDescription>
+        <value>Request Submitted</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Form_Topic_Required</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Form Topic Required</shortDescription>
+        <value>Topic is required to submit your message.</value>
+    </labels>
+    <labels>
+        <fullName>Continue</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Continue</shortDescription>
+        <value>Continue</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_delete_the_selected_image</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not delete the selected image</shortDescription>
+        <value>Could not delete the selected image</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_get_blood_types</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not get blood types</shortDescription>
+        <value>Could not get blood types</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_load_Profile_information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not load Profile information</shortDescription>
+        <value>Could not load Profile information</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_load_relationship_information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not load relationship information</shortDescription>
+        <value>Could not load relationship information.</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_refresh_Profile_information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not refresh Profile information</shortDescription>
+        <value>Could not refresh Profile information</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_retrieve_all_card_images</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not retrieve all card images</shortDescription>
+        <value>Could not retrieve all card images</value>
+    </labels>
+    <labels>
+        <fullName>Could_not_update_Profile_information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Could not update Profile information</shortDescription>
+        <value>Could not update Profile information</value>
+    </labels>
+    <labels>
+        <fullName>Coverage_for</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Coverage for</shortDescription>
+        <value>Coverage for</value>
+    </labels>
+    <labels>
+        <fullName>Create_My_Health_Profile</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create My Health Profile</shortDescription>
+        <value>Create My Health Profile</value>
+    </labels>
+    <labels>
+        <fullName>Create_New_Appointment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create New Appointment</shortDescription>
+        <value>Create New Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Create_an_Appointment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create an Appointment</shortDescription>
+        <value>Create an Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Current_Page</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Current Page</shortDescription>
+        <value>Page {0} of N</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Date_Added_Ascending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date Added Ascending</shortDescription>
+        <value>Date Added (Ascending)</value>
+    </labels>
+    <labels>
+        <fullName>Date_Added_Descending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date Added Descending</shortDescription>
+        <value>Date Added (Descending)</value>
+    </labels>
+    <labels>
+        <fullName>Date_administered</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date administered</shortDescription>
+        <value>Date administered</value>
+    </labels>
+    <labels>
+        <fullName>Date_of_Assessment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date of Assessment</shortDescription>
+        <value>Date of Assessment</value>
+    </labels>
+    <labels>
+        <fullName>Date_of_Birth</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date of Birth</shortDescription>
+        <value>Date of Birth</value>
+    </labels>
+    <labels>
+        <fullName>Days_before_my_appointment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Days before my appointment</shortDescription>
+        <value>days before my appointment</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Dismiss</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dismiss</shortDescription>
+        <value>Dismiss</value>
+    </labels>
+    <labels>
+        <fullName>Dismiss_Resource_Recommendation</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dismiss Resource Recommendation</shortDescription>
+        <value>Dismiss Resource Recommendation</value>
+    </labels>
+    <labels>
+        <fullName>DoesNotHaveInsurance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DoesNotHaveInsurance</shortDescription>
+        <value>Currently, do you have insurance coverage?</value>
+    </labels>
+    <labels>
+        <fullName>Dosage_Unit</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dosage Unit</shortDescription>
+        <value>Dosage Unit</value>
+    </labels>
+    <labels>
+        <fullName>Dosage_Value</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dosage Value</shortDescription>
+        <value>Dosage Value</value>
+    </labels>
+    <labels>
+        <fullName>Download_My_Family_History</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Download My Family History</shortDescription>
+        <value>Download My Family History</value>
+    </labels>
+    <labels>
+        <fullName>Edit</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Appointment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Appointment</shortDescription>
+        <value>Edit Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Caregiver_Supporter</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Caregiver/Supporter</shortDescription>
+        <value>Edit Caregiver/Supporter</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Health_Condition</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Health Condition</shortDescription>
+        <value>Edit Health Condition</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Immunization</shortDescription>
+        <value>Edit immunization</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Medication</shortDescription>
+        <value>Edit Medication</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Procedure</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Procedure</shortDescription>
+        <value>Edit Procedure</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Search</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Search</shortDescription>
+        <value>Edit Search</value>
+    </labels>
+    <labels>
+        <fullName>Edit_insurance_coverage</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit insurance coverage</shortDescription>
+        <value>Edit insurance coverage</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Emergency_Contact</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Emergency Contact</shortDescription>
+        <value>Emergency Contact</value>
+    </labels>
+    <labels>
+        <fullName>Error</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>Error_Code</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Code</shortDescription>
+        <value>Error Code</value>
+    </labels>
+    <labels>
+        <fullName>Error_Deleting_File</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Deleting File</shortDescription>
+        <value>Error Deleting File</value>
+    </labels>
+    <labels>
+        <fullName>Error_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Description</shortDescription>
+        <value>Error Description</value>
+    </labels>
+    <labels>
+        <fullName>Error_Inserting_Insurance</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Inserting Insurance</shortDescription>
+        <value>Error while inserting an insurance, please make sure to provide Provider and Type fields</value>
+    </labels>
+    <labels>
+        <fullName>Error_Loading_Insurances</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Loading Insurances</shortDescription>
+        <value>Could not load insurances</value>
+    </labels>
+    <labels>
+        <fullName>Error_Loading_Pciklist_values</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Loading Pciklist values</shortDescription>
+        <value>Could not load picklist values</value>
+    </labels>
+    <labels>
+        <fullName>Error_Saving_Insurance</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Saving Insurance</shortDescription>
+        <value>Error when saving an insurance</value>
+    </labels>
+    <labels>
+        <fullName>Error_deleting_insurance_image</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error deleting insurance image</shortDescription>
+        <value>Error deleting image.</value>
+    </labels>
+    <labels>
+        <fullName>Error_saving_Immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error saving Immunization</shortDescription>
+        <value>Error saving Immunization!</value>
+    </labels>
+    <labels>
+        <fullName>Error_saving_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error saving Medication</shortDescription>
+        <value>Error saving Medication!</value>
+    </labels>
+    <labels>
+        <fullName>Export_Medical_History_Main_Heading</fullName>
+        <categories>KHC,Export Medical History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The text following the patient&apos;s name in the first heading</shortDescription>
+        <value>Medical History</value>
+    </labels>
+    <labels>
+        <fullName>Export_Medical_History_Personal_Info_Header</fullName>
+        <categories>KHC,Export Medical History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The heading for the personal information section in Export Family History</shortDescription>
+        <value>Personal Information</value>
+    </labels>
+    <labels>
+        <fullName>Export_Medical_History_Title</fullName>
+        <categories>KHC,Export Medical History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title for Export Medical History Page</shortDescription>
+        <value>Export Medical History</value>
+    </labels>
+    <labels>
+        <fullName>FILTERS</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FILTERS</shortDescription>
+        <value>FILTERS</value>
+    </labels>
+    <labels>
+        <fullName>FIND_RESOURCES</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FIND RESOURCES</shortDescription>
+        <value>FIND RESOURCES</value>
+    </labels>
+    <labels>
+        <fullName>Family_Health_Add_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family Health Add Header Text</shortDescription>
+        <value>Add a new family member</value>
+    </labels>
+    <labels>
+        <fullName>Family_Health_Edit_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family Health Edit Header Text</shortDescription>
+        <value>Edit family member</value>
+    </labels>
+    <labels>
+        <fullName>Family_Health_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family Health Header Text</shortDescription>
+        <value>My Family Health History</value>
+    </labels>
+    <labels>
+        <fullName>Family_Health_History</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family Health History</shortDescription>
+        <value>Family Health History</value>
+    </labels>
+    <labels>
+        <fullName>Family_History_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family History Description</shortDescription>
+        <value>Knowing your family health history can help you reduce your risk of developing health problems.</value>
+    </labels>
+    <labels>
+        <fullName>Family_Information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Family Information</shortDescription>
+        <value>FAMILY INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Favorite</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Favorite</shortDescription>
+        <value>Favorite</value>
+    </labels>
+    <labels>
+        <fullName>Favorites</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Favorites</shortDescription>
+        <value>Favorites</value>
+    </labels>
+    <labels>
+        <fullName>Featured</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Featured</shortDescription>
+        <value>Featured</value>
+    </labels>
+    <labels>
+        <fullName>Feedback_Dislike</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feedback Dislike</shortDescription>
+        <value>I have feedback</value>
+    </labels>
+    <labels>
+        <fullName>Feedback_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feedback Header Text</shortDescription>
+        <value>How is your experience with MyKomen Health?</value>
+    </labels>
+    <labels>
+        <fullName>Feedback_Like</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feedback Like</shortDescription>
+        <value>I like it</value>
+    </labels>
+    <labels>
+        <fullName>Feedback_Missing_Error_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feedback Missing Error Text</shortDescription>
+        <value>Please make a selection</value>
+    </labels>
+    <labels>
+        <fullName>Feedback_Thank_You_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feedback Thank You Header Text</shortDescription>
+        <value>Thank you for submitting feedback about your MyKomen Health experience.</value>
+    </labels>
+    <labels>
+        <fullName>File_Deleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>File Deleted</shortDescription>
+        <value>File Deleted</value>
+    </labels>
+    <labels>
+        <fullName>First_Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>Frequency_Unit</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Frequency Unit</shortDescription>
+        <value>Frequency Unit</value>
+    </labels>
+    <labels>
+        <fullName>Frequency_Value</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Frequency Value</shortDescription>
+        <value>Frequency Value</value>
+    </labels>
+    <labels>
+        <fullName>Gender</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Gender</shortDescription>
+        <value>Gender</value>
+    </labels>
+    <labels>
+        <fullName>Health_History_Excerpt_PDF</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Health History Excerpt PDF</shortDescription>
+        <value>This form does not replace the health history form that you fill out at your health care provider’s office. But you can use it to get started on your family health history. Share the form with your provider — it gives helpful information about health conditions that may run in your family.</value>
+    </labels>
+    <labels>
+        <fullName>Health_Issue</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Health Issue</shortDescription>
+        <value>HEALTH CONDITIONS</value>
+    </labels>
+    <labels>
+        <fullName>Health_Issues_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Health Issues Header Text</shortDescription>
+        <value>Health Issues</value>
+    </labels>
+    <labels>
+        <fullName>Health_Profile_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Health Profile Description</shortDescription>
+        <value>To get started, set up your health profile.</value>
+    </labels>
+    <labels>
+        <fullName>Height</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Height</shortDescription>
+        <value>Height</value>
+    </labels>
+    <labels>
+        <fullName>Height_ft</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Height (ft)</shortDescription>
+        <value>Height (ft)</value>
+    </labels>
+    <labels>
+        <fullName>Height_in</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Height (in)</shortDescription>
+        <value>Height (in)</value>
+    </labels>
+    <labels>
+        <fullName>Immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Immunization</shortDescription>
+        <value>Immunization</value>
+    </labels>
+    <labels>
+        <fullName>Immunization_deleted</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Immunization deleted</shortDescription>
+        <value>Immunization deleted!</value>
+    </labels>
+    <labels>
+        <fullName>Immunization_saved</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Immunization saved</shortDescription>
+        <value>Immunization saved!</value>
+    </labels>
+    <labels>
+        <fullName>Insurance_Image_Close</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insurance Image Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Insurance_Image_Preview</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insurance Image Preview</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>Insurance_Image_deleted_msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insurance Image deleted msg</shortDescription>
+        <value>Image deleted successfully.</value>
+    </labels>
+    <labels>
+        <fullName>Insurance_Provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insurance Provider</shortDescription>
+        <value>Insurance Provider</value>
+    </labels>
+    <labels>
+        <fullName>Is_Past_Provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Is Past Provider</shortDescription>
+        <value>I&apos;m no longer working with this provider</value>
+    </labels>
+    <labels>
+        <fullName>Keeping_Profile_Updated</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Keeping Profile Updated</shortDescription>
+        <value>, by Keeping your Profile up to date, we will be able to show you content we think you may find relevant</value>
+    </labels>
+    <labels>
+        <fullName>Knowledge_Resource_Recommendation</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Knowledge Resource Recommendation</shortDescription>
+        <value>Knowledge Resource Recommendation</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Link_Address</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Address</shortDescription>
+        <value>Susan G. Komen is a 501(c)(3) non-profit organization.</value>
+    </labels>
+    <labels>
+        <fullName>Link_Contact_Us</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Contact Us</shortDescription>
+        <value>contactsupport</value>
+    </labels>
+    <labels>
+        <fullName>Link_Copyright</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Copyright</shortDescription>
+        <value>©2020 Susan G Komen</value>
+    </labels>
+    <labels>
+        <fullName>Link_EIN</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link EIN</shortDescription>
+        <value>EIN 75-1835298</value>
+    </labels>
+    <labels>
+        <fullName>Link_Facebook</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Facebook</shortDescription>
+        <value>https://www.facebook.com/SusanGKomen/</value>
+    </labels>
+    <labels>
+        <fullName>Link_Instagram</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Instagram</shortDescription>
+        <value>https://www.instagram.com/susangkomen/</value>
+    </labels>
+    <labels>
+        <fullName>Link_Komen</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Komen</shortDescription>
+        <value>https://www.komen.org/</value>
+    </labels>
+    <labels>
+        <fullName>Link_Privacy_Policy</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link  Privacy Policy</shortDescription>
+        <value>https://www.komen.org/AboutUs/PrivacyPolicy.html</value>
+    </labels>
+    <labels>
+        <fullName>Link_Terms_Of_Use</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Terms Of Use</shortDescription>
+        <value>https://www.komen.org/AboutUs/TermsOfUse.html</value>
+    </labels>
+    <labels>
+        <fullName>Link_Twitter</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Link Twitter</shortDescription>
+        <value>https://twitter.com/SusanGKomen</value>
+    </labels>
+    <labels>
+        <fullName>List_View</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>List View</shortDescription>
+        <value>List View</value>
+    </labels>
+    <labels>
+        <fullName>Location</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Location</shortDescription>
+        <value>Location</value>
+    </labels>
+    <labels>
+        <fullName>Log_In_or_Register</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Log In or Register</shortDescription>
+        <value>Log In or Register</value>
+    </labels>
+    <labels>
+        <fullName>Login</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login</shortDescription>
+        <value>Login</value>
+    </labels>
+    <labels>
+        <fullName>Login_Error_Header_Detail</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login Error Header Detail</shortDescription>
+        <value>An error occurred while trying to log you in.</value>
+    </labels>
+    <labels>
+        <fullName>Login_Error_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login Error Header Text</shortDescription>
+        <value>Unable to Log In to MyKomen Health Cloud</value>
+    </labels>
+    <labels>
+        <fullName>MY_FAVORITES</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MY FAVORITES</shortDescription>
+        <value>MY FAVORITES</value>
+    </labels>
+    <labels>
+        <fullName>MY_REFFERALS</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MY REFFERALS</shortDescription>
+        <value>MY REFFERALS</value>
+    </labels>
+    <labels>
+        <fullName>Manage_Contact_Information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage Contact Information</shortDescription>
+        <value>To manage your contact information please visit</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Allergies</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Allergies</shortDescription>
+        <value>Manage My Allergies</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Appointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Appointments</shortDescription>
+        <value>Manage My Appointments</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Caregivers_Supporters</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Caregivers/Supporters</shortDescription>
+        <value>Manage My Caregivers/Supporters</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Family_History</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Family History</shortDescription>
+        <value>Manage My Family History</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Health_Conditions</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Health Conditions</shortDescription>
+        <value>Manage My Health Conditions</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Health_Providers</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Health Providers</shortDescription>
+        <value>Manage My Health Providers</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Immunizations</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Immunizations</shortDescription>
+        <value>Manage My Immunizations</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Insurances</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Insurances</shortDescription>
+        <value>Manage My Insurances</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Medications</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Medications</shortDescription>
+        <value>Manage My Medications</value>
+    </labels>
+    <labels>
+        <fullName>Manage_My_Procedures</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manage My Procedures</shortDescription>
+        <value>Manage My Procedures</value>
+    </labels>
+    <labels>
+        <fullName>Map_View</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Map View</shortDescription>
+        <value>Map View</value>
+    </labels>
+    <labels>
+        <fullName>Matching_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Matching Medication</shortDescription>
+        <value>No matching medication found.</value>
+    </labels>
+    <labels>
+        <fullName>Medication_API_Endpoint</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication API Endpoint</shortDescription>
+        <value>https://dailymed.nlm.nih.gov</value>
+    </labels>
+    <labels>
+        <fullName>Medication_Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication Name</shortDescription>
+        <value>Medication Name</value>
+    </labels>
+    <labels>
+        <fullName>Medication_Name_is_required</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication Name is required</shortDescription>
+        <value>Medication Name is required!</value>
+    </labels>
+    <labels>
+        <fullName>Medication_Service_Error</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication Service Error</shortDescription>
+        <value>Error parsing the medication service response.</value>
+    </labels>
+    <labels>
+        <fullName>Medication_Service_Message</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication Service Message</shortDescription>
+        <value>Invalid service response.</value>
+    </labels>
+    <labels>
+        <fullName>Medication_Start_Date_Time</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication Start Date Time</shortDescription>
+        <value>What date/time did you start this medication?</value>
+    </labels>
+    <labels>
+        <fullName>Medication_deleted</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication deleted!</shortDescription>
+        <value>Medication deleted!</value>
+    </labels>
+    <labels>
+        <fullName>Medication_is_required</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication is required</shortDescription>
+        <value>Medication is required!</value>
+    </labels>
+    <labels>
+        <fullName>Medication_saved</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medication saved</shortDescription>
+        <value>Medication saved!</value>
+    </labels>
+    <labels>
+        <fullName>Medications</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medications</shortDescription>
+        <value>MEDICATIONS</value>
+    </labels>
+    <labels>
+        <fullName>Medications_Description</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medications Description</shortDescription>
+        <value>Add your medications.</value>
+    </labels>
+    <labels>
+        <fullName>Member_Number</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Member Number</shortDescription>
+        <value>Member Number</value>
+    </labels>
+    <labels>
+        <fullName>MyKomen_Opt_In_Page</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyKomen Opt In Page</shortDescription>
+        <value>HealthOptIn</value>
+    </labels>
+    <labels>
+        <fullName>MyKomen_Redirector_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyKomen Redirector Text</shortDescription>
+        <value>Launching MyKomen...</value>
+    </labels>
+    <labels>
+        <fullName>My_Allergies</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergies</shortDescription>
+        <value>ALLERGIES</value>
+    </labels>
+    <labels>
+        <fullName>My_Allergies_Header_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergies Header Text</shortDescription>
+        <value>My Allergies</value>
+    </labels>
+    <labels>
+		<fullName>My_Allergy_Edit_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergy Edit Header</shortDescription>
+        <value>Edit Allergy</value>
+    </labels>
+    <labels>
+        <fullName>My_Allergy_Error_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergy Error Msg</shortDescription>
+        <value>Error while saving Allergy.</value>
+    </labels>
+    <labels>
+        <fullName>My_Allergy_Update</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergy Update</shortDescription>
+        <value>Update Allergy</value>
+    </labels>
+    <labels>
+        <fullName>My_Allergy_deletion_msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Allergy deletion msg</shortDescription>
+        <value>Allergy successfully deleted.</value>
+    </labels>
+    <labels>
+        <fullName>My_Appointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Appointments</shortDescription>
+        <value>My Appointments</value>
+    </labels>
+    <labels>
+        <fullName>My_Current_Providers</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Current Providers</shortDescription>
+        <value>My Current Providers</value>
+    </labels>
+    <labels>
+        <fullName>My_Family_History</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Family History</shortDescription>
+        <value>FAMILY HISTORY</value>
+    </labels>
+    <labels>
+        <fullName>My_Health_Conditions</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Health Conditions</shortDescription>
+        <value>HEALTH ISSUES</value>
+    </labels>
+    <labels>
+        <fullName>My_Health_Conditions_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Health Conditions Header Text</shortDescription>
+        <value>My Health Conditions</value>
+    </labels>
+    <labels>
+        <fullName>My_Health_Profile</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Health Profile</shortDescription>
+        <value>My Health Profile</value>
+    </labels>
+    <labels>
+        <fullName>My_Health_Provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Health Provider</shortDescription>
+        <value>PROVIDERS</value>
+    </labels>
+    <labels>
+        <fullName>My_Health_Summary</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Health Summary</shortDescription>
+        <value>Health Profile</value>
+    </labels>
+    <labels>
+        <fullName>My_Immunizations</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Immunizations</shortDescription>
+        <value>IMMUNIZATIONS</value>
+    </labels>
+    <labels>
+        <fullName>My_Immunizations_Header_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Immunizations Header Text</shortDescription>
+        <value>My Immunizations</value>
+    </labels>
+    <labels>
+        <fullName>My_Insurance</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Insurance</shortDescription>
+        <value>My Insurance</value>
+    </labels>
+    <labels>
+        <fullName>My_Insurances</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Insurances</shortDescription>
+        <value>INSURANCE</value>
+    </labels>
+    <labels>
+        <fullName>My_Medications</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MY MEDICATIONS</shortDescription>
+        <value>MY MEDICATIONS</value>
+    </labels>
+    <labels>
+        <fullName>My_Past_Providers</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Past Providers</shortDescription>
+        <value>My Past Providers</value>
+    </labels>
+    <labels>
+        <fullName>My_Procedures</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Procedures</shortDescription>
+        <value>PROCEDURES</value>
+    </labels>
+    <labels>
+        <fullName>My_Profile</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Profile</shortDescription>
+        <value>My Profile</value>
+    </labels>
+    <labels>
+        <fullName>My_Surgeries_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My Surgeries Header Text</shortDescription>
+        <value>My Procedures</value>
+    </labels>
+    <labels>
+        <fullName>My_allergy_Save_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My allergy Save Msg</shortDescription>
+        <value>Allergy Saved.</value>
+    </labels>
+    <labels>
+        <fullName>My_allergy_add</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My allergy add</shortDescription>
+        <value>Add a new Allergy</value>
+    </labels>
+    <labels>
+        <fullName>My_allergy_no_allergy_found</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My allergy no allergy found</shortDescription>
+        <value>Keep a record of your allergies, including seasonal, food &amp; medications</value>
+    </labels>
+    <labels>
+        <fullName>My_allergy_remove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My allergy remove</shortDescription>
+        <value>Remove allergy</value>
+    </labels>
+    <labels>
+        <fullName>My_allergy_save</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>My allergy save</shortDescription>
+        <value>Add an Allergy</value>
+    </labels>
+    <labels>
+        <fullName>NPI_Registry_Endpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NPI Registry Endpoint</shortDescription>
+        <value>https://npiregistry.cms.hhs.gov</value>
+    </labels>
+    <labels>
+        <fullName>Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Name_Relationship</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name/Relationship</shortDescription>
+        <value>Name/Relationship</value>
+    </labels>
+    <labels>
+        <fullName>Next</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Next_Appointment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next Appointment</shortDescription>
+        <value>Your Next Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Next_Page</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next Page</shortDescription>
+        <value>Next Page</value>
+    </labels>
+    <labels>
+        <fullName>No_Articles_Have_Locations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Articles Have Locations</shortDescription>
+        <value>None of the returned articles have locations to display on the map</value>
+    </labels>
+    <labels>
+        <fullName>No_Caregivers_Supporters</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Caregivers/Supporters</shortDescription>
+        <value>There are no Caregivers/Supporters associated with the patient.</value>
+    </labels>
+    <labels>
+        <fullName>No_Existing_Providers</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Existing Providers</shortDescription>
+        <value>There are no existing providers</value>
+    </labels>
+    <labels>
+        <fullName>No_Favorite_Articles</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Favorite Articles</shortDescription>
+        <value>No Favorite Articles</value>
+    </labels>
+    <labels>
+        <fullName>No_Files_Uploaded</fullName>
+        <categories>Community</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Files Uploaded</shortDescription>
+        <value>No Files Uploaded Yet</value>
+    </labels>
+    <labels>
+        <fullName>No_Immunization_Found</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Immunization Found</shortDescription>
+        <value>You haven&apos;t added any immunization yet.</value>
+    </labels>
+    <labels>
+        <fullName>No_Insurance_Found</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Insurance Found</shortDescription>
+        <value>You haven&apos;t added any insurance coverage yet.</value>
+    </labels>
+    <labels>
+        <fullName>No_Knowledge_Articles_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Knowledge Articles Found</shortDescription>
+        <value>No articles found. If filters are applied, try refining your search.</value>
+    </labels>
+    <labels>
+        <fullName>No_Other_Recommendations</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Other Recommendations</shortDescription>
+        <value>No Other Recommendations</value>
+    </labels>
+    <labels>
+        <fullName>No_Procedure_text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Procedure text</shortDescription>
+        <value>No Procedure added yet, click the button below to add your first procedure.</value>
+    </labels>
+    <labels>
+        <fullName>No_Records_Found</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Records Found</shortDescription>
+        <value>No records found!</value>
+    </labels>
+    <labels>
+        <fullName>No_Referred_Articles</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Referred Articles</shortDescription>
+        <value>No Referred Articles</value>
+    </labels>
+    <labels>
+        <fullName>No_Upcoming_Appointments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Upcoming Appointments</shortDescription>
+        <value>No Upcoming Appointments!</value>
+    </labels>
+    <labels>
+        <fullName>No_health_condition_exist</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No health condition exist</shortDescription>
+        <value>No health condition exists presently, press the button to add a health condition.</value>
+    </labels>
+    <labels>
+        <fullName>Notes</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notes</shortDescription>
+        <value>Notes</value>
+    </labels>
+    <labels>
+        <fullName>Notes_Risk_Assessment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notes(Risk Assessment)</shortDescription>
+        <value>Notes(Risk Assessment)</value>
+    </labels>
+    <labels>
+        <fullName>Number_of_dose</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Number of dose</shortDescription>
+        <value>Number of doses in prescription</value>
+    </labels>
+    <labels>
+        <fullName>OTHER_RECOMMENDATIONS</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OTHER RECOMMENDATIONS</shortDescription>
+        <value>OTHER RECOMMENDATIONS</value>
+    </labels>
+    <labels>
+        <fullName>Onboarding_Steps_End</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Onboarding Steps End</shortDescription>
+        <value>easy steps.</value>
+    </labels>
+    <labels>
+        <fullName>Onboarding_Steps_Start</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Onboarding Steps Start</shortDescription>
+        <value>Set up your new MyKomen Health account in</value>
+    </labels>
+    <labels>
+        <fullName>Opt_In</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opt In</shortDescription>
+        <value>Join MyKomen Health</value>
+    </labels>
+    <labels>
+        <fullName>Opt_In_Detail_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opt In Detail Text</shortDescription>
+        <value>A MyKomen account is required for access to MyKomen Health.</value>
+    </labels>
+    <labels>
+        <fullName>Opt_In_Detail_Text_2</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opt In Detail Text 2</shortDescription>
+        <value>Already have a MyKomen Account?</value>
+    </labels>
+    <labels>
+        <fullName>Opt_In_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opt In Header Text</shortDescription>
+        <value>Welcome to MyKomen Health</value>
+    </labels>
+    <labels>
+        <fullName>Organ_Donor</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organ Donor</shortDescription>
+        <value>Organ Donor</value>
+    </labels>
+    <labels>
+        <fullName>Other_Picklist_Option</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Picklist Option</shortDescription>
+        <value>Other (please specify)</value>
+    </labels>
+    <labels>
+        <fullName>Other_Procedure_Option</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Procedure Option</shortDescription>
+        <value>Other (please specify in notes)</value>
+    </labels>
+    <labels>
+        <fullName>Past_Appointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Past Appointments</shortDescription>
+        <value>Past Appointments</value>
+    </labels>
+    <labels>
+        <fullName>Patient_Information</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Patient Information</shortDescription>
+        <value>PATIENT INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Portal_User_Default_Email_Encoding</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Portal User Default Email Encoding</shortDescription>
+        <value>UTF-8</value>
+    </labels>
+    <labels>
+        <fullName>Portal_User_Default_Locale</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Portal User Default Locale</shortDescription>
+        <value>en_US</value>
+    </labels>
+    <labels>
+        <fullName>Portal_User_Default_Timezone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Portal User Default Timezone</shortDescription>
+        <value>America/Los_Angeles</value>
+    </labels>
+    <labels>
+        <fullName>Portal_User_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Portal User Profile</shortDescription>
+        <value>Patient Community User</value>
+    </labels>
+    <labels>
+        <fullName>Portal_User_Username_Suffix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PortalUser Username Suffix</shortDescription>
+        <value>.mykomen</value>
+    </labels>
+    <labels>
+        <fullName>Previous</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>Previous_Page</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous Page</shortDescription>
+        <value>Previous Page</value>
+    </labels>
+    <labels>
+        <fullName>Printable_View</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Printable View</shortDescription>
+        <value>Printable View</value>
+    </labels>
+    <labels>
+        <fullName>Provider_Pagination_Result</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Provider Pagination Result</shortDescription>
+        <value>We&apos;ve found {0} results for &quot;{1} {2} {3}, {4}&quot;</value>
+    </labels>
+    <labels>
+        <fullName>Provider_Result</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Provider Result</shortDescription>
+        <value>We couldn&apos;t find any results for</value>
+    </labels>
+    <labels>
+        <fullName>Provider_Search_Validation_Message</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Provider Search Validation Message</shortDescription>
+        <value>If searching by State, please include at least one other field to search!</value>
+    </labels>
+    <labels>
+        <fullName>Read_Article</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read Article</shortDescription>
+        <value>Read Article</value>
+    </labels>
+    <labels>
+        <fullName>Recommend_a_Resource</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recommend a Resource</shortDescription>
+        <value>Recommend a Resource</value>
+    </labels>
+    <labels>
+        <fullName>Recommend_a_resource_message</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recommend a resource message</shortDescription>
+        <value>Do you know a business that should be included in this list? Send us a link and we&apos;ll review if they meet our criteria.</value>
+    </labels>
+    <labels>
+        <fullName>Recommendations_based_on_your</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recommendations based on your</shortDescription>
+        <value>Recommendations based on your</value>
+    </labels>
+    <labels>
+        <fullName>Recommended_Resource_Message</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recommended Resource Message</shortDescription>
+        <value>Recommended to you by patient services.</value>
+    </labels>
+    <labels>
+        <fullName>Record_updated_successfully</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record updated successfully</shortDescription>
+        <value>Record updated successfully</value>
+    </labels>
+    <labels>
+        <fullName>Referral_Dismissed</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Referral Dismissed</shortDescription>
+        <value>Referral Dismissed</value>
+    </labels>
+    <labels>
+        <fullName>Referred</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Referred</shortDescription>
+        <value>Referred</value>
+    </labels>
+    <labels>
+        <fullName>Register</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Register</shortDescription>
+        <value>Register</value>
+    </labels>
+    <labels>
+        <fullName>Relationship</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship</shortDescription>
+        <value>Relationship</value>
+    </labels>
+    <labels>
+        <fullName>Relationship_Page_Header_Detail</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship Page Header Detail</shortDescription>
+        <value>(select all that apply)</value>
+    </labels>
+    <labels>
+        <fullName>Relationship_Page_Header_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship Page Header Text</shortDescription>
+        <value>What is your relationship to breast cancer?</value>
+    </labels>
+    <labels>
+        <fullName>Relationship_to_Cancer_Patient</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship to Cancer Patient</shortDescription>
+        <value>Relationship to Cancer</value>
+    </labels>
+    <labels>
+        <fullName>Remind_Me_Later</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remind Me Later</shortDescription>
+        <value>Remind me Later</value>
+    </labels>
+    <labels>
+        <fullName>Remove</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>Remove_Family_Member</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove Family Member</shortDescription>
+        <value>Remove Family Member</value>
+    </labels>
+    <labels>
+        <fullName>Remove_Immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove Immunization</shortDescription>
+        <value>Remove Immunization</value>
+    </labels>
+    <labels>
+        <fullName>Remove_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove Medication</shortDescription>
+        <value>Remove Medication</value>
+    </labels>
+    <labels>
+        <fullName>Remove_Referral</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove Referral</shortDescription>
+        <value>Remove Referral</value>
+    </labels>
+    <labels>
+        <fullName>Remove_coverage</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove coverage</shortDescription>
+        <value>Remove Provider</value>
+    </labels>
+    <labels>
+        <fullName>Report_a_Resource_Issue</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Report a Resource Issue</shortDescription>
+        <value>Report a Resource Issue</value>
+    </labels>
+    <labels>
+        <fullName>Report_an_Issue</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Report an Issue</shortDescription>
+        <value>Report an Issue</value>
+    </labels>
+    <labels>
+        <fullName>Resource_Library</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resource Library</shortDescription>
+        <value>Resource Library</value>
+    </labels>
+    <labels>
+        <fullName>Resource_Repository_Register_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resource Repository Register Message</shortDescription>
+        <value>For the full Susan G Komen Health Cloud experience please Log In or create an Account</value>
+    </labels>
+    <labels>
+        <fullName>Resource_Topic</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resource Topic</shortDescription>
+        <value>Resource Topic</value>
+    </labels>
+    <labels>
+        <fullName>Resources</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resources</shortDescription>
+        <value>Resources</value>
+    </labels>
+    <labels>
+        <fullName>Resources_favorited_by_you</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resources favorited by you</shortDescription>
+        <value>Resources favorited by you</value>
+    </labels>
+    <labels>
+        <fullName>Results</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Results</shortDescription>
+        <value>Results</value>
+    </labels>
+    <labels>
+        <fullName>Risk_Level</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Risk Level</shortDescription>
+        <value>Risk Level</value>
+    </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Search</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Search_for_your_provider</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search for your provider</shortDescription>
+        <value>Search for your provider</value>
+    </labels>
+    <labels>
+        <fullName>Search_resource</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search resource</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Select</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>Select_Dismissal_Reason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Dismissal Reason</shortDescription>
+        <value>Select Dismissal Reason</value>
+    </labels>
+    <labels>
+        <fullName>Select_Topics</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Topics</shortDescription>
+        <value>Select Topics</value>
+    </labels>
+    <labels>
+        <fullName>Send_a_reminder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send a reminder</shortDescription>
+        <value>Send a reminder</value>
+    </labels>
+    <labels>
+        <fullName>State</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>Status</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Step</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Step</shortDescription>
+        <value>Step</value>
+    </labels>
+    <labels>
+        <fullName>Submit_Feedback</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit Feedback</shortDescription>
+        <value>Submit Feedback</value>
+    </labels>
+    <labels>
+        <fullName>Submit_a_Resource</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit a Resource</shortDescription>
+        <value>Submit a Resource</value>
+    </labels>
+    <labels>
+        <fullName>Subscriber_Date_of_Birth</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscriber Date of Birth</shortDescription>
+        <value>Subscriber Date of Birth</value>
+    </labels>
+    <labels>
+        <fullName>Subscriber_First_Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscriber First Name</shortDescription>
+        <value>Subscriber First Name</value>
+    </labels>
+    <labels>
+        <fullName>Komen_recommended_business_support_message</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Komen recommended business support message</shortDescription>
+        <value>Komen recommended businesses to support you, Featuring both local and national retailers, organizations &amp; more.</value>
+    </labels>
+    <labels>
+        <fullName>Subscriber_Last_Name</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscriber Last Name</shortDescription>
+        <value>Subscriber Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Subscriber_Number</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscriber Number</shortDescription>
+        <value>Subscriber Number</value>
+    </labels>
+    <labels>
+        <fullName>Success</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>Susan_G_Komen</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Susan G Komen</shortDescription>
+        <value>Susan G. Komen</value>
+    </labels>
+    <labels>
+        <fullName>Susan_G_Komen_Address</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Susan G Komen Address</shortDescription>
+        <value>13770 Noel Road, Suite 801889&lt;br/&gt;
+Dallas, TX 75380&lt;br/&gt;
+Tel: 1-877-GO-KOMEN&lt;br /&gt;
+Email: helpline@komen.org</value>
+    </labels>
+    <labels>
+        <fullName>Taken_with_food</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Taken with food</shortDescription>
+        <value>I take this medication with food</value>
+    </labels>
+    <labels>
+        <fullName>Taxonomies</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Taxonomies</shortDescription>
+        <value>Taxonomies</value>
+    </labels>
+    <labels>
+        <fullName>There_are_no_appointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>There are no appointments.</shortDescription>
+        <value>There are no appointments.</value>
+    </labels>
+    <labels>
+        <fullName>Time</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Time</shortDescription>
+        <value>Time</value>
+    </labels>
+    <labels>
+        <fullName>Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>Topic</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Topic</shortDescription>
+        <value>Topic</value>
+    </labels>
+    <labels>
+        <fullName>Twin_Multiple</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Twin/Multiple</shortDescription>
+        <value>Twin/Multiple</value>
+    </labels>
+    <labels>
+        <fullName>Type</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>Type_of_Assessment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type of Assessment</shortDescription>
+        <value>Type of Assessment</value>
+    </labels>
+    <labels>
+        <fullName>Unable_To_Load_MyKomen_URL_Error_Text</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unable To Load MyKomen URL Error Text</shortDescription>
+        <value>Unable to load MyKomen URL</value>
+    </labels>
+    <labels>
+        <fullName>Unable_To_Save_Feedback_Error_Msg</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unable To Save Feedback Error Msg</shortDescription>
+        <value>Unable to save feedback</value>
+    </labels>
+    <labels>
+        <fullName>Unexpected_Error</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unexpected Error</shortDescription>
+        <value>Some unexpected error</value>
+    </labels>
+    <labels>
+        <fullName>Upcoming_Apppointments</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upcoming Apppointments</shortDescription>
+        <value>Upcoming Apppointments</value>
+    </labels>
+    <labels>
+        <fullName>Update</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>Update_Appointment</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Appointment</shortDescription>
+        <value>Update Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Update_Caregiver_Supporter</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Caregiver/Supporter</shortDescription>
+        <value>Update Caregiver/Supporter</value>
+    </labels>
+    <labels>
+        <fullName>Update_Medication</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Medication</shortDescription>
+        <value>Update Medication</value>
+    </labels>
+    <labels>
+        <fullName>Update_Procedure</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Procedure</shortDescription>
+        <value>Update Procedure</value>
+    </labels>
+    <labels>
+        <fullName>Update_coverage</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update coverage</shortDescription>
+        <value>Update Provider</value>
+    </labels>
+    <labels>
+        <fullName>Update_health_condition</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update health condition on My Health Condition</shortDescription>
+        <value>Update health condition</value>
+    </labels>
+    <labels>
+        <fullName>Update_immunization</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update immunization</shortDescription>
+        <value>Update immunization</value>
+    </labels>
+    <labels>
+        <fullName>Upload_Insurance_Card_Front_and_Back</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upload Insurance Card Front and Back</shortDescription>
+        <value>Upload Insurance Card Front and Back</value>
+    </labels>
+    <labels>
+        <fullName>Upload_Insurance_Photo</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upload Insurance Photo</shortDescription>
+        <value>For your convenience, you can add photos of your insurance card for future reference with your appointments</value>
+    </labels>
+    <labels>
+        <fullName>Upload_Insurance_Photo_Unsaved</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upload Insurance Photo Unsaved</shortDescription>
+        <value>For your convenience, you can add photos of your insurance card for future reference with your appointments after saving the insurance.</value>
+    </labels>
+    <labels>
+        <fullName>View_All_Favorites</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View All Favorites</shortDescription>
+        <value>View All Favorites</value>
+    </labels>
+    <labels>
+        <fullName>View_All_Items</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View All Items</shortDescription>
+        <value>View All Items</value>
+    </labels>
+    <labels>
+        <fullName>View_All_Referrals</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View All Referrals</shortDescription>
+        <value>View All Referrals</value>
+    </labels>
+    <labels>
+        <fullName>Visit_Website</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Visit Website</shortDescription>
+        <value>Website</value>
+    </labels>
+    <labels>
+        <fullName>What_Breast_Health_Topics_Are_On_Your_Mind</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>What Breast Health Topics Are On Your Mind?</shortDescription>
+        <value>What Breast Health Topics Are On Your Mind?</value>
+    </labels>
+    <labels>
+        <fullName>What_is_your_Relationship_with_the_patient</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>What is your Relationship with the patient?</shortDescription>
+        <value>What is your relationship to cancer?</value>
+    </labels>
+    <labels>
+        <fullName>When_did_this_condition_end</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>When did this condition end</shortDescription>
+        <value>When did this condition end?</value>
+    </labels>
+    <labels>
+        <fullName>When_were_you_diagnosed</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>When were you diagnosed</shortDescription>
+        <value>When were you diagnosed?</value>
+    </labels>
+    <labels>
+        <fullName>Why_am_I_being_asked_this</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Why am I being asked this</shortDescription>
+        <value>Why am I being asked this?</value>
+    </labels>
+    <labels>
+        <fullName>error_toast</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>error_toast</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>files_saved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>files_saved</shortDescription>
+        <value>File(s) saved</value>
+    </labels>
+    <labels>
+        <fullName>of</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>of</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>or</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>or</shortDescription>
+        <value>or</value>
+    </labels>
+    <labels>
+        <fullName>profile</fullName>
+        <categories>MyKomen Health</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>profile</shortDescription>
+        <value>profile</value>
+    </labels>
+    <labels>
+        <fullName>select_files</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>select_files</shortDescription>
+        <value>Select one or multiple files</value>
+    </labels>
+    <labels>
+        <fullName>success_toast</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>success_toast</shortDescription>
+        <value>Success</value>
+    </labels>
+</CustomLabels>

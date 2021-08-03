@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Exclusion_Criteria</fullName>
+    <columns>NAME</columns>
+    <columns>NCTId__c</columns>
+    <columns>Brief_Title__c</columns>
+    <columns>Eligibility_Criteria__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Clinical_Trial_Status__c</field>
+        <operation>equals</operation>
+        <value>Not yet recruiting,Recruiting,Enrolling by invitation,&quot;Active, not recruiting&quot;</value>
+    </filters>
+    <label>All Exclusion Criteria</label>
+</ListView>

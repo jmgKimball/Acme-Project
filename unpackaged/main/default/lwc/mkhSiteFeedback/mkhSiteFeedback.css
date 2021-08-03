@@ -1,0 +1,65 @@
+/**
+ * 
+ * 
+ * @author Grant Adamson, Traction on Demand
+ * @author Christian Wico, Traction on Demand
+ * @date 2020-11-16
+ */
+
+.mk-feedback-link {
+	font-size: 13px;
+	text-decoration: underline;
+}
+
+.slds-modal__header, .slds-modal__content {
+	background-color: #EBE9E7;
+}
+
+.slds-modal__header {
+	height: 100px;
+	border-radius: 0;
+	position: relative;
+}
+
+.mk-brand-logo {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+	display: inline-block;
+	background-image: var(--lwc-brandLogoImage,url(/file-asset/MyKomenHealth_Logo2x?v=1));
+	width: 200px;
+	height: 54px;
+	background-size: cover;
+}
+
+.slds-modal__close {
+	top: 20px;
+	right: 20px;
+}
+
+.mk-feedback .slds-modal__content  {
+	border: 0;
+	box-shadow: none;
+	background-color: #EBE9E7;
+	border: 0;
+	border-radius: 0;
+}
+
+@media only screen and (max-width: 420px) {
+	.slds-modal {
+		background-color: #EBE9E7;
+	}
+
+	.slds-modal__container {
+		margin: 0;
+		padding-top: 5px;
+		justify-content: unset
+	}
+
+	.slds-modal__close {
+		top: 24px;
+		right: 20px;
+		transform: none;
+	}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Organ_Donor__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, indicates that the Contact is an Organ Donor</description>
+    <externalId>false</externalId>
+    <label>Organ Donor</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

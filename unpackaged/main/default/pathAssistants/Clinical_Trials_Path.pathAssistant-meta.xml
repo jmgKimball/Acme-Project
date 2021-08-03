@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Clinical_Trial__c</entityName>
+    <fieldName>Clinical_Trial_Status__c</fieldName>
+    <masterLabel>Clinical Trials Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial is not currently accepting applicants, but is under way.&lt;/p&gt;</info>
+        <picklistValueName>Active, not recruiting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial has completed.&lt;/p&gt;</info>
+        <picklistValueName>Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial is only accepting applicants by invite - this is not an open recruitment.&lt;/p&gt;</info>
+        <picklistValueName>Enrolling by invitation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Clinical_Trial_Status__c</fieldNames>
+        <fieldNames>Start_Date__c</fieldNames>
+        <fieldNames>Last_Update__c</fieldNames>
+        <info>&lt;p&gt;This Trial isn&amp;#39;t recruiting just yet - check back on this one if it is of interest, but applications are not currently being accepted.&lt;/p&gt;</info>
+        <picklistValueName>Not yet recruiting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Clinical_Trial_Status__c</fieldNames>
+        <fieldNames>Start_Date__c</fieldNames>
+        <fieldNames>Last_Update__c</fieldNames>
+        <info>&lt;p&gt;This Trial is recruiting!  Consider criteria and suitability, get those applications in!&lt;/p&gt;</info>
+        <picklistValueName>Recruiting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial is no longer continuing as it has been suspended.&lt;/p&gt;</info>
+        <picklistValueName>Suspended</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial has been terminated.&lt;/p&gt;</info>
+        <picklistValueName>Terminated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;The current status of this Trial is not know.&lt;/p&gt;</info>
+        <picklistValueName>Unknown Status</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This Trial has been withdrawn.&lt;/p&gt;</info>
+        <picklistValueName>Withdrawn</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

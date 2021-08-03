@@ -1,0 +1,67 @@
+<!-- MyKomen Health Site Feedback -->
+<template>
+	<div>
+		<template if:false={isCompleted}>
+			<article>
+				<h1 class="slds-m-vertical_small slds-text-align_center">{feedbackHeaderText}</h1>
+
+				<template if:true={showError}>
+					<div
+						class="slds-box slds-theme_error slds-m-vertical_medium slds-p-horizontal_medium slds-box_x-small">
+						<p>{feedbackMissingErrorText}</p>
+					</div>
+				</template>
+
+				<div class="slds-grid slds-m-vertical_xx-large mk-actions">
+
+					<div class="slds-col slds-size_1-of-2">
+						<a class="slds-text-align_center" onclick={handleResponseChange} data-name="like"
+						   data-selected={isThumbsUpSelected}>
+							<i class="far fa-thumbs-up"></i>
+							<span>{likeLabel}</span>
+						</a>
+
+					</div>
+					<div class="slds-col slds-size_1-of-2">
+						<a class="slds-text-align_center" onclick={handleResponseChange} data-name="dislike"
+						   data-selected={isThumbsDownSelected}>
+							<i class="far fa-thumbs-down"></i>
+							<span>{dislikeLabel}</span>
+						</a>
+					</div>
+				</div>
+
+
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="mk-comments-text">{commentsLabel}</label>
+					<div class="slds-form-element__control">
+						<textarea max-length="500"
+						          name="mk-comments-text"
+						          class="mk-feedback-comments slds-textarea slds-m-bottom_x-large"
+						          onchange={handleCommentsChange}>{comments}</textarea>
+					</div>
+				</div>
+
+			</article>
+
+			<footer>
+				<button onclick={handleSubmit}
+				        class="mk-submit-button">{submitFeedbackLabel}
+				</button>
+
+			</footer>
+		</template>
+
+		<template if:true={isCompleted}>
+			<header class="slds-text-align_center slds-m-bottom_xx-large slds-m-top_large">
+				<h1>{feedbackThankYouHeaderText}</h1>
+			</header>
+
+			<footer>
+				<button class="mk-submit-button" onclick={handleClose}>{closeLabel}
+				</button>
+			</footer>
+		</template>
+
+	</div>
+</template>

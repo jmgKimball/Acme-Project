@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pat_Nav_Application_Screening_Treatment</fullName>
+    <active>false</active>
+    <description>Confirms that the Applicant meets the base requirements for Navigation.</description>
+    <errorConditionFormula>AND(
+RecordType.Name = &quot;Patient Navigation&quot;,
+				NOT( Abnormal_Screening_Result__c ),
+				NOT( In_Active_Treatment__c ),
+				NOT( Pre_Screening__c )
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;))</errorConditionFormula>
+    <errorMessage>Patient must either have an abnormal screening result, or be in active treatment to apply for Patient Navigation</errorMessage>
+</ValidationRule>

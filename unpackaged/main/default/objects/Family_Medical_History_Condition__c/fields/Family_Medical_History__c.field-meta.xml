@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family_Medical_History__c</fullName>
+    <externalId>false</externalId>
+    <label>Family Medical History</label>
+    <referenceTo>Patient_Contact__c</referenceTo>
+    <relationshipLabel>Family Medical History Conditions</relationshipLabel>
+    <relationshipName>Family_Medical_History_Conditions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

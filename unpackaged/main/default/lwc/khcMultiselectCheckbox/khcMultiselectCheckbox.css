@@ -1,0 +1,43 @@
+.khc-filter-list{
+    border: 1px solid #d4d4d4;
+}
+.khc-pointer{
+    cursor: pointer;
+}
+.khc-multiselect-dropdown-wrapper {
+    text-align: left;
+    min-width: 300px;
+}
+
+.khc-slds-pill{
+    cursor: pointer;
+    border-radius: 20px;
+    min-width: 90px;
+}
+.slds-pill__label{
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+.slds-pill-active {
+    color: #b2005d;
+    border-color: #b2005d;
+}
+
+/* Invisible backdrop to close dropdown when clicked */
+.khc-multiselect-dropdown-overlay {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    opacity:0;
+}
+
+/* Make sure the dropdown doesn't go off screen on mobile */
+@media only screen and (max-width: 768px) {
+    .khc-multiselect-dropdown-wrapper.slds-dropdown {
+        left: auto;
+        transform: translateX(0);
+    }
+}

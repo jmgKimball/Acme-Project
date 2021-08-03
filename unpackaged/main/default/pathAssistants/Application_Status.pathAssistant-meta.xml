@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Application__c</entityName>
+    <fieldName>Application_Status__c</fieldName>
+    <masterLabel>Application Status</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Rejection_Reason__c</fieldNames>
+        <fieldNames>Rejection_Other_Reason__c</fieldNames>
+        <picklistValueName>Rejected</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Patient_Navigation</recordTypeName>
+</PathAssistant>

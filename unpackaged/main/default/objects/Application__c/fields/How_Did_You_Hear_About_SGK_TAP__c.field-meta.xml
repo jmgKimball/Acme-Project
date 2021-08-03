@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_Did_You_Hear_About_SGK_TAP__c</fullName>
+    <externalId>false</externalId>
+    <label>How did you hear about the program?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hospital/Healthcare Provider (e.g. doctor, nurse, patient navigator, social worker)</fullName>
+                <default>false</default>
+                <label>Hospital/Healthcare Provider (e.g. doctor, nurse, patient navigator, social worker)</label>
+            </value>
+            <value>
+                <fullName>Internet/Radio/TV</fullName>
+                <default>false</default>
+                <label>Internet/Radio/TV</label>
+            </value>
+            <value>
+                <fullName>Local Komen Affiliate</fullName>
+                <default>false</default>
+                <label>Local Komen Affiliate</label>
+            </value>
+            <value>
+                <fullName>Family/Friends/Another Patient</fullName>
+                <default>false</default>
+                <label>Family/Friends/Another Patient</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Komen Breast Care Helpline (1-877 GO KOMEN)</fullName>
+                <default>false</default>
+                <label>Komen Breast Care Helpline (1-877 GO KOMEN)</label>
+            </value>
+            <value>
+                <fullName>Other (Please Specify)</fullName>
+                <default>false</default>
+                <label>Other (Please Specify)</label>
+            </value>
+            <value>
+                <fullName>Komen Breast Care Helpline (1-888-GO KOMEN)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen Breast Care Helpline (1-888-GO KOMEN)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Populate_Application_Lookup</name>
+        <label>Populate Application Lookup</label>
+        <locationX>314</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Application__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Object_ID__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Care_Program_Enrollee_Lookup</name>
+        <label>Populate Care Program Enrollee Lookup</label>
+        <locationX>578</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Care_Program_Enrollee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Object_ID__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Populate_Case_Lookup</name>
+        <label>Populate Case Lookup</label>
+        <locationX>50</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Object_ID__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Unset existing lookup fields to remove inconsistency.</description>
+        <name>Unset_Existing_Lookups</name>
+        <label>Unset Existing Lookups</label>
+        <locationX>226</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Case__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Application__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Object_Id_Type</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if object Id is 500 then populate Case lookup, else check for Application.</description>
+        <name>Check_Object_Id_Type</name>
+        <label>Check Object Id Type</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Object_ID__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>500</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Case_Lookup</targetReference>
+            </connector>
+            <label>Is Case</label>
+        </rules>
+        <rules>
+            <name>Is_Application</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Object_ID__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>a1B</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Application_Lookup</targetReference>
+            </connector>
+            <label>Is Application</label>
+        </rules>
+        <rules>
+            <name>Is_CareProgramEnrollee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Object_ID__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>0Ww</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Care_Program_Enrollee_Lookup</targetReference>
+            </connector>
+            <label>Is CareProgramEnrollee</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if record is Valid</description>
+        <name>Is_Valid</name>
+        <label>Is Valid</label>
+        <locationX>446</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Object_Id_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Object_ID__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Object_ID__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unset_Existing_Lookups</targetReference>
+            </connector>
+            <label>Is Object Id Changed</label>
+        </rules>
+        <rules>
+            <name>Is_New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Object_Id_Type</targetReference>
+            </connector>
+            <label>Is New</label>
+        </rules>
+    </decisions>
+    <description>Establish relationship on the basis of Object Id field.</description>
+    <interviewLabel>Before Save-Komen Feedback Survey(Object Link) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Save-Komen Feedback Survey(Object Link)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Valid</targetReference>
+        </connector>
+        <filters>
+            <field>Object_ID__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Komen_Survey_Feedback__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

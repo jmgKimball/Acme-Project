@@ -1,0 +1,33 @@
+/* Favourite Button */
+.khc-favorite {
+    padding: 0px !important;
+    color: #3B3B3B;
+    margin: 0px !important;
+    width: 62px !important;
+    font-weight: 500 !important;
+}
+.khc-favorite:focus {
+    box-shadow: none;
+}
+.khc-favorite[data-favorite="true"]:hover {
+    color: #3B3B3B!important;
+}
+.khc-favorite[data-favorite="false"]:hover {
+    color: #B2005D !important;
+}
+
+/* Page State */
+.khc-active{
+    color: #B2005D !important;
+}
+.khc-active .slds-icon{
+    fill: #B2005D !important;
+}
+details > summary {
+    padding: 4px;
+    background-color: none;
+    outline: none;
+    color: #B2005D !important; /* For whatever reason default link styling doesn't come through for external pages */
+    text-decoration: underline !important;
+    font-weight: bold;
+}

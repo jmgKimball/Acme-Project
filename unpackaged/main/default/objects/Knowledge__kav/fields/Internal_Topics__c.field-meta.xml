@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Topics__c</fullName>
+    <externalId>false</externalId>
+    <label>Internal Topics</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AAHEI</fullName>
+                <default>false</default>
+                <label>AAHEI</label>
+            </value>
+            <value>
+                <fullName>Clinical Trials</fullName>
+                <default>false</default>
+                <label>Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Employment</fullName>
+                <default>false</default>
+                <label>Employment</label>
+            </value>
+            <value>
+                <fullName>Health Education</fullName>
+                <default>false</default>
+                <label>Health Education</label>
+            </value>
+            <value>
+                <fullName>Newly Diagnosed – maybe an audience attribute</fullName>
+                <default>false</default>
+                <label>Newly Diagnosed – maybe an audience attribute</label>
+            </value>
+            <value>
+                <fullName>Prescription drug costs</fullName>
+                <default>false</default>
+                <label>Prescription drug costs</label>
+            </value>
+            <value>
+                <fullName>Symptom management</fullName>
+                <default>false</default>
+                <label>Symptom management</label>
+            </value>
+            <value>
+                <fullName>Treatment</fullName>
+                <default>false</default>
+                <label>Treatment</label>
+            </value>
+            <value>
+                <fullName>Cultural/ Religious/ Spiritual</fullName>
+                <default>false</default>
+                <label>Cultural/ Religious/ Spiritual</label>
+            </value>
+            <value>
+                <fullName>Medical Care</fullName>
+                <default>false</default>
+                <label>Medical Care</label>
+            </value>
+            <value>
+                <fullName>Economic stability</fullName>
+                <default>false</default>
+                <label>Economic stability</label>
+            </value>
+            <value>
+                <fullName>Support/ Patient tools</fullName>
+                <default>false</default>
+                <label>Support/ Patient tools</label>
+            </value>
+            <value>
+                <fullName>Transportation Assistance</fullName>
+                <default>false</default>
+                <label>Transportation Assistance</label>
+            </value>
+            <value>
+                <fullName>BCCP/NBCCEDP</fullName>
+                <default>false</default>
+                <label>BCCP/NBCCEDP</label>
+            </value>
+            <value>
+                <fullName>Patient Navigation Tools</fullName>
+                <default>false</default>
+                <label>Patient Navigation Tools</label>
+            </value>
+            <value>
+                <fullName>TAP Tools</fullName>
+                <default>false</default>
+                <label>TAP Tools</label>
+            </value>
+            <value>
+                <fullName>Helpline Tool</fullName>
+                <default>false</default>
+                <label>Helpline Tool</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

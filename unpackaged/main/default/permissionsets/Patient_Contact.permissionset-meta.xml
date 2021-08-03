@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Includes CRU for Contact and Account, CRUD for Relationship records Contact-Contact, Account Contact, and Account-Account.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Patient Contact</label>
+</PermissionSet>

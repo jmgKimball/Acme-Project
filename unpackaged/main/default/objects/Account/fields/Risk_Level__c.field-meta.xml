@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Level__c</fullName>
+    <description>Risk level to store recent risk assessment severity level</description>
+    <externalId>false</externalId>
+    <label>Risk Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High Risk</fullName>
+                <default>false</default>
+                <label>High Risk</label>
+            </value>
+            <value>
+                <fullName>Above Average Risk</fullName>
+                <default>false</default>
+                <label>Above Average Risk</label>
+            </value>
+            <value>
+                <fullName>Average Risk</fullName>
+                <default>false</default>
+                <label>Average Risk</label>
+            </value>
+            <value>
+                <fullName>Below Average Risk</fullName>
+                <default>false</default>
+                <label>Below Average Risk</label>
+            </value>
+            <value>
+                <fullName>Low Risk</fullName>
+                <default>false</default>
+                <label>Low Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provide_Cancelled_Reason</fullName>
+    <active>false</active>
+    <description>Please provide a reason why this case has been set to cancelled</description>
+    <errorConditionFormula>ISPICKVAL(Status,&quot;Cancelled&quot;) &amp;&amp;
+        ISPICKVAL(Cancelled_Reason__c, &quot;&quot;) &amp;&amp;
+        (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;
+        &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;case&quot;))</errorConditionFormula>
+    <errorMessage>Please provide a Cancelled Reason when setting a Case status to Cancelled</errorMessage>
+</ValidationRule>

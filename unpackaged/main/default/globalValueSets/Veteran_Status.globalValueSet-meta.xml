@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Never served in the military</fullName>
+        <default>false</default>
+        <label>Never served in the military</label>
+    </customValue>
+    <customValue>
+        <fullName>Only on active duty for training in the Reserves or National Guard</fullName>
+        <default>false</default>
+        <label>Only on active duty for training in the Reserves or National Guard</label>
+    </customValue>
+    <customValue>
+        <fullName>Now on active duty</fullName>
+        <default>false</default>
+        <label>Now on active duty</label>
+    </customValue>
+    <customValue>
+        <fullName>On active duty in the past, but not now</fullName>
+        <default>false</default>
+        <label>On active duty in the past, but not now</label>
+    </customValue>
+    <masterLabel>Veteran Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_Sub_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Condition Sub Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Condition_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Condition_Sub_Category</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Osteoporosis</controllingFieldValue>
+            <valueName>Osteoporosis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Anxiety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Attention Deficit Disorder-Hyperactivity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Autism</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Bipolar Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Dementia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Depression</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Eating Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Mental Disorder Unspecified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Obsessive Compulsive Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Panic Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Personality Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Post Traumatic Stress Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Schizophrenia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Social Phobia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Psychological Disorder</controllingFieldValue>
+            <valueName>Unknown Psychological Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Septicemia</controllingFieldValue>
+            <valueName>Septicemia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stroke/Brain Attack</controllingFieldValue>
+            <valueName>Stroke/Brain Attack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sudden Infant Death Syndrome</controllingFieldValue>
+            <valueName>Sudden Infant Death Syndrome</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unknown Disease</controllingFieldValue>
+            <valueName>Unknown Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Bone Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Brain Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Breast Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Colon Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Colorectal Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Esophageal Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Familial adnenomatous polyposis (FAP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Gastric Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Lynch Syndrome/Hereditary non-polyposis colorectal cancer (HNPCC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Kidney Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Leukemia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Liver Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Lung Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Muscle Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Other Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Ovarian Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Pancreatic Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Prostate Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Rectal Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Skin Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Thyroid Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Unknown Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancer</controllingFieldValue>
+            <valueName>Uterine Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clotting Disorder</controllingFieldValue>
+            <valueName>Clotting Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clotting Disorder</controllingFieldValue>
+            <valueName>Deep Vein Thrombosis (DVT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clotting Disorder</controllingFieldValue>
+            <valueName>Pulmonary Embolism</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Clotting Disorder</controllingFieldValue>
+            <valueName>Unknown Clotting Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dementia/Alzheimers</controllingFieldValue>
+            <valueName>Dementia/Alzheimer&apos;s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Gestational Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Impaired Fasting Glucose</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Impaired Glucose Tolerance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Insulin Resistance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Maturity Onset Diabetes mellitus in Young (MODY)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Pre-Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Type 1 Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Type 2 Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Diabetes</controllingFieldValue>
+            <valueName>Unknown Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Colon Polyp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Crohn&apos;s Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Gastrointestinal Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Irritable Bowel Syndrome</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Ulcerative Colitis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gastrointestinal Disorder</controllingFieldValue>
+            <valueName>Unknown Gastrointestinal Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Heart Disease</controllingFieldValue>
+            <valueName>Angina</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Heart Disease</controllingFieldValue>
+            <valueName>Coronary Artery Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Heart Disease</controllingFieldValue>
+            <valueName>Heart Attack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Heart Disease</controllingFieldValue>
+            <valueName>Heart Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Heart Disease</controllingFieldValue>
+            <valueName>Unknown Heart Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Cholesterol</controllingFieldValue>
+            <valueName>High Cholesterol</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hypertension</controllingFieldValue>
+            <valueName>Hypertension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Cystic Kidney Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Diabetic Kidney Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Kidney Disease Present from Birth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Kidney Nephrosis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Nephritis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Other Kidney Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kidney Disease</controllingFieldValue>
+            <valueName>Unknown Kidney Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Asthma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>COPD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Chronic Bronchitis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Chronic Lower Respiratory Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Emphysema</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Influenza/Pneumonia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Lung Disease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lung Disease</controllingFieldValue>
+            <valueName>Unknown Lung Disease</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

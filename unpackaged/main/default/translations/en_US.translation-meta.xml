@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label><!-- The text following the patient&apos;s name in the first heading --></label>
+        <name>Export_Medical_History_Main_Heading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The heading for the personal information section in Export Family History --></label>
+        <name>Export_Medical_History_Personal_Info_Header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Title for Export Medical History Page --></label>
+        <name>Export_Medical_History_Title</name>
+    </customLabels>
+</Translations>

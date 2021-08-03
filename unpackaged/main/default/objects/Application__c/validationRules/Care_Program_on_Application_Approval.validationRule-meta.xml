@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Care_Program_on_Application_Approval</fullName>
+    <active>true</active>
+    <description>On Application approval, Care Program should be mandatory.</description>
+    <errorConditionFormula>
+        AND(
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            OR(
+                AND(
+                    NOT(ISBLANK(Care_Program__c)),
+                    NOT(ISPICKVAL(Care_Program__r.Status,&apos;Active&apos;))
+                ),
+                AND(ISPICKVAL(Application_Status__c, &apos;Approved&apos;) ,
+                    ISBLANK(Care_Program__c)
+                )
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>Care Program is not selected or selected Care Program is not Active</errorMessage>
+</ValidationRule>

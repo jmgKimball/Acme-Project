@@ -1,0 +1,19 @@
+<template>
+	<div class="khc-container">
+		<c-khc-medication-list if:true={showMedicationList} onedit={handleEdit}></c-khc-medication-list>
+		<template if:true={showBack}>
+			<a onclick={handleBackClick} class="slds-m-bottom_small khc-a">&lt; {backLabel}</a>
+		</template>
+		<div class="slds-align_absolute-center slds-p-vertical_medium">
+			<button title={addANewMedication} onclick={handleAddMedicationClick}
+			        class="slds-button slds-button_brand slds-button_stretch khc-add-button"
+			        if:false={showAddMedication}>
+				{addANewMedication}
+			</button>
+		</div>
+		<template if:true={showAddMedication}>
+			<c-khc-add-medication show-medication-detail={showAddMedication}
+			                      record-id={selectedRecordId}></c-khc-add-medication>
+		</template>
+	</div>
+</template>

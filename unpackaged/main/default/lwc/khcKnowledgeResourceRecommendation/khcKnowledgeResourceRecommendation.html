@@ -1,0 +1,61 @@
+<template>
+        <!-- Spinner -->
+        <div class="slds-align_absolute-center khc-recommend-spinner" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+
+<!--         Header-->
+        <header class="slds-p-bottom_small khc-header">
+            <h1>{editHeaderText}</h1>
+        </header>
+        <article>
+            <!-- Create Knowledge Recommendation (Case) Form -->
+            <lightning-record-edit-form
+                    record-id=""
+                    onload={handleLoad}
+                    onsuccess={handleSuccess}
+                    onerror={handleError}
+                    onsubmit={handleSubmit}
+                    object-api-name="Case"
+                    density="comfy">
+
+                <lightning-messages></lightning-messages>
+                <lightning-input-field value={recordTypeId} field-name="RecordTypeId" class="slds-hide"></lightning-input-field>
+                <lightning-input-field id="Contact" field-name="ContactId" value={contactId} class="slds-hide"></lightning-input-field>
+                <lightning-input-field class="slds-hide" field-name="Type" value={caseType}></lightning-input-field>
+                <lightning-input-field class="slds-hide" field-name="Origin" value={caseOrigin}></lightning-input-field>
+
+                <lightning-layout multiple-rows="true" class="slds-m-around_medium">
+                    <label class="slds-p-vertical_small">{aboutThePersonSubmittingTheRequestLabel}</label>
+
+                    <lightning-layout-item size="12">
+                        <lightning-input-field id="Resource_Relationship__c" field-name="Resource_Relationship__c"></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12">
+                        <lightning-input-field id="Phone" field-name="Phone__c"></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <label class="slds-p-vertical_small">{aboutTheResourceLabel}</label>
+
+                    <lightning-layout-item size="12">
+                        <label class="slds-p-left_xx-small" for="subject">{nameLabel}</label>
+                        <lightning-input-field id="subject" field-name="Subject" variant="label-hidden"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-input-field id="External_Resource_Recommendation__c" field-name="External_Resource_Recommendation__c" required
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-input-field id="Description" field-name="Description" ></lightning-input-field>
+                    </lightning-layout-item>
+
+                </lightning-layout>
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" name="update" >
+                        {saveLabel}
+                    </button>
+                </div>
+            </lightning-record-edit-form>
+        </article>
+</template>

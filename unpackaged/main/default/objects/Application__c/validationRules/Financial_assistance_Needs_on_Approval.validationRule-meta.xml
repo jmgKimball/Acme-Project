@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financial_assistance_Needs_on_Approval</fullName>
+    <active>true</active>
+    <description>before selecting Stage to Approved for a Treatment Assistance Application, need to Select Financial Assistance Needs on Application.</description>
+    <errorConditionFormula>
+        AND(
+            ISPICKVAL(Application_Status__c , &quot;Approved&quot;),
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            (
+                ISPICKVAL(Financial_Assistance_Needs__c , &quot;&quot;)
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorDisplayField>Financial_Assistance_Needs__c</errorDisplayField>
+    <errorMessage>Please Select &quot;Financial Assistance Need&quot; to Approve this Application</errorMessage>
+</ValidationRule>

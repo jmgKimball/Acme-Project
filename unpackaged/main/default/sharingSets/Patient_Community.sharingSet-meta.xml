@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Account</object>
+        <objectField>Id</objectField>
+        <userField>Contact.Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Application__c</object>
+        <objectField>Patient__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Case</object>
+        <objectField>Account</objectField>
+        <userField>Contact.Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Clinical_Trial_Patient__c</object>
+        <objectField>Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__ContactContactRelation__c</object>
+        <objectField>HealthCloudGA__RelatedContact__c</objectField>
+        <userField>Contact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EHRProcedure__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrAllergyIntolerance__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrCondition__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrEncounter__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Contact.Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrImmunization__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrMedicationStatement__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>HealthCloudGA__EhrObservation__c</object>
+        <objectField>HealthCloudGA__Account__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Referral_Record__c</object>
+        <objectField>Patient__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <name>Patient Community</name>
+    <profiles>customer community login user</profiles>
+    <profiles>customer community user</profiles>
+    <profiles>patient community login</profiles>
+    <profiles>patient community user</profiles>
+</SharingSet>

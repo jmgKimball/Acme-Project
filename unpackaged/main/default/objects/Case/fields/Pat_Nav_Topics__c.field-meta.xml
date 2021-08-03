@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pat_Nav_Topics__c</fullName>
+    <externalId>false</externalId>
+    <label>Pat Nav Topics</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Breast Cancer Clinical Trials</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Breast Cancer Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Breast Health &amp; Breast Cancer</fullName>
+                <default>false</default>
+                <label>Breast Health &amp; Breast Cancer</label>
+            </value>
+            <value>
+                <fullName>Clinical Trials</fullName>
+                <default>false</default>
+                <label>Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Financial Assistance</fullName>
+                <default>false</default>
+                <label>Financial Assistance</label>
+            </value>
+            <value>
+                <fullName>General/Other</fullName>
+                <default>false</default>
+                <label>General/Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

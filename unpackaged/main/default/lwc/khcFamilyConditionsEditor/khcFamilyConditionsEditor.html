@@ -1,0 +1,47 @@
+<template>
+  <div class="khc-family-conditions-editor">
+
+    <b class="khc-label">{healthIssueLabel}</b>
+    <template for:each={conditions} for:item="condition" for:index="index">
+      <div class="data-header" key={condition.Condition_Name__c}>
+        <div class="plain">{condition.Condition_Sub_Category__c}
+          <template if:true={condition.Age_at_diagnosis__c}>
+            &nbsp;({condition.Age_at_diagnosis__c})
+          </template>
+        </div>
+        <div class="controls">
+            <a class="khc-remove-button" onclick={onRemove} data-index={index}>{removeLabel}</a>
+        </div>
+      </div>
+    </template>
+
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+        <lightning-combobox class="category"
+                            label={categoryLabel}
+                            options={categoryOptions}
+                            onchange={handleCategoryChange}
+                            required>
+        </lightning-combobox>
+      </lightning-layout-item>
+      <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+        <lightning-combobox class="sub-category"
+                            label={subcategoryLabel}
+                            options={subCategoryOptions}
+                            required>
+        </lightning-combobox>
+      </lightning-layout-item>
+      <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+        <lightning-combobox class="age-at-diagnosis"
+                         label={ageAtDiagnosisLabel}
+                         options={ageAtDiagnosisOptions}>
+        </lightning-combobox>
+      </lightning-layout-item>
+    </lightning-layout>
+    <footer>
+      <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small">
+        <a onclick={onAdd}>{addHealthIssueLabel}</a>
+      </div>
+    </footer>
+  </div>
+</template>

@@ -1,0 +1,52 @@
+.slds-modal__header {
+    margin-bottom: 0px!important;
+}
+.slds-modal__header .khc-modal-close {
+    justify-content: flex-end;
+}
+
+.container {
+    font-family: "Montserrat", sans-serif;
+    color: #3B3B3B;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.modalBody {
+    overflow-x: hidden;
+    max-height: calc(100vh - 210px);
+}
+
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+a, a:active, a:visited, a:hover {
+    color: #B2005D !important; /* For whatever reason default link styling doesn't come through for external pages */
+    text-decoration: underline !important;
+    font-weight: 300;
+}
+
+b {
+    font-weight: 300;
+}
+
+.slds-button-neutral {
+    font-weight: 400;
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border-color: #B2005D;
+}
+
+.slds-button-neutral.slds-is-pressed {
+    background: #B2005D;
+}

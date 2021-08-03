@@ -1,0 +1,424 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+img {
+	-ms-interpolation-mode: bicubic;
+}
+.buttonlink div a:link, .buttonlink div a:visited {
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 14px;
+	font-family: Arial, sans-serif;
+	text-decoration: none;
+	width: 100%;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.columnlink div a:link, .columnlink div a:visited {
+	font-family: Arial, Verdana, 'sans-serif';
+	font-size: 14px;
+	line-height: 18px;
+	color: #e068a6;
+	text-decoration: none;
+	text-align: left;
+	text-transform: uppercase;
+}
+.whitelink div a:link, .whitelink div a:visited {
+	font-family: Calibri, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+body, table, td, p, a, li, blockquote {
+	-webkit-text-size-adjust: 100% !important;
+	-moz-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+}
+.mobile {
+	width: 100% !important;
+}
+img {
+	height: auto !important;
+	max-width: 100% !important;
+}
+.largeimage {
+	height: auto !important;
+	max-width: 100% !important;
+	width: 100% !important;
+}
+.logo {
+	height: auto !important;
+	max-width: 100% !important;
+	width: 180px !important;
+}
+.center {
+	text-align: center !important;
+}
+.h1 {
+	font-size: 18px !important;
+	line-height: 22px !important;
+	text-align: left !important;
+}
+.h20 {
+	height: 20px !important;
+	line-height: 20px !important;
+	font-size: 20px !important;
+}
+.h1c {
+	font-size: 18px !important;
+	line-height: 22px !important;
+	text-align: center !important;
+}
+.p1 {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: left !important;
+}
+.c1 {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+}
+.buttonlink {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+}
+.columnlink {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+}
+.whitelink {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+}
+.p1c {
+	font-size: 16px !important;
+	line-height: 20px !important;
+	text-align: center !important;
+}
+.p2 {
+	font-size: 14px !important;
+	line-height: 18px !important;
+	text-align: center !important;
+}
+.whitelink {
+	font-size: 14px !important;
+	line-height: 18px !important;
+	text-align: center !important;
+}
+.nav {
+	font-size: 12px !important;
+	line-height: 16px !important;
+	text-align: right!important;
+}
+.hide {
+	display: none !important;
+}
+.show-for-small {
+	display: block !important;
+	overflow: visible !important;
+	width: auto !important;
+	max-height: inherit !important;
+}
+}
+</style>
+</head>
+
+<body bgcolor="#efefef">
+<!--Start Email Wrap-->
+<table bgcolor="#efefef" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="100%"><!--Start Preview-->
+	<tbody>
+		<tr>
+			<td>
+			<center>
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+				<tbody>
+					<tr>
+						<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+					</tr>
+					<tr pardot-removable="" style="">
+						<td pardot-data="" pardot-region="previewtext" style="font-family: Arial, Verdana, sans-serif; font-size: 11px; line-height: 12px; color: rgb(102, 102, 102); text-decoration: none; text-align: center;"></td>
+					</tr>
+					<tr>
+						<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</center>
+			</td>
+		</tr>
+		<!--End Preview--><!--Start Main Email-->
+		<tr>
+			<td>
+			<center>
+			<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600"><!--Start Black Section-->
+				<tbody>
+					<tr>
+						<td>
+						<center>
+						<table align="center" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+							<tbody>
+								<tr>
+									<td>
+									<center>
+									<table align="center" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+										<tbody>
+											<tr>
+												<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+												<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+												<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+											</tr>
+											<!--Start Logo-->
+											<tr>
+												<td width="20">&nbsp;</td>
+												<td class="p1" style="font-family: Calibri, Helvetica Neue, Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#ffffff; text-decoration:none; text-align:right; font-weight:bold; text-transform:uppercase;" width="560"><!--Start Two Column-->
+												<table align="center" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="560">
+													<tbody>
+														<tr>
+															<td valign="top"><!--Start Left Column-->
+															<table align="left" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="140">
+																<tbody>
+																	<tr style="">
+																		<td align="left" pardot-region="logo" style="background-color:#000000;"><a href="https://www.komen.org/" target="_blank"><img alt="Susan G. Komen" border="0" height="55" src="https://www.komen.org/pages/img/logo.png" style="font-family:Arial, Verdana, 'sans-serif'; font-size:10px; line-height:12px; color:#ffffff; text-decoration:none;" width="140"></a></td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+															<td align="center" valign="top">
+															<table align="right" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="420">
+																<tbody>
+																	<tr>
+																		<td height="22" style="font-size:22px; line-height:22px;">&nbsp;</td>
+																	</tr>
+																	<tr>
+																		<td class="nav" style="font-family: Calibri, Helvetica Neue, Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#ffffff; text-decoration:none; text-align:right; font-weight:bold; text-transform:uppercase; background-color:#000001;">
+																		<div class="nav" pardot-data="" pardot-region="navigation" style="background: rgb(0, 0, 1);"><a class="nav" href="https://www.komen.org/Donate/Donate.html" style="font-family: Calibri, Helvetica Neue, Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#ffffff; text-decoration:none; text-align:right; font-weight:bold; text-transform:uppercase;" target="_blank"></a> 
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															<!--End Right Column--></td>
+														</tr>
+													</tbody>
+												</table>
+												<!--End Two Column--></td>
+												<td width="20">&nbsp;</td>
+											</tr>
+											<!--End Logo-->
+											<tr>
+												<td class="h20" height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+												<td class="h20" height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+												<td class="h20" height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</center>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</center>
+						</td>
+					</tr>
+					<!--End Black Section--><!--Start Pink Section-->
+					<tr pardot-removable="" style="" class="">
+						<td>
+						<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+							<tbody>
+								<tr>
+									<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+									<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+									<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+								</tr>
+							
+								<tr>
+									<td height="2" style="font-size:2px; line-height:2px;">&nbsp;</td>
+									<td height="2" style="font-size:2px; line-height:2px;">&nbsp;</td>
+									<td height="2" style="font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<!--End Pink Section--><!--Start Text Section-->
+					<tr pardot-removable="" style="" class="">
+						<td>
+						<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+							<tbody>
+							
+								<tr pardot-repeatable="" style="" class="">
+								  <td width="40">&nbsp;</td>
+									<td align="right" width="400" class="" style="font-family: Arial, Verdana, sans-serif; font-size: 16px; line-height: 28px; text-decoration: none; text-align: right;" pardot-region="logo"><img alt="" border="0" height="53" src="https://go.komen.org/l/370451/2020-08-27/ly4bf/370451/76172/MyKomen_Health.png" style="width: 180px; height: 53px; border-width: 0px; border-style: solid; float: right" width="180"></td>
+
+									<td width="40">&nbsp;</td>
+								</tr>
+								</tbody>
+								</table>
+								<center>
+						<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+								<tbody>
+								<tr pardot-repeatable="" style="" class="">
+								<td width="40">&nbsp;</td>
+									<td pardot-region="textblock" style="font-family: Arial, Verdana, sans-serif; font-size: 16px; line-height: 28px; text-decoration: none; text-align: left;" width="520" class="">
+Hi {!Account.Name},<br>
+<br>
+To find out more about the TAP application process join us at MyKomen! <br>
+<br>
+To get started, go to <a href="{!$Setup.Join_Community_URL__c.Join_Community__c}" target="_blank">{!$Setup.Join_Community_URL__c.Join_Community__c}</a><br>
+<br>
+Thanks,<br>
+{!Organization.Name}<br>
+								
+
+								
+									<div style ="color:#ffffff;">
+									sgkencrypt
+									</div>
+									</tr>
+									
+
+									<tr pardot-repeatable="" style="">
+									<td width="40">&nbsp;</td>
+									<td pardot-region="textblock" style="font-family: Arial, Verdana, sans-serif; font-size: 16px; line-height: 20px; text-decoration: none; text-align: left;" width="520" class="">Warmly,<br>
+									
+									Susan G. Komen</td>
+									<td width="40">&nbsp;</td>
+								</tr>
+								<tr pardot-repeatable="" style="" class="">
+									
+									<td height="30" style="font-size:30px; line-height:30px;">&nbsp;</td>
+									<td height="30" style="font-size:30px; line-height:30px;">&nbsp;</td>
+								</tr>
+								
+							
+								
+								
+								<tr style="">
+									<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+									<td align="center" pardot-region="cta" class=""><!--Curved Button-->
+									<center>
+									<table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+										<tbody>
+											
+										</tbody>
+									</table>
+									</center>
+									<!--End Curved Button--></td>
+									<td height="15" style="font-size:15px; line-height:15px;">&nbsp;</td>
+								</tr>
+								
+	
+							</tbody>
+						</table>
+						</center>
+						</td>
+					</tr>
+					<!-- End Start Text Section // --><!-- Start Social Media // -->
+					<tr pardot-repeatable="" style="">
+						<td align="center" style="padding-bottom: 20px;" valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" width="170">
+							<tbody>
+								<tr style="">
+									<td align="center" pardot-region="Social_fb" valign="top"><a href="https://www.facebook.com/SusanGKomen" style="font-family:Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;" target="_blank"><img alt="Facebook" border="0" height="30" src="https://storage.pardot.com/370451/62490/RKD_2020_Feb_NL_fb.png" style="max-width: 34px; outline: none; text-decoration: none; border: none;" width="34"></a></td>
+									<td align="center" pardot-region="Social_twitter" valign="top"><a href="https://twitter.com/SusanGKomen" style="font-family:Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;" target="_blank"><img alt="Twitter" border="0" height="30" src="https://storage.pardot.com/370451/62498/RKD_2020_Feb_NL_twitter.png" style="max-width: 34px; outline: none; text-decoration: none; border: none;" width="34"></a></td>
+									<td align="center" pardot-region="Social_Linkedin" valign="top"><a href="https://www.linkedin.com/company/susangkomen/" style="font-family:Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;" target="_blank"><img alt="Linkedin" border="0" height="30" src="https://storage.pardot.com/370451/62496/RKD_2020_Feb_NL_linkedin.png" style="max-width: 34px; outline: none; text-decoration: none; border: none;" width="34"></a></td>
+									<td align="center" pardot-region="Social_fb" valign="top"><a href="https://www.youtube.com/user/KomenfortheCure" style="font-family:Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;" target="_blank"><img alt="YouTube" border="0" height="30" src="https://storage.pardot.com/370451/62502/RKD_2020_Feb_NL_youtube.png" style="max-width: 34px; outline: none; text-decoration: none; border: none;" width="34"></a></td>
+									<td align="center" pardot-region="Social_Instagram" valign="top"><a href="https://www.instagram.com/susangkomen/" style="font-family:Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;" target="_blank"><img alt="Instagram" border="0" height="30" src="https://storage.pardot.com/370451/62494/RKD_2020_Feb_NL_instagram.png" style="max-width: 34px; outline: none; text-decoration: none; border: none;" width="34"></a></td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+						<!-- End Social Media // -->
+					</tr>
+				</tbody>
+			</table>
+			</center>
+			</td>
+		</tr>
+		<!--End Main Table--><!--Start Black Section-->
+		<tr>
+			<td>
+			<center>
+			<table align="center" bgcolor="#000001" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse:collapse;" width="600">
+				<tbody><!-- Start Footer // -->
+					<tr>
+						<td align="center" class="footer" style="background: #000000;" valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" style="background: #000000;" width="100%">
+							<tbody>
+								<tr style="">
+									<td class="align-center" pardot-region="footer_content_00" style="background-color: #000000;color: #ffffff; font-family: Arial, Helvetica, Sans-Serif; font-size: 11px; line-height: 13px; text-align: left;padding-bottom: 13px; padding-top: 20px; padding-left: 20px; padding-right: 20px;" valign="top">This message was sent to <a href="mailto:{!Account.PersonEmail}" style="color: #ffffff; text-decoration: underline;">{!Account.PersonEmail}</a></td>
+								</tr>
+								<tr style="">
+									<td class="align-center" pardot-region="footer_content_00" style="background: #000000;color: #FFFFFF; font-family: Arial, Helvetica, Sans-Serif; font-size: 12px; line-height: 15px; text-align: left;padding-bottom: 10px; padding-left: 20px; padding-right: 20px;" valign="top">For breast health or breast cancer information, please call the Breast Care Helpline: <span class="mobile-address">1-877 GO KOMEN (1-877-465-6636)</span> | <a href="mailto:helpline@komen.org" style="color: #ffffff; text-decoration: underline;">helpline@komen.org</a></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" style="background: #000000;" valign="top">
+									<table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" style="background: #000000;" width="430">
+										<tbody>
+											<tr style="">
+												<td class="align-center" pardot-region="footer_content_00" style="background: #000000;color: #FFFFFF; font-family: Arial, Helvetica, Sans-Serif; font-size: 11px; line-height: 17px; text-align: left;padding-bottom: 10px; padding-left: 20px; padding-right: 20px;" valign="top"><a href="https://apps.komen.org/preferenceCenterUI?email={{Recipient.Email}}&amp;SID=6&amp;IID={{Recipient.ID}}" rel="nofollow,noreferrer" style="color: #ffffff; text-decoration: underline;"><strong>Manage your email preferences</strong></a> | <a href="https://www.komen.org/AboutUs/PrivacyPolicy.html" style="color: #ffffff; text-decoration: underline;"><strong>Privacy Policy<br class="hide-m">
+												Disclosure</strong></a> | <a href="https://www.komen.org/AboutUs/AboutUs.html" style="color: #ffffff; text-decoration: underline;"><strong>About Susan G. Komen</strong></a></td>
+											</tr>
+											<tr style="">
+												<td class="align-center" pardot-region="footer_content_00" style="background: #000000;color: #FFFFFF; font-family: Arial, Helvetica, Sans-Serif; font-size: 11px; line-height: 17px; text-align: left;padding-bottom: 10px; padding-left: 20px; padding-right: 20px;" valign="top">© 2020 Susan G. Komen | <span class="mobile-address">13770 Noel Road, Suite 801889 Dallas, TX 75380</span></td>
+											</tr>
+										</tbody>
+									</table>
+									<!--[if mso]></td><td align="center" valign="top"><![endif]-->
+
+									<table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="170">
+										<tbody>
+											<tr style="">
+												<td align="center" pardot-region="footer_logo" style="background-color:#000000;" valign="top"><a href="https://www.komen.org/" target="_blank"><img alt="Susan G. Komen" border="0" height="83" src="https://storage.pardot.com/370451/62500/RKD_2020_Feb_NL_Whitelogo.png" style="font-family:Arial, Verdana, 'sans-serif'; font-size:10px; line-height:12px; color:#ffffff; text-decoration:none;" width="170"></a></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End footer --></td>
+					</tr>
+				</tbody>
+			</table>
+			</center>
+			</td>
+		</tr>
+		<!--End Black Section--><!--Start Space-->
+		<tr>
+			<td align="center">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile" style="border-collapse: collapse;" width="600">
+				<tbody>
+					<tr>
+						<td align="center" height="10" style="font-size: 10px; line-height: 10px;display: none;"> </td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<!--End Space--><!--tracking-->
+		<tr>
+			<td align="left" style="font-size: 0px; line-height: 0px;">
+			<style type="text/css">#_rkd_div, #_rkd_img { display:none; } @media print{ #_rkd_div { background-image: url('https://dmctrk.rkd.io/tracking/pixel/tracking/387'); } } div.OutlookMessageHeader, table.moz-email-headers-table, blockquote #_rkd_div, #mailContainerBody #_rkd_div { background-image:url('https://dmctrk.rkd.io/tracking/pixel/tracking/387'); }
+			</style>
+			<div id="_rkd_div">&nbsp;</div>
+			<img alt="" border="0" height="1" id="_rkd_img" src="https://dmctrk.rkd.io/tracking/pixel/tracking/387" style="height:1px !important; width:1px !important; border-width:0 !important; margin-top:0 !important; margin-bottom:0 !important; margin-right:0 !important; margin-left:0 !important; padding-top:0 !important; padding-bottom:0 !important; padding-right:0 !important; padding-left:0 !important; display:block;" title="" width="1"></td>
+		</tr>
+	</tbody>
+</table>
+<!--End Email Wrap-->
+
+</body>

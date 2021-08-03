@@ -1,0 +1,32 @@
+<!-- Clinical Trial Detail Accordion -->
+<template>
+    <div class="container">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <div class="slds-p-bottom_xx-small">
+                    <span class="icon slds-icon_container slds-current-color slds-p-right_x-small" title={title}>
+                        <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                            <use xlink:href={icon}></use>
+                        </svg>
+                    </span>
+                    <span class="title">{title}</span>
+                </div>
+
+                <div class="summary" if:false={expanded}>
+                    <slot name="summary"></slot>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-float_right" if:false={disabled}>
+                    <c-ct-button icon="/_slds/icons/utility-sprite/svg/symbols.svg#add" title="Expand"
+                                 onclick={handleToggle} if:false={expanded}></c-ct-button>
+                    <c-ct-button icon="/_slds/icons/utility-sprite/svg/symbols.svg#dash" title="Contract"
+                                 onclick={handleToggle} if:true={expanded} inverse></c-ct-button>
+                </div>
+            </div>
+        </div>
+        <div class="detail" if:true={expanded}>
+            <slot></slot>
+        </div>
+    </div>
+</template>

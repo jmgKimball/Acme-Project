@@ -1,0 +1,148 @@
+/**
+ * Shared styles used by all custom MyKomen Community components
+ *
+ * @author Grant Adamson, Traction on Demand
+ * @author Christian Wico, Traction on Demand
+ * @date 2020-09-04
+ */
+.container {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    color: #3B3B3B;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: -30px; /* Remove the extra padding at the top of standard community builder pages */
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.container-external {
+    margin-top: 0;
+}
+
+header, footer {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+article {
+    margin-bottom: 10px;
+}
+
+a, a:active, a:visited, a:hover {
+    color: #B2005D !important; /* For whatever reason default link styling doesn't come through for external pages */
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+small {
+    font-size: 13px;
+}
+
+.data-header {
+    margin: 16px 0;
+    font-weight: 500;
+}
+
+.data-header h2 {
+    display: inline-block;
+}
+
+.data-header a {
+    font-size: 13px;
+}
+
+.data-header .controls {
+    font-weight: 500;
+    float: right;
+}
+
+b {
+    font-weight: 500;
+}
+
+button {
+    font-weight: 500;
+    width: 100%;
+    padding: 8px 16px;
+}
+
+.slds-button-neutral {
+    background: none;
+    border-color: #B2005D;
+}
+
+.slds-button-neutral.slds-is-pressed {
+    background: #B2005D;
+}
+
+.error {
+    margin: 15px 0;
+    text-align: center;
+    color: #ff9e9e;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.password-toggle {
+    float: right;
+    position: relative;
+    bottom: 40px;
+    font-size: 13px;
+}
+
+.plain {
+    font-weight: 300;
+    display: inline-block;
+}
+
+
+/* DESKTOP */
+@media only screen and (min-width: 410px) {
+
+	.khc-family-conditions-editor {
+		margin-top: 50px;
+	}
+
+	b.khc-label, .data-header {
+		padding-left: 12px;
+		max-width: 50%;
+		font-weight: 500 !important;
+	}
+
+	.data-header div.plain {
+		font-weight: 500;
+		font-size: 14px;
+		max-width: 70%
+	}
+
+	.data-header {
+		padding-top: 10px;
+	}
+
+	a.controls {
+		font-weight: 500 !important;
+	}
+
+	.khc-family-conditions-editor footer {
+		margin: 0 !important;
+	}
+
+	.khc-family-conditions-editor footer div {
+		display: inline-block;
+		padding-left: 12px;
+		margin-top: 0;
+		padding-top:0;
+	}
+
+}

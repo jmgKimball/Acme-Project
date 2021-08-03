@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Locking_on_Approval</fullName>
+    <active>false</active>
+    <errorConditionFormula>
+        AND(
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            NOT(
+                ISCHANGED(Is_Locked__c)
+            ),
+            Is_Locked__c,
+            AND(
+                $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+                $Profile.Name &lt;&gt; &apos;Accounting&apos;,
+                $Profile.Name &lt;&gt; &apos;Program Owner&apos;,
+                $UserRole.Name &lt;&gt; &apos;TAP_Program_Owner&apos;,
+                $UserRole.Name &lt;&gt; &apos;Program_Manager&apos;,
+                NOT($Permission.Patient_Navigation_Management )
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>You do not have permission to edit the application after it gets approved.</errorMessage>
+</ValidationRule>

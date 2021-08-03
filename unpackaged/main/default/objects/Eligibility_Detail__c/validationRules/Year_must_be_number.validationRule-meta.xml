@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_must_be_number</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+LEN (Year__c) &lt;&gt; 0,
+NOT(REGEX(Year__c, &quot;[0-9]{4}&quot;))
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;eligibility_detail__c&quot;))</errorConditionFormula>
+    <errorDisplayField>Year__c</errorDisplayField>
+    <errorMessage>Enter valid year</errorMessage>
+</ValidationRule>

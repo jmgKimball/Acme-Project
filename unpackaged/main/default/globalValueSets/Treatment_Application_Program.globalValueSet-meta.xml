@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Treatment Assistance Program</fullName>
+        <default>false</default>
+        <label>Treatment Assistance Program</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient Navigation</fullName>
+        <default>false</default>
+        <label>Patient Navigation</label>
+    </customValue>
+    <masterLabel>Treatment Application Program</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

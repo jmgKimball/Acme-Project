@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_with_Relationship__c</fullName>
+    <description>Display the family member&apos;s name followed the the relationship in brackets, if a relationship value has been selected</description>
+    <externalId>false</externalId>
+    <formula>Family_Member_Name__c +
+IF(ISBLANK(TEXT(Relationship__c)),
+  &quot;&quot;,
+  &quot; (&quot; + TEXT(Relationship__c) + &quot;)&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Name with Relationship</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

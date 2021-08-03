@@ -1,0 +1,51 @@
+<template>
+    <div class="khc-view-item">
+        <span class="slds-form-element slds-form-element_stacked" key={field}>
+            <span class="slds-form-element__label">{ecounterFieldMap.Appointment_Date__c.label}</span>
+            <div class="slds-form-element__control">
+                <lightning-formatted-date-time value={appointment.Appointment_Date__c}></lightning-formatted-date-time>
+            </div>
+        </span>
+        <span class="slds-form-element slds-form-element_stacked" key={field}>
+            <span class="slds-form-element__label">{ecounterFieldMap.Appointment_Time__c.label}</span>
+            <div class="slds-form-element__control">
+                <lightning-formatted-time value={appointment.Appointment_Time__c} ></lightning-formatted-time>
+            </div>
+        </span>
+        <span class="slds-form-element slds-form-element_stacked khc-text" key={field}>
+            <span class="slds-form-element__label">{ecounterFieldMap.Description__c.label}</span>
+            <div class="slds-form-element__control">
+                <lightning-formatted-text value={appointment.Description__c}></lightning-formatted-text>
+            </div>
+        </span>
+        <span class="slds-form-element slds-form-element_stacked" key={field}>
+            <span class="slds-form-element__label">{ecounterFieldMap.Appointment_Type__c.label}</span>
+            <div class="slds-form-element__control">
+                <lightning-formatted-text value={appointment.Appointment_Type__c}></lightning-formatted-text>
+            </div>
+        </span>
+        <span class="slds-form-element slds-form-element_stacked" key={field}>
+            <span class="slds-form-element__label">{ecounterFieldMap.Attended__c.label}</span>
+            <div class="slds-form-element__control">
+                {appointment.Attended}
+            </div>
+        </span>
+
+        <span class="slds-form-element slds-form-element_stacked" key={field}>
+            <span class="slds-form-element__label">{sendReminderLabel} </span>
+            <div class="slds-form-element__control">
+                <lightning-formatted-number value={appointment.Reminder_Days__c}></lightning-formatted-number>
+            </div>
+            <div class="slds-form-element__label"> {daysBeforeAppointmentLabel}</div>
+        </span>
+
+        <span class="khc-edit-button" if:true={showEdit}>
+            <lightning-button label={editLabel} data-id={appointment.Id}
+                              onclick={handleEdit}></lightning-button>
+        </span>
+        <span class="khc-attended-button">
+            <lightning-button label={attendedLabel} data-id={appointment.Id} variant="brand"
+                              onclick={handleAttended} disabled={appointment.Attended__c}></lightning-button>
+        </span>
+    </div>
+</template>

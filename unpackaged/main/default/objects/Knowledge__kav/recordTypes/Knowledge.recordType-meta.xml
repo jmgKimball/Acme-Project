@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Knowledge</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Community</compactLayoutAssignment>
+    <label>Knowledge</label>
+    <picklistValues>
+        <picklist>Article_Type__c</picklist>
+        <values>
+            <fullName>Cosmetic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mammogram Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screening Facility</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Community_Topics__c</picklist>
+        <values>
+            <fullName>Care coordination%2C logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostic Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emotional Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetic testing and counseling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lymphedema Care %26 Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Supplies - Wigs %26 Prosthesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palliative and Hospice Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pregnancy %26 Fertility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screening %26 Mammograms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ethnicity__c</picklist>
+        <values>
+            <fullName>Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to Answer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gender_Diverse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer_Not_to_Say</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internal_Topics__c</picklist>
+        <values>
+            <fullName>AAHEI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BCCP%2FNBCCEDP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Trials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cultural%2F Religious%2F Spiritual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic stability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Helpline Tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newly Diagnosed %E2%80%93 maybe an audience attribute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient Navigation Tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescription drug costs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support%2F Patient tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Symptom management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAP Tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treatment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Knowledge_Article_Type__c</picklist>
+        <values>
+            <fullName>Cosmetic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mammogram Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screening Facility</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Other_Segments__c</picklist>
+        <values>
+            <fullName>Indiv w%2F Disability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LGBTQI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-citizen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Language__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaiian or Other Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern and North African %28MENA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer Not to Answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_To_Cancer__c</picklist>
+        <values>
+            <fullName>Care-giver or Co-Survivor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Survivorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Living with MBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Never been diagnosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recently diagnosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undergoing treatment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Resource_Type__c</picklist>
+        <values>
+            <fullName>Article</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subcategory__c</picklist>
+        <values>
+            <fullName>Biopsy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Child Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daily Expenses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deductible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groceries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Higher Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Premiums</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MRI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mammogram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prosthesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prosthesis Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scarves</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scholarship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treatment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultrasound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wigs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

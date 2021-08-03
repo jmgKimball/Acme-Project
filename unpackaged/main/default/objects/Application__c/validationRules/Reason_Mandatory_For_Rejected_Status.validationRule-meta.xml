@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Mandatory_For_Rejected_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>
+        AND(
+            RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;,
+            ISPICKVAL( Application_Status__c , &apos;Rejected&apos;),
+            NOT(Is_Rejection_Out_Of_Coverage_Area__c),
+            NOT(Is_rejection_Age_Less_than_18_online_app__c),
+            NOT(Is_Rejection_Applying_for_Someone_Online__c),
+            NOT(Is_Rejection_Not_Qualify__c),
+            NOT(Is_rejection_Qualify_but_Not_Open__c),
+            NOT(Is_Rejection_Application_Withdrawn__c),
+            NOT(Is_Rejection_Annual_Income_Exceeds_Limit__c),
+            NOT(Is_Rejection_Incomplete_Application__c),
+            NOT(Is_Rejection_Funding_Unavailable__c),
+            NOT(is_rejected_not_in_Active_treatment__c),
+            (OR
+                (NOT(Is_Rejection_Other__c),
+                ISBLANK( Rejection_Other_Reason__c ))
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>Reason is required to Decline the Application</errorMessage>
+</ValidationRule>

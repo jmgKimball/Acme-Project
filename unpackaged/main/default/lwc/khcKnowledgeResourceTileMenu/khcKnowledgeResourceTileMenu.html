@@ -1,0 +1,42 @@
+<!-- Khc Knowledge Resource Tile Menu -->
+<template>
+    <div class="slds-text-align_right">
+        <!-- Article Menu Dropdown -->
+        <lightning-button-menu class="khc-resource-tile-menu"
+                               icon-size="x-small"
+                               menu-alignment="right"
+                               alternative-text="Show Article Menu">
+            <lightning-menu-item onclick={openReportResourceModal}
+                                 value="reportIssue"
+                                 label={reportAnIssueLabel}>
+            </lightning-menu-item>
+            <lightning-menu-item onclick={openReferralDismissalModal}
+                                 if:true={knowledge.isReferred}
+                                 value="removeReferralRec"
+                                 label={removeReferralLabel} ></lightning-menu-item>
+        </lightning-button-menu>
+    </div>
+    <!-- Report a Resource Issue Modal -->
+    <c-mk-modal data-modal-name="report-resource-modal">
+        <div slot="header">
+            {reportResourceLabel}
+        </div>
+        <div class="khc-report-issue-modal-content" slot="content">
+            <c-khc-report-resource-issue knowledge={knowledge}
+                                         onreportissuesuccess={handleReportIssueSuccess}>
+            </c-khc-report-resource-issue>
+        </div>
+    </c-mk-modal>
+
+    <!-- Dismiss Referral Modal -->
+    <c-mk-modal data-modal-name="khc-dismiss-referral-modal">
+        <div slot="header">
+            <h1>{dismissResourceRecommendationLabel}</h1>
+        </div>
+
+        <div slot="content">
+            <c-khc-resource-dismissal-form knowledge-article-id={knowledgeArticleIdToDismiss}
+                                           ondismiss={handleReferralDismissed}></c-khc-resource-dismissal-form>
+        </div>
+    </c-mk-modal>
+</template>

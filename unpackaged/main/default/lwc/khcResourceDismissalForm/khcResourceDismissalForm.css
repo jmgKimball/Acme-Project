@@ -1,0 +1,11 @@
+/**
+ * Created by mlandels on 2021-06-14.
+ */
+.khc-dismissal-form {
+    min-height: 250px;
+    position: relative;
+}
+
+.khc-dismissal-button {
+    bottom: 0;
+}

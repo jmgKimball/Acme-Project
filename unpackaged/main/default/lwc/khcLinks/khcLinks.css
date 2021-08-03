@@ -1,0 +1,43 @@
+/**
+ * Created by vupneja on 10/19/2020.
+ */
+.mk-footer-info-desktop {
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.mk-link-desktop {
+	line-height: 28px;
+}
+
+.mk-footer-links-desktop {
+	padding: 20px 50px;
+	font-size: 13px;
+}
+
+.mk-copyright-desktop {
+	margin-right: 15px;
+}
+
+.mk-link-desktop {
+	margin-right: 17px;
+}
+
+.mk-link-desktop a {
+	margin-right: 17px;
+	text-decoration: underline;
+}
+
+.mk-social-desktop  {
+	margin-left: 24px;
+}
+
+.mk-social-desktop img {
+	max-height: 20px;
+	margin-right: 15px;
+}
+
+/* Extra space on mobile for chat bubble */
+.mk-footer-links-mobile {
+	margin-bottom: 85px;
+}
