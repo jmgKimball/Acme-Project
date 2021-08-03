@@ -1,0 +1,89 @@
+<!--
+@author IVL Dev
+@date 11 June 2020
+@description component created for showing suggested next actions to be performed after creating the Care program and 
+when it is in draft status.
+This component is visible only when Care Program is in draft status.
+-->
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller ="TAP_CareProgram_Ctlr" access="global" >
+    <aura:attribute name="CareProgram" type="string"/>
+    <aura:attribute name="Program" type="string"/>
+    <aura:attribute name="eligibilityRule" type="boolean" default="false"/>
+    <aura:attribute name="eligibilityCriteria" type="Boolean" default="false"/>
+    <aura:attribute name="eligibilityDetails" type="Boolean" default="false"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onLoad}"/>
+    
+    <aura:renderIf isTrue="{!v.isLoaded}">
+        <div>
+            <div class="c-container">
+                <lightning:card iconName="standard:work_capacity_usage" class="slds-text-title_bold slds-text-title_absolute-center" title="{! 'Suggested Next Actions'}">
+                    <article class="slds-card slds-align_absolute-center slds-box slds-table_bordered">
+                        <div class="slds-card__body slds-box slds-table_bordered "> 
+                            <ul class="slds-list_horizontal slds-has-dividers_bottom-space">
+                                <li class="slds-item">
+                                    <aura:renderIf isTrue="{!v.eligibilityRule}">
+                                        <lightning:icon iconName="action:approval" size="xx-small" alternativeText="Done" title="Done" />
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName="action:close" size="xx-small" alternativeText="Pending" title="Pending" />
+                                        </aura:set>
+                                    </aura:renderIf>
+                                </li>
+                                <li class="slds-item">
+                                    Set Eligibility Rules
+                                </li>   
+                            </ul>
+                            
+                               <ul class="slds-list_horizontal slds-has-dividers_bottom-space">
+                                <li class="slds-item">
+                                    <aura:renderIf isTrue="{!v.eligibilityCriteria}">
+                                        <lightning:icon iconName="action:approval" size="xx-small" alternativeText="Done" title="Done" />
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName="action:close" size="xx-small" alternativeText="Pending" title="Pending" />
+                                        </aura:set>      
+                                    </aura:renderIf>
+                                </li>
+                                <li class="slds-item">
+                                    Set Eligibility Criteria
+                                </li>
+                            </ul>
+                            
+                            <ul class="slds-list_horizontal slds-has-dividers_bottom-space">
+                                <li class="slds-item">
+                                    <aura:renderIf isTrue="{!v.eligibilityDetails}">
+                                        <lightning:icon iconName="action:approval" size="xx-small" alternativeText="Done" title="Done" />
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName="action:close" size="xx-small" alternativeText="Pending" title="Pending" />
+                                        </aura:set>  
+                                    </aura:renderIf>
+                                </li>
+                                <li class="slds-item">
+                                    Set Eligibility Details
+                                </li>
+                            </ul>
+                            
+                         
+                            
+                            <ul class="slds-list_horizontal slds-has-dividers_bottom-space">
+                                <li class="slds-item">
+                                    <aura:renderIf isTrue="{!v.eligibilityCriteria}">
+                                        <lightning:icon iconName="action:approval" size="xx-small" alternativeText="Done" title="Done" />
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName="action:close" size="xx-small" alternativeText="Pending" title="Pending" />
+                                        </aura:set>      
+                                    </aura:renderIf>
+                                </li>
+                                <li class="slds-item">
+                                    Set Status as Active
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </lightning:card>
+            </div>
+        </div>
+    </aura:renderIf>
+    
+</aura:component>

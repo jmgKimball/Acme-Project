@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Care_Program_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Care Program Access</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>TAP_Program_Owner</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

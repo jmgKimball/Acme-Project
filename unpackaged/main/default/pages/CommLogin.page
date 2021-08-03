@@ -1,0 +1,12 @@
+<apex:page showHeader="false" >
+<div style="align-content: center;">
+<Center>
+<apex:image id="img" value="{!$Resource.KHC_Women}" style="width:600px;height:350px;"/><br/><br/>
+<Center><!--<h1 Style="width:50%;height:">Welcome to the Komen Health Cloud</h1> -->
+<apex:outputLabel style="color:#FF1493;width:100%;height:80%;"><b>Welcome to the Komen Health Cloud</b></apex:outputLabel><br/>
+<apex:outputLabel >Through the Komen Health Cloud, we can connect you with </apex:outputLabel><br/>
+<apex:outputLabel >Important breast cancer tools and resource </apex:outputLabel>
+</Center>
+</Center>
+</div>
+</apex:page>

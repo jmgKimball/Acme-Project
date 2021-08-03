@@ -1,0 +1,115 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes,forceCommunity:layout" access="global" >
+    
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="headerTitle" type="Aura.Component[]">
+        <h2 style="color:#FF69B4">
+            <b>Komen </b><br/>
+            <b>Health cloud </b>
+        </h2>
+    </aura:attribute>
+    <aura:attribute name="buttonLabel" type="Aura.Component[]">
+        <h2 >
+            <p> <b>Komen Treatment Assistance </b></p>
+            <p>Learn More ></p>
+        </h2>
+    </aura:attribute>
+    <lightning:card  class="title" >
+        <aura:set attribute="actions">
+            <img src="{!$Resource.KHC_Logo}" style="margin-right:400px"/>
+            <lightning:button label="Join" class="customButton" onclick="{!c.registerUser}"/>
+        </aura:set>
+        <div >
+            <img src="{!$Resource.HC_Landing_image_Women}" class="image" />
+            <div style="background-color:hotpink">
+                <h1 style="color:#FF69B4">Komen</h1>
+            </div>
+        </div>
+        <div style="color:#FF69B4">
+            <h6 style="text-align:center"> <b>Welcome to the Komen Health Cloud</b></h6>
+        </div><br/>
+        <div>
+            <h6 style="text-align:center"><b>Through the Komen Health Cloud,we connect you with</b></h6>
+        </div>
+        <div>
+            <h6 style="text-align:center"><b>important brest cancer tools and resources.</b></h6>
+        </div>
+        <br/><br/><br/>
+        <table>
+            <tr>
+                <th>
+                    <div class="box1">
+                        <h1 style="color:#FF69B4">Brest Cancer helpline</h1><br/>
+                        <h1>Susan G. Komen® offers two helplines for those in</h1>
+                        <h1>need of breast cancer education, psychosocial</h1>
+                        <h1>support and information on resources.</h1><br/>
+                        <div>
+                            <h1><b> Call now</b></h1>
+                        </div>
+                        <div>
+                            <lightning:button label="1-877 GO KOMEN" class="customButton1" />
+                        </div>
+                        
+                        <div>
+                            <lightning:button label="Email Us" class="customButton2"/>
+                        </div>
+                        <br/>
+                        <div>
+                            <h1>Our helpline available Monday through Friday</h1>
+                            <h1>from 9 a.m to 10 p.m ET. You can also</h1>
+                            <h1>email the helpline at  <lightning:formattedUrl label="helpline@komenorg" value="helpline@komenorg" target="_blank" /></h1>
+                        </div>
+                    </div>
+                </th>
+                
+                
+                <th>
+                    <div class="box2">
+                        <h1>Would you like to see If you qualify</h1>
+                        <h1>for treatment assistance?</h1>
+                        <br/>
+                        <lightning:buttonGroup>
+                            <lightning:button label="Yes" class="customButton3"/>&nbsp;
+                            <lightning:button label="No" class="customButton4"/>
+                        </lightning:buttonGroup><br/>
+                        <br/>
+                        <div>
+                            <h1>Type of assistance we offer:</h1>
+                        </div>
+                        <br/>
+                        <div>
+                            <lightning:button label="{!v.buttonLabel}" class="customButton5"/>
+                        </div><br/>
+                        <div>
+                            <h1> <lightning:button  label="Login"  variant ="null" onclick="{!c.handlelogin}" /> to track the status of submitted</h1>
+                            <h1>application</h1>
+                        </div>
+                        
+                    </div>
+                </th>
+            </tr>
+        </table>
+        <br/>
+        <div>
+            <lightning:button label="Register for the Komen Health Cloud" class="customButton6" />
+        </div>
+        <div>
+            <h1 class="customButton7">Already a member? <lightning:button  label="Login"  variant ="null" onclick="{!c.handlelogin}" /> </h1>
+        </div>
+        <br/>
+        <div class= "box3">
+            <table>
+                <tr>
+                    <th>
+                        <h1>About Us &nbsp;&nbsp;<lightning:formattedUrl  label="FOQs" value="FOQs" target="_blank" /></h1><br/>
+                        <h1>Contact Us &nbsp;&nbsp;<lightning:formattedUrl  label="Privacy Policy" value="Privacy Policy" target="_blank" /> </h1><br/>
+                        <h1>Tearms Of Use &nbsp;&nbsp; Legal and Disclosures</h1><br/><br/><br/>
+                        <h1>Susan G. Komen is a 501(c)(3) non-profit organisation.EIN 75-1835298</h1>	
+                    </th>
+                    <th>
+                        <img src="{!$Resource.KHC_Information}" style="margin-right:200px"/>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applications_that_Need_Evaluation</fullName>
+    <columns>NAME</columns>
+    <columns>Patient__c</columns>
+    <columns>Application_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Application_Status__c</field>
+        <operation>contains</operation>
+        <value>New,In Review,Deferred</value>
+    </filters>
+    <label>Applications that Need Review</label>
+    <sharedTo>
+        <role>System_Administrator</role>
+        <roleAndSubordinatesInternal>TAP_Mission</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>TAP_Program_Owner</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

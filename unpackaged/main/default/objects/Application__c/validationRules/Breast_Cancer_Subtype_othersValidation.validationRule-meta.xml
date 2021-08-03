@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breast_Cancer_Subtype_othersValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISPICKVAL(
+Breast_Cancer_Subtype__c ,
+&apos;Other (please specify)&apos;
+),
+ ISBLANK(Other_Breast_Cancer_Subtype__c)
+)</errorConditionFormula>
+    <errorDisplayField>Other_Breast_Cancer_Subtype__c</errorDisplayField>
+    <errorMessage>Please Specify Values</errorMessage>
+</ValidationRule>

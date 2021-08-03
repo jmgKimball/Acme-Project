@@ -1,0 +1,227 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes,forceCommunity:layout" access="global" >
+    
+    <!--<lightning:notificationsLibrary aura:id="notifLib" />
+ This is a form to create new application
+    <lightning:recordForm objectApiName="Application__c" layoutType="Full" columns="2" onerror="{!c.handleError}" /> -->
+    
+    
+    
+    <aura:attribute name="newApplication" type="Object"/>
+    <aura:attribute name="simpleNewApplication" type="Object"/>
+    <aura:attribute name="newApplicationError" type="String"/>
+    <aura:attribute name="cbaseURL" type="String"/>
+    
+    <force:recordData aura:id="applicationRecordCreator" layoutType="FULL" targetRecord="{!v.newApplication}" targetFields="{!v.simpleNewApplication}" targetError="{!v.newApplicationError}" />
+    
+   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:recordEditForm objectApiName="Application__c" aura:id="applicationRecordSave" onsubmit ="{!c.handleSubmit}"> 
+ 
+    
+        <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">Financial Information</h3>
+        <div class="slds-form--stacked">
+            <div class="slds-grid slds-wrap slds-gutters">
+                
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName ="Employment_Status__c" label ="Is patient curently employed?" />
+                            
+                        </span>
+                    </div> 
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName ="Family__c" />
+                            
+                        </span>
+                </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName ="Other_Family_Income_Sources__c" />
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName="Total_annual_Household_Income__c" />
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName="Type_of_Income_Verification_Provided__c" />
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <span>
+                            <lightning:inputField fieldName="Financial_Assistance_Needs__c" />
+                        </span>
+                    </div>
+                    
+                
+            </div>
+        </div>
+        </div>
+        
+        <div class="slds-section slds-is-open">
+            <h3 class="slds-section__title">Medical Information</h3>
+            <div class="slds-form--stacked">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        
+                            <span>
+                                <lightning:inputField fieldName ="Breast_Cancer_Diagnosis_Date__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                
+                                <lightning:inputField fieldName="Breast_cancer_subtype__c" />
+                                
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Current_stage__c" />
+                                
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="New_Diagnosis_or_Recurrence__c" /> 
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Is_patient_in_active_treatment__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Follow_up_Frequency__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Other_Treatment_Frequency__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Treatment_s_received_in_the_past_12_mon__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Other_Treatment_s__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="MD_Name__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Hospital_Clinic__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Hospital_Clinic_Address__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldname="Hospital_Clinic_City__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldname="Hospital_Clinic_State__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Hospital_Clinic_Zip__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Hospital_Clinic_Phone__c" />
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <span>
+                                <lightning:inputField fieldName="Hospital_Clinic_Fax__c" />
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title"> Insurance Information</h3>
+        <div class="slds-form--stacked">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Health_Insurance__c" required="true"/>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Co_Pay__c" />
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Prescription_Drug_Coverage__c" />
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Deductible__c" />
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Type_of_Insurance__c" required="true"/>
+                    </span>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Deductible_Amount__c" />
+                    </span>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Co_Pay_Amount__c" />
+                    </span>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                    <span>
+                        <lightning:inputField fieldName="Prescription_Drug_Co_Pay_Amount__c" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      
+        <div class="slds-align_absolute-center">
+        <lightning:button label="Cancel" variant="brand" onclick="{!c.handleCancel}" class="slds-m-top--medium"/>
+        <lightning:button label="Save Application"  variant="brand" type="submit" class="slds-m-top--medium"/>
+        </div>
+
+        </lightning:recordEditForm>   
+
+
+
+</aura:component>

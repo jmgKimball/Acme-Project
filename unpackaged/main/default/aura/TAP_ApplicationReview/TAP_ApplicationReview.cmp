@@ -1,0 +1,44 @@
+<!--
+@author IVL Dev
+@date 15-May-2020
+@description component created for displaying Application Review section and checklist on Application object in order to help the Mission staff in reviewing the application.
+-->
+
+
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"  access="global" >
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="application" type="Application__c" default="{ 'sobjectType': 'Application__c' }"/>
+    <aura:attribute name="newApplication" type="Object"/>
+    <aura:attribute name="simpleNewApplication" type="Object"/>
+    <aura:attribute name="newApplicationError" type="String"/>
+    <aura:attribute name="isselected" type="Boolean" default="false"/>
+    <aura:attribute name="okBtnBoolean" type="Boolean" default="false" />
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <aura:attribute name="ApplicationReviewFields" type="String[]" default="Income_Verification_is_Valid__c,Type_of_Income_Verification_Provided__c,Physician_confirms_patient_inactive_tre__c,Poverty_Level__c,Applicant_within_income_guideline__c,Applicant_resides_US_Territory__c,Applicant_has_no_award_in_last_12months__c,Completed_Physician_Form_Received__c"/>
+    <aura:attribute name="options" type="List" default="[ 
+                                                        {'label': 'Yes', 'value': 'Yes'},
+                                                        {'label': 'No', 'value': 'No'}]"/>
+    
+    
+    
+    <force:recordData aura:id="caseRecord"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.application}"
+                      layoutType="FULL"/>
+    <lightning:card iconName="standard:work_capacity_usage" class=". slds-text-title_bold" title="{! 'Application Review'}">
+        <div class="slds-p-left_large slds-p-right_medium">
+            
+            <lightning:recordForm aura:id="ApplicationReviewFields"
+                                  recordId="{!v.recordId}"
+                                  objectApiName="Application__c"
+                                  fields="{!v.ApplicationReviewFields}"
+                                  columns="1"
+                                  mode="view"
+                                  onsuccess="{!c.handleSuccess}"/>
+        </div>
+        <lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+        
+        
+    </lightning:card>        
+</aura:component>

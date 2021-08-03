@@ -1,0 +1,20 @@
+<!--
+@author IVL Dev
+@date 7-June-2020
+@description component created for showing list of other applications submitted by the same patient.
+This list will show the application status and payment date along with application number.
+-->
+
+<aura:component controller="TAP_Application_Ctlr" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute type="Application__c" name="applist"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onLoad}"/>
+    <aura:renderif isTrue="{!not(empty(v.applist))}">
+        <lightning:datatable data="{! v.applist }"  columns="{! v.mycolumns }" keyField="Id" hideCheckboxColumn="true"/>
+        <aura:set attribute="else">
+            There are no records to display.
+        </aura:set>
+    </aura:renderif>
+</aura:component>

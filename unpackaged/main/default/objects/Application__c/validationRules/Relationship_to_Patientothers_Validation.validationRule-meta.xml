@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_to_Patientothers_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Relationship_to_Patient__c,&apos;Other (Please Specify)&apos;),
+ISBLANK( Other_Relationship_to_Patient__c)
+)</errorConditionFormula>
+    <errorDisplayField>Other_Relationship_to_Patient__c</errorDisplayField>
+    <errorMessage>Please Specify Relationship with Patient</errorMessage>
+</ValidationRule>

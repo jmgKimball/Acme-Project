@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">    
+    <!--
+@author IVL Dev
+@date 12-May-2020
+@description component created for displaying Patient Details on Application object retrieved from Person Account details.
+These details can be updated from the component itself.
+-->
+    
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="application" type="Application__c"/>
+    <aura:attribute name="accountFields" type="String[]" default="Name,Applicant_Id__c,Gender__pc,Race__pc,Ethnicity__pc,PersonBirthdate,Age__pc,Parent_Guardian_Name__pc,PersonEmail,PersonMobilePhone,PersonHomePhone,PersonOtherPhone,Preferred_method_of_contact__c,PersonMailingAddress"/>
+    <force:recordData aura:id="caseRecord"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.application}"
+                      layoutType="FULL"/>
+    <aura:renderIf isTrue="{!not(empty(v.application.Patient__c))}">
+        <lightning:card iconName="standard:user" class=".slds-text-title_bold" title="{! 'Patient Details'}">
+            <div class="slds-p-left_large slds-p-right_medium">
+                <lightning:recordForm aura:id="PatientForm"
+                                      recordId="{!v.application.Patient__c}"
+                                      objectApiName="Account"
+                                      fields="{!v.accountFields}"
+                                      columns="2"
+                                      mode="readonly"/>
+            </div>
+            
+            <lightning:button label="Update Patient Details" onclick="{!c.handleUpdate}" 
+                              variant ="brand" class="slds-align_absolute-center"/>
+            
+        </lightning:card>
+    </aura:renderIf>
+    
+    
+</aura:component>

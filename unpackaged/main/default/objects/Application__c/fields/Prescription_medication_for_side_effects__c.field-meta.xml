@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prescription_medication_for_side_effects__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is there any side effects for Patient that Prescribed by Doctor?</description>
+    <externalId>false</externalId>
+    <label>Prescription medication for side effects</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

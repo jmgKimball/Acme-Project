@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family__c</fullName>
+    <description>Patient&apos;s family&apos;s sources of income like employment, family/friends, pension etc.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient&apos;s family&apos;s sources of income like employment, family/friends, pension etc.</inlineHelpText>
+    <label>Family Income Sources</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Social_Security</fullName>
+                <default>false</default>
+                <label>Social Security</label>
+            </value>
+            <value>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+                <label>Retirement</label>
+            </value>
+            <value>
+                <fullName>Public_Assistance</fullName>
+                <default>false</default>
+                <label>Public Assistance</label>
+            </value>
+            <value>
+                <fullName>Short_Term_Disability</fullName>
+                <default>false</default>
+                <label>Short-Term Disability</label>
+            </value>
+            <value>
+                <fullName>Pension</fullName>
+                <default>false</default>
+                <label>Pension</label>
+            </value>
+            <value>
+                <fullName>SSD (Disability)</fullName>
+                <default>false</default>
+                <label>SSD (Disability)</label>
+            </value>
+            <value>
+                <fullName>Unemployment</fullName>
+                <default>false</default>
+                <label>Unemployment</label>
+            </value>
+            <value>
+                <fullName>Salary</fullName>
+                <default>false</default>
+                <label>Salary</label>
+            </value>
+            <value>
+                <fullName>Family/Friend Support</fullName>
+                <default>false</default>
+                <label>Family/Friend Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Family_Friends_Support</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Family/Friends Support</label>
+            </value>
+            <value>
+                <fullName>SSD_Disability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SSD(Disability)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

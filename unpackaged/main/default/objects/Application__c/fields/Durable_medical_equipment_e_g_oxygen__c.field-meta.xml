@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Durable_medical_equipment_e_g_oxygen__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Durable medical equipment that Medicare covers  include: Hospital beds, infusion supplies, oxygen equipment, patient lifts, and blood sugar monitors etc.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Durable medical equipment (e.g. oxygen, walker, wheelchair, etc.)</inlineHelpText>
+    <label>Durable Medical Equipment</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
