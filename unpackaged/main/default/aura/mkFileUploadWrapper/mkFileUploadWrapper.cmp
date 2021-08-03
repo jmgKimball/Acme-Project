@@ -1,0 +1,9 @@
+<!--
+ * @description Markup for mkFileUploadWrapper
+ * @author      Scott Taylor, Traction on Demand
+ * @date        2020-10-23
+ -->
+<aura:component description="mkFileUploadWrapper"
+                implements="flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId">
+    <c:mkFileUpload recordIdFromWrapper="{!v.recordId}" onclose="{!c.closeAction}"></c:mkFileUpload>
+</aura:component>

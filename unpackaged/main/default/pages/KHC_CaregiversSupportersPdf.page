@@ -1,0 +1,91 @@
+<apex:page standardController="Account" renderAs="pdf" >
+    <head>
+        <title>{!$Label.Export_Medical_History_Title}</title>
+        <style>
+    
+            @page {
+                        size: letter;
+                        margin: 25mm;
+                        @top-center {
+                            content: "Sample";
+                        }
+                        @bottom-center {
+                            content: "Page " counter(page) " of " counter(pages);
+                        }
+                    }
+                    .page-break {
+                        display:block;
+                        page-break-after:always;
+                        font-family: Arial Unicode MS;
+                    }
+    
+        </style>
+        </head>
+    <body>
+
+        <table width="100%">
+            <tr style="padding: 0.5em;">
+                <td colspan="2" align="left" style="vertical-align: top;"><apex:image value="{!URLFOR($Resource.SGKLogo)}" style="height: 80px; "/></td>
+                <td colspan="2" align="right" style="font-family: Arial Unicode MS; font-size: 0.7em;">
+                    <b>{!$Label.Susan_G_Komen}</b><br />  
+                    <apex:outputLabel value="{!$Label.Susan_G_Komen_Address}" escape="false"></apex:outputLabel>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" style="font-size: 1.0em; font-weight: bold; font-family: Arial Unicode MS;text-align:center">
+                    {!$Label.Caregivers_Supporters}
+                </th>
+            </tr>
+            <tr>
+                <th colspan="4" style="font-size: 1.0em; font-weight: bold; color: #EB41A9; font-family: Arial Unicode MS;">
+                    {!$Label.Patient_Information}
+                </th>
+            </tr>
+            <tr>
+                <th style="font-size: 0.8em; font-weight: bold; font-family: Arial Unicode MS;">{!$Label.Name}: {!Account.Name}</th>
+            </tr>
+        </table>
+        <br/>
+        <apex:variable var="sizeOfCaregivers" value="{!0}"/>
+        <apex:repeat value="{!Account.Patient_Contacts__r}" var="patientContact">
+            <apex:variable var="sizeOfCaregivers" value="{!sizeOfCaregivers + 1}" rendered="{!patientContact.RecordType.Name == 'Supporter/Caregiver'}"/>
+        </apex:repeat>
+        <apex:outputPanel layout="none" rendered="{!sizeOfCaregivers > 0}">
+            <table style="border-spacing: 0px;">
+                <tr style="width:100%">
+                    <th colspan="5" style="font-size: 1.0em; font-weight: bold; color: #EB41A9; font-family: Arial Unicode MS;">
+                        {!$Label.Caregivers_Supporters}
+                    </th>
+                </tr>
+                <tr>
+                    <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;">{!$ObjectType.Patient_Contact__c.fields.Family_Member_Name__c.Label}</th>
+                    <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;">{!$ObjectType.Patient_Contact__c.fields.Relationship__c.Label}</th>
+                    <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;">{!$ObjectType.Patient_Contact__c.fields.Email__c.Label}</th>
+                    <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;">{!$ObjectType.Patient_Contact__c.fields.Phone__c.Label}</th>
+                    <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;">{!$ObjectType.Patient_Contact__c.fields.Emergency_Contact__c.Label}</th>
+                    
+                </tr>
+                <apex:repeat value="{!Account.Patient_Contacts__r}" var="patientContact">
+                    <apex:outputPanel layout="none" rendered="{!patientContact.RecordType.Name == 'Supporter/Caregiver'}">
+                        <tr>
+                            <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!patientContact.Family_Member_Name__c}</td>
+                            <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!patientContact.Relationship__c}</td>
+                            <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!patientContact.Email__c}</td>
+                            <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!patientContact.Phone__c}</td>
+                            <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!patientContact.Emergency_Contact__c}</td>
+                        </tr>
+                    </apex:outputPanel>
+                </apex:repeat>
+            </table>
+            <br/>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!sizeOfCaregivers == 0}">
+            {!$Label.No_Caregivers_Supporters}
+        </apex:outputPanel>
+        <table align="center">
+            <tr><td style="font-size: 0.5em; font-family: Arial Unicode MS;">
+            <apex:outputText value="Exported: {0,date,yyyy.MM.dd}"> <apex:param value="{!Now()}" /> </apex:outputText>
+            </td></tr>
+        </table>
+    </body>
+</apex:page>

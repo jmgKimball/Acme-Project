@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Side_Effect_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Side Effect Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Diarrhea</fullName>
+                <default>false</default>
+                <label>Diarrhea</label>
+            </value>
+            <value>
+                <fullName>Dizziness</fullName>
+                <default>false</default>
+                <label>Dizziness</label>
+            </value>
+            <value>
+                <fullName>Hairloss</fullName>
+                <default>false</default>
+                <label>Hairloss</label>
+            </value>
+            <value>
+                <fullName>Loss of Appetite</fullName>
+                <default>false</default>
+                <label>Loss of Appetite</label>
+            </value>
+            <value>
+                <fullName>Loss of Energy</fullName>
+                <default>false</default>
+                <label>Loss of Energy</label>
+            </value>
+            <value>
+                <fullName>Loss of Sensation</fullName>
+                <default>false</default>
+                <label>Loss of Sensation</label>
+            </value>
+            <value>
+                <fullName>Nausea</fullName>
+                <default>false</default>
+                <label>Nausea</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Skin issues</fullName>
+                <default>false</default>
+                <label>Skin issues</label>
+            </value>
+            <value>
+                <fullName>Urinary Issues</fullName>
+                <default>false</default>
+                <label>Urinary Issues</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

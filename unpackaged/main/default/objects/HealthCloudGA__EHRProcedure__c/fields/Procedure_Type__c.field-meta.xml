@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procedure_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Procedure Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mammogram</fullName>
+                <default>false</default>
+                <label>Mammogram</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>Screening</fullName>
+                <default>false</default>
+                <label>Screening</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>Biopsy</fullName>
+                <default>false</default>
+                <label>Biopsy</label>
+            </value>
+            <value>
+                <fullName>Vitals</fullName>
+                <default>false</default>
+                <label>Vitals</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>Blood Draw</fullName>
+                <default>false</default>
+                <label>Blood Draw</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>Xray</fullName>
+                <default>false</default>
+                <label>Xray</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>MRI</fullName>
+                <default>false</default>
+                <label>MRI</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>CT Scan</fullName>
+                <default>false</default>
+                <label>CT Scan</label>
+                <isActive>false</isActive>
+            </value>
+            <value>
+                <fullName>Screening/ Imaging</fullName>
+                <default>false</default>
+                <label>CT Scan</label>
+            </value>
+            <value>
+                <fullName>Diagnostic Imaging</fullName>
+                <default>false</default>
+                <label>CT Scan</label>
+            </value>
+            <value>
+                <fullName>Chemotherapy (Infusion)</fullName>
+                <default>false</default>
+                <label>CT Scan</label>
+            </value>
+            <value>
+                <fullName>Chemotherapy (Oral)</fullName>
+                <default>false</default>
+                <label>CT Scan</label>
+            </value>
+            <value>
+                <fullName>Hormone Therapy</fullName>
+                <default>false</default>
+                <label>Hormone Therapy</label>
+            </value>
+            <value>
+                <fullName>Immunotherapy</fullName>
+                <default>false</default>
+                <label>Immunotherapy</label>
+            </value>
+            <value>
+                <fullName>Radiation</fullName>
+                <default>false</default>
+                <label>Radiation</label>
+            </value>
+            <value>
+                <fullName>Lumpectomy</fullName>
+                <default>false</default>
+                <label>Lumpectomy</label>
+            </value>
+            <value>
+                <fullName>Mastectomy</fullName>
+                <default>false</default>
+                <label>Mastectomy</label>
+            </value>
+            <value>
+                <fullName>Palliative Care</fullName>
+                <default>false</default>
+                <label>Palliative Care</label>
+            </value>
+            <value>
+                <fullName>End of life care</fullName>
+                <default>false</default>
+                <label>End of life care</label>
+            </value>
+            <value>
+                <fullName>Other (please specify in notes)</fullName>
+                <default>false</default>
+                <label>Other (please specify in notes)</label>
+            </value>    
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

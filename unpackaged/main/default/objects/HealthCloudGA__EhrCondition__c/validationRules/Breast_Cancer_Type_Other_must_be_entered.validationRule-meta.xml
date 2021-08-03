@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breast_Cancer_Type_Other_must_be_entered</fullName>
+    <active>true</active>
+    <description>Breast Cancer Type Other field must be entered when the Breast Cancer Type &quot;Other (please specify)&quot; is selected</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Breast_Cancer_Type__c , &quot;Other (please specify)&quot;),
+  ISBLANK( Breast_Cancer_Type_Other__c )  
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga__ehrcondition__c&quot;))</errorConditionFormula>
+    <errorMessage>You indicated a Breast Cancer type of &quot;Other&quot; - please specify the type of breast cancer</errorMessage>
+</ValidationRule>

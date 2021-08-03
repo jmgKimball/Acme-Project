@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Mother</fullName>
+        <default>false</default>
+        <label>Mother</label>
+    </customValue>
+    <customValue>
+        <fullName>Father</fullName>
+        <default>false</default>
+        <label>Father</label>
+    </customValue>
+    <customValue>
+        <fullName>Full Sibling</fullName>
+        <default>false</default>
+        <label>Full Sibling</label>
+    </customValue>
+    <customValue>
+        <fullName>Half Sibling</fullName>
+        <default>false</default>
+        <label>Half Sibling</label>
+    </customValue>
+    <customValue>
+        <fullName>Grandparent</fullName>
+        <default>false</default>
+        <label>Grandparent</label>
+    </customValue>
+    <customValue>
+        <fullName>Uncle/Aunt</fullName>
+        <default>false</default>
+        <label>Uncle/Aunt</label>
+    </customValue>
+    <customValue>
+        <fullName>First Cousin</fullName>
+        <default>false</default>
+        <label>First Cousin</label>
+    </customValue>
+    <customValue>
+        <fullName>Grandchild</fullName>
+        <default>false</default>
+        <label>Grandchild</label>
+    </customValue>
+    <customValue>
+        <fullName>Niece/Nephew</fullName>
+        <default>false</default>
+        <label>Niece/Nephew</label>
+    </customValue>
+    <customValue>
+        <fullName>Spouse/Partner</fullName>
+        <default>false</default>
+        <label>Spouse/Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Co-Worker</fullName>
+        <default>false</default>
+        <label>Co-Worker</label>
+    </customValue>
+    <customValue>
+        <fullName>Employer</fullName>
+        <default>false</default>
+        <label>Employer</label>
+    </customValue>
+    <customValue>
+        <fullName>Therapist</fullName>
+        <default>false</default>
+        <label>Therapist</label>
+    </customValue>
+    <customValue>
+        <fullName>Child</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Child</label>
+    </customValue>
+    <customValue>
+        <fullName>Maternal Uncle/Aunt</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Maternal Uncle/Aunt</label>
+    </customValue>
+    <customValue>
+        <fullName>Maternal Grandparent</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Maternal Grandparent</label>
+    </customValue>
+    <customValue>
+        <fullName>Paternal Uncle/Aunt</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Paternal Uncle/Aunt</label>
+    </customValue>
+    <customValue>
+        <fullName>Paternal Grandparent</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Paternal Grandparent</label>
+    </customValue>
+    <customValue>
+        <fullName>Paternal Half Sibling</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Paternal Half Sibling</label>
+    </customValue>
+    <customValue>
+        <fullName>Maternal Half Sibling</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Maternal Half Sibling</label>
+    </customValue>
+    <masterLabel>Relationship</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frequency_Mandatory_For_Payout_Cap</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR (
+    AND(
+        ISPICKVAL(Payout_Cap_Frequency__c , &apos;&apos;),
+        NOT(Payout_Cap_Amount__c &lt;= 0)
+    ),
+    AND(
+        NOT(
+            ISPICKVAL(Payout_Cap_Frequency__c , &apos;&apos;)
+        ),
+        OR(
+            ISBLANK(Payout_Cap_Amount__c),
+            Payout_Cap_Amount__c &lt;= 0
+        )
+    )
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;careprogram&quot;))</errorConditionFormula>
+    <errorMessage>Both Frequency And Amount Are Required For Payout Cap</errorMessage>
+</ValidationRule>

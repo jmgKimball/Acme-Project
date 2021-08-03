@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Follow_Up__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Follow up from the Initial (first) contact</inlineHelpText>
+    <label>Initial Follow Up</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nothing</fullName>
+                <default>false</default>
+                <label>Nothing</label>
+            </value>
+            <value>
+                <fullName>Patient will Call Komen</fullName>
+                <default>false</default>
+                <label>Patient will Call Komen</label>
+            </value>
+            <value>
+                <fullName>Scheduled Call Back</fullName>
+                <default>false</default>
+                <label>Scheduled Call Back</label>
+            </value>
+            <value>
+                <fullName>Send Care Plan Info</fullName>
+                <default>false</default>
+                <label>Send Care Plan Info</label>
+            </value>
+            <value>
+                <fullName>Send Resource Material</fullName>
+                <default>false</default>
+                <label>Send Resource Material</label>
+            </value>
+            <value>
+                <fullName>Send Barrier Material</fullName>
+                <default>false</default>
+                <label>Send Barrier Material</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

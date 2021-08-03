@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Status field for reporting with following set of values(Draft / Not Scheduled, Scheduled, Sent - Waiting response, Responded, Past Due)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+				ISNULL(  Survey_Listener_URL__c ) , &apos;No Survey URL - Survey will not send&apos;,
+				IF(
+								!ISNULL( Recorded_Date__c ) , &apos;Responded&apos;,
+								IF( 
+												ISNULL( Date_to_Send__c ) &amp;&amp; ISNULL(Date_Time_Sent__c), &apos;Draft / Not Scheduled&apos;, 
+												IF( 
+																!ISNULL( Date_to_Send__c ) &amp;&amp; Date_to_Send__c &gt;= TODAY() &amp;&amp; ISNULL( Date_Time_Sent__c ), &apos;Scheduled&apos;,
+																IF( 
+																				!ISNULL( Date_Time_Sent__c ), &apos;Sent - Waiting response&apos;, 
+																				IF( 
+																								!ISNULL( Date_to_Send__c ) &amp;&amp; Date_to_Send__c &lt; TODAY() &amp;&amp; ISNULL( Date_Time_Sent__c ), &apos;Past Due&apos;, 
+																								&apos;Draft / Not Scheduled&apos; 
+																				)
+																)
+												)
+								)
+				)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

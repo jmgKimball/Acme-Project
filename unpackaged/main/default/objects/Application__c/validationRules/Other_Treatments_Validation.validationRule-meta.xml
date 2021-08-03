@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Treatments_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( INCLUDES(Treatment_s_received_in_the_past_12_mon__c, &quot;Other&quot;) ,ISBLANK(Other_Treatments_Received__c))&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;))</errorConditionFormula>
+    <errorDisplayField>Other_Treatments_Received__c</errorDisplayField>
+    <errorMessage>Please Specify Other Treatments Received In Past 12 Months</errorMessage>
+</ValidationRule>

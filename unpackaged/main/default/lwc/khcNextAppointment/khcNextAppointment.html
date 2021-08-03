@@ -1,0 +1,56 @@
+<!--
+ - Created by Amos Ko on 3/11/2021.
+ -->
+
+<!-- Khc Upcoming Appointment -->
+<template>
+
+    <template if:true={loaded}>
+        <div class=" htmlHeading slds-p-left_large khc-org-color khc-title">
+            {nextAppointmentLabel}
+        </div>
+
+        <article if:true={hasAppointment} class="slds-p-left_medium slds-p-bottom_large">
+                <div class="slds-media__body slds-p-around_small khc-appointment-container">
+                    <div class="slds-tile__detail dateTime">
+                        <ul class="slds-list_horizontal slds-p-bottom_small">
+                            <li if:true={hasAppointmentDate}><lightning-formatted-date-time class="slds-item_detail khc-appointment-date" value={appointment.Appointment_Date__c}
+                                                               month="long" day="2-digit" year="numeric"></lightning-formatted-date-time></li>
+                            <li if:true={hasAppointmentTime} class="khc-appointment-time"><lightning-formatted-date-time class="slds-item_detail khc-appointment-date" value={appointment.Appointment_Time__c}
+                                                                            hour="numeric" minute="2-digit" time-zone="UTC"></lightning-formatted-date-time> </li>
+                        </ul>
+                    </div>
+
+                        <div class="htmlContent khc-appointment-details">
+                            <p class="slds-item_label khc-field-label">{encounterFields.Title__c.label}: </p>
+                            <p class="slds-item_detail khc-field-detail slds-truncate">{appointment.Title__c}</p>
+                            <p class="slds-item_label khc-field-label">{encounterFields.Appointment_Type__c.label}: </p>
+                            <p class="slds-item_detail khc-field-detail">{appointment.Appointment_Type__c}</p>
+                            <p class="slds-item_label khc-field-label ">{encounterFields.Description__c.label}: </p>
+                            <p class="slds-item_detail khc-field-detail slds-truncate">{appointment.Description__c}</p>
+                        </div>
+
+                    <div class="slds-p-top_medium">
+                        <a class="mkButton khc-org-color" href="my-appointments">{allAppointmentsLabel}</a>
+                    </div>
+                </div>
+        </article>
+
+        <article if:false={hasAppointment} class="slds-p-left_medium">
+                <div class="slds-p-around_small">
+                    <div class="htmlTitle">
+                        {noUpcomingAppointmentsLabel}
+                    </div>
+
+                    <c-khc-new-appointment-modal onrefresh={getAppointment}>
+                        <div slot="createAppointmentButton">
+                            <div class="htmlContent">
+                                Please go <a class="khc-org-color">here</a> to create a new appointment.
+                            </div>
+                        </div>
+                    </c-khc-new-appointment-modal>
+                </div>
+        </article>
+
+    </template>
+</template>

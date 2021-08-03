@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Patient Needs Screening</fullName>
+        <default>false</default>
+        <label>Patient Needs Screening</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient Has Abnormal Screening Result</fullName>
+        <default>false</default>
+        <label>Patient Has Abnormal Screening Result</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient In Active Treatment</fullName>
+        <default>false</default>
+        <label>Patient In Active Treatment</label>
+    </customValue>
+    <description>Used to identify the underlying reason a Patient needs assistance</description>
+    <masterLabel>Patient Need</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

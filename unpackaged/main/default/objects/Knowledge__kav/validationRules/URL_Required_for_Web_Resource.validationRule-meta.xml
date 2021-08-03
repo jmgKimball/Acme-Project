@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>URL_Required_for_Web_Resource</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+            IF(ISPICKVAL(Resource_Type__c ,&apos;Web&apos;),true,false),
+            ISBLANK( Komen_Site_URL__c ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;knowledge__kav&quot;
+        )</errorConditionFormula>
+    <errorMessage>Please enter the Site URL if Resource Type is &quot;Web&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<template>
+  <c-khc-back-navigation container-class="khc-container"></c-khc-back-navigation>
+  <div class="khc-container">
+    <div class="slds-align_absolute-center" if:true={showSpinner}>
+      <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+    <header>
+      <h1>{headerText}</h1>
+    </header>
+
+    <article>
+      <lightning-accordion active-section-name="" allow-multiple-sections-open>
+        <template for:each={history} for:item="item">
+          <lightning-accordion-section key={item.id} name={item.id} label={item.Name_with_Relationship__c}>
+            <div slot="actions" class="controls">
+              <a data-id={item.Id} onclick={onEdit}>{editLabel}</a>
+            </div>
+            <ul>
+              <template for:each={item.Family_Medical_History_Conditions__r} for:item="condition">
+                <li key={condition.Id}>
+                  {condition.Condition_Sub_Category__c}
+                  <template if:true={condition.Age_at_diagnosis__c}>
+                    &nbsp;({condition.Age_at_diagnosis__c})
+                  </template>
+                </li>
+              </template>
+            </ul>
+          </lightning-accordion-section>
+        </template>
+      </lightning-accordion>
+    </article>
+
+    <footer>
+      <div class="slds-m-top_large">
+        <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-add-button" onclick={onAdd}>
+          {addNewFamilyMemberLabel}
+        </button>
+      </div>
+      <div class="slds-m-top_x-large slds-text-align_center">
+        <a href={downloadFamilyHistoryLink} target="_blank">
+            {downloadMyFamilyHistoryLabel}
+        </a>
+      </div>
+    </footer>
+  </div>
+</template>

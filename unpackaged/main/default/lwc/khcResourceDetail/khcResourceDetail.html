@@ -1,0 +1,104 @@
+<template>
+    <!-- Spinner -->
+    <div class="slds-align_absolute-center" if:true={showSpinner}>
+        <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+    <!-- Back Button -->
+    <div>
+        <a onclick={handleBackClick} class="khc-a">&#x3c; {backToResourceLibrary}</a>
+    </div>
+    <article class="slds-p-top_large">
+        <!-- Article Summary -->
+        <div class="khc-tile-wrapper">
+            <div class="slds-grid slds-float_right khc-resource-menu">
+                    <button class="slds-button khc-favorite slds-p-top_none"
+                            onclick={toggleFavourite}
+                            data-favorite={knowledge.isFavorite}>
+                    {favoriteLabel}
+                    <i if:true={knowledge.isFavorite} data-favorite={knowledge.isFavorite} class="fas fa-heart slds-m-left_xx-small"></i>
+                    <i if:false={knowledge.isFavorite} data-favorite={knowledge.isFavorite} class="far fa-heart slds-m-left_xx-small"></i>
+                </button>
+            </div>
+            <div class="slds-grid slds-grid_vertical-align-center">
+                <!-- Article Icon -->
+                <i if:true={isArticleResource} class="far fa-newspaper"></i>
+                <i if:true={isWebResource} class="fas fa-desktop"></i>
+                <i if:true={isLocalResource} class="fas fa-map-marker-alt"></i>
+                <!-- Article Title -->
+                <h2 class="slds-p-left_small">
+                    <a data-article-url-name={knowledge.UrlName}
+                        onclick={handleNavigateToArticle}>
+                        {knowledge.Title}
+                    </a>
+                </h2>
+            </div>
+            
+            <small>
+                <!-- Account Information -->
+                <div if:true={knowledge.Account_Name__c} class="slds-p-top_small">
+                    <label><strong>{knowledge.Account_Name__c}</strong></label>
+                    <p if:true={knowledge.Account_Billing_Address_Street__c}>
+                        {knowledge.Account_Billing_Address_Street__c}
+                    </p>
+                    <p>
+                        <template if:true={knowledge.Account_Billing_Address_City__c}>{knowledge.Account_Billing_Address_City__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_State__c}>{knowledge.Account_Billing_Address_State__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_Country__c}>{knowledge.Account_Billing_Address_Country__c},&nbsp;</template>
+                        <template if:true={knowledge.Account_Billing_Address_Zip__c}>{knowledge.Account_Billing_Address_Zip__c}</template>
+                    </p>
+                </div>
+
+                <!-- Phone, Website, Email -->
+                <div class="slds-grid slds-p-top_x-small">
+                    <template if:true={phoneNumberMarkupString}>
+                        <a href={phoneNumberMarkupString} class="slds-p-right_small">{knowledge.Phone__c}</a>
+                    </template>
+
+                    <template if:true={knowledge.Komen_Site_URL__c}>
+                        <a href={knowledge.Komen_Site_URL__c} target="_blank" class="slds-p-right_small">{visitWebsiteLabel}</a>
+                    </template>
+
+                    <template if:true={emailToMarkupString}>
+                        <a href={emailToMarkupString} class="slds-p-right_small">{emailLabel}</a>
+                    </template>
+                </div>
+
+                <hr class="slds-m-vertical_medium"/>
+
+                <!-- Article Summary -->
+                <div>
+                    <p>{knowledge.Summary}</p>
+                    <br/>
+                    <lightning-formatted-rich-text value={knowledge.Body__c} class="knowledge-detail-body"></lightning-formatted-rich-text>
+                </div>
+
+                <hr class="slds-m-vertical_medium"/>
+
+                <!-- Article Footer -->
+                <div class="slds-p-top_small slds-grid slds-grid_align-spread">
+                    <a if:false={isGuest} onclick={openReportResourceModal}>{reportAnIssueLabel}</a>
+                </div>
+            </small>
+        </div>
+    </article>
+
+    <!-- Report Resource Issue Modal -->
+    <c-mk-modal data-modal-name="report-resource-modal">
+        <div slot="header">
+            {reportResourceLabel}
+        </div>
+        <div slot="content" style="min-height: 350px;">
+            <c-khc-report-resource-issue knowledge={knowledge} onreportissuesuccess={handleReportIssueSuccess}></c-khc-report-resource-issue>
+        </div>
+    </c-mk-modal>
+
+    <!-- Guest User Login Modal -->
+    <c-mk-modal data-modal-name="guest-login-modal">
+        <div slot="header">
+            {logInOrRegisterLabel}
+        </div>
+        <div slot="content">
+            <c-khc-guest-login-form></c-khc-guest-login-form>
+        </div>
+    </c-mk-modal>
+</template>

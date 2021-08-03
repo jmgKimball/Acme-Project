@@ -1,0 +1,63 @@
+<template>
+    <lightning-messages ></lightning-messages>
+    <div class="htmlContent">
+        <slot name="createAppointmentButton" onclick={openModal}></slot>
+    </div>
+
+    <c-mk-modal>
+        <div slot="header">
+            <h2 class="slds-modal__title">{createAnAppointmentLabel}</h2>
+        </div>
+
+        <form slot="content">
+            <div class="slds-m-around_medium">
+                <div class="slds-form-element slds-form_stacked">
+                    <div class="slds-form-element__control">
+                        <lightning-input label={titleLabel} max-length="255" data-name="title" type="text" class="slds-lightning-input" required></lightning-input>
+                    </div>
+                </div> 
+
+                <div class="slds-form-element slds-form_stacked ">
+                    <div class="slds-form-element__control">
+                        <lightning-input type="date" data-name="appointmentDate" label={dateLabel} onchange={setReminderDays}></lightning-input>
+                    </div>
+                </div>
+
+                <div class="slds-form-element slds-form_stacked">
+                    <div class="slds-form-element__control">
+                        <lightning-input type="time" label={timeLabel} data-name="appointmentTime" class="slds-dat"></lightning-input>
+                    </div>
+                </div>
+
+                <div class="slds-form_stacked slds-form-element">
+                    <lightning-combobox class="category"
+                                        data-name="appointmentType"
+                                        options={appointmentTypes}
+                                        label={typeLabel}>
+                    </lightning-combobox>
+                </div>
+
+                <div class="slds-form_stacked slds-form-element">
+                    <div class="slds-form-element__control">
+                        <lightning-textarea data-name="appointmentDescription" placeholder="Enter description" required label={descriptionLabel}> </lightning-textarea>
+                    </div>
+                </div>
+
+                <div class="slds-grid">
+                    <div class="slds-box_x-small slds-text-align_left">{sendReminderLabel}</div>
+                    <div class="slds-size_2-of-12 slds-col slds-float_left khc-reminder-days">
+                            <lightning-input type="number" label="" class={greyOutDisabledFields} variant="label-hidden" min="0" max="999"
+                                             max-length="3" disabled={disableReminderDays} data-name="reminderDays"></lightning-input>
+                    </div>
+                    <div class="slds-box_x-small slds-text-align_left">{daysBeforeAppointmentLabel}</div>
+                </div>
+            </div>
+
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                <button type="button" class="slds-button slds-button_brand" onclick={submitForm}>Save</button>
+            </footer>
+
+        </form>
+    </c-mk-modal>
+</template>

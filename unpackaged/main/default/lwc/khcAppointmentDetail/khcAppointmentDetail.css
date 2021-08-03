@@ -1,0 +1,49 @@
+.khc-form {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 50% 50%;
+    margin-top: 10px;
+}
+
+.khc-form-item {
+    position: relative;
+}
+
+
+.khc-form-item lightning-helptext {
+    position: absolute;
+    top: -24px;
+    right: 5px;;
+    display: inline-block;
+}
+
+section.slds-accordion__section {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* add condition */
+.khc-view-item {
+    max-width: 50em;
+    height: 17em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4em;
+    max-height: 25rem;
+}
+
+.khc-attended-button{
+    display: block;
+    width:100%;
+}
+
+.khc-edit-button {
+    grid-column: 1;
+}
+
+.khc-text {
+    overflow-y: auto;
+    white-space: pre-wrap;
+    max-width: 15rem;
+}

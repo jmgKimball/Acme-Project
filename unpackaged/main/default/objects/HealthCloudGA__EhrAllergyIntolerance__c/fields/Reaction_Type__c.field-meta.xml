@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reaction_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Reaction</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A sense of “impending doom”</fullName>
+                <default>false</default>
+                <label>A sense of “impending doom”</label>
+            </value>
+            <value>
+                <fullName>Bloating</fullName>
+                <default>false</default>
+                <label>Bloating</label>
+            </value>
+            <value>
+                <fullName>Chest tightness and losing your breath</fullName>
+                <default>false</default>
+                <label>Chest tightness and losing your breath</label>
+            </value>
+            <value>
+                <fullName>Cough</fullName>
+                <default>false</default>
+                <label>Cough</label>
+            </value>
+            <value>
+                <fullName>Diarrhea</fullName>
+                <default>false</default>
+                <label>Diarrhea</label>
+            </value>
+            <value>
+                <fullName>Feeling faint, light-headed or “blacking out”</fullName>
+                <default>false</default>
+                <label>Feeling faint, light-headed or “blacking out”</label>
+            </value>
+            <value>
+                <fullName>Hives (a rash with raised red patches)</fullName>
+                <default>false</default>
+                <label>Hives (a rash with raised red patches)</label>
+            </value>
+            <value>
+                <fullName>Itchy, watery eyes</fullName>
+                <default>false</default>
+                <label>Itchy, watery eyes</label>
+            </value>
+            <value>
+                <fullName>Itchy nose</fullName>
+                <default>false</default>
+                <label>Itchy nose</label>
+            </value>
+            <value>
+                <fullName>Pain</fullName>
+                <default>false</default>
+                <label>Pain</label>
+            </value>
+            <value>
+                <fullName>Rashes</fullName>
+                <default>false</default>
+                <label>Rashes</label>
+            </value>
+            <value>
+                <fullName>Redness</fullName>
+                <default>false</default>
+                <label>Redness</label>
+            </value>
+            <value>
+                <fullName>Runny nose</fullName>
+                <default>false</default>
+                <label>Runny nose</label>
+            </value>
+            <value>
+                <fullName>Sneezing</fullName>
+                <default>false</default>
+                <label>Sneezing</label>
+            </value>
+            <value>
+                <fullName>Stomach cramps</fullName>
+                <default>false</default>
+                <label>Stomach cramps</label>
+            </value>
+            <value>
+                <fullName>Swelling</fullName>
+                <default>false</default>
+                <label>Swelling</label>
+            </value>
+            <value>
+                <fullName>Throat closing</fullName>
+                <default>false</default>
+                <label>Throat closing</label>
+            </value>
+            <value>
+                <fullName>Tongue swelling</fullName>
+                <default>false</default>
+                <label>Tongue swelling</label>
+            </value>
+            <value>
+                <fullName>Vomiting</fullName>
+                <default>false</default>
+                <label>Vomiting</label>
+            </value>
+            <value>
+                <fullName>Wheezing (a whistling sound when you breathe)</fullName>
+                <default>false</default>
+                <label>Wheezing (a whistling sound when you breathe)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>General_Procedure</fullName>
+    <active>true</active>
+    <label>General Procedure</label>
+    
+    <picklistValues>
+        <picklist>Procedure_Type__c</picklist>
+        <values>
+            <fullName>Biopsy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemotherapy %28Infusion%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemotherapy %28Oral%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostic Imaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End of life care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hormone Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immunotherapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lumpectomy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastectomy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28please specify in notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palliative Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screening%2F Imaging</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    
+</RecordType>

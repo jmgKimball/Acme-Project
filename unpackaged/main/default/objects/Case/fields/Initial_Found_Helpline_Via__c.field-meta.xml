@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Found_Helpline_Via__c</fullName>
+    <externalId>false</externalId>
+    <label>How did you hear about the program?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hospital/Healthcare Provider (e.g. doctor, nurse, patient navigator, social worker)</fullName>
+                <default>false</default>
+                <label>Hospital/Healthcare Provider (e.g. doctor, nurse, patient navigator, social worker)</label>
+            </value>
+            <value>
+                <fullName>Internet/Radio/TV</fullName>
+                <default>false</default>
+                <label>Internet/Radio/TV</label>
+            </value>
+            <value>
+                <fullName>Local Komen Affiliate</fullName>
+                <default>false</default>
+                <label>Local Komen Affiliate</label>
+            </value>
+            <value>
+                <fullName>Family/Friends/Another Patient</fullName>
+                <default>false</default>
+                <label>Family/Friends/Another Patient</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Komen Breast Care Helpline (1-877 GO KOMEN)</fullName>
+                <default>false</default>
+                <label>Komen Breast Care Helpline (1-877 GO KOMEN)</label>
+            </value>
+            <value>
+                <fullName>Other (Please Specify)</fullName>
+                <default>false</default>
+                <label>Other (Please Specify)</label>
+            </value>
+            <value>
+                <fullName>ACS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ACS</label>
+            </value>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Community Organization (faith org, United Way 211, etc)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Community Organization (faith org, United Way 211, etc)</label>
+            </value>
+            <value>
+                <fullName>Community/Resource Navigator</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Community/Resource Navigator</label>
+            </value>
+            <value>
+                <fullName>Doctor/Healthcare Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Doctor/Healthcare Provider</label>
+            </value>
+            <value>
+                <fullName>Friends/Family</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Friends/Family</label>
+            </value>
+            <value>
+                <fullName>Healthcare Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Healthcare Provider</label>
+            </value>
+            <value>
+                <fullName>Hospice/Palliative Care</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hospice/Palliative Care</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Internet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internet</label>
+            </value>
+            <value>
+                <fullName>Internet Search (Google, Yahoo, etc.)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internet Search (Google, Yahoo, etc.)</label>
+            </value>
+            <value>
+                <fullName>Know Your Girls Ad Campaign</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Know Your Girls Ad Campaign</label>
+            </value>
+            <value>
+                <fullName>Komen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen</label>
+            </value>
+            <value>
+                <fullName>Komen Event</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen Event</label>
+            </value>
+            <value>
+                <fullName>Komen Pamphlet/Flyer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen Pamphlet/Flyer</label>
+            </value>
+            <value>
+                <fullName>Komen Patient Navigator</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen Patient Navigator</label>
+            </value>
+            <value>
+                <fullName>Komen Race/Walk event</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen Race/Walk event</label>
+            </value>
+            <value>
+                <fullName>Komen TAP Coordinator</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen TAP Coordinator</label>
+            </value>
+            <value>
+                <fullName>Komen-generated Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Komen-generated Email</label>
+            </value>
+            <value>
+                <fullName>NBCCCEDP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NBCCCEDP</label>
+            </value>
+            <value>
+                <fullName>NCI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NCI</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Cancer Org (NCI, ACS, CancerCare, etc)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Cancer Org (NCI, ACS, CancerCare, etc)</label>
+            </value>
+            <value>
+                <fullName>Other: fill in the blank option</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other: fill in the blank option</label>
+            </value>
+            <value>
+                <fullName>PAF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PAF</label>
+            </value>
+            <value>
+                <fullName>Social Media (Facebook, IG, TW, Youtube, LinkedIn, etc)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social Media (Facebook, IG, TW, Youtube, LinkedIn, etc)</label>
+            </value>
+            <value>
+                <fullName>TV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TV</label>
+            </value>
+            <value>
+                <fullName>TV/Radio/News</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TV/Radio/News</label>
+            </value>
+            <value>
+                <fullName>Unknown/Unable to Answer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unknown/Unable to Answer</label>
+            </value>
+            <value>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Word of mouth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

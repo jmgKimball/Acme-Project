@@ -1,0 +1,144 @@
+<!--
+ - Created by cwico@tractionondemand.com on 2020-11-06.
+ -->
+
+<!-- MK Navigation -->
+<template>
+
+	<!-- SIDEBAR MENU -->
+	<div class="mk-side-navigation slds-grid slds-wrap" if:true={isDesktop}>
+		<template for:each={menuItems} for:item="item" for:index="i">
+
+			<a key={item.Id}
+			   data-label={item.Label}
+			   data-type={item.Type}
+			   data-selected={item.isSelected}
+			   data-url={item.hyperlink}
+			   onclick={navigateToItem}
+			   class="slds-col slds-size_1-of-1 mk-parent-menu"
+			>{item.Label}</a>
+
+			<template for:each={item.children} for:item="childItem" for:index="j">
+
+				<a key={childItem.Id}
+				   onclick={navigateToItem}
+				   data-label={childItem.Label}
+				   data-selected={childItem.isSelected}
+				   data-type={childItem.Type}
+				   data-url={childItem.hyperlink}
+				   class="slds-col slds-size_1-of-1 mk-child-menu"
+				>{childItem.Label}</a>
+
+			</template>
+
+		</template>
+	</div>
+
+
+	<!-- MOBILE MENU -->
+	<div class="mk-mobile-navigation" if:true={isMobile}>
+
+		<div class="mk-toggle">
+			<input type="checkbox" />
+
+			<!--HAMBURGER MENU-->
+
+			<span class="mk-hamburger-line"></span>
+			<span class="mk-hamburger-line"></span>
+			<span class="mk-hamburger-line"></span>
+
+
+			<ul class="mk-menu">
+				<div class="slds-grid slds-wrap">
+
+					<a onclick={resetNavigation} if:true={selectedLabel} class="slds-p-vertical_medium">
+						<span class="fa fa-chevron-left"></span>
+						<span class="slds-m-left_small">Main Menu</span>
+					</a>
+
+					<template for:each={menuItems} for:item="item" for:index="i">
+
+						<a key={item.Id}
+						   data-label={item.Label}
+						   data-type={item.Type}
+						   data-selected={item.isSelected}
+						   data-url={item.hyperlink}
+						   data-target={item.Target}
+						   onclick={navigateToItem}
+						   class="slds-p-horizontal_small_x-small slds-p-vertical_small slds-col slds-size_1-of-1 mk-parent-menu"
+						   if:false={selectedLabel}
+						>
+							<span>{item.Label}</span>
+							<span class="fa fa-chevron-right" if:true={item.hasChildren}></span>
+						</a>
+
+						<!-- SUBMENU -->
+						<div key={item.Id}
+						     class="mk-mobile-sub-menu slds-col slds-size_1-of-1 slds-wrap"
+						     if:true={item.isExpanded}
+						>
+							<h2 class="slds-p-vertical_medium">{item.Label}</h2>
+							<template for:each={item.children} for:item="childItem" for:index="j">
+								<a key={childItem.Id}
+								   data-label={childItem.Label}
+								   data-selected={childItem.isSelected}
+								   data-type={childItem.Type}
+								   data-url={childItem.hyperlink}
+								   data-target={item.Target}
+								   onclick={navigateToItem}
+								   class="slds-p-vertical_medium slds-grid mk-child-menu"
+								>{childItem.Label}</a>
+							</template>
+						</div>
+					</template>
+
+					<template if:false={isGuest}>
+						<!-- USER MENU -->
+						<a key={userId}
+						   class="slds-p-vertical_small slds-col slds-size_1-of-1 mk-parent-menu mk-user"
+						   data-type="MenuLabel"
+						   data-label={userId}
+						   data-photo={userData.photoUrl}
+						   data-is-expanded={isUserMenuExpanded}
+						   onclick={navigateToItem}
+						   if:true={showUserMenu}
+						>
+							<span class="mk-user-label"><span class="mk-user-photo" style={photoUrl}></span> {userData.name}</span>
+							<span class="fa fa-chevron-right" if:false={isUserMenuExpanded}></span>
+						</a>
+
+						<!-- USER SUBMENU -->
+						<div key={userData.email} class="mk-mobile-user-sub-menu slds-grid slds-wrap" if:true={isUserMenuExpanded}>
+							<template for:each={menuItemsUser} for:item="childItem" for:index="j">
+								<a key={childItem.Id}
+								   data-label={childItem.Label}
+								   data-selected={childItem.isSelected}
+								   data-type={childItem.Type}
+								   data-target={childItem.Target}
+								   data-url={childItem.hyperlink}
+								   onclick={navigateToItem}
+								   class="slds-p-vertical_small slds-size_1-of-1 mk-child-menu"
+								>{childItem.Label}</a>
+							</template>
+						</div>
+					</template>
+				</div>
+
+				<!-- Mobile Login / Register Links -->
+				<template if:true={isGuest}>
+					<li class="slds-p-top_medium mk-guest-mobile-menu-link">
+						<a onclick={gotoRegistration}>
+							Register
+						</a>
+					</li>
+
+					<li class="slds-p-top_small mk-guest-mobile-menu-link">
+						<a onclick={gotoLogin}>
+							Login
+						</a>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</div>
+</template>

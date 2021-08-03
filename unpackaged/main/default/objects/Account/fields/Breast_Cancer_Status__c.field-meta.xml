@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breast_Cancer_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Breast Cancer Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Early Indications</fullName>
+                <default>false</default>
+                <label>Early Indications</label>
+            </value>
+            <value>
+                <fullName>Diagnosed</fullName>
+                <default>false</default>
+                <label>Diagnosed</label>
+            </value>
+            <value>
+                <fullName>Metastatic</fullName>
+                <default>false</default>
+                <label>Metastatic</label>
+            </value>
+            <value>
+                <fullName>Remission</fullName>
+                <default>false</default>
+                <label>Remission</label>
+            </value>
+            <value>
+                <fullName>Survivor</fullName>
+                <default>false</default>
+                <label>Survivor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

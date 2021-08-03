@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ensure that all users assigned to this permission group also have the following user record permission: Knowledge User, Flow User, and Service Cloud User</description>
+    <label>Helpline Agent Permissions</label>
+    <permissionSets>Application_Create_Only</permissionSets>
+    <permissionSets>Care_Plan_CRU</permissionSets>
+    <permissionSets>Care_Program_Create_Modify</permissionSets>
+    <permissionSets>HealthCloudGA__HealthCloudApexAuraAccess</permissionSets>
+    <permissionSets>HealthCloudGA__HealthCloudStandard</permissionSets>
+    <permissionSets>Health_Cloud_No_Object_Access</permissionSets>
+    <permissionSets>Helpline_Application_Permissions</permissionSets>
+    <permissionSets>Komen_Health_App_Console</permissionSets>
+    <permissionSets>Live_Agent_Setup_Flow</permissionSets>
+    <permissionSets>Patient_Care_Barrier</permissionSets>
+    <permissionSets>Patient_Contact</permissionSets>
+    <permissionSets>Patient_Management</permissionSets>
+    <permissionSets>System_Permissions</permissionSets>
+    <permissionSets>TAP_Inbox_Read</permissionSets>
+    <permissionSets>TAP_Inbox_Read_Modify</permissionSets>
+    <permissionSets>Tasks_Activities</permissionSets>
+    <permissionSets>View_Public_Reports_and_Dashboards</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,20 @@
+<!--
+ * @description Upload and view file list
+ * @author      Scott Taylor, Traction on Demand
+ * @date        2020-10-23
+ -->
+<template>
+    <div class="slds-m-bottom_medium">
+        <lightning-file-upload
+                class="upload-component slds-m-bottom_medium"
+                label={LABELS.select_files}
+                name="fileUploader"
+                record-id={objectRecordId}
+                onuploadfinished={handleUploadFinished}
+                accept={acceptedFormats}
+                multiple>
+        </lightning-file-upload>
+    </div>
+
+    <c-mk-file-list-with-icons file-data={fileData}></c-mk-file-list-with-icons>
+</template>

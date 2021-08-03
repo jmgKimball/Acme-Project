@@ -1,0 +1,99 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div >
+        <header>
+            <h1 class="slds-m-vertical_medium khc-h1">
+                <template if:false={hasANewProvider}>
+                    {searchForYourProviderLabel}
+                </template>
+                <template if:true={hasANewProvider}>
+                    {addANewProviderLabel}
+                </template>
+            </h1>
+        </header>
+
+
+        <template if:false={data.length}>
+            <template if:true={foundNoProvider}>
+                <p>{providerResultLabel} " {filterValue.providerFirstName} {filterValue.providerLastName} {filterValue.city},{filterValue.state} "</p>
+                <a onclick={backToSearchScreen} class="slds-m-bottom_small khc-a" >Please try your search again.</a>
+            </template>
+            <template if:false={foundNoProvider}>
+                <article>
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input name="ProviderFirstName" label={firstNameLabel}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input name="ProviderLastName" label={lastNameLabel} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input name="City" label={cityLabel} ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+                        <lightning-input name="State" label={stateLabel} max-length="2"></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+                
+                <br/>
+            </article>
+            <footer>
+                <div class="slds-m-top_large mkh-footer-actions">
+                    <button class="slds-button khc-button slds-button_brand slds-p-vertical_x-small"
+                        onclick={handleSearchClicked}>
+                        {searchLabel}
+                    </button>
+                </div>
+            </footer>
+            </template>
+        </template>
+        <template if:true={showProviderList}>
+            <h3 slot="title">
+                {providerPaginationResultLabel} &nbsp;
+                <a onclick={editSearch} class="khc-a">{editSearchLabel}</a>
+            </h3>
+            <div class="slds-p-horizontal_small">
+                <ul class="slds-has-dividers_bottom-space">
+                    <template for:each={data} for:item="provider">
+                        <li class="slds-item" key={provider.NPI_ID__c}>
+                            <lightning-tile >
+                                <p class="slds-truncate" title={provider.name}>
+                                    <b>{provider.name}</b>
+                                    <a onclick={handleSelect} class="select-provider khc-a" data-record-name={provider.name} data-id={provider.npi_id} >{selectLabel}</a>
+                                </p>
+                                <p class="slds-truncate">{provider.address_1}</p>
+                                <p class="slds-truncate">{provider.address_2}</p>
+                                <p class="slds-truncate">{provider.city}, {provider.state}</p>
+                                <p class="slds-truncate">{provider.postal_code}</p>
+                            </lightning-tile>
+                        </li>
+                    </template>
+                </ul>
+                <lightning-button-group class="slds-align_absolute-center slds-m-around_medium" if:true={showPaginationDetails}>
+                    <!-- Previous-->
+                    <a onclick={handlePrevious} class="khc-a previous-action" if:false={showDisabledPrevious}> {previousPageLabel}</a>
+                    <a class="khc-a previous-action" disabled if:true={showDisabledPrevious}> {previousPageLabel}</a>&nbsp;
+                    <!-- Next-->
+                    <a onclick={handleNext} class="khc-a next-action" if:false={showDisabledNext}>{nextPageLabel}</a>
+                    <a class="khc-a next-action" disabled if:true={showDisabledNext}>{nextPageLabel}</a>
+                </lightning-button-group>
+            </div>
+        </template>
+        <template if:true={selectedRow}>
+            <a onclick={backToResults} class="slds-m-bottom_small khc-a" >&lt; {backToResultLabel}</a>
+            <lightning-tile class="slds-m-around_small">
+                <p class="slds-truncate" title={selectedRow.name}>
+                    <b>{selectedRow.name}</b>
+                </p>
+                <p class="slds-truncate">{selectedRow.address_1}</p>
+                <p class="slds-truncate">{selectedRow.address_2}</p>
+                <p class="slds-truncate">{selectedRow.city}, {selectedRow.state}</p>
+                <p class="slds-truncate">{selectedRow.postal_code}</p>
+            </lightning-tile>
+            
+            <lightning-button label={addNewProviderLabel} variant="brand" onclick={saveContactAndTeamMember}></lightning-button>
+        </template>
+    </div>
+</template>

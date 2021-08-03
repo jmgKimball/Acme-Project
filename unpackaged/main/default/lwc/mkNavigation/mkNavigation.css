@@ -1,0 +1,231 @@
+/* #222222 and the (login link) is #464646 */
+
+.mk-side-navigation a {
+	color: #3B3B3B;
+	font-size: 17px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	padding-left: 36px;
+	padding-bottom: 33px;
+}
+
+.mk-side-navigation a:first-child {
+	padding-top: 33px;
+}
+
+.mk-side-navigation a[data-selected=false] {
+	color: inherit;
+}
+
+.mk-side-navigation a[data-selected=true] {
+	color: #B2005D;
+	font-size: 22px;
+}
+
+.mk-side-navigation .mk-child-menu {
+	margin-left: 15px;
+}
+
+.mk-mobile-navigation {
+	display: none;
+}
+
+/* User Photo */
+
+.mk-user-label {
+	margin-left: 40px;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.mk-user-photo {
+	display: inline-block;
+	background-position: center center;
+	background-size: cover;
+	width: 32px;
+	height: 32px;
+	border-radius: 100px;
+	position: absolute;
+	top: 50%;
+	left: -42px;
+	transform: translateY(-50%);
+}
+
+
+/* MOBILE */
+
+.mk-toggle {
+	display: inline-block;
+	position: relative;
+	z-index: 999;
+	margin-top: 10px;
+
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.mk-toggle a {
+	text-decoration: none;
+	color: #222222;
+
+	transition: color 0.3s ease;
+}
+
+.mk-toggle a:hover {
+	color: #464646;
+}
+
+
+.mk-toggle input {
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	cursor: pointer;
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */
+	-webkit-touch-callout: none;
+}
+
+.mk-toggle span.mk-hamburger-line {
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+
+	background: #cdcdcd;
+	border-radius: 3px;
+
+	z-index: 1;
+
+	transform-origin: 4px 0px;
+
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	opacity 0.55s ease;
+}
+
+.mk-toggle span.mk-hamburger-line:first-child {
+	transform-origin: 0% 0%;
+}
+
+.mk-toggle span.mk-hamburger-line:nth-last-child(2) {
+	transform-origin: 0% 100%;
+}
+
+/* chevrons */
+
+.mk-mobile-navigation a {
+	position: relative;
+}
+
+.mk-mobile-navigation .fa-chevron-right {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #222222
+}
+
+/*
+ * hamburger to crossmark
+ */
+.mk-toggle input:checked ~ span.mk-hamburger-line {
+	opacity: 1;
+	height: 3px;
+	transform: rotate(45deg) translate(-2px, -1px);
+	background: #222222;
+}
+
+
+.mk-toggle input:checked ~ span.mk-hamburger-line:nth-last-child(3) {
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+.mk-toggle input:checked ~ span.mk-hamburger-line:nth-last-child(2) {
+	transform: rotate(-45deg) translate(0, 1px);
+}
+
+/* actual navigation menu container*/
+.mk-menu {
+	position: absolute;
+	display: block;
+	width: 100vw;
+	height: calc(100vh + 200px);
+	margin: 0;
+	top: 50px;
+	left: 0;
+	padding: 25px 30px;
+	background-color: #EBE9E7;
+	opacity: unset;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	/* to stop flickering of text in safari */
+
+	transform-origin: 0% 0%;
+	transform: translate(calc(-200vw + 50px), 0);
+
+	transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.mk-toggle input:checked ~ .mk-menu:before {
+	content: ' ';
+	background-color: #EBE9E7;
+	position: absolute;
+	width: 100vw;
+	height: 400vh;
+	top: 40px;
+	left: 0;
+	display: block;
+	z-index: -1;
+	transition: none;
+}
+
+
+.mk-menu a {
+	font-size: 22px;
+}
+
+/* menu group titles */
+.mk-menu h2, .mk-menu a[data-is-expanded=true] span {
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.mk-menu .mk-mobile-sub-menu a {
+	font-size: 20px;
+}
+
+.mk-side-navigation a[data-type=MenuLabel]:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+.mk-toggle input:checked ~ ul {
+	transform: translate(calc(-100vw + 50px), 0);
+}
+
+/* Default Color for Register/Login Links */
+.mk-guest-mobile-menu-link a {
+	color: var(--lwc-colorTextLink);
+}
+
+@media only screen and (max-width: 420px) {
+
+	.mk-side-navigation {
+		display: none;
+	}
+
+	.mk-mobile-navigation {
+		display: inline;
+	}
+
+}

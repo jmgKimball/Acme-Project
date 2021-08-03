@@ -1,0 +1,8 @@
+<!--
+ - Created by vupneja on 11/24/2020.
+ -->
+
+<design:component>
+    <design:attribute name="RecordId" label="RecordID" />
+    <design:attribute name="SubRecordId" label="SubRecordID" />
+</design:component>

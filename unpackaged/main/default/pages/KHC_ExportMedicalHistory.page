@@ -1,0 +1,118 @@
+<apex:page standardController="Account" extensions="KHC_ExportMedicalHistoryController" standardStylesheets="false" showHeader="false" renderAs="pdf">
+    <head>
+    <title>{!$Label.Export_Medical_History_Title}</title>
+    <style>
+
+        @page {
+            size: letter;
+            margin: 25mm;
+            @top-center {
+                content: "Sample";
+            }
+            @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+            }
+        }
+        .page-break {
+            display:block;
+            page-break-after:always;
+            font-family: Arial Unicode MS;
+        }
+
+        .conditionhead {
+            background-color: #CCCCCC;
+            color: red;
+            font-size: 16px;
+            border: none;
+        }
+    </style>
+    </head>
+<body>
+
+    <div class="page-break">
+        <table width="100%">
+            <tr style="padding: 0.5em;">
+                <td colspan="2" align="left" style="vertical-align: top;"><apex:image value="{!URLFOR($Resource.SGKLogo)}" style="height: 80px; "/></td>
+                <td colspan="2" align="right" style="font-family: Arial Unicode MS; font-size: 0.7em;">
+                    <b>{!$Label.Susan_G_Komen}</b><br />  
+                    <apex:outputLabel value="{!$Label.Susan_G_Komen_Address}" escape="false"></apex:outputLabel>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" style="font-size: 1.0em; font-weight: bold; font-family: Arial Unicode MS;text-align:center">
+                    {!$Label.Family_Health_History}
+                </th>
+            </tr>
+            <tr>
+                <td colspan="4" style="font-family: Arial Unicode MS; font-size: 0.8em;">
+                    <p>{!$Label.Health_History_Excerpt_PDF}</p>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" style="font-size: 1.0em; font-weight: bold; color: #EB41A9; font-family: Arial Unicode MS;">
+                    {!$Label.Patient_Information}
+                </th>
+            </tr>
+            <tr>
+                <th style="font-size: 0.8em; font-weight: bold; font-family: Arial Unicode MS;">{!$Label.Name}: {!patient.LastName}, {!patient.FirstName}</th>
+            </tr>
+        </table>
+        <table style="border-spacing: 0px;">
+            <tr>
+                <th colspan="4" style="font-size: 1.0em; font-weight: bold; color: #EB41A9; font-family: Arial Unicode MS;padding: 8px 0px;">
+                    {!$Label.Family_Information}
+                </th>
+            </tr>
+            <apex:repeat value="{!familyMedicalHistories}" var="history">
+            <tr>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$Label.Name_Relationship}</th>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$Label.Age_Age_at_death_Cause}</th>
+                <!-- <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:center;">{!$Label.Conditions_Diagnosed_Age}</th> -->
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$Label.Twin_Multiple}</th>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$ObjectType.Patient_Contact__c.fields.Adopted__c.Label}</th>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$ObjectType.Patient_Contact__c.fields.Race_Picklist__c.Label}</th>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$ObjectType.Patient_Contact__c.fields.Ethnicity__c.Label}</th>
+                <th style="border: 1px solid #DDDDDD; font-size: 0.8em; font-weight: bold; background-color: #DDDDDD; font-family: Arial Unicode MS;text-align:left;">{!$ObjectType.Patient_Contact__c.fields.Are_They_Ashkenazi_Jewish__c.Label}</th>    
+            </tr>
+            
+                <tr>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Family_Member_Name__c},{!history.Relationship__c}</td>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Estimated_Age_at_Death__c}</td>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Was_this_person_born_a_twin_multiple__c}</td>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Adopted__c}</td>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Race_Picklist__c}</td> 
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Ethnicity__c}</td>
+                    <td style="border: 1px solid #DDDDDD; font-family: Arial Unicode MS; font-size: 0.8em;">{!history.Are_They_Ashkenazi_Jewish__c}</td>
+                </tr>
+                <tr>
+                    <td colspan ="7" style="border: 1px solid #CCCCCC; padding: 5px; font-family: Arial Unicode MS; font-size: 0.8em; border-bottom-width: 1px; ">
+                        <apex:dataTable value="{!history.Family_Medical_History_Conditions__r}" var="condition" width="80%" align="right">
+                            <apex:column value="{!condition.Condition_Category__c}" headerValue="Condition" headerClass="conditionhead" style="border: 1px solid #FFFFFF; background: #DDDDDD; padding: 5px; font-family: Arial Unicode MS; font-size: 0.8em; border-bottom-width: 2px solid #FFFFFF; "/>
+
+                            <apex:column value="{!condition.Condition_Sub_Category__c}" headerValue="Sub Category" headerClass="conditionhead" style="border:1px solid #FFFFFF; background: #DDDDDD; padding: 5px; font-family: Arial Unicode MS; font-size: 0.8em; border-bottom-width: 2px solid #FFFFFF;" />
+
+                            <apex:column value="{!condition.Age_at_diagnosis__c}" headerValue="Age at Diagnosis" headerClass="conditionhead" style="border: 1px solid #FFFFFF; background: #DDDDDD; padding: 5px; font-family: Arial Unicode MS; font-size: 0.8em; border-bottom-width: 2px solid #FFFFFF; "/>
+
+                        </apex:dataTable>
+                    </td>       
+                </tr>
+                <tr>
+                    <td colspan ="7">
+                    <div height="40px">&nbsp;</div>
+                    </td>
+                </tr>
+            </apex:repeat>
+        </table>
+        <br/>
+        <table align="center">
+            <tr><td style="font-size: 0.5em; font-family: Arial Unicode MS;">
+            <apex:outputText value="Exported: {0,date,yyyy.MM.dd}"> <apex:param value="{!Now()}" /> </apex:outputText>
+            </td></tr>
+        </table>
+    </div>
+
+
+</body>
+
+
+</apex:page>

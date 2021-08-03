@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Save_without_a_Medication_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( HealthCloudGA__MedicationName__c )&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga_ehrmedicationstatement__c&quot;))</errorConditionFormula>
+    <errorDisplayField>HealthCloudGA__MedicationName__c</errorDisplayField>
+    <errorMessage>Must have a medication</errorMessage>
+</ValidationRule>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Assign_Values_to_Account</name>
+        <label>Assign Values to Account</label>
+        <locationX>644</locationX>
+        <locationY>1262</locationY>
+        <assignmentItems>
+            <assignToReference>getAccountRecord.Annual_Household_Income__pc</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>What_is_your_Annual_Household_Income</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>getAccountRecord.Household_Size_Including_Patient__pc</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>How_many_members_are_there_in_the_Family</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>getAccountRecord.PersonMailingState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MailingState</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateAccount</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Required_Highlight_Variable</name>
+        <label>Set Required Highlight Variable</label>
+        <locationX>550</locationX>
+        <locationY>633</locationY>
+        <assignmentItems>
+            <assignToReference>highlightState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Income_Input_Screen</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>PatientState</name>
+        <choiceText>{!getAccountRecord.PersonMailingState}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>getAccountRecord.PersonMailingState</elementReference>
+        </value>
+    </choices>
+    <constants>
+        <name>Test</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Test</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Required_Field_Entered</name>
+        <label>Required Field Entered?</label>
+        <locationX>768</locationX>
+        <locationY>739</locationY>
+        <defaultConnector>
+            <targetReference>Display_FPL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MailingState</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Set_Required_Highlight_Variable</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Save_Info_CheckBox_Checked</name>
+        <label>Save Info CheckBox Checked?</label>
+        <locationX>770</locationX>
+        <locationY>1042</locationY>
+        <defaultConnectorLabel>NO</defaultConnectorLabel>
+        <rules>
+            <name>YES</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_if_you_want_to_save_the_details_on_your_profile</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Values_to_Account</targetReference>
+            </connector>
+            <label>YES</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>MailingStatePicklist</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>US_States__c</picklistField>
+        <picklistObject>Knowledge_Resource_Recommendation__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>CalculateFederalBracket</name>
+        <dataType>Number</dataType>
+        <expression>IF({!How_many_members_are_there_in_the_Family}&gt; 0 &amp;&amp; {!How_many_members_are_there_in_the_Family} &lt; 9 &amp;&amp; {!MailingState} != &apos;Alaska&apos; &amp;&amp; {!MailingState} != &apos;Hawaii&apos;,
+CASE({!How_many_members_are_there_in_the_Family},
+1,{!getCustommetadata.X48_1__c},
+2,{!getCustommetadata.X48_2__c},
+3,{!getCustommetadata.X48_3__c},
+4,{!getCustommetadata.X48_4__c},
+5,{!getCustommetadata.X48_5__c},
+6,{!getCustommetadata.X48_6__c},
+7,{!getCustommetadata.X48_7__c},
+8,{!getCustommetadata.X48_8__c},
+0),
+IF({!How_many_members_are_there_in_the_Family} &gt; 0 &amp;&amp; {!How_many_members_are_there_in_the_Family} &lt; 9 &amp;&amp; ( {!MailingState} == &apos;Alaska&apos;),
+CASE({!How_many_members_are_there_in_the_Family} ,
+1,{!getCustommetadata.AK_1__c},
+2,{!getCustommetadata.AK_2__c},
+3,{!getCustommetadata.AK_3__c},
+4,{!getCustommetadata.AK_4__c},
+5,{!getCustommetadata.AK_5__c},
+6,{!getCustommetadata.AK_6__c},
+7,{!getCustommetadata.AK_7__c},
+8,{!getCustommetadata.AK_8__c},
+0),
+IF({!How_many_members_are_there_in_the_Family} &gt; 0 &amp;&amp; {!How_many_members_are_there_in_the_Family}&lt; 9 &amp;&amp; ( {!MailingState}== &apos;Hawaii&apos;),
+CASE({!How_many_members_are_there_in_the_Family} ,
+1,{!getCustommetadata.HI_1__c},
+2,{!getCustommetadata.HI_2__c},
+3,{!getCustommetadata.HI_3__c},
+4,{!getCustommetadata.HI_4__c},
+5,{!getCustommetadata.HI_5__c},
+6,{!getCustommetadata.HI_6__c},
+7,{!getCustommetadata.HI_7__c},
+8,{!getCustommetadata.HI_8__c},
+0),
+IF({!How_many_members_are_there_in_the_Family} &gt; 8 &amp;&amp; {!MailingState} != &apos;Alaska&apos; &amp;&amp; {!MailingState} != &apos;Hawaii&apos;,
+{!getCustommetadata.X48_8__c}+({!getCustommetadata.X48_Over8__c}*({!How_many_members_are_there_in_the_Family}-8)),
+IF({!How_many_members_are_there_in_the_Family} &gt; 8 &amp;&amp; ( {!MailingState}== &apos;Alaska&apos;),
+{!getCustommetadata.AK_8__c}+({!getCustommetadata.AK_Over8__c}*({!How_many_members_are_there_in_the_Family}-8)),
+IF({!How_many_members_are_there_in_the_Family}&gt; 8 &amp;&amp; ({!MailingState}== &apos;Hawaii&apos;),
+{!getCustommetadata.HI_8__c}+({!getCustommetadata.HI_Over8__c}*({!How_many_members_are_there_in_the_Family}-8)),
+0
+)
+)
+)
+)
+)
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CalculateFPL</name>
+        <dataType>Number</dataType>
+        <expression>({!What_is_your_Annual_Household_Income} / {!CalculateFederalBracket})*100</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Federal Income Calculator {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Federal Income Calculator</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>getAccountRecord</name>
+        <label>getAccountRecord</label>
+        <locationX>776</locationX>
+        <locationY>326</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getCustommetadata</targetReference>
+        </connector>
+        <filters>
+            <field>PersonContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>getUsers.Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getCustommetadata</name>
+        <label>getCustommetadata</label>
+        <locationX>776</locationX>
+        <locationY>446</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Income_Input_Screen</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>FPL2021</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Federal_Poverty_Guidelines__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getUsers</name>
+        <label>getUsers</label>
+        <locationX>776</locationX>
+        <locationY>206</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getAccountRecord</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>userId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateAccount</name>
+        <label>UpdateAccount</label>
+        <locationX>644</locationX>
+        <locationY>1382</locationY>
+        <inputReference>getAccountRecord</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Display_FPL</name>
+        <label>Display FPL</label>
+        <locationX>778</locationX>
+        <locationY>913</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Save_Info_CheckBox_Checked</targetReference>
+        </connector>
+        <fields>
+            <name>FederalPovertyLevel</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(178, 0, 93); font-size: 20px;&quot;&gt;Your FPL percentage is  :&lt;/span&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;  {!CalculateFPL} %&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>FPLInfoSaveCheckbox</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;You can save your FPL percentage to your patient record for future use in other funding opportunities.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Check_if_you_want_to_save_the_details_on_your_profile</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Save my FPL percentage to my profile</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Income_Input_Screen</name>
+        <label>Income Input Screen</label>
+        <locationX>776</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Required_Field_Entered</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayHeader</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 16px; color: rgb(178, 0, 93);&quot;&gt;FPL Percentage Calculator&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 12px; color: rgb(0, 0, 0);&quot;&gt;Share these 3 simple measures to get your FPL Percentage.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>What_is_your_Annual_Household_Income</name>
+            <dataType>Currency</dataType>
+            <defaultValue>
+                <elementReference>getAccountRecord.Annual_Household_Income__pc</elementReference>
+            </defaultValue>
+            <fieldText>What is your Annual Household Income?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>2</scale>
+        </fields>
+        <fields>
+            <name>How_many_members_are_there_in_the_Family</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>getAccountRecord.Household_Size_Including_Patient__pc</elementReference>
+            </defaultValue>
+            <fieldText>How many members are there in the Family?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>highlightStateText</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Please select your state to continue...&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>highlightState</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>MailingState</name>
+            <choiceReferences>PatientState</choiceReferences>
+            <choiceReferences>MailingStatePicklist</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>PatientState</defaultSelectedChoiceReference>
+            <fieldText>Which State do you live in?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>getUsers</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>highlightState</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>userId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

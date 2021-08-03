@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Redirects user to MyKomen</description>
+    <isExposed>true</isExposed>
+    <masterLabel>MyKomenHealth MyKomen Redirector</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Page" name="page" type="String" datasource="home,profile,account" default="home"
+                      description="The target page to open in MyKomen."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

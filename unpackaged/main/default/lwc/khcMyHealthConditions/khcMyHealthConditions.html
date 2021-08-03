@@ -1,0 +1,320 @@
+<!--
+ * @description Lightning web component for My Health Condition
+ * @author Vikrant Upneja, Traction on Demand
+ * @date 9/14/2020.
+ -->
+
+<template>
+
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="loading" ></lightning-spinner>
+    </template>
+
+
+    <template if:true={showHealthCondition} >
+
+        <h1 >{headerText}</h1>
+
+        <lightning-accordion  class="accordion-section" allow-multiple-sections-open= true>
+
+            <template if:true={bcCondition}>
+                <template for:each={bcCondition} for:item="Condition">
+                    <lightning-accordion-section name={Condition.Condition_Name__c} label={Condition.Condition_Name__c} key={Condition.Id}>
+                        <lightning-record-view-form record-id={Condition.Id}
+                                                    object-api-name="HealthCloudGA__EhrCondition__c"
+                                                    if:true={showViewHealthCondition}
+                                                    onsubmit={onFormSubmit}
+                                                    onload={onFormLoad}
+                                                    >
+
+                            <div class="controls slds-float_right "><a data-id={Condition.Id} onclick={openEditForm}>Edit</a></div>
+                            <div name="view_form" class="slds-box">
+                                <lightning-output-field field-name="Breast_Cancer_Type__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="Breast_Cancer_Sub_Type__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="Stage_at_Diagnosis__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="HealthCloudGA__IsAbated__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="Date_Abated__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="HealthCloudGA__Notes__c" variant="label-hidden">
+                                </lightning-output-field>
+                            </div>
+                        </lightning-record-view-form>
+
+                        <lightning-record-edit-form record-id={Condition.Id} object-api-name="HealthCloudGA__EhrCondition__c"
+                                                    if:true={showEditHealthCondition}
+                                                    onsubmit={onFormSubmit}
+                                                    onload={onFormLoad}
+                                                    onsuccess={showExistingCondition}
+                                                    >
+
+                            <div name="edit_form">
+                                <lightning-input-field field-name="Breast_Cancer_Type__c">
+                                </lightning-input-field>
+                                <lightning-input-field field-name="Breast_Cancer_Sub_Type__c">
+                                </lightning-input-field>
+                                <lightning-input-field field-name="Stage_at_Diagnosis__c">
+                                </lightning-input-field>
+                                <label >{whenWereYouDiagnosed}</label>
+                                <lightning-input-field field-name="HealthCloudGA__DateAsserted__c"  variant="label-hidden" >
+                                </lightning-input-field>
+                                <lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+                                </lightning-input-field>
+                                <label >{whenDidThisConditionEnd}</label>
+                                <lightning-input-field field-name="Date_Abated__c" variant="label-hidden" >
+                                </lightning-input-field>
+                                <lightning-input-field field-name="HealthCloudGA__Notes__c">
+                                </lightning-input-field>
+
+                                <div class="slds-m-top_large">
+                                    <button class="slds-button slds-button-neutral slds-button_stretch slds-p-vertical_x-small" type="submit" name="update"  >
+                                        {updateConditionLabel}
+                                    </button>
+
+                                </div>
+                                <footer>
+                                    <div class="slds-m-top_large">
+                                        <button class="slds-button slds-button_stretch slds-p-vertical_x-small" name="remove" onclick={deleteRecord} data-recordid={Condition.Id}>
+                                            {removeLabel}
+                                        </button>
+                                        <button class="slds-button slds-button_stretch slds-p-vertical_x-small" name="Close" onclick={openViewForm} >
+                                            {cancelLabel}
+                                        </button>
+                                    </div>
+                                </footer>
+
+                                <!--lightning-button class="slds-button slds-button_brand slds-button_stretch slds-var-p-vertical_x-small slds-align_absolute-center "
+                                                  variant="Brand" type="submit" name="update" label={updateConditionLabel}  ></lightning-button>
+                                <lightning-button class="slds-link slds-button_inverse  slds-button_stretch slds-var-p-vertical_x-small slds-align_absolute-center "
+                                                  variant="Base" name="remove" label={removeLabel}
+                                                  onclick={deleteRecord} data-recordid={Condition.Id}></lightning-button>
+                                <lightning-button class="slds-link slds-button_inverse slds-button_stretch slds-var-p-vertical_x-small slds-align_absolute-center "
+                                                  variant="Base" label={cancelLabel} title="Close" onclick={openViewForm}   ></lightning-button-->
+                            </div>
+                        </lightning-record-edit-form>
+
+                    </lightning-accordion-section>
+                </template>
+            </template>
+        </lightning-accordion>
+
+        <lightning-accordion  class="accordion-section" allow-multiple-sections-open= true>
+            <template if:true={chronicCondition}>
+                <template for:each={chronicCondition} for:item="Condition">
+                    <lightning-accordion-section name={Condition.Condition_Name__c} label={Condition.Condition_Name__c} key={Condition.Id}>
+                        <lightning-record-view-form record-id={Condition.Id}
+                                                    object-api-name="HealthCloudGA__EhrCondition__c"
+                                                    if:true={showViewHealthCondition}
+                                                    onsubmit={onFormSubmit}
+                                                    onload={onFormLoad}
+                                                    >
+
+                            <div class="controls slds-float_right "><a data-id={Condition.Id} onclick={openEditForm}>Edit</a></div>
+                            <div name="view_form" class="slds-box">
+
+                                <lightning-output-field field-name="HealthCloudGA__DateAsserted__c" variant="label-hidden">
+                                </lightning-output-field>
+
+                                <lightning-output-field field-name="HealthCloudGA__IsAbated__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="Date_Abated__c" variant="label-hidden">
+                                </lightning-output-field>
+                                <lightning-output-field field-name="HealthCloudGA__Notes__c" variant="label-hidden">
+                                </lightning-output-field>
+                            </div>
+                        </lightning-record-view-form>
+
+                        <lightning-record-edit-form record-id={Condition.Id} object-api-name="HealthCloudGA__EhrCondition__c"
+                                                    if:true={showEditHealthCondition}
+                                                    onsubmit={onFormSubmit}
+                                                    onload={onFormLoad}
+                                                    onsuccess={showExistingCondition}
+                                                    >
+                            <div name="edit_form">
+                                <label >{whenWereYouDiagnosed}</label>
+                                <lightning-input-field field-name="HealthCloudGA__DateAsserted__c"  variant="label-hidden" >
+                                </lightning-input-field>
+                                <lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+                                </lightning-input-field>
+                                <label >{whenDidThisConditionEnd}</label>
+                                <lightning-input-field field-name="Date_Abated__c" variant="label-hidden" >
+                                </lightning-input-field>
+                                <lightning-input-field field-name="HealthCloudGA__Notes__c">
+                                </lightning-input-field>
+
+                                <div class="slds-m-top_large">
+                                    <button class="slds-button slds-button-neutral slds-button_stretch slds-p-vertical_x-small" type="submit" name="update"  >
+                                        {updateConditionLabel}
+                                    </button>
+                                </div>
+                                <footer>
+                                    <div class="slds-m-top_large">
+                                        <button class="slds-button slds-button_stretch slds-p-vertical_x-small" name="remove" onclick={deleteRecord} data-recordid={Condition.Id}>
+                                            {removeLabel}
+                                        </button>
+                                        <button class="slds-button slds-button_stretch slds-p-vertical_x-small" name="Close" onclick={openViewForm} >
+                                            {cancelLabel}
+                                        </button>
+                                    </div>
+                                </footer>
+
+                            </div>
+                        </lightning-record-edit-form>
+                    </lightning-accordion-section>
+                </template>
+            </template>
+        </lightning-accordion>
+        <footer>
+            <div class="slds-m-top_large">
+                <button class="slds-button slds-button-neutral slds-button_stretch slds-p-vertical_x-small"
+                        itle="Add another condition" onclick={addNewCondition} if:true={showViewHealthCondition} >
+                    {addAnotherConditionLabel}
+                </button>
+            </div>
+        </footer>
+    </template>
+
+    <template if:true={noHealthConditionExist}>
+        <h1 >{headerText}</h1>
+        <p>&nbsp;</p>
+        <h3 >{noHealthConditionExistLabel}</h3>
+        <p>&nbsp;</p>
+        <footer>
+            <div class="slds-m-top_large">
+                <button class="slds-button slds-button-neutral slds-button_stretch slds-p-vertical_x-small" onclick={addFirstCondition} >
+                    {addNewHealthConditionLabel}
+                </button>
+            </div>
+        </footer>
+    </template>
+
+    <template if:true={newHealthCondition}>
+        <h1>{headerAddText}</h1>
+        <lightning-combobox name="Condition Type" label="Condition Type" options= {conditionTypeOptions}
+                            onchange={handleConditionTypeValueEvent} value={conditionTypeValue}  >
+        </lightning-combobox>
+        <lightning-record-edit-form object-api-name="HealthCloudGA__EhrCondition__c"
+                                    onsuccess={showExistingCondition}
+                                    onsubmit={onFormSubmit}
+                                    onload={onFormLoad}>
+            <label >{whenWereYouDiagnosed}</label>
+            <lightning-input-field field-name="HealthCloudGA__DateAsserted__c"  variant="label-hidden" >
+            </lightning-input-field>
+            <lightning-input-field field-name="Condition_Name__c" required="true">
+            </lightning-input-field>
+            <lightning-input-field field-name="HealthCloudGA__IsAbated__c">
+            </lightning-input-field>
+            <label >{whenDidThisConditionEnd}</label>
+            <lightning-input-field field-name="Date_Abated__c" variant="label-hidden" >
+            </lightning-input-field>
+            <template if:true={renderOptionalField}>
+                <lightning-input-field field-name="Breast_Cancer_Type__c" >
+                </lightning-input-field>
+                <lightning-input-field field-name="Breast_Cancer_Sub_Type__c">
+                </lightning-input-field>
+                <lightning-input-field field-name="Stage_at_Diagnosis__c">
+                </lightning-input-field>
+                <div class="slds-hide">
+                    <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                    </lightning-input-field>
+                </div>
+            </template>
+
+            <template if:false={renderOptionalField}>
+                <div class="slds-hide">
+                    <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                    </lightning-input-field>
+                </div>
+            </template>
+            <lightning-input-field field-name="HealthCloudGA__Notes__c">
+            </lightning-input-field>
+            <div class="slds-hide">
+                <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId}>
+                </lightning-input-field>
+            </div>
+            <div class="slds-m-top_large" >
+                <button class="slds-button  slds-button-neutral slds-button_stretch slds-p-vertical_x-small" type="submit" >
+                    {addNewConditionLabel}
+                </button>
+            </div>
+
+        </lightning-record-edit-form>
+        <footer>
+            <div class="slds-m-top_large" >
+                <button class="slds-button  slds-button_stretch slds-p-vertical_x-small"  onclick={showNoCondition}>
+                    {cancelLabel}
+                </button>
+            </div>
+        </footer>
+
+    </template>
+
+    <template if:true={addHealthCondition} >
+        <h1>{headerAddText}</h1>
+
+        <lightning-combobox name="Condition Type" label="Condition Type" options= {conditionTypeOptions}
+                            onchange={handleConditionTypeValueEvent} value={conditionTypeValue}   >
+        </lightning-combobox>
+        <lightning-record-edit-form object-api-name="HealthCloudGA__EhrCondition__c"
+                                    onsuccess={showExistingCondition}
+                                    onsubmit={onFormSubmit}
+                                    onload={onFormLoad}>
+            <label >{whenWereYouDiagnosed}</label>
+            <lightning-input-field field-name="HealthCloudGA__DateAsserted__c"  variant="label-hidden" >
+            </lightning-input-field>
+            <lightning-input-field field-name="Condition_Name__c">
+            </lightning-input-field>
+            <lightning-input-field field-name="HealthCloudGA__IsAbated__c" label="When did this condition end?">
+            </lightning-input-field>
+            <label >{whenDidThisConditionEnd}</label>
+            <lightning-input-field field-name="Date_Abated__c" variant="label-hidden" >
+            </lightning-input-field>
+            <template if:true={renderOptionalField}>
+                <lightning-input-field field-name="Breast_Cancer_Type__c" >
+                </lightning-input-field>
+                <lightning-input-field field-name="Breast_Cancer_Sub_Type__c">
+                </lightning-input-field>
+                <lightning-input-field field-name="Stage_at_Diagnosis__c">
+                </lightning-input-field>
+                <div class="slds-hide">
+                    <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                    </lightning-input-field>
+                </div>
+
+            </template>
+
+            <template if:false={renderOptionalField}>
+                <div class="slds-hide">
+                    <lightning-input-field field-name="RecordTypeId" value={recordTypeId}>
+                    </lightning-input-field>
+                </div>
+            </template>
+
+            <lightning-input-field field-name="HealthCloudGA__Notes__c">
+            </lightning-input-field>
+            <div class="slds-hide">
+                <lightning-input-field field-name="HealthCloudGA__Account__c" value={recordId}>
+                </lightning-input-field>
+            </div>
+            <div class="slds-m-top_large" >
+                <button class="slds-button  slds-button-neutral slds-button_stretch slds-p-vertical_x-small" type="submit" >
+                    {addNewConditionLabel}
+                </button>
+            </div>
+        </lightning-record-edit-form>
+        <footer>
+            <div class="slds-m-top_large" >
+                <button class="slds-button  slds-button_stretch slds-p-vertical_x-small"  onclick={showExistingCondition}>
+                    {cancelLabel}
+                </button>
+            </div>
+        </footer>
+    </template>
+
+
+</template>

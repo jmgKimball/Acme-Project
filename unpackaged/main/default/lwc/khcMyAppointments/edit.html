@@ -1,0 +1,49 @@
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <header class="slds-p-bottom--small">
+            <h1>{editHeaderText}</h1>
+        </header>
+        <article >
+            <lightning-record-edit-form if:true={appointmentRecordTypeId}
+                record-id={editRecordId} record-type-id={appointmentRecordTypeId} onload={handleLoad} onsubmit={handleSubmit}
+                onsuccess={handleSuccess} onerror={handleError}
+                object-api-name="HealthCloudGA__EhrEncounter__c" density="comfy">
+
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={encounterFieldList} for:item="encounterField">
+                        <lightning-layout-item key={encounterField.apiName} size="12" large-device-size="6"
+                            class="slds-p-around--xx-small">
+                                <lightning-input-field id={encounterField.apiName} field-name={encounterField.apiName} data-name={encounterField.apiName}></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                    <lightning-layout-item size="12" large-device-size="6"
+                        class="slds-p-around--xx-small">
+                            <lightning-input type="time" value={appointmentTime}
+                                label={ecounterFieldMap.Appointment_Time__c.label}
+                                onchange={handleTimeChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" large-device-size="6"
+                                           class="slds-p-around--xx-small">
+                        <lightning-input type="number" value={reminderDays}
+                                         label= {sendReminderLabel} min="0" max="999" max-length="3"
+                                         onchange={handleReminderDays} data-name="reminderDays"></lightning-input>
+                        <div class="slds-form-element__label"> {daysBeforeAppointmentLabel}</div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                
+                <div class="slds-m-top_large">
+                        <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" >
+                            {saveButtonLabel}
+                        </button>
+                        <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small ">
+                            <a onclick={handleCancelClick}>{cancelLabel}</a>
+                        </div>
+                    </div>
+            </lightning-record-edit-form>
+        </article>
+    </div>
+</template>

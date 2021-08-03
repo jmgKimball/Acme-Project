@@ -1,0 +1,10 @@
+<!--
+ - Created by vupneja on 11/24/2020.
+ -->
+<aura:component description="khcOpenTab" implements="lightning:availableForFlowActions , flexipage:availableForAllPageTypes,flexipage:availableForRecordHome"  access="global" >
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}"/>
+    <aura:attribute name="RecordId" type="String" />
+    <aura:attribute name="SubRecordId" type="String" />
+</aura:component>
+

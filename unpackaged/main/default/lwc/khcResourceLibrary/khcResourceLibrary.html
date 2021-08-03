@@ -1,0 +1,39 @@
+<!-- Parent Wrapper -->
+<template>
+    <!-- Step 1 - Select Topic -->
+    <template if:true={showLandingScreen}>
+        <div class="khc-container">
+            <c-khc-resource-search
+                    topic-options={topicOptions}
+                    onsearch={handleTopicSearch}
+                    onshowresource={handleShowResource}>
+            </c-khc-resource-search>
+        </div>
+    </template>
+
+    <!-- Step 2 - Show Results -->
+    <template if:true={showSearchScreen}>
+        <div class="khc-container">
+            <c-khc-resource-search-results
+                    topic-options={topicOptions}
+                    selected-topics={selectedTopics}
+                    referred={referred}
+                    favourite={favourite}
+                    default-filters={filters}
+                    onback={refreshComponent}
+                    onshowresource={handleShowResource}
+                    logged-in-user={loggedInUser}>
+            </c-khc-resource-search-results>
+        </div>
+    </template>
+
+    <!-- Step 3 - Show Resource Details -->
+    <template if:true={knowledge}>
+        <div class="khc-container">
+            <c-khc-resource-detail knowledge={knowledge}
+                onback={handleBack} 
+                filters={filters}
+                logged-in-user={loggedInUser}></c-khc-resource-detail>
+        </div>
+    </template>
+</template>

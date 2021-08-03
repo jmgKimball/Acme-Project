@@ -1,0 +1,45 @@
+<template>
+    <div class="khc-container">
+        <h1>{editProceduresHeaderLabel}</h1>
+
+
+        <template if:true={showEditProcedure}>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <lightning-record-edit-form record-id={editId}  object-api-name="HealthCloudGA__EHRProcedure__c"
+                                        onsuccess={openViewForm} density="comfy">
+
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+
+                    <lightning-layout-item size="12" large-device-size="6" class="slds-p-around--xx-small">
+                        <lightning-input-field field-name="Procedure_Type__c" onchange={handleEvent}></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <template for:each={procedureFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+                                                   class="slds-p-around--xx-small">
+                            <label for={fieldName.apiName}>{fieldName.label}</label>
+                            <lightning-input-field key={fieldName.apiName} variant="label-hidden"
+                                                       field-name={fieldName.apiName}
+                                                       id={fieldName.apiName}></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+                <lightning-input-field field-name="HealthCloudGA__Notes__c" required={isRequired}></lightning-input-field>
+
+                <div class="slds-m-top_large">
+                    <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" name="update" >
+                        {updateLabel}
+                    </button>
+                    <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small " >
+                        <a data-id={editId} onclick={deleteRecord}>{removeLabel}</a>
+                    </div>
+                    <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small ">
+                        <a onclick={openViewForm}>{cancelLabel}</a>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+        </template>
+    </div>
+</template>

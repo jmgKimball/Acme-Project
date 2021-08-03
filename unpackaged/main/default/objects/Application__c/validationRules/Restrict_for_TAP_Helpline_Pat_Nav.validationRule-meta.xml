@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_for_TAP_Helpline_Pat_Nav</fullName>
+    <active>true</active>
+    <errorConditionFormula>CASE(
+	1,
+	
+	IF($Profile.Name = &apos;System Administrator&apos;,1,0),
+	0,
+	IF( $Profile.Name = &apos;Patient Community Login&apos;,1,0),
+        0,
+	IF((RecordType.DeveloperName = &quot;Treatment_Assistance_Program&quot;),1,0),
+	IF(
+		ISNEW(),
+		IF(
+			AND(
+				 $Permission.Helpline_Application_Permission  = false,
+				$Permission.Patient_Navigation_Management = false,
+				$Permission.TAP_Specialist_Permission = false,
+				$Permission.TAP_Program_Owner_Permission = false
+                                
+			),
+			1,
+			0
+		),
+		IF(
+			AND(
+				NOT(ISCHANGED(Is_Locked__c)),
+				Is_Locked__c
+			),
+			IF(
+				AND(
+					$Permission.TAP_Program_Owner_Permission = false,
+					$Permission.TAP_Accounting_Specialist_Permission = false
+				),
+				1,
+				0
+			),
+			IF(
+				AND(
+				    OR( ISPICKVAL( Application_Status__c , &quot;Deferred&quot;) , 
+                        ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;Deferred&quot;),
+                        ISPICKVAL( Application_Status__c , &quot;In Review&quot;),
+		                ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;In Review&quot;),
+		                ISPICKVAL( Application_Status__c, &quot;Rejected&quot;),
+		                ISPICKVAL( Application_Status__c, &quot;Approved&quot;),
+		                ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;Approved&quot;),
+		                ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;Rejected&quot;),
+		                ISPICKVAL( Application_Status__c, &quot;Canceled&quot;),
+		                ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;Canceled&quot;),
+		                ISPICKVAL( Application_Status__c, &quot;Completed&quot;),
+		                ISPICKVAL( PRIORVALUE(Application_Status__c), &quot;Completed&quot;)
+					),
+					OR($Permission.Helpline_Application_Permission,
+					   $Permission.Patient_Navigation_Management
+					   )
+				),
+				1,
+				0
+			)
+		)			
+	),
+			
+	IF((RecordType.DeveloperName = &quot;Patient_Navigation&quot;),1,0),
+	IF(
+		ISNEW(),
+		IF(
+			AND(
+				 $Permission.Helpline_Application_Permission  = false,
+				$Permission.Patient_Navigation_Management = false
+			),
+			1,
+			0
+		),
+		IF(
+			$Permission.Patient_Navigation_Management = false,
+			1,
+			0
+		)
+	),
+	0
+) = 1</errorConditionFormula>
+    <errorMessage>You don&apos;t have sufficient privileges to perform this operation.</errorMessage>
+</ValidationRule>

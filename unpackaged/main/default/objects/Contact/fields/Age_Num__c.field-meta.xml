@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Num__c</fullName>
+    <externalId>false</externalId>
+    <formula>VALUE(
+If(ISBLANK(HealthCloudGA__DeceasedDate__c),
+
+IF( NOT( ISBLANK( Birthdate ) ) , TEXT(IF( NOT( ISBLANK( Birthdate ) ) ,
+IF( DATE( 2000 , MONTH( Birthdate ) , DAY( Birthdate ) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+YEAR (Today()) - YEAR ( Birthdate ),
+YEAR (Today()) - YEAR ( Birthdate ) -1 ),
+null)), &apos;&apos;),
+
+IF( NOT( ISBLANK( Birthdate ) ) , TEXT(IF( NOT( ISBLANK( Birthdate ) ) ,
+IF( DATE( 2000 , MONTH( Birthdate ) , DAY( Birthdate ) ) &lt;= DATE( 2000 , MONTH( HealthCloudGA__DeceasedDate__c ) , DAY( HealthCloudGA__DeceasedDate__c ) ),
+YEAR (HealthCloudGA__DeceasedDate__c) - YEAR ( Birthdate ),
+YEAR (HealthCloudGA__DeceasedDate__c) - YEAR ( Birthdate ) -1 ),
+null)), &apos;&apos;)
+
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Age Num</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

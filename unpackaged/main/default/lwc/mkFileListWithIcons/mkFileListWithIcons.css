@@ -1,0 +1,22 @@
+/**
+ * Created by mlandels on 2021-06-02.
+ */
+.khc-dismissal-icon::before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f2ed";
+    color:var(--lwc-colorTextBrand);
+    float: right;
+    padding-top: 0.6rem;
+}
+
+.khc-file-wrapper {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .khc-file-name {
+        font-size:12px;
+    }
+}

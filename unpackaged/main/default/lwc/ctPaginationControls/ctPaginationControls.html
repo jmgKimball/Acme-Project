@@ -1,0 +1,47 @@
+<!--
+ -
+ -
+ - @author Grant Adamson, Traction on Demand
+ - @date 2020-05-26
+ -->
+
+<!-- Clinical Trials Pagination Controls -->
+<template>
+    <div class="container">
+        <div class="list-header slds-grid">
+            <div class="slds-col">
+                <div class="slds-p-around_small nav-button" onclick={handlePrev}>
+                    <span class="icon slds-p-right_x-small">
+                        <span class="slds-icon_container slds-icon-utility-chevronleft slds-current-color"
+                              title="Bookmark Trial">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#chevronleft"></use>
+                            </svg>
+                        </span>
+                    </span>
+                    <span>Prev</span>
+                </div>
+            </div>
+
+            <div class="slds-col">
+                <div class="slds-p-around_small slds-text-align_center">
+                    <span>{currentPage} / {pageCount}</span>
+                </div>
+            </div>
+
+            <div class="slds-col slds-text-align_right">
+                <div class="slds-p-around_small nav-button" onclick={handleNext}>
+                    <span>Next</span>
+                    <span class="icon slds-p-left_x-small">
+                        <span class="slds-icon_container slds-icon-utility-chevronright slds-current-color"
+                              title="Bookmark Trial">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                            </svg>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

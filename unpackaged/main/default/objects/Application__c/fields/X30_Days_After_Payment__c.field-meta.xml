@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X30_Days_After_Payment__c</fullName>
+    <description>Sets itself to true when the Application is 30 days out from the Payment Date</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  ( Payment_Date__c + 30 ) = TODAY(),
+  TRUE,
+  FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>30 Days After Payment?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

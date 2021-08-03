@@ -1,0 +1,42 @@
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <header class="slds-p-bottom--small">
+            <h1>{editHeaderText}</h1>
+        </header>
+        <article >
+            <lightning-record-edit-form
+                record-id={editRecordId} onload={handleLoad} onsubmit={handleSubmit}
+                onsuccess={handleSuccess} onerror={handleError}
+                object-api-name="Patient_Contact__c" density="comfy"
+                record-type-id={recordTypeId}>
+
+                <lightning-messages></lightning-messages>
+                <lightning-input-field value={loggedInUser.AccountId} field-name="Patient__c" class="slds-hide"></lightning-input-field>
+                <lightning-input-field value={recordTypeId} field-name="RecordTypeId" class="slds-hide"></lightning-input-field>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={patientContactFields} for:item="patientContactField">
+                        <lightning-layout-item key={patientContactField.apiName} size="12" large-device-size="6"
+                            class="slds-p-around--xx-small">
+                                <lightning-input-field id={patientContactField.apiName} field-name={patientContactField.apiName}></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+
+                <div class="slds-m-top_large">
+                        <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" type="submit" >
+                            {saveButtonLabel}
+                        </button>
+                        <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small " if:true={editRecordId}>
+                            <a data-id={editId} onclick={handleDeleteClick}>{removeLabel}</a>
+                        </div>
+                        <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small ">
+                            <a onclick={handleCancelClick}>{cancelLabel}</a>
+                        </div>
+                    </div>
+            </lightning-record-edit-form>
+        </article>
+    </div>
+</template>

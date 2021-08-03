@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Locking_for_Helpline</fullName>
+    <active>false</active>
+    <description>Helpline Agents should not be able to edit an Application unless it is in Draft, New, or Needs Information Statuses.</description>
+    <errorConditionFormula>
+        AND(
+            $Permission.Helpline_Application_Permission,
+            NOT( $Permission.Patient_Navigation_Management  ),
+            NOT(
+                OR(
+                    ISPICKVAL(Application_Status__c ,&quot;Draft&quot;),
+                    ISPICKVAL(Application_Status__c ,&quot;New&quot;),
+                    ISPICKVAL(Application_Status__c ,&quot;Need More Information&quot;)
+                )
+            ),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>Edits cannot be made to the Application in this Status. Please contact a manager if changes need to be made.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<!-- Clinical Trial Location Detail -->
+<template>
+    <div>
+        <span>{value.record.Facility__c}</span>
+        <span class="accordion-description slds-p-left_xx-small">{value.distance} mi.</span>
+        <p class="slds-p-vertical_x-small accordion-description">
+            <lightning-formatted-text value={address}></lightning-formatted-text>
+        </p>
+    </div>
+    <div class="map-container slds-p-bottom_xx-large">
+        <lightning-map map-markers={mapMarkers} zoom-level="15" show-footer></lightning-map>
+    </div>
+</template>

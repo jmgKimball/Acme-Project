@@ -1,0 +1,19 @@
+/**
+ * Created by ako on 6/30/2021.
+ */
+.khc-reminder-days {
+    margin-top: -0.8rem;
+}
+
+@media only screen and (max-width: 600px){
+    .khc-reminder-days {
+        margin-top: 0.2rem;
+        float: left;
+        width: 5rem;
+    }
+}
+
+.khc-disabled-field {
+    background-color: #dddddd;
+    pointer-events: none;
+}

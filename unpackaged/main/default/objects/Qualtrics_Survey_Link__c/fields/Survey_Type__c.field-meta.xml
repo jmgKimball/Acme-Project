@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Survey_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Survey Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Helpline</fullName>
+                <default>false</default>
+                <label>Helpline</label>
+            </value>
+            <value>
+                <fullName>TAP</fullName>
+                <default>false</default>
+                <label>TAP</label>
+            </value>
+            <value>
+                <fullName>Pat Nav</fullName>
+                <default>false</default>
+                <label>Pat Nav</label>
+            </value>
+            <value>
+                <fullName>Clinical Trials</fullName>
+                <default>false</default>
+                <label>Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+                <label>Feedback</label>
+            </value>
+            <value>
+                <fullName>Ratings</fullName>
+                <default>false</default>
+                <label>Ratings</label>
+            </value>
+            <value>
+                <fullName>Check-In</fullName>
+                <default>false</default>
+                <label>Check-In</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

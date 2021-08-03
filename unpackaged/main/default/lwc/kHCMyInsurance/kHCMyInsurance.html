@@ -1,0 +1,241 @@
+<template>
+        <div class="khc-container">
+                <template if:true={displayViewInsurance}>
+
+                        <c-khc-back-navigation container-class="slds-m-bottom--small"></c-khc-back-navigation>
+                        <h1>{myInsuranceLabel}</h1>
+
+                        <template if:false={insuranceRecords}>
+                                <h3 class="slds-m-top_large">{noInsuranceFoundLabel}</h3>
+                        </template>
+
+                        <template if:true={accountRecord}>
+                                <div class="slds-p-vertical_xxx-small">
+                                </div>
+
+                                <lightning-layout-item size="12">
+                                        <lightning-layout>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <label>{doesNotHaveInsuranceLabel}</label>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-combobox name={checkboxIconName}
+                                                                            value={isInsertValue}
+                                                                            label = {doesNotHaveInsuranceLabel}
+                                                                            options={isInsuredOptions}
+                                                                            onchange={handleChange}
+                                                                            placeholder=""
+                                                                            variant = label-hidden width="small" class="slds-size_2-of-3"
+                                                        >{doesNotHaveInsuranceLabel}
+                                                        </lightning-combobox>
+                                                </lightning-layout-item>
+                                        </lightning-layout>
+                                </lightning-layout-item>
+                        </template>
+
+                        <template for:each={insuranceRecords} for:item="insurance">
+                                <div key={insurance.Id} class='insurance-section'>
+                                        <lightning-button key={insurance.Id} variant="base" class="slds-float_right slds-m-left_x-large edit-button"
+                                                          label={editLabel} title={editLabel} onclick={loadEditInfo}
+                                                          data-record-id={insurance.Id} data-id={insurance.Id}></lightning-button>
+                                        <h3 class="slds-text-title">{insurance.Insurance_Provider__c}</h3>
+                                        <h3  class="details">{memberNumberLabel}: {insurance.Member_Number__c}</h3>
+                                        <h3  class="details">{coverageForLabel}: {insurance.Subscriber_First_Name__c} {insurance.Subscriber_Last_Name__c}</h3>
+                                        <h3  class="details">{subscriberNumberLabel}: {insurance.Subscriber_Number__c}</h3>
+                                        <h3  class="details">{dateOfBirthLabel}: {insurance.Subscriber_Date_of_Birth__c}</h3>
+                                        &nbsp;
+                                </div>
+                        </template>
+
+                        <div class="slds-m-top_large">
+                                <button class="slds-button slds-button_brand  slds-button_stretch slds-p-vertical_x-small button-brand khc-button khc-add-button"
+                                        onclick={changeToAddInsurance} name="addNewInsurance">{addNewInsuranceProviderLabel}</button>
+                        </div>
+                </template>
+
+                <template if:true={displayAddInsurance}>
+                        <template if:true={isAdd}>
+                                <div class="title">
+                                        <h1>{addNewInsuranceCoverageLabel}</h1>
+                                </div>
+                        </template>
+
+                        <template if:true={isEdit}>
+                                <div class="title">
+                                        <h1>{editInsuranceCoverageLabel}</h1>
+                                </div>
+                        </template>
+
+                        <template if:true={isSmallScreen} >
+
+                                <lightning-combobox class="input-fields" name="provider" label={insuranceProviderLabel}
+                                                    placeholder={selectedProvider}  value={selectedProvider} required
+                                                    onchange={handleProviderChange} options={providerOptions}></lightning-combobox>
+
+                                <lightning-input name="firstName" class="input-fields" label={subscriberFirstNameLabel}
+                                                 value={insuranceInfo.Subscriber_First_Name__c} onchange={handleSubcriberFirstName} ></lightning-input>
+
+                                <lightning-input name="lastName" class="input-fields" label={subscriberLastNameLabel}
+                                                 value={insuranceInfo.Subscriber_Last_Name__c} onchange={handleSubcriberLastName} ></lightning-input>
+
+                                <lightning-input type="date" name="date" class="input-fields" label={subscriberDateOfBirthLabel}
+                                                 onchange={handleBirthdayNumber} value={insuranceInfo.Subscriber_Date_of_Birth__c}></lightning-input>
+
+                                <lightning-input name="subscriberNumber" class="input-fields" label={subscriberNumberLabel}
+                                                 value={insuranceInfo.Subscriber_Number__c} onchange={handleSubcriberNumber}></lightning-input>
+
+                                <lightning-input name="memberNumber" class="input-fields" label={memberNumberLabel}
+                                                 value={insuranceInfo.Member_Number__c} onchange={handleMemberNumber}></lightning-input>
+
+                        </template>
+
+                        <lightning-layout if:false={isSmallScreen} multiple-rows >
+                                <lightning-layout-item size="12">
+                                        <lightning-layout>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-combobox  name="provider" label={insuranceProviderLabel}
+                                                                             placeholder={selectedProvider}  value={selectedProvider} required
+                                                                             onchange={handleProviderChange} options={providerOptions}></lightning-combobox>
+                                                </lightning-layout-item>
+
+                                        </lightning-layout>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item size="12">
+                                        <lightning-layout>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-input name="firstName"  label={subscriberFirstNameLabel}
+                                                                         value={insuranceInfo.Subscriber_First_Name__c} onchange={handleSubcriberFirstName} ></lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-input name="lastName"  label={subscriberLastNameLabel}
+                                                                         value={insuranceInfo.Subscriber_Last_Name__c} onchange={handleSubcriberLastName} ></lightning-input>
+                                                </lightning-layout-item>
+                                        </lightning-layout>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item size="12">
+                                        <lightning-layout>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-input type="date" name="date" label={subscriberDateOfBirthLabel}
+                                                                         onchange={handleBirthdayNumber} value={insuranceInfo.Subscriber_Date_of_Birth__c}></lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-input name="subscriberNumber" label={subscriberNumberLabel}
+                                                                         value={insuranceInfo.Subscriber_Number__c} onchange={handleSubcriberNumber}></lightning-input>
+                                                </lightning-layout-item>
+                                        </lightning-layout>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item size="12">
+                                        <lightning-layout>
+                                                <lightning-layout-item size="6" padding="around-small">
+                                                        <lightning-input name="memberNumber" label={memberNumberLabel}
+                                                                         value={insuranceInfo.Member_Number__c} onchange={handleMemberNumber}></lightning-input>
+                                                </lightning-layout-item>
+                                        </lightning-layout>
+                                </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={isEdit}>
+                                <div class="convenience">
+                                        <h3 >{uploadInsurancePhotoLabel}</h3>
+                                </div>
+                                <lightning-file-upload class=""  name="cardFrontUploader" accept={allowedExtensions}
+                                                       record-id={insuranceInfo.Id}
+                                                       multiple onuploadfinished= {refreshEdit}></lightning-file-upload>
+                        </template>
+
+                        <template if:true={isAdd}>
+                                <div class="convenience">
+                                        <h3>{uploadInsurancePhotoUnsavedLabel}</h3>
+                                </div>
+                        </template>
+
+                        <template if:true={imageURL}>
+                                <div class="slds-container_center">
+                                <template for:each = {imageURL} for:item = "image">
+                                        <tr key={image.ContentDocumentId}>
+                                                <th scope="col" class="slds-text-body_small">
+                                                        {image.Title}
+                                                </th>
+                                                <th scope="col">
+                                                        <div class="slds-box " key={image.ContentDocumentId}>
+                                                                <img class="slds-float_right" key={image.ContentDocumentId} src={image.Id} width="50" height="50" border-radius="50%"/>
+                                                        </div>
+                                                </th>
+                                                <th scope="col">
+                                                        <lightning-button-icon icon-name="utility:preview"
+                                                                               data-id={image.Id}
+                                                                               data-contentdocumentid={image.ContentDocumentId}
+                                                                               alternative-text="Preview"
+                                                                               class="slds-m-right_xx-small slds-grid_vertical-align-center slds-float_right" title="Preview"
+                                                                               onclick={handleOpenModal}></lightning-button-icon>
+                                                </th>
+                                                <th scope="col">
+                                                        <lightning-button-icon icon-name="utility:delete"
+                                                                               data-id={image.ContentDocumentId}
+                                                                               alternative-text="Delete"
+                                                                               class="slds-m-right_xx-small slds-grid_vertical-align-center slds-float_right"
+                                                                               title="Delete"
+                                                                               onclick={deleteFile}></lightning-button-icon>
+                                                </th>
+                                        </tr>
+                                </template>
+                                </div>
+                        </template>
+
+                        <template if:true={isAdd}>
+                                <div class="slds-p-top_medium">
+                                        <button class="slds-button slds-button_brand slds-button_stretch update-button khc-button"
+                                                onclick={handleUpdateInsurance} name="add" >{addNewCoverageLabel}</button>
+                                </div>
+                        </template>
+                        <template if:true={isEdit}>
+                                <div class="slds-p-top_medium">
+                                        <button class="slds-button slds-button_brand slds-button_stretch update-button khc-button"
+                                                onclick={handleUpdateInsurance} name="update">{updateCoverageLabel}</button>
+                                </div>
+
+                                <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-button">
+                                        <a onclick={deleteRecord}>{removeCoverageLabel}</a>
+                                </div>
+
+                        </template>
+
+                        <div class="slds-p-top_medium">
+                                <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small">
+                                        <a onclick={navigateToViewInsurance}>{cancelLabel}</a>
+                                </div>
+
+                        </div>
+                </template>
+
+                <template if:true={isOpenModal}>
+                        <div style="height: 500px;">
+                                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                        <div class="slds-modal__container">
+                                                <header class="slds-modal__header">
+                                                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                                                                <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close" size="medium">
+                                                                </lightning-icon>
+                                                                <span class="slds-assistive-text">{insuranceImageCloseLabel}</span>
+                                                        </button>
+                                                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{insuranceImagePreviewLabel}</h2>
+                                                </header>
+                                                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                                        <div class="slds-text-heading_small slds-text-align_center">
+                                                                <img class="slds-container_center"  src={previewPhotoUrl}/>
+                                                        </div>
+                                                </div>
+                                                <footer class="slds-modal__footer">
+                                                        <lightning-button label="Cancel" variant="neutral" onclick={handleCloseModal}></lightning-button>
+                                                </footer>
+                                        </div>
+                                </section>
+                                <div class="slds-backdrop slds-backdrop_open"></div>
+                        </div>
+                </template>
+        </div>
+        </template>

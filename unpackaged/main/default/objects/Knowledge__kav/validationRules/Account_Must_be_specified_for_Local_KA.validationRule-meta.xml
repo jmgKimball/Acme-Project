@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Must_be_specified_for_Local_KA</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+            IF(ISPICKVAL(Resource_Type__c ,&apos;Local&apos;),true,false),
+            ISBLANK(Account__c),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;knowledge__kav&quot;
+        )</errorConditionFormula>
+    <errorMessage>Please select an Account for &quot;Local&quot; Resource Type</errorMessage>
+</ValidationRule>

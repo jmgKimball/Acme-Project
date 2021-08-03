@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Readable_Enrollment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( ISBLANK( Enrollment__c ) , &quot;There is no enrollment information available.&quot;,
+
+IF( TEXT(Enrollment_Type__c)= &quot;Actual&quot; , &quot;There are &quot; &amp;  TEXT(Enrollment__c) &amp; &quot; patients currently enrolled&quot;, &quot;This Trial is enrolling &quot; &amp; TEXT(Enrollment__c) &amp; &quot; patients&quot;)
+
+)</formula>
+    <label>Readable Enrollment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Family_Income_Source_Field_must_be</fullName>
+    <active>true</active>
+    <description>Whenever Family Income Source -&gt; Others then Mandatory to complete &apos;Other Family Income Source&apos; Field.</description>
+    <errorConditionFormula>
+        AND( INCLUDES( Family__c , &quot;Other&quot;) ,
+            ISBLANK( Other_Family_Income_Sources__c ) )&amp;&amp;
+            (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;)
+        )</errorConditionFormula>
+    <errorDisplayField>Other_Family_Income_Sources__c</errorDisplayField>
+    <errorMessage>Please Specify Other Family Income Sources.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+/* Set the spinner background opacity to 0 */
+.khc-recommend-spinner .slds-spinner_container {
+    background-color: rgba(255,255,255, 0)
+}
+
+.khc-header {
+    font-weight: normal;
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+<!--
+ - Created by mlandels on 2021-06-14.
+ -->
+
+<!-- Khc Resource Dismissal Form -->
+<template>
+    <div class="khc-dismissal-form slds-grid slds-wrap slds-p-around_medium">
+        <div class="slds-size_1-of-1">
+            <lightning-combobox
+                    name="progress"
+                    label={selectDismissalReasonLabel}
+                    value={selectedDismissalReason}
+                    placeholder=""
+                    onchange={handleChange}
+                    options={dismissalPicklistValues}></lightning-combobox>
+        </div>
+
+        <div class="slds-size_1-of-1 slds-align-bottom">
+            <button class="slds-button slds-button_brand khc-dismissal-button"
+                    type="submit"
+                    onclick={handleDismissReferral}>{dismissLabel}</button>
+        </div>
+    </div>
+</template>

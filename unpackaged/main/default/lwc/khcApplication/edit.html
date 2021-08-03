@@ -1,0 +1,55 @@
+<!--
+ - Created by vupneja on 2/18/2021.
+ -->
+
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+            <h1>{headerAddText}</h1>
+
+        <div class="slds-p-vertical_small">
+            {applicationDescription}
+        </div>
+
+        <div class="khc-content">
+            <lightning-record-edit-form record-id={recordId} onload={handleLoad} onsubmit={handleSubmit}
+                                        onsuccess={handleSuccess} onerror={handleError} density="comfy"
+                                        object-api-name="Application__c" class="application-form">
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={applicationFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+                                               class="slds-p-vertical_small">
+                            <label for={fieldName.apiName}>{fieldName.label}</label>
+                            <lightning-input-field key={fieldName.apiName} variant="label-hidden"
+                                                   field-name={fieldName.apiName} id={fieldName.apiName} ></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                    <template for:each={applicationPrePopulatedFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.value} size="12" large-device-size="6"
+                                               class="slds-p-vertical_small">
+                            <label for={fieldName.value}>{fieldName.label}</label>
+                            <div class="slds-text-body_regular">{fieldName.value}</div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+                <button type="submit" class="slds-hide submit-application"></button>
+            </lightning-record-edit-form>
+        </div>
+        <footer>
+            <p>&nbsp;</p>
+            <div class="slds-align_absolute-center " >
+                <button title="Add a new Application"
+                        class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button"
+                        onclick={handleSave}>
+                    {saveLabel}
+                </button>
+            </div>
+            <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-remove-button" >
+                <a onclick={handleCancelClick}>{cancelLabel}</a>
+            </div>
+        </footer>
+    </div>
+</template>

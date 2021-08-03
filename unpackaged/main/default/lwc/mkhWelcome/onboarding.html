@@ -1,0 +1,32 @@
+<template>
+  <div class="container">
+    <header>
+      <c-mkh-logo></c-mkh-logo>
+    </header>
+
+    <article>
+      <div>
+        <div class="slds-p-bottom_medium slds-align_absolute-center no-header-image">
+          <img src={imageURL} alt="Onboarding Image" width="272" height="272"/>
+        </div>
+        <div class="slds-m-bottom_large slds-text-align_center">
+          <p>{onboardingStepsStartLabel}&nbsp;{totalSteps}&nbsp;{onboardingStepsEndLabel}</p>
+          <br />
+          <p>{stepLabel}&nbsp;{currentStep}&nbsp;{ofLabel}&nbsp;{totalSteps}: {descriptionText}</p>
+        </div>
+
+        <div>
+          <button class="slds-button slds-button_brand" onclick={onAction}>{actionLabel}</button>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="slds-m-top_medium">
+        <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small">
+          <a onclick={onSkip}>{remindMeLaterLabel}</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>

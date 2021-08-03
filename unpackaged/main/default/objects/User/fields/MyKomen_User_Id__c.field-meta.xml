@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyKomen_User_Id__c</fullName>
+    <description>User Id of the MyKomen User used to authenticate to MyKomen Health. Field is relevant for community users only.</description>
+    <externalId>false</externalId>
+    <label>MyKomen User Id</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

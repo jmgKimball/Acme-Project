@@ -1,0 +1,179 @@
+<!-- Clinical Trial Detail -->
+<template>
+    <div class="container fade-in">
+        <template if:false={loadingComplete}>
+            <div class="loading-screen">
+<!--                <div class="loading-text slds-text-align_center">-->
+<!--                    <span></span>-->
+<!--                </div>-->
+<!--                <div class="slds-align_absolute-center">-->
+<!--                    <div class="loading-spinner"></div>-->
+<!--                </div>-->
+            </div>
+        </template>
+        <template if:true={loadingComplete}>
+            <div class="card-controls">
+                <div class="item-controls slds-grid">
+                    <div class="slds-col slds-size_5-of-8">
+                        <div class="slds-p-vertical_small slds-p-right_small nav-button" onclick={handleBack}>
+                            <span class="nav-button-icon slds-p-right_x-small">
+                                <span class="slds-icon_container slds-icon-utility-chevronleft slds-current-color"
+                                      title="Back">
+                                    <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#chevronleft"></use>
+                                    </svg>
+                                </span>
+                            </span>
+                            <span>Back</span>
+                        </div>
+                    </div>
+                    <div class="slds-col">
+                        <c-ct-bookmark trial-id={recordId} record-id={bookmarkId}></c-ct-bookmark>
+                    </div>
+                    <div class="slds-col">
+                        <c-ct-button icon="/_slds/icons/utility-sprite/svg/symbols.svg#print" title="Print"
+                                     onclick={handlePrint}></c-ct-button>
+                    </div>
+                    <div class="slds-col">
+                        <c-ct-button icon="/_slds/icons/utility-sprite/svg/symbols.svg#threedots_vertical"
+                                     title="More" onclick={handleMore} color="#D8D8D8" borderless>
+                        </c-ct-button>
+                    </div>
+                </div>
+                <div class="card-divider"></div>
+            </div>
+
+            <div class="card-header">
+                <div class="detail-header">
+                    <c-ct-phase-badge value={record.Phase__c}></c-ct-phase-badge>
+                    <div class="detail-id">ID: {record.Name}</div>
+                </div>
+                <div class="title slds-p-vertical_medium">
+                    {title}
+                </div>
+            </div>
+
+            <div class="card-detail-groups">
+                <c-ct-detail-accordion icon="/_slds/icons/utility-sprite/svg/symbols.svg#user" title="Condition"
+                                       disabled={noConditions}>
+                    <div slot="summary">
+                        <ul>
+                            <li for:each={record.Clinical_Trial_Conditions__r} for:item="condition" key={condition.Id}>
+                                {condition.Condition_Name__c}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div for:each={record.Clinical_Trial_Conditions__r} for:item="condition" key={condition.Id}>
+                            <span>{condition.Condition_Name__c}</span>
+                            <p class="slds-p-vertical_x-small accordion-description">
+                                <lightning-formatted-text value={condition.Condition__r.Description__c}></lightning-formatted-text>
+                            </p>
+                        </div>
+                    </div>
+                </c-ct-detail-accordion>
+                <c-ct-detail-accordion icon="/_slds/icons/utility-sprite/svg/symbols.svg#check" title="Eligibility"
+                                       disabled={hasCriteriaList}>
+                    <div slot="summary">
+                        <ul>
+                            <li if:true={hasAgeRange}>{ageRange}</li>
+                            <li if:true={record.Gender__c}>Gender: {record.Gender__c}</li>
+                            <li if:true={record.Healthy_Volunteers__c}>Healthy Volunteers: Yes</li>
+                            <template if:true={hasCriteriaList}>
+                                <li>Inclusions
+                                    <ul class="criteria">
+                                        <li for:each={criteriaList.includes} for:item="criterion" key={criterion.Id} class="accordion-description">
+                                            {criterion.Criteria__r.Name}: {criterion.Specific_Measure__c}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Exclusions
+                                    <ul class="criteria">
+                                        <li for:each={criteriaList.excludes} for:item="criterion" key={criterion.Id} class="accordion-description">
+                                            {criterion.Criteria__r.Name}: {criterion.Specific_Measure__c}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </template>
+                            <li if:false={hasCriteriaList}>Additional Criteria: yes
+                                <span class="accordion-description slds-p-left_xx-small">(expand to view)</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li if:true={hasAgeRange}>{ageRange}</li>
+                            <li if:true={record.Gender__c}>Gender: {record.Gender__c}</li>
+                            <li if:true={record.Healthy_Volunteers__c}>Healthy Volunteers: Yes</li>
+                        </ul>
+                        <div class="slds-p-bottom_x-small">Additional Criteria:</div>
+                        <p class="accordion-description">
+                            <lightning-formatted-text value={criteria}></lightning-formatted-text>
+                        </p>
+                    </div>
+                </c-ct-detail-accordion>
+                <c-ct-detail-accordion icon="/_slds/icons/utility-sprite/svg/symbols.svg#display_text"
+                                       title="Intervention/Treatment" disabled={noInterventions}>
+                    <div slot="summary">
+                        <ul>
+                            <li for:each={record.NLM_Interventions__r} for:item="intervention" key={intervention.Id}>
+                                {intervention.Intervention_Name__c}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div for:each={record.NLM_Interventions__r} for:item="intervention" key={intervention.Id}>
+                            <span>{intervention.Intervention_Name__c}</span>
+                            <p class="slds-p-vertical_x-small accordion-description">
+                                <lightning-formatted-text value={intervention.Description__c}></lightning-formatted-text>
+                            </p>
+                        </div>
+                    </div>
+                </c-ct-detail-accordion>
+                <c-ct-detail-accordion icon="/_slds/icons/utility-sprite/svg/symbols.svg#favorite" title="Sponsor"
+                                       disabled>
+                    <div slot="summary">
+                        <ul>
+                            <li>{record.Organization__c}</li>
+                        </ul>
+                    </div>
+                </c-ct-detail-accordion>
+                <c-ct-detail-accordion icon="/_slds/icons/utility-sprite/svg/symbols.svg#world"
+                                       title="Location">
+                    <div slot="summary">
+                        <ul>
+                            <li for:each={locations} for:item="location" key={location.Id}>
+                                {location.record.Facility__c} <span class="accordion-description">{location.distance} mi.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div for:each={locations} for:item="location" key={location.record.Id}>
+                            <c-ct-location-detail value={location}></c-ct-location-detail>
+                        </div>
+                    </div>
+                </c-ct-detail-accordion>
+
+            </div>
+
+            <div class="card-free-text">
+                <div class="free-text-title">Brief Title</div>
+                <p class="slds-p-vertical_x-small accordion-description">
+                    <lightning-formatted-text value={record.Brief_Title__c}></lightning-formatted-text>
+                </p>
+
+                <div class="free-text-title">Description</div>
+                <p class="slds-p-vertical_x-small accordion-description">
+                    <lightning-formatted-text value={description}></lightning-formatted-text>
+                </p>
+            </div>
+
+            <div class="card-footer">
+                &nbsp;
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <c-khc-back-navigation container-class="khc-container"></c-khc-back-navigation>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <header>
+            <h1>{headerText}</h1>
+        </header>
+        <div class="khc-content">
+            <template for:each={immunizations} for:item="immunization" if:true={hasImmunization}>
+                <div key={immunization.Id} class="data-header">
+                    <h2>
+                        {immunization.Immunization_Type__c}
+                        <template if:true={immunization.year}>&nbsp;({immunization.year})</template>
+                    </h2>
+                    <div class="controls">
+                        <a name={immunization.Id} data-id={immunization.Id} 
+                        onclick={handleEditImmunizationClick} class="immunization-edit">{editLabel}</a>
+                    </div>
+                </div>
+            </template>
+            <template if:false={hasImmunization}>
+                <label>{noRecordFoundLabel}</label>
+            </template>
+        </div>
+        <footer>
+            <div class="slds-align_absolute-center slds-m-around_medium" >
+                <button title="Add a new immunization" onclick={handleAddImmunizationClick} 
+                    class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button khc-add-button">
+                    {addANewImmunization}
+                </button>
+            </div>
+        </footer>
+    </div>
+</template>

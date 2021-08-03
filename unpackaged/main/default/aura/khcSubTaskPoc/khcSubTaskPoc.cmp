@@ -1,0 +1,15 @@
+<!--
+ - Created by vupneja on 11/20/2020.
+ -->
+
+<aura:component implements="lightning:availableForFlowActions,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome"  access="global" >
+    <lightning:workspaceAPI aura:id="workspace" />
+    <lightning:button label="Open Tab with Subtab" onclick="{! c.openTabWithSubtab }"/>
+    <aura:attribute name="RecordId" type="String" default="0012f00000aDpdzAAC"/>
+    <aura:attribute name="SubRecordId" type="String" default="5002f0000081ojqAAA"/>
+    <ui:inputText label="RecordId"  aura:id="RecordId" value="0012f00000aDpdzAAC"/>
+    <ui:inputText label="SubRecordId"  aura:id="SubRecordId" value="5002f0000081ojqAAA"/>
+    <!--aura:handler name="init" value="{!this}" action="{!c.openTabWithSubtab}"/>
+    <lightning:input label="RecordId"  aura:id="RecordId" value="0012f00000aDpdzAAC"/>
+    <lightning:input label="SubRecordId"  aura:id="SubRecordId" value="5002f0000081ojqAAA"/-->
+</aura:component>

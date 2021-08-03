@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Komen_Care_Program</fullName>
+    <fields>Name</fields>
+    <fields>Status</fields>
+    <fields>Payout_Amount__c</fields>
+    <fields>Remaining_Amount__c</fields>
+    <label>Komen Care Program</label>
+</CompactLayout>

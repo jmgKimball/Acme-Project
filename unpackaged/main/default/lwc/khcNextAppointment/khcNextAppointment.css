@@ -1,0 +1,52 @@
+/**
+ * Created by ako on 3/12/2021.
+ */
+
+.khc-title::before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f274";
+    padding-left: 0.3rem;
+    padding-right: 0.7rem;
+    color:var(--lwc-colorTextBrand);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.khc-appointment-date {
+    font-family: 'Verdana', serif;
+    font-size:1.3rem;
+}
+
+.khc-field-detail {
+    grid-column-start: 2;
+    padding-left: 1.3rem;
+    padding-bottom: 0.5rem;
+    white-space: pre-wrap;
+
+}
+
+.khc-field-label {
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    grid-column-start: 1;
+
+}
+
+.khc-appointment-details {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+.khc-appointment-time {
+    padding-left: 0.8rem;
+}
+
+.khc-org-color {
+    color:var(--lwc-colorTextBrand);
+}
+
+.khc-appointment-container {
+    overflow: auto;
+    max-height: 20rem;
+    max-width: 22rem;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Donation_Amount_del__c</fullName>
+    <description>Sum of Donation Amount for this Care Program.</description>
+    <externalId>false</externalId>
+    <label>Total Donation Amount</label>
+    <summarizedField>Donation__c.Amount__c</summarizedField>
+    <summaryForeignKey>Donation__c.Care_Program__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

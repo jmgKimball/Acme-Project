@@ -1,0 +1,91 @@
+<!--
+ - Created by chris on 2021-01-18.
+ -->
+
+<!-- My Komen Health Cases -->
+<template>
+
+	<div class="mkh-grid" if:true={casesList}>
+		<!--Desktop-->
+		<template if:true={isDesktop}>
+			<div class="mkh-header">
+				<div>
+					{labels.CASE_NUMBER}
+				</div>
+				<div>
+					{labels.CASE_SUBJECT}
+				</div>
+				<div>
+					{labels.CASE_STATUS}
+				</div>
+				<div>
+					{labels.CASE_DATE}
+				</div>
+			</div>
+
+			<template for:each={casesList} for:item=record>
+				<div key={record.Id} class="mkh-row">
+					<div>
+						{record.CaseNumber}
+					</div>
+					<div>
+						{record.Subject}
+					</div>
+					<div>
+						{record.Ticket_Status__c}
+					</div>
+					<div>
+						<lightning-formatted-date-time value={record.CreatedDate} year="numeric"
+													month="numeric" day="numeric" hour="numeric"
+													minute="2-digit" hour12="true"></lightning-formatted-date-time>
+					</div>
+				</div>
+			</template>
+		</template>
+
+		<!--Mobile UI -->
+		<template if:false={isDesktop}>
+			<div class="slds-p-around_medium lgc-bg">
+				<ul class="slds-has-dividers_bottom-space">
+					<template for:each={casesList} for:item="record">
+						<li key={record.Id} class="slds-item">
+							<lightning-tile >
+								<dl class="slds-dl_horizontal">
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate" title={labels.CASE_NUMBER}>{labels.CASE_NUMBER}:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate" title={record.CaseNumber}>{record.CaseNumber}</p>
+									</dd>
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate" title={labels.CASE_SUBJECT}>{labels.CASE_SUBJECT}:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate" title={record.Subject}>{record.Subject}</p>
+									</dd>
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate" title={labels.CASE_STATUS}>{labels.CASE_STATUS}:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate" title={record.Ticket_Status__c}>{record.Ticket_Status__c}</p>
+									</dd>
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate" title={labels.CASE_DATE}>{labels.CASE_DATE}:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate" title={record.CreatedDate}>
+											<lightning-formatted-date-time value={record.CreatedDate} year="numeric"
+												month="numeric" day="numeric" hour="numeric"
+												minute="2-digit" hour12="true"></lightning-formatted-date-time>
+										</p>
+									</dd>
+								</dl>
+							</lightning-tile>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</template>
+	</div>
+
+</template>

@@ -1,0 +1,87 @@
+<template>
+    <!-- Spinner -->
+    <div class="slds-align_absolute-center" if:true={showSpinner}>
+        <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+    <!-- Filter Label -->
+    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+        <label class="slds-m-vertical_medium">{filtersLabel}</label>
+    </div>
+
+    <!-- Start Filter Pills -->
+    <article>
+        <div>
+            <div class="slds-grid slds-wrap">
+                <!-- TYPE -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center slds-is-relative slds-p-bottom_small">
+                    <c-khc-multiselect-checkbox options={typeOptions}
+                                                label={typeLabel}
+                                                show-pill="false"
+                                                onchange={handleTypeChange}
+                                                ondropdown={handleFilterDropdownChange}
+                                                data-filter-type="type"></c-khc-multiselect-checkbox>
+                    <div if:true={numTypesSelected} class="khc-filter-counter">
+                        {numTypesSelected}
+                    </div>
+                </div>
+                
+                <!-- FEATURED -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center slds-p-bottom_small">
+                    <span class="slds-pill khc-slds-pill"
+                          onclick={handleFilterResults}
+                          data-filter-type="featured">
+                        <span class="slds-pill__label">{featuredLabel}</span>
+                    </span>
+                </div>
+
+                <!-- LOCATION -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center slds-is-relative slds-p-bottom_small">
+                    <c-khc-multiselect-checkbox options={locationOptions}
+                                                label={locationLabel}
+                                                show-pill="false"
+                                                onchange={handleLocationChange}
+                                                ondropdown={handleFilterDropdownChange}
+                                                data-filter-type="location"
+                                                dropdown-position="right"></c-khc-multiselect-checkbox>
+                    <div if:true={numLocationsSelected} class="khc-filter-counter">
+                        {numLocationsSelected}
+                    </div>
+                </div>
+
+                <!-- TOPICS -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center slds-is-relative slds-p-left_x-small">
+                    <c-khc-multiselect-checkbox options={topics}
+                                                selected-options={selectedFilters.topics}
+                                                label={topicLabel}
+                                                show-pill="false"
+                                                onchange={handleTopicChange}
+                                                ondropdown={handleFilterDropdownChange}
+                                                data-filter-type="topic"></c-khc-multiselect-checkbox>
+                    <div if:true={numTopicsSelected} class="khc-filter-counter">
+                        {numTopicsSelected}
+                    </div>
+                </div>
+
+                <!-- FAVOURITES -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center">
+                    <span class="slds-pill khc-slds-pill"
+                          onclick={handleFilterResults}
+                          data-filter-type="favourites">
+                        <span class="slds-pill__label">{favoriteLabel}</span>
+                    </span>
+                </div>
+
+                <!-- REFERRED -->
+                <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-6 slds-text-align_center">
+                    <span class="slds-pill khc-slds-pill"
+                          onclick={handleFilterResults}
+                          data-filter-type="referred">
+                        <span class="slds-pill__label">{referredLabel}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Invisible backdrop to close dropdown when clicked -->
+    <div class="khc-multiselect-dropdown-overlay" if:true={isFilterDropdownOpen} onclick={handleCloseFilterDropdown}></div>
+</template>

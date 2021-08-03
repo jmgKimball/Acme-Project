@@ -1,0 +1,249 @@
+.THIS { /* defines style for the overall page */
+    position:relative;
+/*    z-index:1;*/
+    margin:0 auto;
+    max-width:1140px;
+    display:flex;
+}
+.THIS .logoContainer { /* Defines the styles for the logo */
+	background-image: t('url(' + brandLogoImage  + ')');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 99;
+	cursor: pointer;
+	position: relative;
+	max-width: 100%;
+	max-height: 52px;
+	display: block;
+	outline: 0;
+	height: 50px;
+	margin-top: 10px;
+}
+
+/*  Menu Styles */
+.THIS .comm-navigation__list { flex-direction: column; }
+.THIS .slds-is-active { color: token(colorTextBrand); }
+.THIS .Log.Out {display:none;}
+
+/* Layout and Bug fixes */
+.THIS .slds-col.slds-grid { flex-grow:1; } /* standard object page layouts */
+.THIS ul.branding-actions.slds-button-group.slds-m-left--xx-small.oneActionsRibbon.forceActionsContainer { margin: 0 1rem 0 auto; } /* button layouts */
+.THIS .slds-col .ui-widget { margin: 16px 0; }
+.THIS .slds-col.content { width:100%; }
+.THIS .cNavPanel {  }
+.THIS.cHeaderLine { background-color:#ffffff; }
+.THIS .cSideBar { background-color: rgba(139,132,132, 0.19); flex:auto;  }
+.THIS .cMainContent { flex:11; }
+.THIS .cSearchPublisher { min-width:12em; flex: 3 1 auto; }
+.THIS .cSearchPublisher .forceSearchInputDesktop .contentWrapper {height: 2rem; border-radius:1.25rem;}
+.THIS svg.slds-icon.slds-icon_x-small {fill: token(colorTextLabel);}
+.THIS .bannerLayoutButton {font-weight:bold; text-transform: uppercase; width: 272px;}
+.THIS .selfServiceProfileMenuTrigger a {color: token(colorTextLabel);}
+.THIS .headlineMessage h4 {padding-left:1rem;}
+.THIS .headlineMessage div .ui-widget {margin:0;}
+.THIS .headlineMessage div div div.uiOutputRichText {background-color:#696d79; padding:1rem; color: token(colorTextInverse);}
+.THIS .cWelcome {padding-top: 0.4rem; padding-left:1rem; flex: 1 1 auto;}
+.THIS .cNotifications {flex:0 1 auto;}
+.THIS .headerImage {
+	max-width: 100%;
+	height: auto;
+}
+.THIS .sidebarFooter { background-color: #FFFFFF; }
+
+/* SEARCH */
+
+.THIS .mk-desktop-search {
+	max-width: 230px;
+	margin-left: auto;
+	margin-right: 15px;
+}
+
+.THIS .mk-desktop-search .slds-input {
+	font-size: 13px;
+}
+
+.THIS .cWelcome:empty {
+	display: none;
+}
+
+/* GUEST HEADER LINKS */
+
+.THIS .mk-guest-header-links {
+	font-size: 15px;
+	margin-left: 15px;
+	font-weight: bold;
+}
+
+.THIS .mk-guest-header-links a:not(:last-child) {
+	margin-right: 25px;
+}
+
+
+/* Homepage Carousel Styling */
+.THIS .forceCommunityCarousel {
+    display:flex;
+    flex-direction:column-reverse;
+}
+.THIS .forceCommunityCarousel a.slds-carousel__indicator-action {border-color: rgb(178, 0, 93);}
+.THIS .forceCommunityCarousel a.slds-carousel__indicator-action.slds-is-active {
+    background-color: rgb(178, 0, 93);
+    border-color: rgb(178, 0, 93); /* NOTE: set manually currently... cannot use token for background color */
+}
+.THIS .forceCommunityCarousel .mediaContainer {margin-top:auto; margin-bottom:auto;} /* align image vertically center */
+.THIS .forceCommunityCarousel .slds-col.slds-no-space {padding-top:0px !important;}
+.THIS .forceCommunityCarousel div.slds-is-relative.slds-grid {order:2;}
+.THIS .forceCommunityCarousel .carouselSlide .js-content-eyebrow::before {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f1ea";
+    padding-right: 0.7rem;
+    color: rgb(178,0,93);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+/* styling for CMS Content Single Items */
+.THIS .slds-text-body_regular {font-size: 0.9rem;}
+/* styling for HTML Content Entry boxes (note: must use these classes to inherit these settings) */
+.THIS .htmlArea { padding-left: 2.0rem; padding-right: 2.0rem; }
+.THIS .MyHeading { color: token(colorTextBrand); }
+.THIS .DashboardText { color: token(colorTextLabel); }
+.THIS .htmlHeading {
+    color: token(colorTextBrand);
+    font-weight: bold;
+    font-size:1.0rem;
+    text-transform:uppercase;
+}
+.THIS .ClinicalTrialsTile .htmlTitle {
+    padding-left:1rem;
+    text-transform: uppercase;
+}
+.THIS .ClinicalTrialsTile .htmlContent{
+    padding-top:1rem;
+}
+.THIS .htmlTitle {
+    color: token(colorTextLabel);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 20px;
+    padding-bottom: 1.4rem;
+    font-family: var(--lwc-fontFamily,Lato);
+}
+
+
+.THIS .htmlContent { font-size:0.9rem; color: token(colorTextLabel); }
+.THIS .htmlClickToCall, .THIS .htmlEmailLink, .THIS .htmlWebLink { padding-left:0.5rem; }
+.THIS .htmlAnchorButton { width: 272px; margin:0.5rem; align-self: flex-end; color: token(colorTextBrand) !important; background-color:white; }
+.THIS .htmlAnchorButton:hover { text-decoration:none; }
+
+.THIS .forceCommunityTileLayout ul.js-content-metadata.slds-m-top_small.metadataFields.slds-text-body_regular { min-height:25px; padding-bottom:10px; float:left;}
+.THIS .forceCommunityTileLayout ul.js-content-metadata.slds-m-top_small.metadataFields.slds-text-body_regular li { display:flex; }
+.THIS .forceCommunityTileLayout ul.js-content-metadata.slds-m-top_small.metadataFields.slds-text-body_regular a:hover { text-decoration:none; }
+
+.THIS .fas, .THIS .far { color: token(colorTextBrand); } /* Set the Font Awesome fonts to the theme color */
+
+/* Button style consistency */
+.THIS .mkButton,
+        .THIS .forceCommunityCarousel .forceCommunityCardLayout ul.js-content-metadata.metadataFields li a,
+        .THIS .forceCommunityTileLayout ul.js-content-metadata.metadataFields li a,
+        .THIS button.slds-button.slds-button_brand.js-content-navButton.bannerLayoutButton {
+			display: inline-block;
+            background-color: #fbf9f6;
+            border: 1px solid rgb(178,0,93);
+            border-radius: 0.2rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            padding-left: 1.0rem;
+            padding-right: 1.0rem;
+            margin: 0 auto;
+            font-weight: bold;
+            text-align:center;
+            text-transform:capitalize;
+            width:unset;
+            line-height:unset;
+			font-size: 13px;
+}
+
+
+.THIS.mk-mobile-header {
+	display: none;
+}
+/* Styling of the mobile menu */
+/*.THIS .mobileSideBar { display:none; } /* So it doesn't show on desktop */
+/*.THIS .mobileSideBar .forceCommunityGlobalNavigation { background-color:unset; }
+.THIS .mobileSideBar .forceCommunityGlobalNavigation svg { fill: token(colorTextLabel); }
+.THIS .mobileSideBar .forceCommunityGlobalNavigation .comm-navigation__item{ color: token(colorTextBrand); }
+*/
+/*
+@media only screen and (max-width: 600px) { /* for a screen smaller than 600px wide */
+/*    .THIS .cSideBar { display:none; }
+    .THIS .mobileSideBar { display:flex; }
+    .THIS .Log.Out { display:list-item; }
+    .THIS .logoContainer { flex-grow:11; }
+    .THIS .cNavPanel { padding-top: unset; flex-grow:1; }
+    .THIS.cHeaderLine, .THIS .cSearchPublisher, .THIS .cWelcome, .THIS .cNotifications, .THIS .cProfileCon, .THIS .headlineMessage { display:none !important; }
+}*/
+
+
+@media only screen and (max-width: 420px) {
+
+	.THIS .cSideBar {
+        display: none;
+    }
+
+	.THIS.mk-desktop-header {
+		display: none;
+	}
+
+	.THIS.mk-mobile-header {
+		display: block;
+	}
+
+	.THIS .js-content-metadata {
+		margin-top: 30px;
+	}
+
+}
+
+/* NEWS CAROUSEL - DESKTOP */
+@media only screen and (min-width: 421px) {
+
+	.THIS .slds-col .ui-widget:first-child {
+		margin-top: 0;
+	}
+
+	.THIS .js-dynamic-collection {
+		position: relative;
+
+	}
+
+	.THIS .slds-carousel__indicators {
+		margin-left: auto;
+		position: absolute;
+		bottom: 15px;
+		right: 360px;
+	}
+
+	.THIS .js-dynamic-collection a.slds-carousel__indicator-action {
+		background-color: transparent;
+		width: 9px;
+		height: 9px;
+	}
+
+	.THIS .js-content-eyebrow {
+		display: inline-block;
+		display: flex;
+		align-items: center;
+	}
+
+	.THIS .js-content-title span {
+		display: inline-block;
+	}
+
+	.THIS .js-content-subtitle {
+		padding-top: 5px;
+		padding-bottom: 20px;
+	}
+
+
+}
+/* NEWS CAROUSEL - DESKTOP */

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>OM_Medication_Lookup</fullName>
+        <apiVersion>49.0</apiVersion>
+        <endpointUrl>https://prod-03.southcentralus.logic.azure.com:443/workflows/e70ef5f3366d47be8d5d521355cd0154/triggers/manual/paths/invoke?api-version=2016-10-01&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=LrTwob6mI_SOz9cWQAq3_p4QcA730c7sfPC3gs2seXE</endpointUrl>
+        <fields>Brand_Name__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LastReferencedDate</fields>
+        <fields>LastViewedDate</fields>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>Product_NDC__c</fields>
+        <fields>RXCUI_Possible_Matches__c</fields>
+        <fields>RXCUI__c</fields>
+        <fields>Side_Effects_Statement__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>acoppin@tractionondemand.com</integrationUser>
+        <name>OM - Medication Lookup</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Medication Lookup</fullName>
+        <actions>
+            <name>OM_Medication_Lookup</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Medication__c.Update_Medication_Information__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Sends Outbound Message to Microsoft system to pull possible matches by medication name.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

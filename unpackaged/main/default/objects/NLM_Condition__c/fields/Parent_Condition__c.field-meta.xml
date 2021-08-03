@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Condition__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Identifies the parent condition - one level higher in hierarchy and nomenclature.  The Parent is less specific, the Child is more specific.</description>
+    <externalId>false</externalId>
+    <label>Parent Condition</label>
+    <referenceTo>NLM_Condition__c</referenceTo>
+    <relationshipLabel>NLM Conditions</relationshipLabel>
+    <relationshipName>Child_Conditions</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

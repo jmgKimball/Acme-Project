@@ -1,0 +1,69 @@
+/**
+ * Created by cwico@tractionondemand.com on 2020-11-20.
+ */
+
+
+h1 {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+button.mk-submit-button {
+	width: 100%;
+	padding: 15px;
+	text-align: center;
+	background-color: var(--sds-c-button-brand-color-background, var(--lwc-brandAccessible,rgb(178, 0, 93)));
+	color: white;
+	border: 0;
+	border-radius: 4px;
+	font-size: 18px;
+}
+
+button.mk-submit-button:active, button.mk-submit-button:focus{
+	border: 0;
+	outline: none;
+}
+
+textarea.mk-feedback-comments.slds-textarea {
+	min-height: 150px !important;
+}
+
+
+.mk-actions i {
+	display: block;
+	font-size: 44px;
+	text-align: center;
+	margin-bottom: 18px;
+}
+
+.mk-actions a {
+	font-size: 18px;
+	font-weight: 600;
+	width: 500px;
+}
+
+.fa-thumbs-down {
+	transform: scaleX(-1);
+}
+
+.mk-actions a span {
+	display: block;
+	text-align: center;
+	max-width: 80px;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mk-actions a {
+	text-decoration: none;
+}
+
+.mk-actions a[data-selected=false]:hover, .mk-actions a[data-selected=false]:hover i {
+	color: var(--sds-c-button-text-color-hover, var(--lwc-brandAccessibleActive,#7f0042));
+}
+
+.mk-actions a[data-selected=true] * {
+	color: #3b3b3b;
+}
+

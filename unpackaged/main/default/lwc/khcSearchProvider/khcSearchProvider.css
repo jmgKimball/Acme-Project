@@ -1,0 +1,25 @@
+.search-result-body{
+    text-align: center;
+}
+.select-provider{
+    float: right;
+}
+.khc-h1{
+    font-size: 22px;
+    font-family: Montserrat;
+}
+.khc-a{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.khc-is-past{
+    height: 22px;
+    width: 22px;
+    margin: 2px;
+}
+.khc-pagination-detail{
+    padding: 2px 10px;
+}
+.previous-action, .next-action{
+    margin: 0px 8px;
+}

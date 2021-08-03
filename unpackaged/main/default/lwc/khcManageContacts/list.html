@@ -1,0 +1,87 @@
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <c-khc-back-navigation container-class="slds-m-bottom--small"></c-khc-back-navigation>
+        <header>
+            <h1>{headerText}</h1>
+        </header>
+        <template for:each={patientContacts} for:item="patientContact" if:true={loaded}>
+            <lightning-accordion key={patientContact.Id} allow-multiple-sections-open active-section-name={patientContact.accordianHeading} class="accordion-section">
+                <lightning-accordion-section name={patientContact.Id} label={patientContact.accordianHeading}>
+                    <div slot="actions" class="controls">
+                        <a onclick={handleEdit} data-id={patientContact.Id}>{editLabel}</a>
+                    </div>
+                    <div class="slds-box">
+                        <div class="khc-view-item">
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Family_Member_Name__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-text value={patientContact.Family_Member_Name__c}></lightning-formatted-text>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Email__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-email value={patientContact.Email__c}></lightning-formatted-email>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Phone__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-phone value={patientContact.Phone__c}></lightning-formatted-phone>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Mobile_Phone__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-phone value={patientContact.Mobile_Phone__c}></lightning-formatted-phone>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.MailingAddress.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-address
+                                        street={patientContact.Mailing_Street__c}
+                                        city={patientContact.Mailing_City__c}
+                                        country={patientContact.Mailing_Country__c}
+                                        province={patientContact.Mailing_State_Province__c}
+                                        postal-code={patientContact.Mailing_Zip_Postal_Code__c}
+                                    ></lightning-formatted-address>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Description_Notes__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-text value={patientContact.Description_Notes__c}></lightning-formatted-text>
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Emergency_Contact__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    {patientContact.Emergency_ContactValue}
+                                </div>
+                            </span>
+                            <span class="slds-form-element slds-form-element_stacked">
+                                <span class="slds-form-element__label">{patientContactFieldsMap.Relationship__c.label}</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-formatted-text value={patientContact.Relationship__c}></lightning-formatted-text>
+                                </div>
+                            </span>
+                            <br/>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </template>
+        <footer class="slds-m-top--small">
+            <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button" onclick={handleAddNewContactClick} >
+                {addNewContactLabel}
+            </button>
+            <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small">
+                <a href={printableViewLink} target="_blank" if:true={loggedInUser}>{printableViewLabel}</a>
+            </div>
+        </footer>   
+    </div>
+</template>

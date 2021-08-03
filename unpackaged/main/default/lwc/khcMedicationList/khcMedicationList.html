@@ -1,0 +1,23 @@
+<template>
+	<c-khc-back-navigation container-class="slds-m-bottom--small"></c-khc-back-navigation>
+	<div class="khc-medications">
+		<header>
+			<h1 class="slds-text-align_center">{myMedicationHeader}</h1>
+		</header>
+		<article class="khc-medication-list">
+			<template for:each={medications} for:item="medication">
+				<div key={medication.Id} class="khc-medication-item slds-border_bottom">
+					<h2>{medication.Medication__r.Name}</h2>
+					<div class="khc-medication-actions">
+						<a if:true={showEdit} name={medication.Id} data-record-id={medication.Id}
+						   data-id={medication.Id}
+						   onclick={editMedicationStatement} class="medication-edit">{editLabel}</a>
+					</div>
+				</div>
+			</template>
+		</article>
+		<template if:false={medications}>
+			<label class="slds-m-around_large">{noRecordFoundLabel}</label>
+		</template>
+	</div>
+</template>

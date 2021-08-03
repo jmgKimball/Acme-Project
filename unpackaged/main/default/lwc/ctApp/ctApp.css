@@ -1,0 +1,4 @@
+.container {
+    margin: -17px; /* Remove border around content, TODO: media query this to mobile devices only */
+    background: rgb(22,20,21);
+}

@@ -1,0 +1,64 @@
+<template>
+    <div class="khc-container">
+            <div class="slds-align_absolute-center" if:true={showSpinner}>
+                <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+            </div>
+            <c-khc-back-navigation container-class="slds-m-bottom--small"></c-khc-back-navigation>
+<!--            <header>-->
+                <h1>{headerText}</h1>
+<!--            </header>-->
+            <template if:true={loaded}>
+                <div>
+                    <div class="slds-p-vertical--small">
+                        {upcomingAppointmentsLabel}
+                    </div>
+                    <lightning-accordion if:true={hasAppointments} allow-multiple-sections-open class="accordion-section" title="Upcoming Appointments">
+                        <template for:each={appointments} for:item="appointment">
+                            <lightning-accordion-section key={appointment.Id} name={appointment.Id} label={appointment.Title__c} class="slds-truncate">
+                                <div class="slds-box">
+                                    <c-khc-appointment-detail appointment={appointment}
+                                                              ecounter-field-map={ecounterFieldMap} onedit={handleEdit}
+                                                              onattended={handleAttended}></c-khc-appointment-detail>
+                                </div>
+                            </lightning-accordion-section>
+
+                        </template>
+                    </lightning-accordion>
+                    <label if:false={hasAppointments}>
+                        {noAppointmentsLabel}
+                    </label>
+                </div>
+                <div>
+                    <div class="slds-p-vertical--small">
+                        {pastAppointmentsLabel}
+                    </div>
+                    <lightning-accordion allow-multiple-sections-open class="accordion-section" title="Upcoming Appointments">
+                        <template if:true={hasPastAppointments} for:each={pastAppointments} for:item="appointment">
+                            <lightning-accordion-section key={appointment.Id} name={appointment.Id} label={appointment.Title__c} class="slds-truncate">
+                                <div class="slds-box">
+                                    <c-khc-appointment-detail appointment={appointment}
+                                                              ecounter-field-map={ecounterFieldMap} onedit={handleEdit}
+                                                              onattended={handleAttended}></c-khc-appointment-detail>
+                                </div>
+                            </lightning-accordion-section>
+
+                        </template>
+                        <label if:false={hasPastAppointments}>
+                            {noAppointmentsLabel}
+                        </label>
+                    </lightning-accordion>
+                </div>
+            </template>
+    </div>
+
+    <div class="slds-p-around_small">
+        <c-khc-new-appointment-modal onrefresh={refreshComponent}> 
+            <div slot="createAppointmentButton">
+                <div class="slds-p-left_xx-large slds-p-vertical_medium">
+                    <button type="button" class="mkButton khc-org-color">{createNewAppointmentLabel}</button>
+                </div>
+            </div>
+        </c-khc-new-appointment-modal>
+    </div>
+
+</template>

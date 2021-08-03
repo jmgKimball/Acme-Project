@@ -1,0 +1,7 @@
+.THIS .slds-scrollable {
+    overflow: auto !important;
+    height: 25rem;
+}
+.THIS .slds-docked-modal-composer {
+    max-width: auto;
+}

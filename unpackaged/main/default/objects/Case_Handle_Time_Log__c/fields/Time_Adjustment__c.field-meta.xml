@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Adjustment__c</fullName>
+    <description>Allows a Manager/Admin to adjust the time spent on a case.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows a Manager/Admin to adjust the time spent on a case.
+For example, if time needs to be reduced by 30 mins, enter 30.</inlineHelpText>
+    <label>Time Adjustment (mins)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

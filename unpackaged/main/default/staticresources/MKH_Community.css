@@ -1,0 +1,37 @@
+/**
+ * Community Pages CSS overides - for styling page specific elements that cannot be done in the template level
+ *
+ * @author Christian Wico, Traction on Demand
+ * @date 2020-12-21
+ *
+ */
+
+
+/* content column */
+div.cMainContentCenter {
+	background-color: #FBF9F6;
+}
+
+@media only screen and (min-width: 421px) {
+
+	/* HOME > content sections */
+	div[data-page=Home] div.cb-section_row {
+		margin-left: 50px !important;
+	}
+
+	/* HOME > Opt In*/
+	div[data-page=Home] div.mk-opt-in {
+		margin-left: 30px !important;
+	}
+
+	/* HOME > 2 column rows */
+	div[data-page=Home] div.cb-section_row div.cb-section_column.slds-size_12-of-12.slds-max-medium-size_12-of-12.slds-large-size_6-of-12:last-child {
+		padding-right: 50px !important;
+	}
+
+}
+
+/* Hides the Owner field from the My Files page table */
+.comm-page-custom-my-files .forceRecordLayout.uiVirtualDataTable td:nth-child(3), .forceRecordLayout.uiVirtualDataTable th:nth-child(3) {
+    display: none;
+}

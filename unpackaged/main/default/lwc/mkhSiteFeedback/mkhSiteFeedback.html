@@ -1,0 +1,29 @@
+<!-- MyKomen Health Site Feedback -->
+<template>
+
+	<a class="mk-feedback-link" onclick={handleShowFeedbackForm}>{feedbackLabel}</a>
+
+	<div class="mk-feedback" if:true={showForm}>
+		<section role="dialog" tabindex="-1" aria-label="Submit feedback" aria-modal="true"
+		         aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header slds-p-horizontal_x-large slds-modal__header_empty">
+
+					<span class="mk-brand-logo">
+					</span>
+
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+					        title="Close"
+					        onclick={handleClosePressed}>
+						<lightning-icon icon-name="utility:close" aria-label="Close"></lightning-icon>
+					</button>
+				</header>
+				<div class="slds-modal__content slds-p-horizontal_x-large slds-p-bottom_x-large" id="modal-content-id-1">
+					<c-mkh-site-feedback-form onclose={handleClosePressed}></c-mkh-site-feedback-form>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</div>
+
+</template>

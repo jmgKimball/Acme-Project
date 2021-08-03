@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Direct Fax</fullName>
+        <default>false</default>
+        <label>Fax</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Postal Mail</fullName>
+        <default>false</default>
+        <label>Postal Mail</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient Portal</fullName>
+        <default>false</default>
+        <label>Patient Portal</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </customValue>
+    <description>How they heard about the program</description>
+    <masterLabel>Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

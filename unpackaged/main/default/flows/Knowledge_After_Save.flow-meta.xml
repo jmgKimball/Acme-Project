@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Populate State from related account.</description>
+        <name>Update_Article</name>
+        <label>Update Article</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.State__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__r.BillingState</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Keywords__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!$Record.Community_Topics__c}; {!$Record.Internal_Topics__c}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ZIP__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Account__r.BillingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>To populate state from related account.</description>
+    <interviewLabel>Knowledge-After Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Knowledge-After Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Article</targetReference>
+        </connector>
+        <filters>
+            <field>Account__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Knowledge__kav</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    <filterLogic>and</filterLogic></start>
+    <status>Active</status>
+<apiVersion>51.0</apiVersion></Flow>

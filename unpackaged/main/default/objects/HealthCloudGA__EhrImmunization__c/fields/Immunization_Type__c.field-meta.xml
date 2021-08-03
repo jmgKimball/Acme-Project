@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Immunization_Type__c</fullName>
+    <description>List from https://www.cdc.gov/vaccines/vpd/vaccines-list.html</description>
+    <externalId>false</externalId>
+    <label>Immunization Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Adenovirus</fullName>
+                <default>false</default>
+                <label>Adenovirus</label>
+            </value>
+            <value>
+                <fullName>Anthrax</fullName>
+                <default>false</default>
+                <label>Anthrax</label>
+            </value>
+            <value>
+                <fullName>Cholera</fullName>
+                <default>false</default>
+                <label>Cholera</label>
+            </value>
+            <value>
+                <fullName>Diphtheria</fullName>
+                <default>false</default>
+                <label>Diphtheria</label>
+            </value>
+            <value>
+                <fullName>Haemophilus influenzae type b (Hib)</fullName>
+                <default>false</default>
+                <label>Haemophilus influenzae type b (Hib)</label>
+            </value>
+            <value>
+                <fullName>Hepatitis A</fullName>
+                <default>false</default>
+                <label>Hepatitis A</label>
+            </value>
+            <value>
+                <fullName>Hepatitis B</fullName>
+                <default>false</default>
+                <label>Hepatitis B</label>
+            </value>
+            <value>
+                <fullName>Human Papillomavirus (HPV)</fullName>
+                <default>false</default>
+                <label>Human Papillomavirus (HPV)</label>
+            </value>
+            <value>
+                <fullName>Japanese Encephalitis</fullName>
+                <default>false</default>
+                <label>Japanese Encephalitis</label>
+            </value>
+            <value>
+                <fullName>Measles</fullName>
+                <default>false</default>
+                <label>Measles</label>
+            </value>
+            <value>
+                <fullName>Meningococcal</fullName>
+                <default>false</default>
+                <label>Meningococcal</label>
+            </value>
+            <value>
+                <fullName>Mumps</fullName>
+                <default>false</default>
+                <label>Mumps</label>
+            </value>
+            <value>
+                <fullName>Pertussis</fullName>
+                <default>false</default>
+                <label>Pertussis</label>
+            </value>
+            <value>
+                <fullName>Pneumococcal</fullName>
+                <default>false</default>
+                <label>Pneumococcal</label>
+            </value>
+            <value>
+                <fullName>Polio</fullName>
+                <default>false</default>
+                <label>Polio</label>
+            </value>
+            <value>
+                <fullName>Rabies</fullName>
+                <default>false</default>
+                <label>Rabies</label>
+            </value>
+            <value>
+                <fullName>Rotavirus</fullName>
+                <default>false</default>
+                <label>Rotavirus</label>
+            </value>
+            <value>
+                <fullName>Rubella</fullName>
+                <default>false</default>
+                <label>Rubella</label>
+            </value>
+            <value>
+                <fullName>Seasonal Influenza (Flu) only</fullName>
+                <default>false</default>
+                <label>Seasonal Influenza (Flu) only</label>
+            </value>
+            <value>
+                <fullName>Shingles</fullName>
+                <default>false</default>
+                <label>Shingles</label>
+            </value>
+            <value>
+                <fullName>Smallpox</fullName>
+                <default>false</default>
+                <label>Smallpox</label>
+            </value>
+            <value>
+                <fullName>Tetanus</fullName>
+                <default>false</default>
+                <label>Tetanus</label>
+            </value>
+            <value>
+                <fullName>Tuberculosis</fullName>
+                <default>false</default>
+                <label>Tuberculosis</label>
+            </value>
+            <value>
+                <fullName>Typhoid Fever</fullName>
+                <default>false</default>
+                <label>Typhoid Fever</label>
+            </value>
+            <value>
+                <fullName>Varicella</fullName>
+                <default>false</default>
+                <label>Varicella</label>
+            </value>
+            <value>
+                <fullName>Yellow Fever</fullName>
+                <default>false</default>
+                <label>Yellow Fever</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

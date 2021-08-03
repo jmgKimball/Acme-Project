@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Patient, indicating patient has been approved to connect with a Navigator.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Pat Nav Approval</name>
+    <style>none</style>
+    <subject>Confirmation of enrollment to Komen’s Patient Navigation Program.</subject>
+    <textOnly>Hi {!CareProgramEnrollee.Patient_Name__c},
+
+We are pleased to let you know you have been enrolled in Komen’s Patient Navigation Program. A patient navigator can help you by:  
+
+·       guiding you through the health care system;  
+·       advocating on your behalf to improve communication with your health care providers;  
+·       working with you to find the resources and support you need;  
+·       helping you find appropriate sources to pay for your health care needs;  
+·       and helping you arrange for appropriate services so you can keep your health care appointments.  
+
+One of our patient navigators will be reaching out to you shortly to schedule a time to connect and learn more about your needs.
+
+Our breast care helpline is also available to answer questions, provide support, and connect you with local resources. (1-877 GO KOMEN/1-877-465-6636 or email helpline@komen.org).
+
+Thanks,
+{!Organization.Name}
+sgkencrypt
+Warmly,
+Susan G. Komen
+
+This message was sent to {!Account.PersonEmail}
+For breast health or breast cancer information, please call the Breast Care Helpline: 1-877 GO KOMEN (1-877-465-6636) | helpline@komen.org
+
+Manage your email preferences | Privacy Policy
+Disclosure | About Susan G. Komen
+© 2020 Susan G. Komen | 13770 Noel Road, Suite 801889 Dallas, TX 75380</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

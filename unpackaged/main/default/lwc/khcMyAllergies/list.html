@@ -1,0 +1,35 @@
+<template>
+    <c-khc-back-navigation container-class="khc-container"></c-khc-back-navigation>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <header>
+            <h1>{headerText}</h1>
+            &nbsp;
+        </header>
+        <div class="khc-content">
+            <template for:each={allergies} for:item="allergy" if:true={hasAllergies}>
+                <div key={allergy.Id} class="data-header">
+                        <b > {allergy.Allergy_Type__c}</b>
+                        <div class="controls" >
+                            <a name={allergy.Id} data-id={allergy.Id}
+                               onclick={handleEditAllergyClick} >{editLabel}</a>
+                        </div>
+                        <p>{allergy.Allergen_Name__c}</p>
+                </div>
+            </template>
+            <template if:false={hasAllergies}>
+                <label>{noAllergyLabel}</label>
+            </template>
+        </div>
+        <footer>
+            <div class="slds-align_absolute-center slds-m-around_medium" >
+                <button title="Add a new Allergy" onclick={handleAddAllergyClick}
+                        class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button khc-add-button">
+                    {addLabel}
+                </button>
+            </div>
+        </footer>
+    </div>
+</template>

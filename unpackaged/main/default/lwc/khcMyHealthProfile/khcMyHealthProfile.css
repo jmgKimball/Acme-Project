@@ -1,0 +1,41 @@
+.myKomenHeathProfile{
+    font-size: 22pt;
+}
+.my-profile{
+    font-size: 12pt;
+    font-weight: bold;
+}
+.user-profile{
+    font-size: 16pt;
+    padding-top: 29px;
+}
+.accordion-section{
+    font-size: 16pt;
+    padding-top: 29px;
+}
+.description{
+    font-size: 16pt;
+    padding-top: 29px;
+    text-align: center;
+}
+
+.general-text{
+    font-size: 13pt;
+}
+.combobox-option{
+    font-size: 13pt;
+    padding-top: 29px;
+}
+.details{
+    font-size: 11.5pt !important;
+    list-style-type:none;
+    font-weight: 500 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+.slds-accordion__summary-heading span{
+    text-transform: uppercase;
+}
+.manage-action{
+    font-size: 14px;
+    text-decoration: underline;
+}

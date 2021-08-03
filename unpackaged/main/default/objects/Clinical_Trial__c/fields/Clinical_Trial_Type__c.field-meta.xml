@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinical_Trial_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Clinical Trial Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intervention</fullName>
+                <default>false</default>
+                <label>Intervention</label>
+            </value>
+            <value>
+                <fullName>Observational</fullName>
+                <default>false</default>
+                <label>Observational</label>
+            </value>
+            <value>
+                <fullName>Patient Registry</fullName>
+                <default>false</default>
+                <label>Patient Registry</label>
+            </value>
+            <value>
+                <fullName>Expanded Access</fullName>
+                <default>false</default>
+                <label>Expanded Access</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

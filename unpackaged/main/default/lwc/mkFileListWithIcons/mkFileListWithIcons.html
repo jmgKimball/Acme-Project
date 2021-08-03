@@ -1,0 +1,48 @@
+<!--
+ * @description Display file list
+ * @author      Scott Taylor, Traction on Demand
+ * @date        2020-10-23
+ -->
+<template>
+    <template if:false={showFileList}>
+        <div class="slds-size_1-of-1 slds-text-align_center">
+            <p class="slds-text-title_caps">{LABELS.No_Files_Uploaded}</p>
+        </div>
+    </template>
+
+    <template if:true={showFileList}>
+        <div class="khc-file-wrapper slds-grid slds-gutters slds-wrap slds-p-horizontal_medium">
+            <template for:each={fileListForMarkup} for:item="fileToList">
+                <div class="slds-p-vertical_x-small slds-col slds-size_1-of-1 slds-border_bottom"
+                     key={fileToList.contentDocumentId}>
+                    <!-- image file -->
+                    <template if:true={fileToList.imageFile}>
+                        <div class="slds-grid slds-wrap slds-grid_align-spread slds-grid_vertical-align-center">
+                            <p class="khc-file-name slds-truncate slds-size_11-of-12">
+                                <lightning-avatar
+                                        size="large"
+                                        alternative-text={fileToList.title}
+                                        src={fileToList.imageUrl}
+                                        class="slds-m-right_small"></lightning-avatar>
+                                {fileToList.title}
+                            </p>
+                            <a data-id={fileToList.contentDocumentId}
+                               class="khc-dismissal-icon slds-size_1-of-12 slds-p-bottom_xx-small"
+                               onclick={handleDeleteFile}></a>
+                        </div>
+                    </template>
+                    <template if:false={fileToList.imageFile}>
+                        <div class="slds-grid slds-wrap slds-grid_align-spread slds-grid_vertical-align-center">
+                            <p class="khc-file-name slds-truncate slds-size_11-of-12">
+                                {fileToList.title}
+                            </p>
+                            <a data-id={fileToList.contentDocumentId}
+                               class="khc-dismissal-icon slds-size_1-of-12 slds-p-bottom_xx-small"
+                               onclick={handleDeleteFile}></a>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

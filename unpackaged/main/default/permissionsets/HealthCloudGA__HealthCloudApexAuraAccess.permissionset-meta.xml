@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grant users access to all Health Cloud Apex classes that contain Aura-enabled methods.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Aura-Enabled Apex Class Access for Health Cloud</label>
+</PermissionSet>

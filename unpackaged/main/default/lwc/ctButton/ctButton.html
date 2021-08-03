@@ -1,0 +1,15 @@
+<!-- Clinic Trial Button -->
+<template>
+    <div class={buttonClass} style={buttonStyle}>
+        <div class="icon slds-align_absolute-center">
+            <span class="slds-icon_container slds-current-color" title={title}>
+                <slot> <!-- optionally override entire svg tag to customize further -->
+                    <svg class={svgClass} aria-hidden="true">
+                        <use xlink:href={icon}></use>
+                    </svg>
+                </slot>
+                <span class="slds-assistive-text">{title}</span>
+            </span>
+        </div>
+    </div>
+</template>

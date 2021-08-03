@@ -1,0 +1,54 @@
+<!--
+ - Created by vupneja on 1/20/2021.
+ -->
+<!-- edit -->
+<template>
+    <div class="khc-container">
+        <div class="slds-align_absolute-center" if:true={showSpinner}>
+            <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+        </div>
+        <header>
+            <h1>{headerText}</h1>
+        </header>
+        <div class="khc-content">
+            <lightning-record-edit-form record-id={recordId} onload={handleLoad} onsubmit={handleSubmit}
+                                        onsuccess={handleSuccess} onerror={handleError} density="comfy"
+                                        object-api-name="HealthCloudGA__EhrAllergyIntolerance__c" class="allergy-form">
+
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={allergyFields} for:item="fieldName">
+                        <lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+                                               class="slds-p-around--xx-small">
+                            <label for={fieldName.apiName}>{fieldName.label}</label>
+                            <lightning-input-field key={fieldName.apiName} variant="label-hidden"
+                                                   field-name={fieldName.apiName}
+                                                   id={fieldName.apiName} required></lightning-input-field>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+
+                <button type="submit" class="slds-hide submit-allergy"></button>
+            </lightning-record-edit-form>
+        </div>
+        <footer>
+            <div class="slds-align_absolute-center " >
+                <button title="Add a new immunization"
+                        class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-button"
+                        onclick={handleSave}>
+                    {saveLabel}
+                </button>
+            </div>
+
+            <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-remove-button" if:true={recordId}>
+                <a onclick={handleRemoveClick}>{removeLabel}</a>
+            </div>
+
+            <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-remove-button" >
+                <a onclick={handleCancelAllergyClick}>{cancelLabel}</a>
+            </div>
+
+        </footer>
+
+    </div>
+</template>

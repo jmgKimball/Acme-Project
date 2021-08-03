@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Prebirth</fullName>
+        <default>false</default>
+        <label>Prebirth</label>
+    </customValue>
+    <customValue>
+        <fullName>Newborn</fullName>
+        <default>false</default>
+        <label>Newborn</label>
+    </customValue>
+    <customValue>
+        <fullName>In Infancy</fullName>
+        <default>false</default>
+        <label>In Infancy</label>
+    </customValue>
+    <customValue>
+        <fullName>In Childhood</fullName>
+        <default>false</default>
+        <label>In Childhood</label>
+    </customValue>
+    <customValue>
+        <fullName>In Adolescence</fullName>
+        <default>false</default>
+        <label>In Adolescence</label>
+    </customValue>
+    <customValue>
+        <fullName>20-29 Years</fullName>
+        <default>false</default>
+        <label>20-29 Years</label>
+    </customValue>
+    <customValue>
+        <fullName>30-39 Years</fullName>
+        <default>false</default>
+        <label>30-39 Years</label>
+    </customValue>
+    <customValue>
+        <fullName>40-49 Years</fullName>
+        <default>false</default>
+        <label>40-49 Years</label>
+    </customValue>
+    <customValue>
+        <fullName>50-59 Years</fullName>
+        <default>false</default>
+        <label>50-59 Years</label>
+    </customValue>
+    <customValue>
+        <fullName>60 Years or older</fullName>
+        <default>false</default>
+        <label>60 Years or older</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown</fullName>
+        <default>false</default>
+        <label>Unknown</label>
+    </customValue>
+    <masterLabel>Age Range</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

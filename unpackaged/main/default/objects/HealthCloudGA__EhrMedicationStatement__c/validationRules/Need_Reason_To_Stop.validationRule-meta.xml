@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_Reason_To_Stop</fullName>
+    <active>true</active>
+    <description>Captures if the Status of the Medication Statement is set to Stopped Before Completion without entering a reason.</description>
+    <errorConditionFormula>and( ispickval(HealthCloudGA__StatusCode__c,&quot;Stopped Before Completion&quot;),
+( LEN( Reason_For_Stopping__c )=0 )
+
+)&amp;&amp; (!$Setup.Bypass__c.Validation__c ||(LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot; &amp;&amp; LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;healthcloudga_ehrmedicationstatement__c&quot;))</errorConditionFormula>
+    <errorMessage>Please enter a reason for stopping the medication before the prescription is completed.</errorMessage>
+</ValidationRule>

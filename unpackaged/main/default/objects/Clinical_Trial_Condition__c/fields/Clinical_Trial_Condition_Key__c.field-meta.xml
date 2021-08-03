@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinical_Trial_Condition_Key__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>used to ensure the Combination of Clinical Trial and Condition is unique</description>
+    <externalId>true</externalId>
+    <label>Clinical Trial Condition Key</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

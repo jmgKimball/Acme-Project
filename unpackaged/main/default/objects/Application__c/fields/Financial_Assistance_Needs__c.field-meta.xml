@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financial_Assistance_Needs__c</fullName>
+    <externalId>false</externalId>
+    <label>Financial Assistance Needs</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+                <label>Transportation</label>
+            </value>
+            <value>
+                <fullName>Rent_or_Housing</fullName>
+                <default>false</default>
+                <label>Rent or Housing</label>
+            </value>
+            <value>
+                <fullName>Utilities_or_Bills</fullName>
+                <default>false</default>
+                <label>Utilities or Bills</label>
+            </value>
+            <value>
+                <fullName>Food or Groceries</fullName>
+                <default>false</default>
+                <label>Food or Groceries</label>
+            </value>
+            <value>
+                <fullName>Lymphedema_Supplies_or_Care</fullName>
+                <default>false</default>
+                <label>Lymphedema Supplies or Care</label>
+            </value>
+            <value>
+                <fullName>Oral Treatment Medications</fullName>
+                <default>false</default>
+                <label>Oral Treatment Medications</label>
+            </value>
+            <value>
+                <fullName>Palliative Care</fullName>
+                <default>false</default>
+                <label>Palliative Care</label>
+            </value>
+            <value>
+                <fullName>Child Care</fullName>
+                <default>false</default>
+                <label>Child Care</label>
+            </value>
+            <value>
+                <fullName>Elder Care</fullName>
+                <default>false</default>
+                <label>Elder Care</label>
+            </value>
+            <value>
+                <fullName>Home Health Care</fullName>
+                <default>false</default>
+                <label>Home Health Care</label>
+            </value>
+            <value>
+                <fullName>Side-Effect Management Medication</fullName>
+                <default>false</default>
+                <label>Side-Effect Management Medication</label>
+            </value>
+            <value>
+                <fullName>Durable Medical Equipment</fullName>
+                <default>false</default>
+                <label>Durable Medical Equipment</label>
+            </value>
+            <value>
+                <fullName>Lymphdema Care Or Supplies</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lymphdema Care Or Supplies</label>
+            </value>
+            <value>
+                <fullName>Lymphedema_Care_or_Supplies</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lymphedema_Care_or_Supplies</label>
+            </value>
+            <value>
+                <fullName>Rent/Housing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rent/Housing</label>
+            </value>
+            <value>
+                <fullName>Utilities/Bills</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Utilities/Bills</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

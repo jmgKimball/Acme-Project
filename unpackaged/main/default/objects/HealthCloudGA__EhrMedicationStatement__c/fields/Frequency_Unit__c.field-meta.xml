@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frequency_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Frequency Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>As Needed</fullName>
+                <default>false</default>
+                <label>As Needed</label>
+            </value>
+            <value>
+                <fullName>Every Day</fullName>
+                <default>false</default>
+                <label>Every Day</label>
+            </value>
+            <value>
+                <fullName>Specific Days</fullName>
+                <default>false</default>
+                <label>Specific Days</label>
+            </value>
+            <value>
+                <fullName>Day</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Day</label>
+            </value>
+            <value>
+                <fullName>Hour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hour</label>
+            </value>
+            <value>
+                <fullName>Week</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Week</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

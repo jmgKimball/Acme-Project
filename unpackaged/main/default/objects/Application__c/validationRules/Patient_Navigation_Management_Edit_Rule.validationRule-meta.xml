@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Navigation_Management_Edit_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>
+        AND(
+            $Permission.Patient_Navigation_Management,
+            ISCHANGED( Application_Status__c ),
+             RecordType.DeveloperName  &lt;&gt;  &apos;Patient_Navigation&apos;,
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;application__c&quot;
+        )
+    </errorConditionFormula>
+    <errorMessage>Patient Navigator Managers can only edit Patient Navigation Applications.</errorMessage>
+</ValidationRule>

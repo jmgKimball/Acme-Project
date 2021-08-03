@@ -1,0 +1,125 @@
+<template>
+    <!-- Spinner -->
+    <div class="slds-align_absolute-center" if:true={showSpinner}>
+        <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+    <!-- Back Button -->
+    <div>
+        <a onclick={handleBackClick} class="khc-a">&lt; {backToResourceLibrary}</a>
+    </div>
+    <!-- Title -->
+    <header class="slds-p-bottom_small slds-p-top_medium slds-p-left_none slds-show_small">
+        <h1>{resourcesLabel}</h1>
+    </header>
+    <!-- Search Results Wrapper -->
+    <article>
+        <!-- Filters/List or Map View Header -->
+        <c-khc-filter-resource topics={topicOptions}
+                               onfiltervaluechange={handleFilter}
+                               onisguest={showGuestLoginModal}
+                               filters={filters}>
+        </c-khc-filter-resource>
+        <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-p-top_medium">
+            <header class="slds-p-left_none">
+                <h6 class="slds-text-title_caps">
+                    {resultsLabel} <span if:true={showPagination}>({startingRecord} - {endingRecord} / {totalRecountCount})</span>
+                </h6>
+            </header>
+            <div>
+                <!-- List View Toggle -->
+                <template if:true={mapView}>
+                    <a onclick={toggleView}>{listViewLabel}</a>
+                </template>
+                <!-- Map View Toggle -->
+                <template if:false={mapView}>
+                    <a onclick={toggleView}>{mapViewLabel}</a>
+                </template>
+                <lightning-button-menu if:false={mapView} alternative-text="Sort By" variant="border-filled" icon-name="utility:sort"
+                        class="slds-m-left_small" onselect={handleOnSortSelect}>
+                    <lightning-menu-item value="Title-ASC" data-field="Title" label={alphabeticallyAscending}></lightning-menu-item>
+                    <lightning-menu-item value="Title-DESC" label={alphabeticallyDescending}></lightning-menu-item>
+                    <lightning-menu-item value="CreatedDate-ASC" label={dateAddedAscending}></lightning-menu-item>
+                    <lightning-menu-item value="CreatedDate-DESC" label={dateAddedDescending}></lightning-menu-item>
+                </lightning-button-menu>
+            </div>
+        </div>
+
+        <template if:true={totalRecountCount}>
+            <!-- List View Tiles -->
+            <template if:false={mapView}>
+                <ul class="slds-has-dividers_bottom-space">
+                    <template for:each={knowledgeList} for:item="knowledge" if:true={knowledgeList}>
+                        <li class="slds-item data-header" key={knowledge.Id}>
+                            <div>
+                                <c-khc-knowledge-resource-tile knowledge={knowledge}
+                                                               onopen={handleOpenArticle}
+                                                               logged-in-user={loggedInUser}
+                                                               onrefresh={handleRefresh}
+                                                               onfavourite={updateFavourite}>
+                                </c-khc-knowledge-resource-tile>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+
+            <!-- Map View -->
+            <template if:true={mapView}>
+                <c-khc-resource-map-results knowledge-list={knowledgeList}>
+                </c-khc-resource-map-results>
+            </template>
+        </template>
+
+        <!-- No Articles Found Message -->
+        <template if:false={totalRecountCount}>
+            <div class="slds-text-title_caps slds-size_1-of-1 slds-text-align_center slds-p-top_large">
+                {noArticlesFoundLabel}
+            </div>
+        </template>
+    </article>
+
+    <!-- Footer / Recommend Resource Link -->
+    <div class="slds-grid slds-wrap slds-grid_align-spread slds-p-top_medium">
+        <div class="slds-text-body_small slds-size_1-of-1 slds-medium-size_2-of-3 slds-p-bottom_large">
+            <div>
+                <p class="slds-p-bottom_x-small">
+                    {recommendAResourceMessageLabel}
+                </p>
+                <a class="slds-text-heading_small" onclick={openRecommendResourceModal}>
+                    {submitAResourceLabel}
+                </a>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <template if:true={showPagination}>
+            <div class="slds-grid slds-text-body_small slds-size_1-of-1 slds-medium-size_1-of-3 slds-grid_align-end">
+                <a onclick={previousHandler} if:true={hasPrevious}>{previousLabel}</a>
+                <a onclick={previousHandler} if:false={hasPrevious} disabled>{previousLabel}</a>
+                <p class="slds-p-horizontal_small">Page {page} of {totalPage}</p>
+                <a onclick={nextHandler} if:true={hasNext}>{nextLabel}</a>
+                <a onclick={nextHandler} if:false={hasNext} disabled>{nextLabel} </a>
+            </div>
+        </template>
+    </div>
+
+    <!-- Recommend Resource Modal -->
+    <c-mk-modal data-modal-name="recommend-resource-modal">
+        <div slot="header">
+            {recommendAResourceLabel}
+        </div>
+        <div slot="content">
+            <c-khc-knowledge-resource-recommendation onhandlesuccess={closeRecommendationModal}></c-khc-knowledge-resource-recommendation>
+        </div>
+    </c-mk-modal>
+
+    <!-- Guest User Login Modal -->
+    <c-mk-modal data-modal-name="guest-login-modal">
+        <div slot="header">
+            {logInOrRegisterLabel}
+        </div>
+        <div slot="content">
+            <c-khc-guest-login-form></c-khc-guest-login-form>
+        </div>
+    </c-mk-modal>
+</template>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initiating_Factors_for_Contacts__c</fullName>
+    <externalId>false</externalId>
+    <label>Initiating Factors for Contacts</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abnormal screening result</fullName>
+                <default>false</default>
+                <label>Abnormal screening result</label>
+            </value>
+            <value>
+                <fullName>Diagnosis received</fullName>
+                <default>false</default>
+                <label>Diagnosis received</label>
+            </value>
+            <value>
+                <fullName>Issues receiving treatment</fullName>
+                <default>false</default>
+                <label>Issues receiving treatment</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

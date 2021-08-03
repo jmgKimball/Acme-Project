@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_this_person_born_a_twin_multiple__c</fullName>
+    <externalId>false</externalId>
+    <label>Was this person born a twin / multiple?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not a Twin</fullName>
+                <default>false</default>
+                <label>Not a Twin</label>
+            </value>
+            <value>
+                <fullName>Yes, Identical Twin</fullName>
+                <default>false</default>
+                <label>Yes, Identical Twin</label>
+            </value>
+            <value>
+                <fullName>Yes, Not Identical Twin</fullName>
+                <default>false</default>
+                <label>Yes, Not Identical Twin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

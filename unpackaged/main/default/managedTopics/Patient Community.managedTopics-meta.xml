@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>Patient Community.Featured:Clinical</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Clinical</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription>Community topic for clinical discussions.</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Community.Featured:Frequently Asked</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Frequently Asked</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription>Community topic for frequently asked questions.</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Community.Featured:Services</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Services</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription>Community topic for services discussions.</topicDescription>
+    </managedTopic>
+</ManagedTopics>

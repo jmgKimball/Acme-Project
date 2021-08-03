@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Knowledge_Resource</fullName>
+    <active>true</active>
+    <businessProcess>Knowledge Process</businessProcess>
+    <description>Record type to store knowledge recourse recommendation requests.</description>
+    <label>Knowledge Resource</label>
+    <picklistValues>
+        <picklist>Breast_Cancer_Type__c</picklist>
+        <values>
+            <fullName>Ductal carcinoma in situ %28DCIS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inflammatory Breast Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invasive Ductal Carcinoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invasive Lobular Carcinoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metaplastic Breast Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28please specify%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancelled_Reason__c</picklist>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Number</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Care_Barrier__c</picklist>
+        <values>
+            <fullName>Financial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Medical Coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation for Care</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Emotial_State__c</picklist>
+        <values>
+            <fullName>Angry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anxious</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Happy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sad</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Follow_Up__c</picklist>
+        <values>
+            <fullName>Nothing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient will Call Komen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled Call Back</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Barrier Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Care Plan Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Resource Material</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Found_Helpline_Via__c</picklist>
+        <values>
+            <fullName>Family%2FFriends%2FAnother Patient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital%2FHealthcare Provider %28e%2Eg%2E doctor%2C nurse%2C patient navigator%2C social worker%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet%2FRadio%2FTV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Komen Breast Care Helpline %281-877 GO KOMEN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Komen Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Please Specify%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Intention_to_Act__c</picklist>
+        <values>
+            <fullName>Call the helpline back at a later time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact a treatment assistance program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gather appropriate medical records %2F information in order to understand diagnosis a little better or answer certain questions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make a mammogram appointment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Share this information with family and%2For friends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Use the information I received to make decisions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Use the information I received to talk to my doctor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit komen%2Eorg for more information</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Stage__c</picklist>
+        <values>
+            <fullName>Stage 0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage IV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial__c</picklist>
+        <values>
+            <fullName>Child</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co Worker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Family Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initiating_Factor_s_for_Contact__c</picklist>
+        <values>
+            <fullName>Abnormal screening result</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnosis received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issues receiving treatment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue__c</picklist>
+        <values>
+            <fullName>Contact information is invalid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link is broken</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program%2Fresource no longer valid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Chat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pat_Nav_Topics__c</picklist>
+        <values>
+            <fullName>Breast Health %26 Breast Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Assistance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Method_of_Contact__c</picklist>
+        <values>
+            <fullName>Cell Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Postal Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Resource_Relationship__c</picklist>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Topic__c</picklist>
+        <values>
+            <fullName>Breast Health %26 Breast Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Trials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Breast Health Topics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Resource Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource Recommendation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

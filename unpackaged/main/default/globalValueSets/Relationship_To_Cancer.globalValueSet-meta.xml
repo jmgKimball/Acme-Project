@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Never been diagnosed</fullName>
+        <default>false</default>
+        <label>Never been diagnosed</label>
+    </customValue>
+    <customValue>
+        <fullName>Recently diagnosed</fullName>
+        <default>false</default>
+        <label>Recently diagnosed</label>
+    </customValue>
+    <customValue>
+        <fullName>Undergoing treatment</fullName>
+        <default>false</default>
+        <label>Undergoing treatment</label>
+    </customValue>
+    <customValue>
+        <fullName>In Survivorship</fullName>
+        <default>false</default>
+        <label>In Survivorship</label>
+    </customValue>
+    <customValue>
+        <fullName>Care-giver or Co-Survivor</fullName>
+        <default>false</default>
+        <label>Care-giver or Co-Survivor</label>
+    </customValue>
+    <customValue>
+        <fullName>Living with MBC</fullName>
+        <default>false</default>
+        <label>Living with MBC</label>
+    </customValue>
+    <description>Values set during the initial onboarding to MyKomen Health</description>
+    <masterLabel>Relationship To Cancer</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

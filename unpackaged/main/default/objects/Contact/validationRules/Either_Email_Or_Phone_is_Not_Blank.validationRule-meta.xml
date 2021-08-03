@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Either_Email_Or_Phone_is_Not_Blank</fullName>
+    <active>false</active>
+    <description>To successfully save the record, either Email Or Phone field is pipulated.</description>
+    <errorConditionFormula>AND(
+            ISBLANK(Email),
+            !$Setup.Bypass__c.Validation__c,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;all&quot;,
+            LOWER($Setup.Bypass__c.SObject__c) &lt;&gt; &quot;contact&quot;
+        )</errorConditionFormula>
+    <errorMessage>Phone or Email is required to create a new patient</errorMessage>
+</ValidationRule>

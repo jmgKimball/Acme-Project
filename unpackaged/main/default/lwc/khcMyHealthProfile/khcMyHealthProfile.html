@@ -1,0 +1,172 @@
+<template>
+    <!-- TODO: After standardizing CSS add change case of all the accordian to CAPS-->
+    <div class="khc-container" id="myHealthProfileInfo">
+        <template if:true={showMyHProfileScreen}>
+            <h1>{myHealthSummaryLabel}</h1>
+            <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}> 
+                <div class="">
+                    <div class="description">
+                        <h3>{manageContactInfoLabel}</h3>
+                        <a class="my-profile" name="My Profile" title="My Profile" onclick={redirectToNPSPProfile}>{myProfileLabel}</a>
+                    </div>
+                    <template if:true={areDetailsVisible}>
+                        <div class="details data-header">
+                            <li>
+                                <span>{heightLabel}: {heightDetails}</span>
+                                <a title={editLabel} onclick={navigateToUpdateProfilePage} class="slds-m-left_x-large controls">{editLabel}</a>
+                            </li>
+                            <li>{bloodTypeLabel}: {bloodTypeScreen}</li>
+                            <li>{organDonorLabel}: {selectedOrganDonor}</li> 
+                            <li>{twinMultipleLabel}: {selectedTwin}</li> 
+                            <!--li>{caregiverOrSurvivorLabel}: {selectedCareGiver}</li-->
+                            <li>{relationshipLabel}: {selectedRelationship}</li>
+                            <li>{dateOfAssessmentLabel}: <lightning-formatted-date-time value={dateOfAssessment}></lightning-formatted-date-time></li>
+                            <li>{typeOfAssessmentLabel}: <lightning-formatted-text value={typeOfAssessment}></lightning-formatted-text></li>
+                            <li>{riskLevelLabel}: <lightning-formatted-text value={riskLevel}></lightning-formatted-text></li>
+                            <li>{notesRiskAssessmentLabel}: <lightning-formatted-text value={riskNotes}></lightning-formatted-text></li>
+                            <li>{healthInterestLabel}: {selectedHealthInterests}</li>
+                        </div>
+                    </template>
+
+                    <lightning-accordion allow-multiple-sections-open active-section-name={activeSections} class="accordion-section">
+                        <lightning-accordion-section name="FAMILYHISTORY" label={myFamilHistoryLabel}>
+                            <a class="manage-action" href="my-family-health-history">{manageMyFamilyHistoryLabel}</a>
+                            <template for:each={familyMembers} for:item="fMember">
+                                <template if:true={areDetailsVisible} class="general-text">
+                                    <li class="details" key={fMember.Id}>{fMember.Family_Member_Name__c} ({fMember.Relationship__c})</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="HEALTHCONDITION" label={myHealthConditionsLabel}>
+                            <a class="manage-action" href="my-health-conditions">{manageMyHealthConiditionsLabel}</a>
+                            <template for:each={conditions} for:item="condition" class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={condition.Id}>{condition.Condition_Name__c}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="HEALTHPROVIDER" label={myHealthProvidersLabel}>
+                            <a class="manage-action" href="my-providers">{manageMyHealthProvidersLabel}</a>
+                            <template for:each={cases} for:item="c" class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={c.Id}>{c.Provider__r.Name}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+                        
+                        <lightning-accordion-section name="MEDICATION" label={myMedicationsLabel}>
+                            <a class="manage-action" href="my-medications">{manageMyMedicationsLabel}</a>
+                            <template for:each={medications} for:item="med"  class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={med.Id}>{med.HealthCloudGA__MedicationName__c}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+                        
+                        <lightning-accordion-section name="ALLERGY" label={myAllergiesLabel}>
+                            <a class="manage-action" href="my-allergies">{manageMyAllergiesLabel}</a>
+                            <template for:each={intolerances} for:item="intolerance"  class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={intolerance.Id}>{intolerance.Allergen_Name__c}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="IMMUNIZATION" label={myImmunizationsLabel}>
+                            <a class="manage-action" href="my-immunizations">{manageMyImmunizationsLabel}</a>
+                            <template for:each={immunizations} for:item="immunization"  class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={immunization.Id}>{immunization.Immunization_Type__c}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="myProcedures" label={mhyProceduresLabel}>
+                            <a class="manage-action" href="my-procedures">{manageMyProceduresLabel}</a>
+                            <template for:each={surgeries} for:item="surgery"  class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={surgery.Id}>{surgery.Procedure_Type__c}</li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="myInsurances" label={myInsurancesLabel}>
+                            <a class="manage-action" href="my-insurance">{manageMyInsurancesLabel}</a>
+                            <template for:each={insurances} for:item="insurance"  class="general-text">
+                                <template if:true={areDetailsVisible}>
+                                    <li class="details" key={insurance.Id}>
+                                        {insurance.Insurance_Provider__c}
+                                    </li>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="myCareProvider" label={myCareGiverSupportersLabel}>
+                            <a class="manage-action" href="my-contacts">{manageMyCaregiversSupporterLabel}</a>
+                            <template for:each={caregiversSupporters} for:item="caregiver"  class="general-text">
+                                    <template if:true={areDetailsVisible}>
+                                        <li class="details" key={caregiver.Id}>
+                                            {caregiver.Family_Member_Name__c} ({caregiver.Relationship__c})
+                                        </li>
+                                    </template>
+                                </template>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="myAppointments" label={myAppointments}>
+                                <a class="manage-action" href="my-appointments">{manageMyAppointments}</a>
+                                <template for:each={appointments} for:item="appointment" class="general-text">
+                                        <template if:true={areDetailsVisible}>
+                                            <li class="details slds-truncate" key={appointment.Id}>
+                                                {appointment.Title__c} 
+                                            </li>
+                                        </template>
+                                    </template>
+                            </lightning-accordion-section>
+
+                    </lightning-accordion>
+                </div>
+            </lightning-record-view-form>
+        </template>
+    </div>
+    
+
+    <div class="" id="update-My-Profile">
+        <template if:true={showUpdateScreen}>
+            <h3 class="myKomenHeathProfile">{myHealthProfileLabel}</h3>
+            <h3 class="description">{contact.FirstName}{keepingProfileUpdateLabel}</h3>
+
+            <template if:true={areDetailsVisible}>
+                                    
+                <lightning-input class="combobox-option" name="heightFt" type="number" label={heightFtLabel} maxlength="2" value={selectedHeightFt} onchange={handleHeightFt} required></lightning-input>
+                <lightning-input class="combobox-option" name="heightIn" type="number" label={heightInLabel} maxlength="4" step=".01" value={selectedHeightIn} onchange={handleHeightIn}></lightning-input>
+
+                <lightning-combobox class="combobox-option" name="bloodType" label={bloodTypeLabel} placeholder={selectedBloodType}  value={selectedBloodType}
+                                    onchange={handleBloodTypeChange} options={bloodTypeOptions}></lightning-combobox>
+                
+                <lightning-combobox class="combobox-option" name="twin" label={areYouATwinMultipleLabel} placeholder={selectedTwin}  value={selectedTwin}
+                                    onchange={handleTwinChange} options={checkboxOptions}></lightning-combobox>
+
+                <lightning-combobox class="combobox-option" name="organDonor" label="Are you an Organ Donor?" placeholder={selectedOrganDonor}  value={selectedOrganDonor}
+                                    onchange={handleOrganDonorChange} options={checkboxOptions}></lightning-combobox>
+
+                <lightning-dual-listbox class="combobox-option" name="relationship" label={whatIsYourRelationShipLabel} value={selectedRelationship}
+                      source-label="Available"  selected-label="Selected" options={relationShipOptions} onchange={handleRelationShipChange} ></lightning-dual-listbox>
+                <lightning-dual-listbox class="combobox-option" name="healthInterest" label={healthInterestLabel} value={selectedHealthInterests}
+                      source-label="Available"  selected-label="Selected" options={healthInterestOptions} onchange={handleHealthInterestChange} ></lightning-dual-listbox>
+                
+                <div class="slds-p-top_medium">
+                    <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleUpdate} name="update" disabled={disabledUpdate}>{updateLabel}</button>
+                </div>
+                <div class="slds-p-top_medium">
+                    <button class="slds-button slds-button_neutral slds-button_stretch " onclick={navigateToUpdateProfilePage} name="cancel">{cancelLabel}</button>
+                </div>
+               <!--  <lightning-button class="slds-m-top_small"  variant="brand" onclick={handleUpdate} name="update" label="Update"></lightning-button>
+                <lightning-button class="slds-m-top_small"  variant="neutral" onclick={navigateToUpdateProfilePage} name="cancel" label="Cancel"></lightning-button> -->
+
+            </template> 
+        </template>
+    </div>
+
+</template>

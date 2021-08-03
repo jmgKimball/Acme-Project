@@ -1,0 +1,91 @@
+<template>
+	<div class="khc-container">
+		<div class="slds-align_absolute-center" if:true={showSpinner}>
+			<lightning-spinner size="large" alternative-text="loading"></lightning-spinner>
+		</div>
+
+		<header>
+			<h1>{headerText}</h1>
+		</header>
+
+		<article>
+
+			<div class="form-container">
+				<lightning-record-edit-form
+					record-id={editId}
+					object-api-name="Patient_Contact__c"
+					record-type-id={familyMemberRecordTypeID}
+					onload={onFormLoad}
+					onsubmit={onFormSubmit}
+					onsuccess={onFormSuccess}
+					onerror={onFormError}>
+					<lightning-messages></lightning-messages>
+					<lightning-layout multiple-rows="true">
+						<lightning-input-field field-name="Patient__c" value={patientId}
+											   class="slds-hide"></lightning-input-field>
+
+
+						<lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+							<lightning-input-field field-name="Relationship__c" onchange={setFamilyRelationField} data-name="relationship"></lightning-input-field>
+						</lightning-layout-item>
+
+						<lightning-layout-item size="12" large-device-size="6" class="slds-p-around--small">
+							<lightning-input-field field-name="Related_through_family_member__c" data-name="familyRelationship"
+												   disabled={hasNoRelationship} class={disableFamilyRelationshipFields}>
+							</lightning-input-field>
+						</lightning-layout-item>
+
+						<template for:each={medicalHistoryFields} for:item="fieldName">
+							<lightning-layout-item key={fieldName.apiName} size="12" large-device-size="6"
+												   class="slds-p-around--small">
+								<label for={fieldName.apiName}>{fieldName.label}</label>
+								<lightning-input-field key={fieldName.apiName} variant="label-hidden"
+													   field-name={fieldName.apiName}
+													   id={fieldName.apiName}></lightning-input-field>
+							</lightning-layout-item>
+						</template>
+
+						<lightning-layout-item size="12" large-device-size="6"
+											   class="slds-p-around--small">
+							<lightning-input-field field-name="Is_this_person_living__c" onchange={setDeathFields} data-name="isPersonLiving"></lightning-input-field>
+						</lightning-layout-item>
+
+						<lightning-layout-item size="12" large-device-size="6"
+											   class="slds-p-around--small">
+							<lightning-input-field field-name="Estimated_Age_at_Death__c" data-name="ageAtDeath" disabled={isLiving}
+												   class={disableDeathFields}></lightning-input-field>
+						</lightning-layout-item>
+
+						<lightning-layout-item size="12" large-device-size="6"
+											   class="slds-p-around--small">
+							<lightning-input-field field-name="Cause_of_Death__c" data-name="causeOfDeath" disabled={isLiving}
+												   class={disableDeathFields}></lightning-input-field>
+						</lightning-layout-item>
+
+					</lightning-layout>
+					<button type="submit" class="slds-hide"></button>
+				</lightning-record-edit-form>
+
+				<c-khc-family-conditions-editor history-id={editId}
+												existing-conditions={editExistingConditions}></c-khc-family-conditions-editor>
+			</div>
+		</article>
+
+		<footer>
+			<div class="slds-m-top_large mkh-footer-actions">
+				<button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small khc-save-button"
+						onclick={onSave}>
+					{saveLabel}
+				</button>
+
+				<div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-remove-button" if:true={hasEditId}>
+					<a onclick={onRemove}>{removeLabel}</a>
+				</div>
+
+				<div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_x-small khc-cancel-button">
+					<a onclick={onCancel}>{cancelLabel}</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+</template>

@@ -1,0 +1,138 @@
+<template>
+    <!-- Spinner -->
+    <div class="slds-align_absolute-center" if:true={showSpinner}>
+        <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+    </div>
+
+    <!-- "Resource Library" Header -->
+    <header class="khc-resource-repo-header slds-p-bottom_large slds-p-left_none">
+        <h1 class="slds-text-heading_large">{headerText}</h1>
+    </header>
+
+    <article>
+        <!-- Sub-Header and Subtitle -->
+        <div class="slds-p-bottom_large">
+            <h6 class="khc-sub-heading">{findResourceLabel}</h6>
+            <label>{recommendedBusinsessSupportLabel}</label>
+        </div>
+
+        <!-- Knowledge Topics List & Search -->
+        <lightning-layout multiple-rows="true" class="slds-m-bottom_large">
+            <lightning-layout-item size="6">
+                <c-khc-multiselect-checkbox label={resourceTopicLabel} options={topicOptions}
+                                            placeholder={selectTopicsLabel} onchange={handleTopicChange}></c-khc-multiselect-checkbox>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small" >
+                <lightning-button variant="brand" label={searchResourceLabel} onclick={handleSearchByTopic}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <!-- Referred, Favorite and Other Articles Short List -->
+        <lightning-layout if:false={isGuest} multiple-rows="true" class="slds-m-vertical--small">
+            <!-- Referred Articles -->
+            <lightning-layout-item class="khc-resource-shortlist-section" size="12" medium-device-size="6" padding="around-small">
+                <div class="slds-size_1-of-1">
+                    <!-- Referred Article Header -->
+                    <h6 class="khc-sub-heading">{myRefferalsLabel}</h6>
+                    <div  class="khc-sub-heading-subtitle">
+                        <label>{recommendedResourceLabel}</label>
+                    </div>
+                    <!-- Referred Article Tiles -->
+                    <template if:true={referredArticles}>
+                        <ul class="slds-has-dividers_bottom-space">
+                            <template for:each={referredArticles} for:item="referredArticle">
+                                <li class="slds-item" key={referredArticle.Knowledge_Article_Referred__c}>
+                                    <a data-knowledge-article-referred-id={referredArticle.Knowledge_Article_Referred__c} class="khc-dismissal-icon" onclick={openReferralDismissalModal}></a>
+                                    <c-khc-knowledge-resource-tile referal-record={referredArticle} onopen={handleOpenArticle}></c-khc-knowledge-resource-tile>
+                                </li>
+                            </template>
+                        </ul>
+                        <!-- View All Referred Button -->
+                        <template if:true={hasReferredArticles}>
+                            <div class="slds-m-vertical_x-small">
+                                <lightning-button label={viewAllReferralsLabel} onclick={handleViewAllReferralClick}></lightning-button>
+                            </div>
+                        </template>
+                    </template>
+                    <!-- No Referred Articles -->
+                    <template if:false={hasReferredArticles}>
+                        <div class="slds-text-title_caps slds-p-vertical_small">
+                            {noReferredArticlesLabel}
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+            
+            <!-- Favourited Articles -->
+            <lightning-layout-item class="khc-resource-shortlist-section" size="12" medium-device-size="6" padding="around-small">
+                <div>
+                    <!-- Favourited Articles Header -->
+                    <h6 class="khc-sub-heading">{myFavoritesLabel}</h6>
+                    <div  class="khc-sub-heading-subtitle">
+                        <label>{resourceFavoritedByYouLabel}</label>
+                    </div>
+                    <!-- Favourited Article Tiles -->
+                    <ul class="slds-has-dividers_bottom-space">
+                        <template for:each={favoriteArticles} for:item="favoriteArticle">
+                            <li class="slds-item" key={favoriteArticle.Knowledge_Article_Referred__c}>
+                                <c-khc-knowledge-resource-tile referal-record={favoriteArticle} onopen={handleOpenArticle}></c-khc-knowledge-resource-tile>
+                            </li>
+                        </template>
+                    </ul>
+                    <!-- View All Favourited Button -->
+                    <template if:true={favoriteArticles}>
+                        <div class="slds-m-vertical_x-small">
+                            <lightning-button label={viewAllFavoritesLabel} onclick={handleViewAllFavClick}></lightning-button>
+                        </div>
+                    </template>
+                    <!-- No Favourite Articles -->
+                    <template if:false={favoriteArticles}>
+                        <div class="slds-text-title_caps slds-p-vertical_small">
+                            {noFavoriteArticlesLabel}
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <!-- Other Articles-->
+            <lightning-layout-item class="khc-resource-shortlist-section slds-is-relative" size="12" medium-device-size="6" padding="around-small">
+                <div>
+                    <h6 class="khc-sub-heading">{otherRecommendationLabel}</h6>
+                    <div  class="khc-sub-heading-subtitle">
+                        <label>{recommendationBasedOnLabel} <a onclick={handleProfileClick}>{profileLabel}</a>.</label>
+                    </div>
+                    <ul class="slds-has-dividers_bottom-space">
+                        <template for:each={otherArticles} for:item="otherArticle">
+                            <li class="slds-item" key={otherArticle.Knowledge_Article_Referred__c}>
+                                <c-khc-knowledge-resource-tile knowledge={otherArticle} is-compact="true" onopen={handleOpenArticle}></c-khc-knowledge-resource-tile>
+                            </li>
+                        </template>
+                    </ul>
+
+                    <template if:true={otherArticles}>
+                        <div class="slds-m-vertical_x-small">
+                            <lightning-button label={viewAllItemsLabel} onclick={handleViewAll}></lightning-button>
+                        </div>
+                    </template>
+
+                    <template if:false={otherArticles}>
+                        <div class="slds-text-title_caps slds-p-vertical_small">
+                            {noOtherRecommendationsLabel}
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </article>
+
+    <c-mk-modal>
+        <div slot="header">
+            <h1>{dismissResourceRecommendationLabel}</h1>
+        </div>
+
+        <div slot="content">
+            <c-khc-resource-dismissal-form knowledge-article-id={knowledgeArticleIdToDismiss}
+                                           ondismiss={handleReferralDismissed}></c-khc-resource-dismissal-form>
+        </div>
+    </c-mk-modal>
+</template>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic__c</fullName>
+    <description>Top level routing of Case provided by users via Chat or Web-to-Case interfaces. Serves as the key value for Case to Queue assignments. NOTE: TOPIC CANNOT BE SET TO REQUIRED. THIS WILL CAUSE AUTOMATED INBOUND CHANNELS TO FAIL</description>
+    <externalId>false</externalId>
+    <label>Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Other Breast Health Topics</fullName>
+                <default>false</default>
+                <label>Other Breast Health Topics</label>
+            </value>
+            <value>
+                <fullName>Breast Health &amp; Breast Cancer</fullName>
+                <default>false</default>
+                <label>Breast Health &amp; Breast Cancer</label>
+            </value>
+            <value>
+                <fullName>Breast Cancer Clinical Trials</fullName>
+                <default>false</default>
+                <label>Breast Cancer Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Financial Assistance</fullName>
+                <default>false</default>
+                <label>Financial Assistance</label>
+            </value>
+            <value>
+                <fullName>Donations &amp; Fundraisers</fullName>
+                <default>false</default>
+                <label>Donations &amp; Fundraisers</label>
+            </value>
+            <value>
+                <fullName>3-Day Events</fullName>
+                <default>false</default>
+                <label>3-Day Events</label>
+            </value>
+            <value>
+                <fullName>Clinical Trials</fullName>
+                <default>false</default>
+                <label>Clinical Trials</label>
+            </value>
+            <value>
+                <fullName>Knowledge Article</fullName>
+                <default>false</default>
+                <label>Knowledge Article</label>
+            </value>
+            <value>
+                <fullName>General/Other</fullName>
+                <default>false</default>
+                <label>General/Other</label>
+            </value>
+            <value>
+                <fullName>Donaciones y Recaudación de Fondos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Donaciones y Recaudación de Fondos</label>
+            </value>
+            <value>
+                <fullName>Estudios clínicos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Estudios clínicos</label>
+            </value>
+            <value>
+                <fullName>Eventos de 3 días</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eventos de 3 días</label>
+            </value>
+            <value>
+                <fullName>La Salud del Seno</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>La Salud del Seno</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
